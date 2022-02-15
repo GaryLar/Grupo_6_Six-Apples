@@ -8,3 +8,5 @@
 - ### Joaquín Galván, diseñador gráfico y desarrollador que busca superarse constantemente a sí mismo.
 - ### Gary Rodriguez, un desarrollador web con ganas de aprender y encarar nuevos desafíos.
 - ### Karen Calisaya, desarrolladora entusiasta, capaz de aprender cosas nuevas.
+# Enlace a Trello:
+<https://trello.com/b/PLLqaRlW/grupo-6-c13>
