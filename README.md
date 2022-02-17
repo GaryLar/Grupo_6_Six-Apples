@@ -10,3 +10,8 @@
 - ### Karen Calisaya, desarrolladora entusiasta, capaz de aprender cosas nuevas.
 # Enlace a Trello:
 <https://trello.com/b/PLLqaRlW/grupo-6-c13>
+# Referentes:
+### En la búsqueda de inspiración, encontramos varios referentes del mercado de los cuales pudimos tomar algunas ideas.
+### Buscando sitios que vendan el mismo estilo de productos que nosotros, nos encontramos con una tienda llamada "El Brote" (<https://elbrotetienda.com/>). De esta tienda pudimos destacar la amplia variedad de productos y su estilo moderno, pero sencillo.
+### Ya buscando referentes mas "conocidos" entramos en la pagina de McDonald's (<https://www.mcdonalds.com.ar/>) de acá nos gusto mucho el estilo y la forma, tanto del header, como del footer. También entramos en la pagina de MercadoLibre (<https://www.mercadolibre.com.ar/>) se podría decir que este fue nuestro principal referente, ya que nos gusta mucho su diseño.
+### Por ultimo, vimos paginas como Fravega (<https://www.fravega.com/>) y LeFruit (<https://www.lefruit.com.ar/index.php>). Estas paginas si bien las vimos, no fueron de tanta inspiración como las demás, aunque nos guiamos de cosas como el tamaño de footer, header, o también "pedimos prestadas" algunas imágenes .
