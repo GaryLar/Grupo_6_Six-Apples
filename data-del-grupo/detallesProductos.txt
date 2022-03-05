@@ -1,0 +1,21 @@
+.manzana roja, tipo: Red Delicious, procedencia: Neuquén, id: 101, precio: $240
+.naranja común, tipo: Navel, procedencia: Nacional , id: 102, precio: $210.
+.Banana, tipo:  Baya tropical , procedencia: India, id: 103, precio: $280.
+.durazno, tipo: Scarlet Pearl, procedencia: Mendoza, id: 104, precio: $290
+.Ananá, tipo: Hawai, procedencia: Hawai, id: 105, precio: $390
+.Uva, tipo: Malbec, procedencia: Mendoza, id: 106, precio:$330
+.Pera, tipo: Williams, Procedencia: Inglaterra, id: 107, precio: $220
+.Kiwi ,   TIPO : Hayward   ,   PROCEDENCIA : Buenos Aires   ,   ID : 108  ,  PRECIO : 749
+.Kiwi ,   TIPO : Summer ,   PROCEDENCIA : Italia   ,   ID : 108.1  ,  PRECIO : 800
+.mango, tipo: Tommy Atkins, Procedencia: Salta, id: 109, precio: $460
+.Frutilla, tipo: Douglas, procedencia: California, id: 110, precio: $480
+.sandia, tipo: Charleston Grey, procedencia: Formosa, id: 111, precio: $390
+.Lechuga, tipo: Romana, procedencia: China, id: 112, precio: $520
+.tomate, tipo: Raf, procedencia: San Juan, id: 113, precio: $390
+.Repollo, tipo: Durham Early, procedencia: China, id: 114, precio: $480
+.Acelga, tipo: Lyon, procedencia: Neuquen, id:115, precio:$ 200
+.zapallo, tipo: anco, procedencia: Buenos Aires, id: 116, precio: $230
+.Zanahoria, tipo: Danvers, procedencia: Francia, id:117, precio $250
+.Cebolla, tipo: Blanca, procedencia: Rio Negro, id: 118, precio: $130
+.Limon, tipo: Verna, procedencia: México, id: 119, precio: $240
+.Papa, tipo: Spunta, procedencia: Buenos Aires, id: 120, precio $120
