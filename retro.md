@@ -1,2 +1,2 @@
 # Retrospectiva del primer Sprint:
-![estrella](./data-del-grupo/Retrospectiva Sprint 1.jpg)
+![estrella](./data-del-grupo/retrospectivaSprint1.jpg)
