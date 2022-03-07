@@ -528,73 +528,47 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen{
         width: 110px;
     }
     header.header-home div.busqueda{
-        margin-right: 30%;
+        /* margin-right: 30%;  */
+       /* display: none; */
     }
 
+    header.header-home div.busqueda input.barra{
+        margin-right: 0px;
+        width: 400px;
+    }
+    
     header.header-home div.iconos{ /* hasta aca bien */
         display: none;
     }
 
-    header.header-home nav.menu-desktop { /* caja contnedora de nuestro menu */
-        display: block;
+    header.header-home nav.menu-desktop{
+        display: inline-flex;
         align-items: center;
+        position: absolute;
     }
 
-    nav.menu-desktop ul.menu-top{ /* le puse none para no confundirme */
-        display: none;
-        /* display: inline-block;
-        justify-content: space-between;   mirar las opciones de abaj
-        flex-direction: row; */
-    }
-    nav.menu-desktop ul.menu-buttom li{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: row;
+    header.header-home nav.nav-right ul.menu-top{
+        display: inline-flex;
+       /*  order: 1; */
+        justify-content: space-between;
         
     }
 
-
-
-
-
-    /* end HEADER */
-
-
-
-
-
-
-   
-
-    /* header.header-home div.busqueda{ 
-        display: block;
+    header.header-home nav.nav-right ul.menu-top li{
+        margin: 0 10px;
     }
 
-    header.header-home nav.menu {
-        display:block;
-    }
-
-    header.header-home nav.desktop {
+    header.header-home nav.menu-desktop div ul.menu-bottom{
         display: flex;
+        order: 0;
+        position: relative;
+        left: 150px;
+        bottom: -30px;
     }
-    header.header-home nav.desktop ul.menu-top li a{
-        justify-content: space-between;
+    header.header-home nav.menu-desktop div ul.menu-bottom li{
+         margin: 0 40px;
     }
-
-    header.header-home div.busqueda input.barra{
-        border-radius: 10px;
-        margin-right: 60px;
-        width: 400px;
-    }
-
-
-
-    div.iconos{
-        display: none;
-    } */
     /* end HEADER */
-
 
 /* OFERTAS BOLSONES */
 main.main-homepage section article.none-oferta{
@@ -612,7 +586,7 @@ main.main-homepage section article.none1{
 
 /* FOOTER */
 footer.footer-homepage div#logo-footer img{ 
-    width: 25%;  /* nuevo tamaño de logo */
+    width: 23%;  /* nuevo tamaño de logo */
 }
 
 footer.footer-homepage div nav a i{ 
@@ -641,9 +615,6 @@ ul.list-footer li{
 
     header nav.menu ul li {
         display:inline-block;
-    }
-    header div.burger-menu {
-        display: none;
     }
 } */
 
