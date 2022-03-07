@@ -1,0 +1,651 @@
+:root {
+    /* COLORES */
+    --color-verdeClaro: #dfffbe;
+    --color-verdeOscuro: #92c88a;
+    /* FUENTES */
+    --font-poppins: 'Poppins', sans-serif;
+    /* TAMAÑOS DE FUENTES */
+    --title: 16px;
+    --paragraph: 14px;  /* valor en rem? */
+    --precios: 18px;
+    --otrasDescripciones: 16px;
+}
+
+/* ESTILOS GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.homepage {
+    font-family: var(--font-poppins);
+}
+main.main-homepage {
+    padding: 15px 10px 0;
+}
+
+body.homepage a{
+    color:black;
+    text-decoration: none;
+}
+
+body.homepage ul {
+    list-style: none; /* para sacar las viñetas */
+    font-size: var(--paragraph);
+}
+
+/* HEADER */
+header.header-home nav.menu-desktop {
+    display: none;
+}
+
+header.header-home {
+    background-color: var(--color-verdeClaro);
+    height: 66px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+header.header-home div a img.logo{
+    height: 70px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+}
+
+header.header-home div.busqueda{ 
+    display: none;
+}
+
+div.iconos{
+    display: flex;
+    flex-grow: 0.10;
+    align-items: center;
+    justify-content: space-between;
+}
+/* end HEADER */
+
+/* CARRUSEL STYLES */
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1050px;
+  position: relative;
+  margin: auto;
+}
+
+/* Botones de next y prev */
+.prev, .next {  
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Posicion del boton next a la derecha */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+main.main-homepage a.prev,
+main.main-homepage a.next{
+    color: white;
+}
+
+/* Al pasar mouse, cambia background-color con transparencia */
+.prev:hover, .next:hover {
+  background-color: rgba(235, 232, 232, 0.472);
+}
+
+/*  Botones indicadores de slides */
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px 20px 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Animacion de desvanecimiento */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* END CARRUSEL STYLES */
+
+
+/* OFERTAS BOLSONES */
+#titulo {
+    font-size: var(--title);
+    text-align: center;
+    margin: 10px 0;
+}
+
+main.main-homepage section article.producto{
+    max-width: 380px; /* no se si ponerlo */
+    margin: 25px auto; /* agrege recien para que me mantenga el contenido en el centro */
+    transition: all 1.10s ease-in;
+
+}
+main.main-homepage section article.none-oferta{
+    display: none;
+}
+
+
+main.main-homepage section article.producto div.contenedor-foto {
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 0 8px 2px rgba(0,0,0,0.3);
+}
+.contenedor-foto:hover{
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+
+}
+
+.boton-ofertas{
+    background-color: lightgray;
+    padding: 8px;
+    text-align: center;
+    border-style: none;
+    border-radius: 10px;
+    margin-top: 18px;
+}
+
+.boton-ofertas:hover{
+    background-color: var(--color-verdeOscuro); /* PONIENDO COLOR A LOS BOTONES */
+    color: white;
+}
+
+main.main-homepage section article.producto {
+    text-align: center;
+}
+
+main.main-homepage section article.detalles{
+    padding: 5px 0 0 10px;
+    text-align: left;
+    font-size: var(--paragraph);
+    line-height: 22px;
+}
+
+main.main-homepage section article p.precio {
+    font-size: var(--precios);
+    font-weight: bold;
+}
+
+.opciones {
+    display: flex;
+    justify-content: space-between;
+}
+
+#cantidad{
+    background-color: lightgray;
+    border-radius: 8px;
+    border-style: none;
+    padding: 10px;
+    flex-grow: 0.05;
+    margin-left: 10px;
+} 
+#cantidad:hover{
+    background-color: var(--color-verdeOscuro);
+    color: white;
+}
+/* end OFERTAS BOLSONES */
+
+/* INFORMACION de envios y demas*/ 
+
+#informacion article {
+    justify-content: space-between;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: var(--paragraph);
+}
+
+#informacion article p {
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+}
+/* end INFORMACION de envios y demas*/
+
+/* DESTACADOS */
+main.main-homepage section article.none,
+main.main-homepage section article.none1 {
+    display: none;
+}
+
+.destacados {
+    display: flex;
+    justify-content: space-between;
+}
+.detalles {  
+    text-align: left;
+    margin: 0 20px;
+    font-size: var(--paragraph);
+}
+.boton-agregar{
+    background-color: lightgrey;
+    border-radius: 9px;
+    border-style: none;
+    padding: 3px;
+}
+
+.boton-agregar:hover{
+    background-color: var(--color-verdeOscuro);
+}
+
+.boton-agregar p.add{
+    font-size: 10px;
+    font-weight: 600;
+    font-family: var(--font-poppins); 
+    margin-left: -4px;
+}
+
+.destacados {
+    display: flex;
+    justify-content: space-between;
+}
+.detalles {  
+    text-align: left;
+    margin: 0 20px;
+    font-size: var(--paragraph);
+}
+.boton-agregar{
+    background-color: lightgrey;
+    border-radius: 9px;
+    border-style: none;
+    padding: 3px;
+}
+
+.boton-agregar:hover{
+    background-color: var(--color-verdeOscuro);
+}
+
+.boton-agregar p.add{
+    font-size: 10px;
+    font-weight: 600;
+    font-family: var(--font-poppins); 
+    margin-left: -4px;
+}
+
+/* end DESTACAD0S */
+
+.destacados {
+    display: flex;
+    justify-content: space-between;
+}
+.detalles {  
+    text-align: left;
+    margin: 0 20px;
+    font-size: var(--paragraph);
+}
+.boton-agregar{
+    background-color: lightgrey;
+    border-radius: 9px;
+    border-style: none;
+    padding: 3px;
+}
+
+.boton-agregar:hover{
+    background-color: var(--color-verdeOscuro);
+}
+
+.boton-agregar p.add{
+    font-size: 10px;
+    font-weight: 600;
+    font-family: var(--font-poppins); 
+    margin-left: -4px;
+}
+
+/* end DESTACAD0S */
+
+/* FOOTER */
+footer.footer-homepage {
+    background-color: var(--color-verdeOscuro);
+    padding: 10px 0px; /* para espacio arriba */
+    position: relative;
+}
+footer.footer-homepage div#logo-footer img{ 
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+footer.footer-homepage div nav.data-footer {
+    font-size: 12px;
+    left: 5px;
+    padding-right: 8px;
+    justify-content: space-between;
+    display: flex;
+}
+/* iconos */
+footer.footer-homepage div nav a i{
+    font-size: 13px;
+    padding: 0 10px 0 10px;
+    position: absolute;
+}
+footer.footer-homepage div nav a.telefono{
+    position: absolute;
+    left: 25px;
+}
+footer.footer-homepage div nav a.twitter-timeline{
+    position: absolute;
+    left:50px;
+}
+
+footer.footer-homepage div nav p.copyright {
+    font-size:6px; 
+}
+
+footer.footer-homepage hr{ /* margen a la linea de separacion */
+    margin-bottom: 8px;
+}
+
+.navegacion-footer{
+    display: flex;
+    justify-content: center;
+}
+
+.list-footer li{
+    font-size: 8px;
+    justify-content: space-between;
+    margin: 0 25px 0 20px;
+    text-align: center;
+}
+
+footer.footer-homepage div.image-bottom{
+    display: flex;
+    justify-content: center;
+    font-size: 8px;
+    margin-top: 4px;
+}
+footer.footer-homepage section.section-footer div.image-bottom img#imagen {
+    width: 4.5%;
+}
+
+/* MEDIA QUERIES */
+/* TABLET VERSION*/
+
+@media (min-width: 768px) {
+    /* HEADER */
+    header.header-home {
+        height: 80px;
+    }
+    
+    header.header-home div a img.logo{
+        height: 80px; /* ver si puedo refactorizar logo con porcentaje */
+        width: 80px;
+    }
+
+    header.header-home div.busqueda{ 
+        display: block;
+    }
+
+    header.header-home div.busqueda input.barra{
+        border-radius: 10px;
+        margin-right: 60px;
+        width: 400px;
+    }
+
+    #lupa {
+        display: none;
+    }
+  
+    div.iconos{
+        font-size: 1.3rem;
+    }
+    /* end HEADER */
+
+    /* OFERTAS BOLSONES */
+   #titulo {
+    font-size: 28px;
+    }
+
+    main.main-homepage section.bolsones{
+    display:flex;
+    }
+    main.main-homepage section article.producto{
+     justify-content: space-between;
+     margin: 25px auto; /* centra los productos mientras todo crece */
+    }
+/* end OFERTAS BOLSONES */
+
+/* INFORMACION de envios y demas*/
+
+ #informacion {
+    display: flex;
+    align-items: center;
+} 
+main.main-homepage section article#cultivo-fresco{
+    margin-bottom: 15px;
+}
+/* end INFORMACION de envios y demas*/
+
+/* DESTACADOS */
+main.main-homepage section article.none{
+    display: block;
+}
+main.main-homepage section article.none1{
+    display: none;
+}
+
+.boton-agregar{
+    padding: 5px;
+}
+
+.boton-agregar p.add{
+    font-size: 14px;
+}
+/* end DESTACAD0S */
+
+/* FOOTER */
+footer.footer-homepage div#logo-footer img{ 
+    width: 35%;
+}
+
+footer.footer-homepage div nav.data-footer{
+    font-size: 12px;
+    left: 5px;
+    padding-right: 8px;
+    justify-content: space-between;
+    display: flex;
+}
+
+/* iconos FOOTER*/
+footer.footer-homepage div nav a i{ 
+    font-size: 16px;
+    padding: 0 20px 0 20px;
+}
+
+footer.footer-homepage div nav p.copyright{ 
+    font-size:9px; 
+}
+
+footer.footer-homepage section.section-footer{  /* agrege en tablet */
+    display: flex;
+    align-items: center;
+}
+
+ul.list-footer li{  /* agrege en tablet */
+    display: inline-block;
+    justify-content: space-around;
+    padding: 7px; 
+    margin-left: 25px;
+}
+
+footer.footer-homepage section.section-footer div.image-bottom img#imagen{
+    width: 13%;
+}
+/* end FOOTER */
+}
+
+/* DESKTOP VERSION */
+
+@media (min-width: 1100px){
+    /* HEADER */
+
+    header.header-home {
+        height: 100px;
+        display: flex;
+    }
+
+    header.header-home div a img.logo{
+        height: 110px; /* ver si puedo refactorizar logo con porcentaje */
+        width: 110px;
+    }
+    header.header-home div.busqueda{
+        margin-right: 30%;
+    }
+
+    header.header-home div.iconos{ /* hasta aca bien */
+        display: none;
+    }
+
+    header.header-home nav.menu-desktop { /* caja contnedora de nuestro menu */
+        display: block;
+        align-items: center;
+    }
+
+    nav.menu-desktop ul.menu-top{ /* le puse none para no confundirme */
+        display: none;
+        /* display: inline-block;
+        justify-content: space-between;   mirar las opciones de abaj
+        flex-direction: row; */
+    }
+    nav.menu-desktop ul.menu-buttom li{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        
+    }
+
+
+
+
+
+    /* end HEADER */
+
+
+
+
+
+
+   
+
+    /* header.header-home div.busqueda{ 
+        display: block;
+    }
+
+    header.header-home nav.menu {
+        display:block;
+    }
+
+    header.header-home nav.desktop {
+        display: flex;
+    }
+    header.header-home nav.desktop ul.menu-top li a{
+        justify-content: space-between;
+    }
+
+    header.header-home div.busqueda input.barra{
+        border-radius: 10px;
+        margin-right: 60px;
+        width: 400px;
+    }
+
+
+
+    div.iconos{
+        display: none;
+    } */
+    /* end HEADER */
+
+
+/* OFERTAS BOLSONES */
+main.main-homepage section article.none-oferta{
+    display: block;
+}
+/* end OFERTAS BOLSONES */
+
+
+/* DESTACADOS */
+main.main-homepage section article.none1{
+    display: block;
+}
+/* end DESTACADOS */
+
+
+/* FOOTER */
+footer.footer-homepage div#logo-footer img{ 
+    width: 25%;  /* nuevo tamaño de logo */
+}
+
+footer.footer-homepage div nav a i{ 
+    font-size: 18px;
+}
+
+ul.list-footer li{  
+    padding: 7px; 
+    margin-left: 70px;
+    font-size: 12px;
+}
+/* end FOOTER */
+
+}
+
+
+
+/* @media (min-width: 768px) {
+    header nav.menu {
+        display: block;
+
+    }
+    header div.busqueda input {
+        display: block;
+    }
+
+    header nav.menu ul li {
+        display:inline-block;
+    }
+    header div.burger-menu {
+        display: none;
+    }
+} */
+
+
+
