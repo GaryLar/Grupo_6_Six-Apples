@@ -522,7 +522,7 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen{
 
     header.header-home {
         height: 100px;
-        display: flex;
+        margin: 0 auto;
     }
 
     header.header-home div a img.logo{
@@ -530,27 +530,23 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen{
         width: 110px;
     }
    
+    header.header-home div.prueba{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
     header.header-home form.busqueda{
          margin-right: 250px;  
     } 
 
     header.header-home form.busqueda input.barra{
-        margin-left: 10px;
+        margin-left: 70px;
         width: 500px;
-    }
-    
-    header.header-home div.iconos{ 
-        display: none;
-    }
-
-    header.header-home nav.menu-desktop{
-        display: block;
-        align-items: center;
-        position: absolute; 
     }
 
     header.header-home nav.menu-right{
         display: block;
+        justify-content: space-between;
     }
 
     header.header-home nav.menu-right ul.menu-top{
@@ -561,16 +557,30 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen{
     header.header-home nav.menu-right ul.menu-top li{
         margin: 0 15px;
     }
-
-    header.header-home nav.menu-desktop div ul.menu-bottom{
-        display: flex;
-        position: relative;
-        left: 80px;
-        bottom: -30px;
+    
+    header.header-home div.iconos{ 
+        display: none;
     }
-    header.header-home nav.menu-desktop div ul.menu-bottom li{
-         margin: 0 80px;
-         right: 20px;
+
+    header.header-home nav.menu-desktop{
+        display: block; /* para que aparezca */
+        margin: 10px;        
+    }
+
+    .menu-desktop {
+        display: flex;
+        justify-content: space-between;
+    }
+
+     nav.menu-desktop li{
+         display: inline-flex;
+         margin:70px 50px 0px 50px;
+         justify-content: space-between;
+    }
+
+    nav ul.menu-bottom{
+        display: flex; 
+        margin-left: -60rem;
     }
 /* end HEADER */
 
