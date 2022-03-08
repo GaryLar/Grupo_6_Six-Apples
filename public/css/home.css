@@ -36,7 +36,8 @@ body.homepage ul {
 }
 
 /* HEADER */
-header.header-home nav.menu-desktop {
+header.header-home nav.menu-desktop,
+header.header-home nav.menu-right {
     display: none;
 }
 
@@ -56,7 +57,7 @@ header.header-home div a img.logo{
     align-items: center;
 }
 
-header.header-home div.busqueda{ 
+header.header-home form.busqueda{ 
     display: none;
 }
 
@@ -411,14 +412,15 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
         width: 80px;
     }
 
-    header.header-home div.busqueda{ 
+    header.header-home form.busqueda{ 
         display: block;
+        
     }
 
-    header.header-home div.busqueda input.barra{
+    header.header-home form.busqueda input.barra{     /* cambiossssssssssssssssssssss */ 
         border-radius: 10px;
-        margin-right: 60px;
         width: 400px;
+        outline: none;
     }
 
     #lupa {
@@ -527,48 +529,50 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen{
         height: 110px; /* ver si puedo refactorizar logo con porcentaje */
         width: 110px;
     }
-    header.header-home div.busqueda{
-        /* margin-right: 30%;  */
-       /* display: none; */
-    }
+   
+    header.header-home form.busqueda{
+         margin-right: 250px;  
+    } 
 
-    header.header-home div.busqueda input.barra{
-        margin-right: 0px;
-        width: 400px;
+    header.header-home form.busqueda input.barra{
+        margin-left: 10px;
+        width: 500px;
     }
     
-    header.header-home div.iconos{ /* hasta aca bien */
+    header.header-home div.iconos{ 
         display: none;
     }
 
     header.header-home nav.menu-desktop{
-        display: inline-flex;
+        display: block;
         align-items: center;
-        position: absolute;
+        position: absolute; 
     }
 
-    header.header-home nav.nav-right ul.menu-top{
+    header.header-home nav.menu-right{
+        display: block;
+    }
+
+    header.header-home nav.menu-right ul.menu-top{
         display: inline-flex;
-       /*  order: 1; */
         justify-content: space-between;
-        
     }
 
-    header.header-home nav.nav-right ul.menu-top li{
-        margin: 0 10px;
+    header.header-home nav.menu-right ul.menu-top li{
+        margin: 0 15px;
     }
 
     header.header-home nav.menu-desktop div ul.menu-bottom{
         display: flex;
-        order: 0;
         position: relative;
-        left: 150px;
+        left: 80px;
         bottom: -30px;
     }
     header.header-home nav.menu-desktop div ul.menu-bottom li{
-         margin: 0 40px;
+         margin: 0 80px;
+         right: 20px;
     }
-    /* end HEADER */
+/* end HEADER */
 
 /* OFERTAS BOLSONES */
 main.main-homepage section article.none-oferta{
@@ -601,22 +605,3 @@ ul.list-footer li{
 /* end FOOTER */
 
 }
-
-
-
-/* @media (min-width: 768px) {
-    header nav.menu {
-        display: block;
-
-    }
-    header div.busqueda input {
-        display: block;
-    }
-
-    header nav.menu ul li {
-        display:inline-block;
-    }
-} */
-
-
-
