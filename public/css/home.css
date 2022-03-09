@@ -420,7 +420,7 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
     header.header-home form.busqueda input.barra{     /* cambiossssssssssssssssssssss */ 
         border-radius: 10px;
         width: 400px;
-        outline: none;
+        /* outline: none; */
     }
 
     #lupa {
