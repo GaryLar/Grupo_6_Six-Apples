@@ -44,6 +44,11 @@ header.header-home div.header-top div.logo img{
     width: 25%;
 }
 
+header.header-home div.header-top{
+    max-width:550px;
+    margin:0 auto;
+}
+
 header.header-home div.header-top form input#barra,
 header.header-home div.header-top nav.menu-home1 ul i#carrito {
     display: none;
@@ -56,8 +61,6 @@ header.header-home div.header-top nav.menu-home1 #user{
     font-size: 1rem;
     cursor: pointer;
     user-select: none;
-
-
 }
 
 header.header-home div.header-top nav.menu-home2 input,
@@ -67,9 +70,9 @@ header.header-home div.header-top nav.menu-home2 ul{
 
 header.header-home div.header-top{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-around;
     align-items: center;
-    margin-right: 3px;
+    /* margin-right: 3px; */
 }
 
 header.header-home div.header-top nav.menu-home2 label{
@@ -101,7 +104,6 @@ header.header-home div.header-top nav.menu-home2 label{
         opacity: 0;
     }
 
-    
 }
 
 header.header-home div.header-top nav.menu-home2 ul{
@@ -134,7 +136,6 @@ header.header-home div.header-top nav.menu-home2 ul li:hover {
     font-weight: 600;
 }
 
-
 header.header-home div.header-top nav.menu-home2 input:checked ~ ul { /* ese simbolo o el + */
     opacity: 1;
     animation-name: menu-in;
@@ -145,42 +146,6 @@ header.header-home div.menu-home3container {
     display: none;
 }
 
-
-
-
-
-
-/* header.header-home nav.menu-desktop,
-header.header-home nav.menu-right {
-    display: none;
-}
-
-header.header-home {
-    background-color: var(--color-verdeClaro);
-    height: 66px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 10px;
-}
-
-header.header-home div a img.logo{
-    height: 70px;
-    width: 70px;
-    display: flex;
-    align-items: center;
-}
-
-header.header-home form.busqueda{ 
-    display: none;
-}
-
-div.iconos{
-    display: flex;
-    flex-grow: 0.10;
-    align-items: center;
-    justify-content: space-between;
-} */
 /* end HEADER */
 
 /* CARRUSEL STYLES */
@@ -260,7 +225,6 @@ main.main-homepage a.next{
 
 /* END CARRUSEL STYLES */
 
-
 /* OFERTAS BOLSONES */
 #titulo {
     font-size: var(--title);
@@ -269,8 +233,8 @@ main.main-homepage a.next{
 }
 
 main.main-homepage section article.producto{
-    max-width: 380px; /* no se si ponerlo */
-    margin: 25px auto; /* agrege recien para que me mantenga el contenido en el centro */
+    max-width: 380px; 
+    margin: 25px auto;
     transition: all 1.10s ease-in;
 
 }
@@ -517,12 +481,13 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
 
 @media (min-width: 768px) {
     /* HEADER */
-    body header.header-home div.header-home{
-        height: 60px;
-    }
-
     header.header-home div.header-top div.logo img{
         width: 30%;
+    }
+
+    header.header-home div.header-top{
+        max-width:1000px;
+        justify-content:space-around;    
     }
     
     header.header-home div.header-top form input#barra{
@@ -546,143 +511,19 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
         border: solid 1px black;
         border-radius: 12px;
         height: 23px;
-        margin: 0 50px 0 -50px 
-      
+        margin: 0 50px 0 -50px; 
     }
 
-
-    header.header-home div.header-top nav.menu-home1 ul li#ingresa{
-        display: none;
-    }
     header.header-home div.header-top nav.menu-home1 #user{
-        margin-right: -20px;  /* cambios */
-    
-    
+        margin-right: -20px;  
     }
     
-    header.header-home div.header-top nav.menu-home2 input,
-    header.header-home div.header-top nav.menu-home2 ul{
-        display: none;
-    }
     
     header.header-home div.header-top {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-right: 3px;
-    }
-    
-    header.header-home div.header-top nav.menu-home2 label{
-        width: 2rem;
-        height: 2rem;
-        font-size: 1.3rem;
-        cursor: pointer;
-        user-select: none;
-        /* margin-right: 10px; */ /* cambios */
-    }
-    
-    @keyframes menu-in {
-        0% {
-            right: -100%;
-            opacity: 0;
-        }
-        100% {
-            right: 0;
-            opacity: 1;
-        }
-    }
-    
-    @keyframes menu-out {
-        0% {
-            right: 0;
-            opacity: 1;
-        }
-        100% {
-            right: -100%;
-            opacity: 0;
-        }
-    
-        
-    }
-    
-    header.header-home div.header-top nav.menu-home2 ul{
-        position: fixed;
-        top: 3rem;
-        right: 0;
-        width: 100%;
-        height: 7rem;
-        background-color: var(--color-verdeClaro);
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        list-style: none;
-        opacity: 0;
-        animation-name: menu-out;
-        animation-duration: 2s;
-        transition: opacity 0.5s ease;
-        user-select: none;
-    }
-    
-    header.header-home div.header-top nav.menu-home2 ul li {
-        width: auto;
-        text-align: center;
-    }
-    
-    header.header-home div.header-top nav.menu-home2 ul li:hover {
-        width: 100%;
-        font-weight: 600;
-    }
-    
-    
-    header.header-home div.header-top nav.menu-home2 input:checked ~ ul { /* ese simbolo o el + */
-        opacity: 1;
-        animation-name: menu-in;
-        animation-duration: 2s;
-    }
-    
-
-
-
-
-
-
-
-
-
-
-
- /*    header.header-home {
-        height: 80px;
-    }
-    
-    header.header-home div a img.logo{
-        height: 80px;  ver si puedo refactorizar logo con porcentaje 
-        width: 80px;
+        margin-right: 3px; /* nuevo margin */
     }
 
-    header.header-home form.busqueda{ 
-        display: block;
-        
-    }
-
-    header.header-home form.busqueda input.barra{      cambiossssssssssssssssssssss 
-        border-radius: 10px;
-        width: 400px;
-       
-    }
-
-    #lupa {
-        display: none;
-    }
-  
-    div.iconos{
-        font-size: 1.3rem;
-    } */
-    /* end HEADER */
-
-    /* OFERTAS BOLSONES */
+/* OFERTAS BOLSONES */
    #titulo {
     font-size: 28px;
     }
@@ -772,6 +613,12 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen{
 
     body header.header-home div.header-top{
         height: 80px;
+    }
+
+    header.header-home div.header-top{
+        max-width:1200px;
+        margin:0 auto;
+    
     }
 
     header.header-home div.header-top div.logo img{

@@ -32,7 +32,7 @@
             </nav>
             <nav class="menu-home2">
                 <input type="checkbox" id="menu">
-                <label for="menu"> ☰ </label>
+                <label for="menu" id="hamburguesa"> ☰ </label>
                 <ul>
                     <li><a href="#">Inicio</a></li>
                     <li><a href="#">Catálogo</a></li>
@@ -56,54 +56,6 @@
        
 
     </header>
-
-
-    <!-- <header class="header-home">
-        <div>
-            <a href="#"><img class="logo" src="images/logoFinal.png" alt="logo"></a>
-        </div>
-        <div class="prueba">
-            <form class="busqueda"> 
-                <input type="text" placeholder="  Buscar..." class="barra">
-            </form>
-        </div>
-        <nav class="prueba">
-            <ul class="menu-top"> 
-                <li><a href="#">Ingresá</a></li>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
-            </ul>
-        </nav>
-
-        <div class="iconos">
-            <i id="lupa" class="fas fa-search"></i>
-            <a href="#"><i class="fa-regular fa-circle-user"></i></a>  
-            <nav class="burger-menu"> 
-                    <i class="fas fa-bars"></i>
-            </nav>
-        </div>
-
-        <nav class="menu-desktop"> 
-                    <ul class="menu-bottom">
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Catálogo</a></li>
-                        <li><a href="#">Ofertas</a></li>
-                        <li><a href="#">¿Quiénes somos?</a></li>
-                    </ul>
-        </nav>  
-
-        <nav>
-            <input type="checkbox" id="menu">
-            <label for="menu"> ☰ </label>
-            <ul>
-              <li>Link 1</li>
-              <li>Link 2</li>
-              <li>Link 3</li>
-              <li>Link 4</li>
-            </ul>
-        </nav>
-    </header> -->
-
-
     <main class="main-homepage">
         <!-- Carrusel -->
         <div class="slideshow-container">
@@ -287,37 +239,7 @@
             </div>
         </section>
     </footer>
-
-    <!-- Script carrusel -->
-    <script> 
-        var slideIndex = 1;
-        showSlides(slideIndex);
-            
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-            
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-            
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-        }
-    </script>
-    <!-- end script carrusel -->
-
+    <!-- script carrusel -->
+    <script src="javascript/carrusel.js"></script>
 </body>
 </html>
