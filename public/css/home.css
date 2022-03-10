@@ -36,7 +36,121 @@ body.homepage ul {
 }
 
 /* HEADER */
-header.header-home nav.menu-desktop,
+body header.header-home{
+    background-color: var(--color-verdeClaro);
+    width: 100%;
+}
+header.header-home div.header-top div.logo img{
+    width: 25%;
+}
+
+header.header-home div.header-top form input#barra,
+header.header-home div.header-top nav.menu-home1 ul i#carrito {
+    display: none;
+}
+
+header.header-home div.header-top nav.menu-home1 ul li#ingresa{
+    display: none;
+}
+header.header-home div.header-top nav.menu-home1 #user{
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+
+
+}
+
+header.header-home div.header-top nav.menu-home2 input,
+header.header-home div.header-top nav.menu-home2 ul{
+    display: none;
+}
+
+header.header-home div.header-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 3px;
+}
+
+header.header-home div.header-top nav.menu-home2 label{
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+@keyframes menu-in {
+    0% {
+        right: -100%;
+        opacity: 0;
+    }
+    100% {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes menu-out {
+    0% {
+        right: 0;
+        opacity: 1;
+    }
+    100% {
+        right: -100%;
+        opacity: 0;
+    }
+
+    
+}
+
+header.header-home div.header-top nav.menu-home2 ul{
+    position: fixed;
+    top: 3rem;
+    right: 0;
+    width: 100%;
+    height: 7rem;
+    background-color: var(--color-verdeClaro);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    opacity: 0;
+    animation-name: menu-out;
+    animation-duration: 2s;
+    transition: opacity 0.5s ease;
+    user-select: none;
+}
+
+header.header-home div.header-top nav.menu-home2 ul li {
+    width: auto;
+    text-align: center;
+}
+
+header.header-home div.header-top nav.menu-home2 ul li:hover {
+    width: 100%;
+    font-weight: 600;
+}
+
+
+header.header-home div.header-top nav.menu-home2 input:checked ~ ul { /* ese simbolo o el + */
+    opacity: 1;
+    animation-name: menu-in;
+    animation-duration: 2s;
+}
+
+header.header-home div.menu-home3container {
+    display: none;
+}
+
+
+
+
+
+
+/* header.header-home nav.menu-desktop,
 header.header-home nav.menu-right {
     display: none;
 }
@@ -66,7 +180,7 @@ div.iconos{
     flex-grow: 0.10;
     align-items: center;
     justify-content: space-between;
-}
+} */
 /* end HEADER */
 
 /* CARRUSEL STYLES */
@@ -403,12 +517,148 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
 
 @media (min-width: 768px) {
     /* HEADER */
-    header.header-home {
+    body header.header-home div.header-home{
+        height: 60px;
+    }
+
+    header.header-home div.header-top div.logo img{
+        width: 30%;
+    }
+    
+    header.header-home div.header-top form input#barra{
+        display:  inline-block;
+        border-radius: 11px;
+        width: 400px;
+    }
+    header.header-home div.header-top form i#lupa{
+        margin-right: 5px;
+        color: lightgray;
+    }
+
+    header.header-home div.header-top form input {
+        outline: none;
+        border: none;
+        height: 14px;
+
+    }
+    header.header-home div.header-top form {
+        background-color: white;
+        border: solid 1px black;
+        border-radius: 12px;
+        height: 23px;
+        margin: 0 50px 0 -50px 
+      
+    }
+
+
+    header.header-home div.header-top nav.menu-home1 ul li#ingresa{
+        display: none;
+    }
+    header.header-home div.header-top nav.menu-home1 #user{
+        margin-right: -20px;  /* cambios */
+    
+    
+    }
+    
+    header.header-home div.header-top nav.menu-home2 input,
+    header.header-home div.header-top nav.menu-home2 ul{
+        display: none;
+    }
+    
+    header.header-home div.header-top {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 3px;
+    }
+    
+    header.header-home div.header-top nav.menu-home2 label{
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.3rem;
+        cursor: pointer;
+        user-select: none;
+        /* margin-right: 10px; */ /* cambios */
+    }
+    
+    @keyframes menu-in {
+        0% {
+            right: -100%;
+            opacity: 0;
+        }
+        100% {
+            right: 0;
+            opacity: 1;
+        }
+    }
+    
+    @keyframes menu-out {
+        0% {
+            right: 0;
+            opacity: 1;
+        }
+        100% {
+            right: -100%;
+            opacity: 0;
+        }
+    
+        
+    }
+    
+    header.header-home div.header-top nav.menu-home2 ul{
+        position: fixed;
+        top: 3rem;
+        right: 0;
+        width: 100%;
+        height: 7rem;
+        background-color: var(--color-verdeClaro);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+        opacity: 0;
+        animation-name: menu-out;
+        animation-duration: 2s;
+        transition: opacity 0.5s ease;
+        user-select: none;
+    }
+    
+    header.header-home div.header-top nav.menu-home2 ul li {
+        width: auto;
+        text-align: center;
+    }
+    
+    header.header-home div.header-top nav.menu-home2 ul li:hover {
+        width: 100%;
+        font-weight: 600;
+    }
+    
+    
+    header.header-home div.header-top nav.menu-home2 input:checked ~ ul { /* ese simbolo o el + */
+        opacity: 1;
+        animation-name: menu-in;
+        animation-duration: 2s;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+ /*    header.header-home {
         height: 80px;
     }
     
     header.header-home div a img.logo{
-        height: 80px; /* ver si puedo refactorizar logo con porcentaje */
+        height: 80px;  ver si puedo refactorizar logo con porcentaje 
         width: 80px;
     }
 
@@ -417,10 +667,10 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
         
     }
 
-    header.header-home form.busqueda input.barra{     /* cambiossssssssssssssssssssss */ 
+    header.header-home form.busqueda input.barra{      cambiossssssssssssssssssssss 
         border-radius: 10px;
         width: 400px;
-        /* outline: none; */
+       
     }
 
     #lupa {
@@ -429,7 +679,7 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
   
     div.iconos{
         font-size: 1.3rem;
-    }
+    } */
     /* end HEADER */
 
     /* OFERTAS BOLSONES */
@@ -520,68 +770,94 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen{
 @media (min-width: 1100px){
     /* HEADER */
 
-    header.header-home {
-        height: 100px;
-        margin: 0 auto;
+    body header.header-home div.header-top{
+        height: 80px;
     }
 
-    header.header-home div a img.logo{
-        height: 110px; /* ver si puedo refactorizar logo con porcentaje */
-        width: 110px;
-    }
-   
-    header.header-home div.prueba{
-        display: flex;
-        justify-content: space-evenly;
+    header.header-home div.header-top div.logo img{
+        width: 45%;
+        margin-left: -15px;
     }
     
-    header.header-home form.busqueda{
-         margin-right: 250px;  
-    } 
-
-    header.header-home form.busqueda input.barra{
-        margin-left: 70px;
-        width: 500px;
+    header.header-home div.header-top form input#barra{
+        display:  inline-block;
+        border-radius: 11px;
+        width: 400px;
+    }
+    header.header-home div.header-top form i#lupa{
+        margin-right: 5px;
+        color: lightgray;
     }
 
-    header.header-home nav.menu-right{
-        display: block;
-        justify-content: space-between;
+    header.header-home div.header-top form input {
+        outline: none;
+        border: none;
+        height: 14px;
+
+    }
+    header.header-home div.header-top form {
+        background-color: white;
+        border: solid 1px black;
+        border-radius: 12px;
+        height: 23px;
+        margin: 0 50px 0 -50px 
+      
     }
 
-    header.header-home nav.menu-right ul.menu-top{
-        display: inline-flex;
-        justify-content: space-between;
+
+    header.header-home div.header-top nav.menu-home1 ul li#ingresa{
+        display: block;  /* cambio */
     }
 
-    header.header-home nav.menu-right ul.menu-top li{
-        margin: 0 15px;
+    header.header-home div.header-top nav.menu-home1 #user{
+        display: none; /* cambio */
     }
     
-    header.header-home div.iconos{ 
+
+    header.header-home div.header-top nav.menu-home2 ul{
         display: none;
     }
-
-    header.header-home nav.menu-desktop{
-        display: block; /* para que aparezca */
-        margin: 10px;        
+    
+    header.header-home div.header-top {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: 3px;
     }
 
-    .menu-desktop {
+    header.header-home div.header-top nav.menu-home2 {
+        display: none;
+    }
+    
+    
+    header.header-home div.header-top nav.menu-home1 ul i#carrito {
+        display: block;
+        margin-left: 30px;
+    }
+
+    header.header-home div.header-top nav.menu-home1 ul{
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
-     nav.menu-desktop li{
-         display: inline-flex;
-         margin:70px 50px 0px 50px;
-         justify-content: space-between;
-    }
+    /* header.header-home div.menu-home3container nav.menu-home3 {
+        display: none;
+    } */
 
-    nav ul.menu-bottom{
-        display: flex; 
-        margin-left: -60rem;
+    header.header-home div.menu-home3container {
+        display: block;
+        
     }
+   
+    header.header-home div.menu-home3container nav.menu-home3 ul{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+        
+    }
+ 
 /* end HEADER */
 
 /* OFERTAS BOLSONES */
