@@ -25,7 +25,7 @@ main.main-homepage {
     padding: 15px 10px 0;
 }
 
-body.homepage a{
+body a{
     color:black;
     text-decoration: none;
 }
@@ -52,6 +52,11 @@ header.header-home div.header-top{
 header.header-home div.header-top form input#barra,
 header.header-home div.header-top nav.menu-home1 ul i#carrito {
     display: none;
+}
+
+header.header-home div.header-top form button#lupa{
+    border: none;
+    background-color: rgba(187, 187, 187, 0);
 }
 
 header.header-home div.header-top nav.menu-home1 ul li#ingresa{

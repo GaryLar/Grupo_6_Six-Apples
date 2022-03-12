@@ -11,3 +11,31 @@ app.listen(port, () => console.log(`servidor levantado en el puerto ${port} http
 app.get('/', (req, res) => 
     res.sendFile(path.join(__dirname, './views/home.html'))
 )
+
+app.get('/login', (req, res) => 
+    res.sendFile(path.join(__dirname, './views/login.html'))
+)
+
+app.get('/register', (req, res) => 
+    res.sendFile(path.join(__dirname, './views/register.html'))
+)
+
+app.get('/carrito', (req, res) => 
+    res.sendFile(path.join(__dirname, './views/productCart.html'))
+)
+
+app.get('/detallesProductos', (req, res) => 
+    res.sendFile(path.join(__dirname, './views/productDetail.html'))
+)
+
+app.get('/quienessomos', (req, res) => 
+    res.sendFile(path.join(__dirname, './views/quienessomos.html'))
+)
+
+app.get('/catalogo', (req, res) => 
+    res.sendFile(path.join(__dirname, './views/catalogo.html'))
+)
+
+app.get('/ofertas', (req, res) => 
+    res.sendFile(path.join(__dirname, './views/ofertas.html'))
+)
