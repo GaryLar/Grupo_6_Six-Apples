@@ -1,3 +1,6 @@
+@import url(home.css);
+
+
 :root {
     /* COLORES */
     --color-verdeClaro: #dfffbe;
@@ -19,27 +22,32 @@
     padding: 0;
 }
 
+body.registro , 
+body.login { 
+    text-decoration: none;
+}
+
 body.registro, 
 body.login{
     font-family: var(--font-poppins);
     font-size: var(--paragraph);
-    display: flex;
-    justify-content: center;
+    /*display: flex;*/
+   /* justify-content: center;
     align-items: center;
-    padding:  0 16px; 
-    background-image: url('/public/img/imagenbody.jpg'); 
+   /* padding:  0 16px; */
+    background-image: url('/images/imagenbody.jpg'); 
     background-size: contain;
     min-height: 100vh;
-    
 }
-
 
 body.registro section.registro-section, 
 body.login section.login-section{
     border-radius: 10px;
     padding: 1rem;
-    background-color: lightgray; 
+    background-color: white; 
     width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
  
 section.login-section{
@@ -73,7 +81,8 @@ body.login h2 {
 
 body.registro form .input-style, 
 body.login form .input-style{
-    border: none;
+    border: solid 1px black;
+    outline: none;
     border-radius: 1rem;
     height: 2.5rem;
     padding: 0.5rem;
@@ -81,13 +90,13 @@ body.login form .input-style{
 }
 
 ::placeholder{
-    color: lightgrey;
+    color: grey;
 }
 
 .btn-submit{
     /*text-align: center;
     border-radius: 10px;*/
-    width: 300px;
+    width: 200px;
     border: none;
     border-radius: 1rem;
     height: 2.5rem;
@@ -95,12 +104,13 @@ body.login form .input-style{
     /*width: 8rem;*/
     cursor: pointer;
     margin: 0.2rem auto 0;
+    /*background-color: black;*/
+}
+
+body.login section form button.btn-submit{
+    background-color: grey;
 }
 @media(min-width: 768px) {
 
-body.registro section.registro-section, 
-body.login section.login-section{
-    
-}
-    
-}
+/*body.registro section.registro-section, 
+body.login section.login-section*/
