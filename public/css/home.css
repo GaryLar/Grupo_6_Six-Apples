@@ -310,7 +310,7 @@ main.main-homepage section article button#cantidad:hover{
 
 /* INFORMACION de envios y demas*/ 
 
-main.main-homepage #informacion article {
+main.main-homepage section#informacion article {
     justify-content: space-between;
     text-align: center;
     padding-top: 20px;
@@ -318,7 +318,7 @@ main.main-homepage #informacion article {
     font-size: var(--paragraph);
 }
 
-#informacion article p {
+main.main-homepage section#informacion article p {
     margin-left: 30px;
     margin-right: 30px;
     text-align: center;
@@ -331,23 +331,23 @@ main.main-homepage section article.none1 {
     display: none;
 }
 
-.destacados {
+main.main-homepage section.destacados {
     display: flex;
     justify-content: space-between;
 }
-.detalles {  
+main.main-homepage section article.detalles {  
     text-align: left;
     margin: 0 20px;
     font-size: var(--paragraph);
 }
-.boton-agregar{
+main.main-homepage button.boton-agregar{
     background-color: lightgrey;
     border-radius: 9px;
     border-style: none;
     padding: 3px;
 }
 
-.boton-agregar:hover{
+main.main-homepage button.boton-agregar:hover{
     background-color: var(--color-verdeOscuro);
 }
 
@@ -357,64 +357,6 @@ main.main-homepage section article.none1 {
     font-family: var(--font-poppins); 
     margin-left: -4px;
 }
-
-.destacados {
-    display: flex;
-    justify-content: space-between;
-}
-.detalles {  
-    text-align: left;
-    margin: 0 20px;
-    font-size: var(--paragraph);
-}
-.boton-agregar{
-    background-color: lightgrey;
-    border-radius: 9px;
-    border-style: none;
-    padding: 3px;
-}
-
-.boton-agregar:hover{
-    background-color: var(--color-verdeOscuro);
-}
-
-.boton-agregar p.add{
-    font-size: 10px;
-    font-weight: 600;
-    font-family: var(--font-poppins); 
-    margin-left: -4px;
-}
-
-/* end DESTACAD0S */
-
-.destacados {
-    display: flex;
-    justify-content: space-between;
-}
-.detalles {  
-    text-align: left;
-    margin: 0 20px;
-    font-size: var(--paragraph);
-}
-.boton-agregar{
-    background-color: lightgrey;
-    border-radius: 9px;
-    border-style: none;
-    padding: 3px;
-}
-
-.boton-agregar:hover{
-    background-color: var(--color-verdeOscuro);
-}
-
-.boton-agregar p.add{
-    font-size: 10px;
-    font-weight: 600;
-    font-family: var(--font-poppins); 
-    margin-left: -4px;
-}
-
-/* end DESTACAD0S */
 
 /* FOOTER */
 footer.footer-homepage {
@@ -531,7 +473,7 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
     }
 
 /* OFERTAS BOLSONES */
-   #titulo {
+    main.main-homepage h3#titulo {
     font-size: 28px;
     }
 
@@ -546,7 +488,7 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
 
 /* INFORMACION de envios y demas*/
 
- #informacion {
+ main.main-homepage section#informacion {
     display: flex;
     align-items: center;
 } 
@@ -563,7 +505,7 @@ main.main-homepage section article.none1{
     display: none;
 }
 
-.boton-agregar{
+main.main-homepage button.boton-agregar{
     padding: 5px;
 }
 
