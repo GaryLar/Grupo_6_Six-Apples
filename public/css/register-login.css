@@ -22,9 +22,9 @@
     padding: 0;
 }
 
-body.registro , 
-body.login { 
-    text-decoration: none;
+body.registro ul,
+body.login ul{
+    list-style: none;
 }
 
 body.registro, 
@@ -50,22 +50,24 @@ body.login section.login-section{
     margin-bottom: 50px;
 }
  
-section.login-section{
+section.login-section{  /* section.registro-section */
     opacity: 80%;
 }
 
-body.registro form, 
-body.login form{
+body.registro section form, 
+body.login section form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-body.registro form .input-container, 
-body.registro form .btn-container, 
-body.login form .input-container, 
-body.login form .btn-container {
+
+
+body.registro section form .input-container, 
+body.registro section form .btn-container, 
+body.login section form .input-container, 
+body.login section form .btn-container {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -79,8 +81,8 @@ body.login h2 {
 
 }
 
-body.registro form .input-style, 
-body.login form .input-style{
+body.registro section form .input-style, 
+body.login section form .input-style{
     border: solid 1px black;
     outline: none;
     border-radius: 1rem;

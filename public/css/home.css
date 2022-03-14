@@ -231,7 +231,7 @@ main.main-homepage a.next{
 /* END CARRUSEL STYLES */
 
 /* OFERTAS BOLSONES */
-#titulo {
+main.main-homepage h3#titulo {
     font-size: var(--title);
     text-align: center;
     margin: 10px 0;
@@ -253,13 +253,13 @@ main.main-homepage section article.producto div.contenedor-foto {
     margin: 0 auto;
     box-shadow: 0 0 8px 2px rgba(0,0,0,0.3);
 }
-.contenedor-foto:hover{
+main.main-homepage section article.producto div.contenedor-foto:hover{
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transform: scale(1.02);
 
 }
 
-.boton-ofertas{
+main.main-homepage section article button.boton-ofertas{
     background-color: lightgray;
     padding: 8px;
     text-align: center;
@@ -268,7 +268,7 @@ main.main-homepage section article.producto div.contenedor-foto {
     margin-top: 18px;
 }
 
-.boton-ofertas:hover{
+main.main-homepage section article button.boton-ofertas:hover{
     background-color: var(--color-verdeOscuro); /* PONIENDO COLOR A LOS BOTONES */
     color: white;
 }
@@ -289,12 +289,12 @@ main.main-homepage section article p.precio {
     font-weight: bold;
 }
 
-.opciones {
+main.main-homepage section article div.opciones {
     display: flex;
     justify-content: space-between;
 }
 
-#cantidad{
+main.main-homepage section article button#cantidad{
     background-color: lightgray;
     border-radius: 8px;
     border-style: none;
@@ -302,7 +302,7 @@ main.main-homepage section article p.precio {
     flex-grow: 0.05;
     margin-left: 10px;
 } 
-#cantidad:hover{
+main.main-homepage section article button#cantidad:hover{
     background-color: var(--color-verdeOscuro);
     color: white;
 }
@@ -310,7 +310,7 @@ main.main-homepage section article p.precio {
 
 /* INFORMACION de envios y demas*/ 
 
-#informacion article {
+main.main-homepage #informacion article {
     justify-content: space-between;
     text-align: center;
     padding-top: 20px;
@@ -455,8 +455,10 @@ footer.footer-homepage div nav p.copyright {
     font-size:6px; 
 }
 
-footer.footer-homepage hr{ /* margen a la linea de separacion */
+footer.footer-homepage hr.hr-footer{ /* margen a la linea de separacion */
     margin-bottom: 8px;
+    border-bottom: dotted 1px black;
+    margin: 0 10px;
 }
 
 .navegacion-footer{
