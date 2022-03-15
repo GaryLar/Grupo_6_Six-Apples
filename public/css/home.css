@@ -41,7 +41,7 @@ body header.header-home{
     width: 100%;
 }
 header.header-home div.header-top div.logo img{
-    width: 25%;
+    width: 35%;  /* cambie tamaño!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 }
 
 header.header-home div.header-top{
@@ -68,8 +68,7 @@ header.header-home div.header-top nav.menu-home1 #user{
     user-select: none;
 }
 
-header.header-home div.header-top nav.menu-home2 input,
-header.header-home div.header-top nav.menu-home2 ul{
+header.header-home div.header-top nav.menu-home2 input{
     display: none;
 }
 
@@ -80,71 +79,44 @@ header.header-home div.header-top{
     /* margin-right: 3px; */
 }
 
-header.header-home div.header-top nav.menu-home2 label{
-    width: 2rem;
-    height: 2rem;
-    font-size: 1.3rem;
-    cursor: pointer;
-    user-select: none;
-}
-
-@keyframes menu-in {
-    0% {
-        right: -100%;
-        opacity: 0;
-    }
-    100% {
-        right: 0;
-        opacity: 1;
-    }
-}
-
-@keyframes menu-out {
-    0% {
-        right: 0;
-        opacity: 1;
-    }
-    100% {
-        right: -100%;
-        opacity: 0;
-    }
-
-}
-
-header.header-home div.header-top nav.menu-home2 ul{
-    position: fixed;
-    top: 3rem;
-    right: 0;
-    width: 100%;
-    height: 7rem;
+header.header-home button{
+    border: none;
+    font-size: 1rem;
     background-color: var(--color-verdeClaro);
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    list-style: none;
-    opacity: 0;
-    animation-name: menu-out;
-    animation-duration: 2s;
-    transition: opacity 0.5s ease;
-    user-select: none;
 }
 
-header.header-home div.header-top nav.menu-home2 ul li {
-    width: auto;
+header.header-home nav#menu {
+    display: none;
+    padding: 1rem;
+    background-color: var(--color-verdeClaro);
     text-align: center;
-}
-
-header.header-home div.header-top nav.menu-home2 ul li:hover {
+    border-radius: 10px;
+    position:fixed;
+    top:66px;
+    right:-100%;
+    z-index: 10;
     width: 100%;
+}
+header.header-home nav#menu ul li:hover{
     font-weight: 600;
 }
 
-header.header-home div.header-top nav.menu-home2 input:checked ~ ul { /* ese simbolo o el + */
+@keyframes fade-in{
+    0%{
+        right: -100%;
+        opacity: 0;
+    }
+    100%{
+        right:0;
+        opacity: 1;
+    }
+}
+
+header.header-home nav#menu.active {
+    display:block;
     opacity: 1;
-    animation-name: menu-in;
-    animation-duration: 2s;
+    animation: fade-in 2s;
+    right:0;
 }
 
 header.header-home div.menu-home3container {
@@ -469,7 +441,7 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
     
     
     header.header-home div.header-top {
-        margin-right: 3px; /* nuevo margin */
+        margin-right: 3px; 
     }
 
 /* OFERTAS BOLSONES */
@@ -571,60 +543,28 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen{
     }
 
     header.header-home div.header-top div.logo img{
-        width: 45%;
+        width: 47%;
         margin-left: -15px;
-    }
-    
-    header.header-home div.header-top form input#barra{
-        display:  inline-block;
-        border-radius: 11px;
-        width: 400px;
-    }
-    header.header-home div.header-top form i#lupa{
-        margin-right: 5px;
-        color: lightgray;
-    }
-
-    header.header-home div.header-top form input {
-        outline: none;
-        border: none;
-        height: 14px;
-
-    }
-    header.header-home div.header-top form {
-        background-color: white;
-        border: solid 1px black;
-        border-radius: 12px;
-        height: 23px;
-        margin: 0 50px 0 -50px 
-      
     }
 
 
     header.header-home div.header-top nav.menu-home1 ul li#ingresa{
-        display: block;  /* cambio */
+        display: block;  
     }
 
     header.header-home div.header-top nav.menu-home1 #user{
-        display: none; /* cambio */
+        display: none; 
     }
-    
 
-    header.header-home div.header-top nav.menu-home2 ul{
-        display: none;
-    }
-    
     header.header-home div.header-top {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        margin-right: 3px;
     }
 
-    header.header-home div.header-top nav.menu-home2 {
+    header.header-home button{
         display: none;
     }
-    
     
     header.header-home div.header-top nav.menu-home1 ul i#carrito {
         display: block;
@@ -637,23 +577,16 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen{
         align-items: center;
     }
 
-    /* header.header-home div.menu-home3container nav.menu-home3 {
-        display: none;
-    } */
-
     header.header-home div.menu-home3container {
         display: block;
-        
     }
    
     header.header-home div.menu-home3container nav.menu-home3 ul{
         display: flex;
         justify-content: space-around;
         align-items: center;
-        
-        
     }
- 
+
 /* end HEADER */
 
 /* OFERTAS BOLSONES */
