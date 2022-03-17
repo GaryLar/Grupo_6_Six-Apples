@@ -16,43 +16,44 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
 <body class="login">
-    <header class="header-home">
-        <div class="header-top">
-            <div class="logo">
-                <a href="/"><img src="images/logoFinal.png" alt="logo"></a>
-            </div>
-            <form action="" method="">
-                <input id="barra" type="search" placeholder="  Buscar...">
-                <button id="lupa"><i id="lupa" class="fas fa-search"></i></button>
-            </form>
-            <nav class="menu-home1">
-                <ul>
-                    <li id="ingresa"><a href="/login">Ingresá</a></li><a href="/login"><i id="user" class="fa-regular fa-circle-user"></i></a>
-                    <li><a href="/carrito"><i id="carrito" class="fa-solid fa-cart-shopping"></i></a></li>
-                </ul>
-            </nav>
-            <button id="boton-menu" for="menu"><i class="fa-solid fa-bars"></i></button>
-            <nav id="menu">
+   <!-- HEADER -->
+<header class="header-home">
+    <div class="header-top">
+        <div class="logo">
+            <a href="/"><img src="images/logoFinal.png" alt="logo"></a>
+        </div>
+        <form action="" method="">
+            <input id="barra" type="search" placeholder="  Buscar...">
+            <button id="lupa"><i id="lupa" class="fas fa-search"></i></button>
+        </form>
+        <nav class="menu-home1">
+            <ul>
+                <li id="ingresa"><a href="/login">Ingresá</a></li><a href="/login"><i id="user" class="fa-regular fa-circle-user"></i></a>
+                <li><a href="/carrito"><i id="carrito" class="fa-solid fa-cart-shopping"></i></a></li>
+            </ul>
+        </nav>
+        <button id="boton-menu" for="menu"><i class="fa-solid fa-bars"></i></button>
+        <nav id="menu">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/catalogo">Catálogo</a></li>
+                <li><a href="/ofertas">Ofertas</a></li>
+                <li><a href="/carrito">Carrito</a></li>
+                <li><a href="/quienessomos">¿Quiénes somos?</a></li>
+            </ul>
+        </nav>
+        </div>
+        <div class="menu-home3container">
+            <nav class="menu-home3">
                 <ul>
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/catalogo">Catálogo</a></li>
                     <li><a href="/ofertas">Ofertas</a></li>
-                    <li><a href="/carrito">Carrito</a></li>
                     <li><a href="/quienessomos">¿Quiénes somos?</a></li>
                 </ul>
             </nav>
-            </div>
-            <div class="menu-home3container">
-                <nav class="menu-home3">
-                    <ul>
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="/catalogo">Catálogo</a></li>
-                        <li><a href="/ofertas">Ofertas</a></li>
-                        <li><a href="/quienessomos">¿Quiénes somos?</a></li>
-                    </ul>
-                </nav>
-            </div>
-    </header>
+        </div>
+</header>
     
     <section class="login-section"> 
         <h2 class="login"> Ingresá</h2>
@@ -60,17 +61,20 @@
         <form action="" method="">
             <div class="input-container">
                 <input type="email" class="input-style" name="email" placeholder="Correo Electronico">
+                <span class="error-message">Debe ingresar su email</span>
             </div>
             <div class="input-container">
                 <input type="password" class="input-style" name="pass" placeholder="Contraseña">
+                <span class="error-message">Debe ingresar su contraseña</span>
             </div>
             <div>
                 <button type="submit" class="btn-submit"> Continuar</button>
             </div>
             <br>
-            <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+            <p>Al registrarte, aceptas nuestras Condiciones de uso y </p>
+            <p>Política de privacidad.</p>
             <br>
-            <span>¿No tienes una cuenta? <span><a href="/register">Registrate</a></span>
+            <span>¿No tienes una cuenta? <span><a href="/register"><strong>Registrate</strong></a></span>
         </form>
     </section>
     <footer class="footer-homepage">
@@ -85,7 +89,7 @@
                 <p class="copyright">Copyright © 1999-2022 Six Apples S.R.L. <br> Av. Monroe 840, Piso 2, CP 1428, Belgrano CABA</p>
             </nav>
         </div>
-        <hr>
+        <hr class="hr-footer">
         <section class="section-footer">
             <nav class="navegacion-footer">
                 <ul class="list-footer">

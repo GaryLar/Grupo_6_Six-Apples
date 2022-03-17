@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="shortcut icon" href="images/logo.png" width="100%" type="image/x-icon">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registrate</title>
+        <title>Six Apples</title>
         <!-- Styles sheets -->
         <link rel="stylesheet" href="css/register-login.css">
         <!-- Google fonts -->
@@ -15,24 +16,35 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
 <body class="registro">
+    <!-- HEADER -->
     <header class="header-home">
         <div class="header-top">
             <div class="logo">
-                <a href="/"><img src="images/logoFinal.png" alt="logo"></a>
-            </div>
-            <form action="" method="">
-                <input id="barra" type="search" placeholder="  Buscar...">
-                <button id="lupa"><i id="lupa" class="fas fa-search"></i></button>
-            </form>
-            <nav class="menu-home1">
-                <ul>
-                    <li id="ingresa"><a href="/login">Ingresá</a></li><a href="/login"><i id="user" class="fa-regular fa-circle-user"></i></a>
-                    <li><a href="#"><i id="carrito" class="fa-solid fa-cart-shopping"></i></a></li>
-                </ul>
-            </nav>
-            <nav class="menu-home2">
-                <input type="checkbox" id="menu">
-                <label for="menu" id="hamburguesa"> ☰ </label>
+            <a href="/"><img src="images/logoFinal.png" alt="logo"></a>
+        </div>
+        <form action="" method="">
+            <input id="barra" type="search" placeholder="  Buscar...">
+            <button id="lupa"><i id="lupa" class="fas fa-search"></i></button>
+        </form>
+        <nav class="menu-home1">
+            <ul>
+                <li id="ingresa"><a href="/login">Ingresá</a></li><a href="/login"><i id="user" class="fa-regular fa-circle-user"></i></a>
+                <li><a href="/carrito"><i id="carrito" class="fa-solid fa-cart-shopping"></i></a></li>
+            </ul>
+        </nav>
+        <button id="boton-menu" for="menu"><i class="fa-solid fa-bars"></i></button>
+        <nav id="menu">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/catalogo">Catálogo</a></li>
+                <li><a href="/ofertas">Ofertas</a></li>
+                <li><a href="/carrito">Carrito</a></li>
+                <li><a href="/quienessomos">¿Quiénes somos?</a></li>
+            </ul>
+        </nav>
+        </div>
+        <div class="menu-home3container">
+            <nav class="menu-home3">
                 <ul>
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/catalogo">Catálogo</a></li>
@@ -40,18 +52,8 @@
                     <li><a href="/quienessomos">¿Quiénes somos?</a></li>
                 </ul>
             </nav>
-            </div>
-            <div class="menu-home3container">
-                <nav class="menu-home3">
-                    <ul>
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="/catalogo">Catálogo</a></li>
-                        <li><a href="/ofertas">Ofertas</a></li>
-                        <li><a href="/quienessomos">¿Quiénes somos?</a></li>
-                    </ul>
-                </nav>
-            </div>
-    </header>
+        </div>
+</header>
     
     <section class="registro-section">
         <h2 class="registro">Registrate</h2>
@@ -59,18 +61,22 @@
         <form action="" method="">
             <div class="input-container">
                 <input type="text" class="input-style" name="name" placeholder="Nombre Completo">
+                <span class="error-message">Debe ingresar su Nombre Completo</span>
             </div>
             <div class="input-container">
                 <input type="email" class="input-style" name="email" placeholder="Correo Electrónico">
+                <span class="error-message">Debe ingresar su email</span>
             </div>
             <div class="input-container">
                 <input type="password" class="input-style" name="pass" placeholder="Contraseña">
+                <span class="error-message">Debe ingresar su contraseña</span>
             </div>
             <div class="btn-container">
                 <button type="submit" class="btn-submit"> Continuar </button>
             </div>
-            <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-            <span>¿Ya tienes una cuenta? <span><a href="/login">Iniciar Sesión</a></span></span>
+            <p>Al registrarte, aceptas nuestras Condiciones de uso y </p>
+            <p>Política de privacidad.</p>
+            <span>¿Ya tienes una cuenta? <span><a href="/login"><strong> Iniciar Sesión</strong> </a></span></span>
         </form>
     </section>
     
@@ -86,7 +92,7 @@
                 <p class="copyright">Copyright © 1999-2022 Six Apples S.R.L. <br> Av. Monroe 840, Piso 2, CP 1428, Belgrano CABA</p>
             </nav>
         </div>
-        <hr>
+        <hr class="hr-footer">
         <section class="section-footer">
             <nav class="navegacion-footer">
                 <ul class="list-footer">
