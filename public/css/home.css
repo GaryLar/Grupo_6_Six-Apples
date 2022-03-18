@@ -41,7 +41,8 @@ body header.header-home{
     width: 100%;
 }
 header.header-home div.header-top div.logo img{
-    width: 35%;  /* cambie tamaño!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+    width: 35%; 
+    object-fit: contain; 
 }
 
 header.header-home div.header-top{
@@ -91,7 +92,7 @@ header.header-home nav#menu {
     background-color: var(--color-verdeClaro);
     text-align: center;
     border-radius: 10px;
-    position:fixed;
+    position:absolute;  /* antes fixed*/
     top:66px;
     right:-100%;
     z-index: 10;
@@ -238,6 +239,7 @@ main.main-homepage section article button.boton-ofertas{
     border-style: none;
     border-radius: 10px;
     margin-top: 18px;
+    transition: all 0.3s ease-in;
 }
 
 main.main-homepage section article button.boton-ofertas:hover{
@@ -273,6 +275,7 @@ main.main-homepage section article button#cantidad{
     padding: 10px;
     flex-grow: 0.05;
     margin-left: 10px;
+    transition: all 0.3s ease-in;
 } 
 main.main-homepage section article button#cantidad:hover{
     background-color: var(--color-verdeOscuro);
@@ -317,6 +320,7 @@ main.main-homepage button.boton-agregar{
     border-radius: 9px;
     border-style: none;
     padding: 3px;
+    transition: all 0.3s ease-in;
 }
 
 main.main-homepage button.boton-agregar:hover{
@@ -414,7 +418,8 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
     header.header-home div.header-top form input#barra{
         display:  inline-block;
         border-radius: 11px;
-        width: 400px;
+        margin-left: 5px;
+        width: 350px;
     }
     header.header-home div.header-top form i#lupa{
         margin-right: 5px;
@@ -539,14 +544,12 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen{
     header.header-home div.header-top{
         max-width:1200px;
         margin:0 auto;
-    
     }
 
     header.header-home div.header-top div.logo img{
         width: 47%;
         margin-left: -15px;
     }
-
 
     header.header-home div.header-top nav.menu-home1 ul li#ingresa{
         display: block;  
@@ -561,11 +564,11 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen{
         justify-content: space-around;
         align-items: center;
     }
-
-    header.header-home button{
+ 
+    header.header-home button#boton-menu{
         display: none;
     }
-    
+     
     header.header-home div.header-top nav.menu-home1 ul i#carrito {
         display: block;
         margin-left: 30px;

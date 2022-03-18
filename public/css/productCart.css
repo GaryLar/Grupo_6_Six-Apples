@@ -160,7 +160,7 @@ section.datos-carrito div.boton-final button{
 }
 
 section.datos-carrito div.boton-final button:hover{
-    background-color: d(--color-verdeOscuro);
+    background-color:var(--color-verdeOscuro);
 }
 
 
