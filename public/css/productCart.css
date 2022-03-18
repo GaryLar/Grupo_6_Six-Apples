@@ -1,0 +1,288 @@
+@import url(home.css);
+
+:root {
+    /* COLORES */
+    --color-verdeClaro: #dfffbe;
+    --color-verdeOscuro: #92c88a;
+    /* FUENTES */
+    --font-poppins: 'Poppins', sans-serif;
+    /* TAMAÑOS DE FUENTES */
+    --title: 16px;
+    --paragraph: 14px;  /* valor en rem? */
+    --precios: 18px;
+    --otrasDescripciones: 16px;
+}
+
+/* ESTILOS GENERALES */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.productCart ul{
+    list-style: none;
+}
+ 
+body.productCart{
+    font-family: var(--font-poppins);
+    font-size: var(--paragraph);
+    /*display: flex;*/
+   /* justify-content: center;
+    align-items: center;
+   /* padding:  0 16px; */
+    background-image: url('/images/imagenbody.jpg'); 
+    background-size: contain;
+    min-height: 100vh;
+}
+
+
+
+
+div.container-carrito {
+    width: 85%;
+    background-color: white;
+   
+    margin: 15px auto;
+    border: grey 1px solid;
+    box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
+}
+
+section.menu-carrito nav ul{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px lightgrey solid;
+    margin: 10px;
+    font-size: small;
+}
+
+/*Color a la ul*/
+nav.data-carrito ul li a#palabra-azul{
+    color: blue;
+    opacity: 70%;
+}
+
+div.tarjeta-carrito{
+    display: flex;
+    justify-content: space-around;
+}
+
+div.container-img-carrito img{
+    width: 80px;
+    opacity: 100%;
+}
+
+div.form-carrito form{
+    background-color: white;
+    border: black 1px solid;
+    border-radius: 15px;
+}
+
+div.form-carrito input.cantidad {
+    text-align: center;
+}
+
+input.cantidad{
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    font-family: var(--font-poppins);
+    background: none;
+}
+
+select.unidad-peso{
+    border: none;
+    border-left: black 1px solid;
+    outline: none;
+    background: none;
+    font-family: var(--font-poppins);
+}
+
+div.botones-carrito button{
+    border: none;
+    background: none;
+    color: blue;
+    opacity: 70%;
+    margin-left: 40px;
+    font-size: smaller;
+}
+
+article.articulos-carrito {
+    border-bottom: thin solid lightgrey;
+    margin: 5px 5px;
+}
+
+/*Le quiero sacar al linea de abajo del ultimo producto
+habia pensando que en vez de darle border-bottom, darle
+border-top y sacarle el border-bottom al nav.
+
+En vez de dotted (dashed)*/
+
+
+article.articulos-carrito div.info-carrito p{
+    font-size: smaller;
+    opacity: 70%;
+}
+
+/*ESTILOS A DATOS FINALES CARRITO*/
+
+
+section.datos-carrito div.input-carrito{
+    margin: 10px 30px;
+    font-size: smaller;
+    ;
+}
+
+section.datos-carrito div.input-carrito span{
+    font-size: x-small;
+    color: blue;
+    opacity: 70%;
+    margin-left: 15px;
+}
+
+section.datos-carrito div.precio-total{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    margin: 5px 10px;
+    border-top: thin solid lightgrey;
+}
+
+section.datos-carrito div.boton-final button{
+    border-radius: 15px;
+    padding: 5px;
+    background: lightgray;
+    font-family: d(--font-poppins);
+    border: 1px solid black;
+    margin: 5px 55px 10px 55px;
+    transition: all 0.5s ease;
+    width: 60%;
+}
+
+section.datos-carrito div.boton-final button:hover{
+    background-color: d(--color-verdeOscuro);
+}
+
+
+/*VERSION TABLET*/
+@media(min-width:768px){
+
+    div.container-carrito {
+        margin: 30px auto;
+    }
+
+    div.botones-carrito button{
+        margin: 0 100px;
+    }
+
+    /*section.datos-carrito div.linea{
+        border-left: 1px dashed grey;
+    }
+    Linea que nunca fue linea*/
+
+    section.datos-carrito div.container-input{
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    section.datos-carrito div.input-carrito span{
+        font-size: x-small;
+        color: blue;
+        opacity: 70%;
+        margin-left: 15px;
+    }
+
+    section.datos-carrito div.boton-final button{
+        padding: 8px;
+        margin: 5px 250px 15px 250px;
+        width: 25%;
+    }
+
+    article.articulos-carrito {
+        margin: 5px 30px;
+    }
+
+    section.datos-carrito div.precio-total{
+        margin: 5px 30px;
+    }
+}
+
+
+/*VERSION DESKTOP*/
+@media(min-width:1100px){
+    div.container-carrito {
+        width: 75%; 
+        margin: 95px auto;
+    }
+
+    section.datos-carrito div.boton-final button{
+        padding: 8px;
+        margin: 5px 360px 15px 360px;
+        width: 20%;
+    }
+}
+
+/*body.productCart main.menu-carrito{
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: white; 
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+ 
+main.carrito-section{
+    opacity: 80%;
+}
+
+body.productCart main form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+body.productCart main form .input-container, 
+body.productCart main form .btn-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+div.menu-carrito nav.data-carrito ul li{ 
+    margin-left: 70px;
+    font-size: 12px;
+    float: left;
+}
+
+body.productCart main form .input-style{
+    border: solid 1px black;
+    outline: none;
+    border-radius: 1rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+::placeholder{
+    color: grey;
+}*/
+
+/*.btn-submit{
+    width: 200px;
+    border: none;
+    border-radius: 1rem;
+    height: 2.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 0.2rem auto 0;
+}
+
+body.carrito section form button.btn-submit{
+    background-color: grey;
+}
+@media(min-width: 768px) {
+*/
