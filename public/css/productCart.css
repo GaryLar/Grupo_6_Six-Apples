@@ -148,16 +148,21 @@ section.datos-carrito div.precio-total{
     border-top: thin solid lightgrey;
 }
 
+section.datos-carrito div.boton-final{
+    text-align: center;
+}
+
 section.datos-carrito div.boton-final button{
     border-radius: 15px;
     padding: 5px;
     background: lightgray;
     font-family: d(--font-poppins);
     border: 1px solid black;
-    margin: 5px 55px 10px 55px;
+    margin: 10px 0;
     transition: all 0.5s ease;
     width: 60%;
 }
+
 
 section.datos-carrito div.boton-final button:hover{
     background-color:var(--color-verdeOscuro);
@@ -194,7 +199,7 @@ section.datos-carrito div.boton-final button:hover{
 
     section.datos-carrito div.boton-final button{
         padding: 8px;
-        margin: 5px 250px 15px 250px;
+        margin: 5px 0 15px 0;
         width: 25%;
     }
 
@@ -217,7 +222,7 @@ section.datos-carrito div.boton-final button:hover{
 
     section.datos-carrito div.boton-final button{
         padding: 8px;
-        margin: 5px 360px 15px 360px;
+        margin: 5px 0 15px 0;
         width: 20%;
     }
 }
