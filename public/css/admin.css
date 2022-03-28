@@ -1,0 +1,102 @@
+@import url(home.css);
+@import url(register-login.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body.administracion ul{
+    list-style: none;
+}
+
+body.administracion {
+    background-image: url('/images/imagenbody.jpg');
+    background-size: contain;
+    min-height: 100vh;
+}
+
+section.section-admin{ /* aqui tendria que poner el fondo */
+   text-align: center;
+   width: 80%;
+   margin: 30px auto;
+   background-color: white;
+   border-radius: 10px;
+   padding: 10px;
+   max-width: 300px;
+}
+
+section.section-admin h2.admin{
+    font-size: 16px;
+    margin: 20px auto;
+   
+}
+
+section.section-admin form{
+    margin: 0 auto;
+}
+
+section.section-admin form div{
+  /*   display: flex;
+    flex-direction: column; */
+    justify-content: center;
+    align-items: center; 
+}
+
+section.section-admin form .container-admin{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+section.section-admin .admin-style{
+    border: solid 1px black;
+    outline: none;
+    border-radius: 1rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+section.section-admin div.container-admin-file{
+    text-align: center; 
+    background-color: lightgray;
+    border: 1px solid black;
+    border-radius: 1rem;
+    height: 2.5rem; 
+  /*   padding: 0rem; */
+    width: 10rem;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+section.section-admin .container-admin-file label{
+    position: absolute;
+    text-align: center;
+    font-size: 13px;
+    left: 25px;
+    top: 10px;
+}
+
+section.section-admin .container-admin-file input[type = file]{
+    opacity: 0;
+    cursor: pointer;
+}
+
+section.section-admin .finalizar-registro{
+    margin: 20px auto;
+}
+section.section-admin .finalizar-registro button{
+    padding: 9px;
+    border-radius: 1rem;
+    border: 1px solid black;
+    transition: all 0.5s ease-in;
+}
+section.section-admin .finalizar-registro button:hover{
+    background-color: var(--color-verdeOscuro);
+}
+
+
