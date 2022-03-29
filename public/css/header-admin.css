@@ -9,24 +9,47 @@ header.header-admin div.logo-admin img {
     width: 35%; 
     object-fit: contain; 
 }
+header.header-admin form {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
 
 header.header-admin form input{
-    display: none;
+     display: inline-block;
+     width: 70px;
+     outline: none;
+     border:none;
+     border-radius: 12px;
 }
+::placeholder{
+    font-size: 12px;
+}
+
 header.header-admin form button#lupa{
     border: none;
-    background-color: var(--color-verdeClaro);
-
+    background-color: rgba(240, 248, 255, 0);
+    font-size: 12px;
 }
+
 header.header-admin div.container-logo-lupa{
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 header.header-admin nav.nav-admin ul{
-    margin: 0 10px;
+    margin: 0 auto;
+    padding: 0 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 500px;
+}
+
+@media(min-width: 1100px){
+    header.header-admin nav.nav-admin ul{
+        max-width: 700px;
+        font-size: 14px;
+    }
 }
 
