@@ -1,5 +1,5 @@
 @import url(home.css);
-@import url(register-login.css);
+@import url(header-admin.css);
 
 * {
     margin: 0;
@@ -25,7 +25,7 @@ section.section-admin{ /* aqui tendria que poner el fondo */
    background-color: white;
    border-radius: 10px;
    padding: 10px;
-   max-width: 300px;
+   max-width: 400px; 
 }
 
 section.section-admin h2.admin{
@@ -39,15 +39,16 @@ section.section-admin form{
 }
 
 section.section-admin form div{
-  /*   display: flex;
-    flex-direction: column; */
+    display: flex;
+    flex-direction: column; 
     justify-content: center;
     align-items: center; 
 }
 
-section.section-admin form .container-admin{
-    display: flex;
-    flex-direction: column;
+section.section-admin form div.container-admin,
+section.section-admin form div.container-admin-file{
+    /* display: flex;
+    flex-direction: column; */
     margin-bottom: 1rem;
 }
 
@@ -58,6 +59,8 @@ section.section-admin .admin-style{
     height: 2.5rem;
     padding: 0.5rem;
     margin-bottom: 0.2rem;
+    width: 80%;
+    max-width: 250px;
 }
 
 section.section-admin div.container-admin-file{
@@ -86,8 +89,9 @@ section.section-admin .container-admin-file input[type = file]{
     cursor: pointer;
 }
 
-section.section-admin .finalizar-registro{
+section.section-admin div.finalizar-registro{
     margin: 20px auto;
+    text-align: center;
 }
 section.section-admin .finalizar-registro button{
     padding: 9px;
@@ -99,4 +103,25 @@ section.section-admin .finalizar-registro button:hover{
     background-color: var(--color-verdeOscuro);
 }
 
+@media(min-width: 1100px){
+    section.section-admin{ 
+        width: 90%;
+        padding: 30px;
+        max-width: 550px; 
+     }
+     section.section-admin h2.admin{
+        font-size: 18px;
+    }
+    section.section-admin form div.container-admin,
+    section.section-admin form div.container-admin-file {
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center; 
+    }
 
+    section.section-admin .finalizar-registro button{
+        width: 200px;
+    }
+
+}
