@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/GaryLar/Grupo_6_Six-Apples#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.3",
     "nodemon": "^2.0.15"
   }

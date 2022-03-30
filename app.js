@@ -2,11 +2,21 @@ const express = require('express');
 const res = require('express/lib/response');
 const app = express();
 const path = require('path');
-const port = 3000;
 
+/* requerimos dotenv para la variable de entorno */
+require('dotenv').config();
+const port = process.env.port || 3000;
+
+/* config de archivos estaticos */
 app.use(express.static('public'));
 
+/* views ejs config  */
+app.set('view engine', 'ejs')
+app.set('views', 'src/views')
+
+/* servidor escuchando */
 app.listen(port, () => console.log(`servidor levantado en el puerto ${port} http://localhost:${port}`))
+
 
 app.get('/', (req, res) => 
     res.sendFile(path.join(__dirname, './views/home.html'))

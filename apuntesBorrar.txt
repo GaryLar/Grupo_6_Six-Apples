@@ -1,0 +1,16 @@
+distribucion de carpetas:
+
+raiz:
+public
+  css
+    style.css con todos los estilos linkeados
+src
+  controllers
+  data
+  routes
+  views
+    partials
+  app.js
+
+IMPORTANTE: cambiar en package.json la linea 5, 
+poner la nueva ruta a app.js('src/app.js')
