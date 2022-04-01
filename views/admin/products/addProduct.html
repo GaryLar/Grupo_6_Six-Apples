@@ -28,42 +28,43 @@
     </div>
         <nav class="nav-admin">
             <ul>
-                <li><a href="#">Nuevo Producto</a></li>
-                <li><a href="#">Stock</a></li>
+                <li><a href="#">Agregar Producto</a></li>
+                <li><a href="#">Listado de Productos</a></li>
                 <li><a href="#">Control de Ventas</a></li>
             </ul>
         </nav>
     </header>
     <section class="section-admin">
-        <h2 class="admin">Registro del Nuevo Producto</h2>
+        <h2 class="admin">Agregar Nuevo Producto</h2>
 
         <form action="" method="" class="form-admin">
             <div class="container-admin">
-                <label for="categoria">Categoría:</label>
-                <input type="text" class="admin-style" name="categoria" id="categoria">
+                <label for="name">Nombre del producto:</label>
+                <input type="text" class="admin-style" name="name" id="name">
             </div>
             <div class="container-admin">
-                <label for="nombre-producto">Nombre del producto:</label>
-                <input type="text" class="admin-style" name="nombre-producto" id="nombre-producto">
+                <label for="categoryName">Categoría:</label>
+                <input type="text" class="admin-style" name="categoryName" id="categoryName">
             </div>
             <div class="container-admin">
-                <label for="tipo">Tipo:</label>
-                <input type="text" class="admin-style" name="tipo" id="tipo">
+                <label for="type">Tipo:</label>
+                <input type="text" class="admin-style" name="type" id="type">
             </div>
             <div class="container-admin">
-                <label for="precio">Precio:</label>
-                <input type="number" class="admin-style" name="precio" id="precio">
+                <label for="price">Precio:</label>
+                <input type="number" class="admin-style" name="price" id="price">
             </div>
             <div class="container-admin">
-                <label for="descripcion">Descripción del Producto:</label>
-                <textarea name="descripcion" class="admin-style" id="descripcion" cols="30" rows="10"></textarea>
-            </div>
+                <label for="origin">Origen del Producto:</label>
+                <input type="text" class="admin-style" name="origin" id="origin">
+<!--                 <textarea name="origin" class="admin-style" id="origin" cols="30" rows="10"></textarea>
+ -->            </div>
             <div class="container-admin-file">
-                <label for="image-prod">Agregar imagen</label>
-                <input type="file" name="image-prod" id="image-prod">
+                <label for="image">Agregar imagen</label>
+                <input type="file" name="image" id="image">
             </div>
             <div class="finalizar-registro">
-                <button type="submit">FINALIZAR REGISTRO</button>
+                <button type="submit">AGREGAR PRODUCTO</button>
             </div>
 
         </form>

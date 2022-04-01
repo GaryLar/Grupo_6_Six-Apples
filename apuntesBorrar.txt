@@ -14,3 +14,22 @@ src
 
 IMPORTANTE: cambiar en package.json la linea 5, 
 poner la nueva ruta a app.js('src/app.js')
+
+cambiamos la extension de los archivos html con ejs
+pero deberiamos hacer la ruta que me renderice a esos archivos.
+
+DB en JSON
+[
+    {
+        "name" : "Manzana",
+        "id" : 1,
+        "type": "Red Delicious",
+        "origin" : "Neuquen",
+        "categoryName": "Frutas",
+        "categoryId" : 1,
+        "price": 240,
+        "image": [
+          "xxx.jpg"
+        ]
+    }
+]
