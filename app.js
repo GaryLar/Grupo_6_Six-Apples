@@ -53,3 +53,7 @@ app.get('/ofertas', (req, res) =>
 app.get('/admin', (req, res) => 
     res.sendFile(path.join(__dirname, './views/admin.html'))
 )
+
+app.get('/profile', (req, res) => 
+    res.sendFile(path.join(__dirname, './views/profile.html'))
+)

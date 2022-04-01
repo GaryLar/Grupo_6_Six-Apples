@@ -1,0 +1,96 @@
+@import url(home.css);
+
+:root {
+    /* COLORES */
+    --color-verdeClaro: #dfffbe;
+    --color-verdeOscuro: #92c88a;
+    --color-natural: #FEFFDF; 
+    /* FUENTES */
+    --font-poppins: 'Poppins', sans-serif;
+    /* TAMAÑOS DE FUENTES */
+    --title: 16px;
+    --paragraph: 14px;  
+    --precios: 18px;
+    --otrasDescripciones: 16px;
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.quienessomos ul{
+    list-style: none;
+}
+
+body.quienessomos{
+    font-family: var(--font-poppins);
+    /*font-size: var(--paragraph);*/
+    /*display: flex;*/
+   /* justify-content: center;
+    align-items: center;
+   /* padding:  0 16px; */
+    background-image: url('/images/imagenbody.jpg'); 
+    background-size: contain;
+    min-height: 100vh;
+}
+
+body.quienessomos section.quienessomos-section{
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: white;
+    width: 90%;
+    margin: 50px auto;
+}
+
+section.quienessomos-section{
+    opacity:80%
+}
+
+body.quienessomos h1{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 20px;
+}
+
+body.quienessomos p{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 15px; 
+}
+
+/* Media Querys Version Tablet */ 
+@media(min-width:768px){
+    body.quienessomos section.quienessomos-section{
+        padding: 2rem;
+        background-color: white;
+        max-width: 50%;
+        margin: 70px auto ;
+    }
+
+    section.quienessomos-section form p {
+        font-size: 17px;
+    }
+}
+
+/* Media Querys Version Escritorio */
+@media(min-width: 1024px){
+    body.quienessomos section.quienessomos-section{
+        padding: 3rem;
+        background-color: white;
+        max-width: 70%;
+        margin: 70px auto ;
+    }
+
+    section.quienessomos-section form p {
+        font-size: 19px;
+    }
+
+    body.quienessomos footer{
+        position: relative;
+        bottom: 0;
+        right:0; 
+    }
+}

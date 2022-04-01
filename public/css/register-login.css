@@ -143,7 +143,7 @@ section.registro-section form p{
     body.login section.login-section{
     padding: 2rem;
     background-color: white; 
-    width: 80%;
+    max-width: 50%;
     margin: 70px auto; 
 }
  
@@ -166,7 +166,7 @@ section.registro-section form p{
     body.login section.login-section{
     padding: 3rem;
     background-color: white; 
-    width: 80%;
+    max-width: 45%;
     margin: 70px auto; 
 }
 section.login-section form span.error-message, 
