@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head.ejs") %>
+
+<body class="login">
+   <!-- HEADER -->
+   <%- include("partials/header.ejs") %>
+    
+    <section class="login-section"> 
+        <h2 class="login"> Ingresá</h2>
+        <br>
+        <form action="" method="">
+            <div class="input-container">
+                <input type="email" class="input-style" name="email" placeholder="Correo Electronico">
+                <span class="error-message">Debe ingresar su email</span>
+            </div>
+            <div class="input-container">
+                <input type="password" class="input-style" name="pass" placeholder="Contraseña">
+                <span class="error-message">Debe ingresar su contraseña</span>
+            </div>
+            <div>
+                <button type="submit" class="btn-submit"> Continuar</button>
+            </div>
+            <br>
+            <p>Al registrarte, aceptas nuestras Condiciones de uso y </p>
+            <p>Política de privacidad.</p>
+            <br>
+            <span>¿No tienes una cuenta? <span><a href="/register"><strong>Registrate</strong></a></span>
+        </form>
+    </section>
+    <%- include("partials/footer.ejs") %> 
+    <%- include("partials/scripts.ejs") %> 
+</body>
+</html>
