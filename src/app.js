@@ -8,6 +8,7 @@ const port = process.env.port || 3000;
 
 
 /* Enrutadores */
+const indexRouter = require("./routes/indexRouter")
 
 
 
@@ -19,15 +20,15 @@ app.set('view engine', 'ejs')
 app.set('views', 'src/views')
 
 /* Middlewares de Rutas */
- 
+ app.use("/",indexRouter)  //Home , About
 
 
 
 /* servidor escuchando */
+
 app.listen(port, () => console.log(`servidor levantado en el puerto ${port} http://localhost:${port}`))
 
-
-
+/* 
 app.get('/', (req, res) => 
     res.sendFile(path.join(__dirname, './views/home.html'))
 ) 
@@ -66,4 +67,4 @@ app.get('/admin', (req, res) =>
 
 app.get('/profile', (req, res) => 
     res.sendFile(path.join(__dirname, './views/profile.html'))
-)
+) */
