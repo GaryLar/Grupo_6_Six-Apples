@@ -3,6 +3,6 @@ module.exports={
         res.render("products/catalogo")
     },
     productCart: (req, res) => {
-        res.render('productCart')
+        res.render('products/productCart')
     }
 }
