@@ -10,6 +10,7 @@ const port = process.env.port || 3000;
 /* Enrutadores */
 const indexRouter = require("./routes/indexRouter")
 const productRouter = require("./routes/productsRouter")
+const userRouter = require("./routes/userRouter")
 
 
 /* config de archivos estaticos */
@@ -22,6 +23,7 @@ app.set('views', 'src/views')
 /* Middlewares de Rutas */
 app.use("/",indexRouter)  //Home , About
 app.use("/productos", productRouter)  //Productos: carrito, detalle, catalogo, ofertas.
+app.use("/usuario", userRouter) //Usuario: perfil, registro.
 
 
 /* servidor escuchando */
