@@ -1,0 +1,14 @@
+[
+    {
+        "name" : "Manzana",
+        "id" : 1,
+        "type": "Red Delicious",
+        "origin" : "Neuquen",
+        "categoryName": "Frutas",
+        "categoryId" : 1,
+        "price": 240,
+        "image": [
+          "xxx.jpg"
+        ]
+    }
+]
