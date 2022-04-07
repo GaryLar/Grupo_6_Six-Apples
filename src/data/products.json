@@ -10,5 +10,265 @@
         "image": [
           "Manzana.png"
         ]
-    }
+    },
+    
+    {
+      "name" : "Naranja Común",
+      "id" : 2,
+      "type": "Red Navel",
+      "origin" : "Nacional",
+      "categoryName": "Frutas",
+      "categoryId" : 1,
+      "price": 210,
+      "image": [
+        "Naranja.png"
+      ]
+  },
+ 
+  {
+    "name" : "Banana",
+    "id" : 3,
+    "type": "Baya Tropical",
+    "origin" : "India",
+    "categoryName": "Frutas",
+    "categoryId" : 1,
+    "price": 280,
+    "image": [
+      "Banana.png"
+    ]
+  },
+  
+  {
+    "name" : "Durazno",
+    "id" : 4,
+    "type": "Scarlet Pearl",
+    "origin" : "Mendoza",
+    "categoryName": "Frutas",
+    "categoryId" : 1,
+    "price": 290,
+    "image": [
+      "Durazno.png"
+    ]
+  },
+  
+  {
+  "name" : "Ananá",
+  "id" : 5,
+  "type": "Hawai",
+  "origin" : "Hawai",
+  "categoryName": "Frutas",
+  "categoryId" : 1,
+  "price": 390,
+  "image": [
+    "Ananá.png"
+  ]
+  },
+  
+  { 
+  "name" : "Uva",
+  "id" : 6,
+  "type": "Malbec",
+  "origin" : "Mendoza",
+  "categoryName": "Frutas",
+  "categoryId" : 1,
+  "price": 330,
+  "image": [
+    "Uva.png"
+  ]
+  },
+  
+  {
+  "name" : "Pera",
+  "id" : 7,
+  "type": "Williams",
+  "origin" : "Inglaterra",
+  "categoryName": "Frutas",
+  "categoryId" : 1,
+  "price": 220,
+  "image": [
+    "Pera.png"
+  ]
+  },
+  
+  {
+  "name" : "Kimi",
+  "id" : 8,
+  "type": "Hayward",
+  "origin" : "Buenos Aires",
+  "categoryName": "Frutas",
+  "categoryId" : 1,
+  "price": 749,
+  "image": [
+    "Kiwi.png"
+  ]
+  },
+  
+  {
+  "name" : "Kiwi",
+  "id" : 9,
+  "type": "Summer",
+  "origin" : "Italia",
+  "categoryName": "Frutas",
+  "categoryId" : 1,
+  "price": 800,
+  "image": [
+    "Kiwi.png"
+  ]
+  },
+  
+  { 
+  "name" : "Mango",
+  "id" : 10,
+  "type": "Tommy Atkins",
+  "origin" : "Salta",
+  "categoryName": "Frutas",
+  "categoryId" : 1,
+  "price": 460,
+  "image": [
+    "Mango.png"
+  ]
+  },
+  
+  {
+  "name" : "Frutilla",
+  "id" : 11,
+  "type": "Duoglas",
+  "origin" : "California",
+  "categoryName": "Frutas",
+  "categoryId" : 1,
+  "price": 480,
+  "image": [
+    "Frutilla.png"
+  ] 
+  },
+  
+  {
+  "name" : "Sandia",
+  "id" : 12,
+  "type": "Charleston Grey",
+  "origin" : "Formosa",
+  "categoryName": "Frutas",
+  "categoryId" : 1,
+  "price": 390,
+  "image": [
+    "Sandia.png"
+  ]
+  },
+ 
+  {
+  "name" : "Lechuga",
+  "id" : 13,
+  "type": "Romana",
+  "origin" : "China",
+  "categoryName": "Verduras",
+  "categoryId" : 2,
+  "price": 240,
+  "image": [
+    "Lechuga.png"
+  ]
+  }, 
+  
+{
+    "name" : "Tomate",
+    "id" : 14,
+    "type": "Raf",
+    "origin" : "San Juan",
+    "categoryName": "Verduras",
+    "categoryId" : 2,
+    "price": 390,
+    "image": [
+      "Tomate.png"
+]
+}, 
+
+{
+      "name" : "Repollo",
+      "id" : 15,
+      "type": "Durham Early",
+      "origin" : "China",
+      "categoryName": "Verduras",
+      "categoryId" : 2,
+      "price": 480,
+      "image": [
+        "Repollo.png"
+]
+}, 
+
+{
+        "name" : "Acelga",
+        "id" : 16,
+        "type": "Lyon",
+        "origin" : "Neuquen",
+        "categoryName": "Verduras",
+        "categoryId" : 2,
+        "price": 200,
+        "image": [
+          "Acelga.png"
+]
+}, 
+
+{
+          "name" : "Zapallo",
+          "id" : 17,
+          "type": "Anco",
+          "origin" : "Buenos Aires",
+          "categoryName": "Verduras",
+          "categoryId" : 2,
+          "price": 230,
+          "image": [
+            "Zapallo.png"
+]
+},
+
+{
+  "name" : "Zanahoria",
+  "id" : 18,
+  "type": "Danvers",
+  "origin" : "Francia",
+  "categoryName": "Verduras",
+  "categoryId" : 2,
+  "price": 250,
+  "image": [
+  "Zahanoria.png"
+]
+}, 
+
+{
+  "name" : "Cebolla",
+  "id" : 19,
+  "type": "Blanca",
+  "origin" : "Rio Negro",
+  "categoryName": "Verduras",
+  "categoryId" : 2,
+  "price": 130,
+  "image": [
+  "Cebolla.png"
+]
+}, 
+
+{
+  "name" : "Limón",
+  "id" : 20,
+  "type": "Verna",
+  "origin" : "México",
+  "categoryName": "Verduras",
+  "categoryId" : 2,
+  "price": 240,
+  "image": [
+  "Limon.png"
+]
+},
+
+{
+  "name" : "Papa",
+  "id" : 21,
+  "type": "Spunta",
+  "origin" : "Buenos Aires",
+  "categoryName": "Verduras",
+  "categoryId" : 2,
+  "price": 120,
+  "image": [
+  "Papa.png"
+]
+}
 ]
