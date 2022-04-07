@@ -9,15 +9,15 @@
         <div class="caja1">
 
             <div class="imagen-detalle">
-                <img src="/images/Durazno.png" alt="Durazno">
+                <img src="/images/<%= product.image[0] %>" alt="Durazno">
             </div>
 
             <div class="texto-detalle">
-                <h3>Durazno</h3>
-                <p> <b>Tipo:</b>  Japonés</p>
-                <p> <b> Procedencia:</b> Ecuador</p>
-                <p><b> ID:</b> 3210</p>
-                <p> <b>Precio por Kg:</b>  $250</p>
+                <h3><%= product.name %></h3>
+                <p> <b>Tipo: </b><%= product.type %></p>
+                <p> <b> Procedencia: </b><%= product.origin %></p>
+                <p><b> ID: </b><%= product.id %> </p>
+                <p> <b>Precio por Kg: </b>$<%= product.price %></p>
             </div>
 
             <div class="botones-detalle">
