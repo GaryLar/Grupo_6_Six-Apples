@@ -1,0 +1,1 @@
+/* controlador de las categorias */

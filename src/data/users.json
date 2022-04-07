@@ -1,0 +1,23 @@
+[
+    {
+        "id": 0,
+        "name": "",
+        "email": "",
+        "password": "",
+        "avatar": ""
+    },
+    {
+        "id": 1,
+        "name": "Andrea Chacón",
+        "email": "andre@mail.com",
+        "password": "123456",
+        "avatar": ""
+    },
+    {
+        "id": 2,
+        "name": "Karen Calisaya",
+        "email": "karen@mail.com",
+        "password": "654321",
+        "avatar": ""
+    }
+]
