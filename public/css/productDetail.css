@@ -136,11 +136,22 @@ div.caja2 .producto-caja2 .imagen-caja2 img{
 
 .caja1{
     margin:45px 80px 0 80px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+div.caja1 .imagen-detalle {
+    width: 75%;
+    padding: 20px;
+    margin: 40px auto;
+    
 }
 
 div.caja1 .imagen-detalle img{
     width: 100%;
     padding: 20px;
+    
 }
 
 div.caja1 .texto-detalle{
@@ -175,6 +186,11 @@ div.caja1 .botones-detalle button{
 
 /* CAJA 2 */ 
 
+div.caja2{
+    position: relative;
+    left: 30px;
+}
+
 div.caja2 .producto-caja2 .texto-caja2 {
     font-size: 25px;
 }
@@ -183,9 +199,10 @@ div.caja2 .producto-caja2 .texto-caja2 {
     margin-top: 50px;
 }
 
+
 div.caja2 .producto-caja2 .imagen-caja2 img{
     max-width:290px ;
-    width: 100%;
+    width: 80%;
     box-shadow: 1px 4px 10px 1px rgba(138,138,138,0.25);
 }
 
@@ -214,35 +231,30 @@ div.caja2 .producto-caja2 .imagen-caja2 img{
     display: flex;
     flex-wrap: wrap;
     height: 532px;
+    justify-content: center;
 }
 
 div.caja1 .imagen-detalle{
     width: 600px;
     height: 530px;
     border-radius: 0px;
-    position: relative;
-    top: -20px;
     border: none;
-    right: -70px;
     border-right: 1px solid black; 
-    
-    
+    margin: 0 auto;
 }
 
 div.caja1 .imagen-detalle img{
     width:600px;
     height: 530px;
-    padding-right: 40px;
     object-fit: contain;
-
     position: relative;
     right: 45px;
+    bottom: 15px;
 }
 
 div.caja1 .texto-detalle{
     margin: 30px 0px;
-    position: relative;
-    left: 80px;
+    
     font-family: var(--font-poppins);
 }
 div.caja1 .texto-detalle p{
@@ -253,23 +265,21 @@ div.caja1 .texto-detalle h3{
 }
 
 div.caja1 .botones-detalle{
+    padding-top: 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin: auto;
 }
 
 div.caja1 .botones-detalle button{
     height: 45px;
-    width: 150px;
+    width: 160px;
     border: none;
     border-radius: 20px;
     margin: 8px 4px ;
     background-color: #C4C4C4;
-    font-size: 18px;
-    position: relative;
-    bottom: 120px;
-    left: 697px;
+    font-size: 17px;
 }
 
 /* CAJA 2 */ 
