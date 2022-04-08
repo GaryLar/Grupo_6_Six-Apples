@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "Bolsón Individual",
+        "CategoryName": "Ofertas",
+        "Description": "Incluye: 1/2Kg de Naranja, 1/2Kg de Limón, 1/2Kg de Pera, 1Kg de Pera, 1/2Kg Batata, 1/2Kg de Zanahoria, 1/2Kg de Cebolla, 1 Atado de remolacha, 1 Cabeza de Ajo",
+        "price": 1600
+    },
+    {
+        "id": 2,
+        "name": "Bolsón Familiar",
+        "CategoryName": "Ofertas",
+        "Description": "Incluye: 1Kg de Naranja, 1/2Kg de Limón, 1/2Kg de Pomelo, 1/2Kg de Pera, 1Kg Papa, 1/2Kg de Batata, 1Kg de Cebolla, 1/2Kg de Zanahoria, 1 Zapallo Cabuto, 1/2Kg Berenjena o Morrón, 1 Atado de Remolacha, 1 Cabeza de Ajo",
+        "price": 2000
+    }
+]

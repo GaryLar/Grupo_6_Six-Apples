@@ -14,4 +14,8 @@ module.exports = {
     writeCategories: (data) => {
         fs.writeFileSync(path.join(__dirname, "/categories.json"), JSON.stringify(data));
     },
+    getOffers: JSON.parse(fs.readFileSync(path.join(__dirname, "/ofertas.json"), "utf-8")),
+    writeOffers: (data) => {
+        fs.writeFileSync(path.join(__dirname, "/ofertas.json"), JSON.stringify(data));
+    }
 }

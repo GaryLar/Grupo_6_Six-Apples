@@ -3,8 +3,9 @@ const { getProducts } = require('../data/index');
 module.exports={
     products:(req,res)=>{
         res.render('products/catalogo', { //catalogo.ejs
-            title: "Catálogo"
-        }) 
+            title: "Catálogo",
+            products: getProducts
+        });
     },
     productCart:(req, res) => {
         res.render('products/productCart', { //productCart.ejs
