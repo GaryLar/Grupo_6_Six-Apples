@@ -1,10 +1,8 @@
 const { getProducts } = require('../data/index');
-/* Para sacar acentos */
-const removeAccents = (str) => {
+const removeAccents = (str) => {                /* Para sacar acentos */
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
-/* ESTA funcion sirve parapasar a miles */
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); /* ESTA funcion sirve parapasar a miles */
 
 module.exports={
     index:(req,res)=>{
