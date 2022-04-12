@@ -4,9 +4,29 @@
 <body class="body-search">
     <%- include("partials/header.ejs") %>
     <main class="main-search">
-        <h1>Tu Busqueda: <%= busqueda %> </h1>
-        
-        <h2>NO TENEMOS EL PRODUCTO QUE SOLICITASTE. INTENTÁ CON OTRO</h2>
+        <h1>Tu Busqueda: <%= search %> </h1>
+        <% if (resultadoBusqueda.length > 0) { %>
+            <% resultadoBusqueda.forEach(product => { %>
+                <div class="caja1">
+                    <div class="imagen-detalle">
+                        <img src="/images/<%= product.image[0] %>" alt="productImage">
+                    </div>
+                    <div class="texto-detalle">
+                        <h3><%= product.name %></h3>
+                        <p> <b>Tipo: </b><%= product.type %></p>
+                        <p> <b> Procedencia: </b><%= product.origin %></p>
+                        <p><b> ID: </b><%= product.id %> </p>
+                        <p> <b>Precio por Kg: </b>$<%= product.price %></p>
+                    </div>
+                    <div class="botones-detalle">
+                        <button>Agregar al carrito</button>
+                        <button>Ver tu carrito</button>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %> 
+        <h2 class="producto-no-encontrado">NO TENEMOS EL PRODUCTO QUE SOLICITASTE. INTENTÁ CON OTRO</h2>
+        <% } %>
     </main> 
     
 </body>

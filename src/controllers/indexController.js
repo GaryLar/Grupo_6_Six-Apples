@@ -1,4 +1,10 @@
 const { getProducts } = require('../data/index');
+/* Para sacar acentos */
+const removeAccents = (str) => {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+/* ESTA funcion sirve parapasar a miles */
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports={
     index:(req,res)=>{
@@ -16,12 +22,17 @@ module.exports={
         }) 
     },
     search: (req, res) => {
-        let busqueda = req.query.search.toLowerCase() /* busca por query string la busqueda que paso el usuario y la paso a una variable */
-        let productos = getProducts.filter(producto => producto.name == busqueda)
+        let resultadoBusqueda = []
+        getProducts.forEach(product => {
+            if(removeAccents(`${product.name} || ${product.categoryName}`).toLowerCase().includes(req.query.search.toLowerCase())){
+                resultadoBusqueda.push(product)
+            }
+        });
         res.render('search', {
             title: "Busqueda",
-            productos,
-            busqueda
+            resultadoBusqueda,
+            search: req.query.search,
+            toThousand
         })
         
     }

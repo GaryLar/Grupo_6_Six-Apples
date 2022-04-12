@@ -1,0 +1,7 @@
+main.main-search {
+    text-align: center;
+    margin-top: 20px;
+}
+h2.producto-no-encontrado {
+    color: var(--color-verdeOscuro)
+}
