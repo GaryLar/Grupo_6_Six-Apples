@@ -7,6 +7,7 @@
     "categoryName": "Frutas",
     "categoryId": 1,
     "price": 240,
+    "view": false,
     "image": [
       "Manzana.png"
     ]
@@ -19,6 +20,7 @@
     "categoryName": "Frutas",
     "categoryId": 1,
     "price": 210,
+    "view": false,
     "image": [
       "Naranja.png"
     ]
@@ -31,6 +33,7 @@
     "categoryName": "Frutas",
     "categoryId": 1,
     "price": 280,
+    "view": false,
     "image": [
       "Banana.png"
     ]
@@ -43,6 +46,7 @@
     "categoryName": "Frutas",
     "categoryId": 1,
     "price": 290,
+    "view": true,
     "image": [
       "Durazno.png"
     ]
@@ -55,6 +59,7 @@
     "categoryName": "Frutas",
     "categoryId": 1,
     "price": 390,
+    "view": false,
     "image": [
       "Ananá.png"
     ]
@@ -67,6 +72,7 @@
     "categoryName": "Frutas",
     "categoryId": 1,
     "price": 330,
+    "view": true,
     "image": [
       "Uva.png"
     ]
@@ -79,18 +85,20 @@
     "categoryName": "Frutas",
     "categoryId": 1,
     "price": 220,
+    "view": false,
     "image": [
       "Pera.png"
     ]
   },
   {
-    "name": "Kimi",
+    "name": "Kiwi",
     "id": 8,
     "type": "Hayward",
     "origin": "Buenos Aires",
     "categoryName": "Frutas",
     "categoryId": 1,
     "price": 749,
+    "view": false,
     "image": [
       "Kiwi.png"
     ]
@@ -103,6 +111,7 @@
     "categoryName": "Frutas",
     "categoryId": 1,
     "price": 800,
+    "view": true,
     "image": [
       "Kiwi.png"
     ]
@@ -115,6 +124,7 @@
     "categoryName": "Frutas",
     "categoryId": 1,
     "price": 460,
+    "view": false,
     "image": [
       "Mango.png"
     ]
@@ -127,6 +137,7 @@
     "categoryName": "Frutas",
     "categoryId": 1,
     "price": 480,
+    "view": false,
     "image": [
       "Frutilla.png"
     ]
@@ -139,6 +150,7 @@
     "categoryName": "Frutas",
     "categoryId": 1,
     "price": 390,
+    "view": false,
     "image": [
       "Sandia.png"
     ]
@@ -151,6 +163,7 @@
     "categoryName": "Verduras",
     "categoryId": 2,
     "price": 240,
+    "view": true,
     "image": [
       "Lechuga.png"
     ]
@@ -163,6 +176,7 @@
     "categoryName": "Verduras",
     "categoryId": 2,
     "price": 390,
+    "view": false,
     "image": [
       "Tomate.png"
     ]
@@ -175,6 +189,7 @@
     "categoryName": "Verduras",
     "categoryId": 2,
     "price": 480,
+    "view": false,
     "image": [
       "Repollo.png"
     ]
@@ -187,6 +202,7 @@
     "categoryName": "Verduras",
     "categoryId": 2,
     "price": 200,
+    "view": false,
     "image": [
       "Acelga.png"
     ]
@@ -199,6 +215,7 @@
     "categoryName": "Verduras",
     "categoryId": 2,
     "price": 230,
+    "view": false,
     "image": [
       "Zapallo.png"
     ]
@@ -211,6 +228,7 @@
     "categoryName": "Verduras",
     "categoryId": 2,
     "price": 250,
+    "view": false,
     "image": [
       "Zanahoria.png"
     ]
@@ -223,6 +241,7 @@
     "categoryName": "Verduras",
     "categoryId": 2,
     "price": 130,
+    "view": false,
     "image": [
       "Cebolla.png"
     ]
@@ -235,6 +254,7 @@
     "categoryName": "Verduras",
     "categoryId": 2,
     "price": 240,
+    "view": false,
     "image": [
       "Limon.png"
     ]
@@ -247,6 +267,7 @@
     "categoryName": "Verduras",
     "categoryId": 2,
     "price": 120,
+    "view": false,
     "image": [
       "Papa.png"
     ]

@@ -86,17 +86,17 @@
         <hr>
         <section id="informacion">
             <article>
-                <img src="/images/enviogratis.jpg" alt="imagen de camion"> <!-- image or icon -->
+                <img src="/images/enviogratis.jpg" alt="imagen de camion">
                 <h4>Envíos Gratis</h4>
                 <p>Hace tu pedido y te lo llevamos sin cargo (con tu compra mayor a $5000). En CABA y GBA.</p>
             </article>
             <article>
-                <img src="/images/puntosderetiro.jpg" alt="imagen de retiros"> <!-- image or icon -->
+                <img src="/images/puntosderetiro.jpg" alt="imagen de retiros">
                 <h4>Más de 30 puntos de retiro</h4>
                 <p>Contamos con Puntos de Retiro en todo CABA y GBA. Hacé tu pedido en nuestra tienda y retiralo por tu sucursal más cercana.</p>
             </article>
             <article id="cultivo-fresco">
-                <img src="/images/cultivosfrescos.jpg" alt="imagen cultivos frescos"> <!-- image or icon -->
+                <img src="/images/cultivosfrescos.jpg" alt="imagen cultivos frescos">
                 <h4>Cultivos 100% frescos</h4>
                 <p>Nuestro acuerdo directo con los productores, nos permite ofrecerte mercadería fresca y de primera calidad.</p>
             </article>
@@ -104,58 +104,21 @@
         <hr>
         <h3 id="titulo">Destacados</h3>
         <section class="destacados">
+            <% productView.forEach(product => { %>
             <article class="producto">
                 <div class="contenedor-foto">
-                    <a href="/productos/detalle/"><img width="100%" src="/images/Durazno.png" alt="imagen durazno"></a><!-- image a photo -->
+                    <a href="/productos/detalle/<%- product.id %>"><img width="100%" src="/images/<%-product.image [0]%>" alt="imagen producto"></a>
                 </div>
                 <article class="detalles">
-                    <p>Durazno</p>
+                    <p><%= product.name %></p>
                     <p>Precio por kg</p>
-                    <p class="precio">$290</p>
+                    <p class="precio">$<%= product.price %> </p>
                     <button class="boton-agregar">
                         <a href="/productos/carrito"><p class="add">Agregar al carrito</p></a>
                     </button>
                 </article>
             </article>
-            <article class="producto">
-                <div class="contenedor-foto">
-                    <a href="/productos/detalle"><img width="100%" src="/images/Uva.png" alt="imagen uva"></a><!-- image a photo -->
-                </div>
-                <article class="detalles">
-                    <p>Uva</p>
-                    <p>Precio por kg</p>
-                    <p class="precio">$330</p>
-                    <button class="boton-agregar">
-                        <a href="/productos/carrito"><p class="add">Agregar al carrito</p></a>
-                    </button>
-                </article>
-            </article>
-            <article class="producto none"> <!-- producto que no aparece en phone -->
-                <div class="contenedor-foto">
-                    <a href="/productos/detalle"><img width="100%" src="/images/Lechuga.png" alt="imagen lechuga"></a><!-- image a photo -->
-                </div>
-                <article class="detalles">
-                    <p>Lechuga</p>
-                    <p>Precio por kg</p>
-                    <p class="precio">$520</p>
-                    <button class="boton-agregar">
-                        <a href="/productos/carrito"><p class="add">Agregar al carrito</p></a>
-                    </button>
-                </article>
-            </article>
-            <article class="producto none1"> <!-- producto que no aparece en phone y tablet -->
-                <div class="contenedor-foto">
-                    <a href="/productos/detalle"><img width="100%" src="/images/Kiwi.png" alt="imagen kiwi"></a><!-- image a photo -->
-                </div>
-                <article class="detalles">
-                    <p>Kiwi</p>
-                    <p>Precio por kg</p>
-                    <p class="precio">$749</p>
-                    <button class="boton-agregar">
-                        <a href="/productos/carrito"><p class="add">Agregar al carrito</p></a>
-                    </button>
-                </article>
-            </article>
+            <% }) %>
         </section>
     </main>
     <%- include("partials/footer.ejs") %> 
