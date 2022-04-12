@@ -1,6 +1,7 @@
 /* header admin */
+@import url(admin.css); 
 body.administracion header.header-admin {
-    background-color: var(--color-verdeClaro);
+    background-color: #dfffbe;
     width: 100%;
     font-size: 12px;
 }
