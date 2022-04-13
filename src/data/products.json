@@ -8,9 +8,7 @@
     "categoryId": 1,
     "price": 240,
     "view": false,
-    "image": [
-      "Manzana.png"
-    ]
+    "image": ["Manzana.png"]
   },
   {
     "name": "Naranja Común",
@@ -21,9 +19,7 @@
     "categoryId": 1,
     "price": 210,
     "view": false,
-    "image": [
-      "Naranja.png"
-    ]
+    "image": ["Naranja.png"]
   },
   {
     "name": "Banana",
@@ -34,9 +30,7 @@
     "categoryId": 1,
     "price": 280,
     "view": false,
-    "image": [
-      "Banana.png"
-    ]
+    "image": ["Banana.png"]
   },
   {
     "name": "Durazno",
@@ -47,9 +41,7 @@
     "categoryId": 1,
     "price": 290,
     "view": true,
-    "image": [
-      "Durazno.png"
-    ]
+    "image": ["Durazno.png"]
   },
   {
     "name": "Ananá",
@@ -60,9 +52,7 @@
     "categoryId": 1,
     "price": 390,
     "view": false,
-    "image": [
-      "Ananá.png"
-    ]
+    "image": ["Ananá.png"]
   },
   {
     "name": "Uva",
@@ -73,9 +63,7 @@
     "categoryId": 1,
     "price": 330,
     "view": true,
-    "image": [
-      "Uva.png"
-    ]
+    "image": ["Uva.png"]
   },
   {
     "name": "Pera",
@@ -86,9 +74,7 @@
     "categoryId": 1,
     "price": 220,
     "view": false,
-    "image": [
-      "Pera.png"
-    ]
+    "image": ["Pera.png"]
   },
   {
     "name": "Kiwi",
@@ -99,9 +85,7 @@
     "categoryId": 1,
     "price": 749,
     "view": false,
-    "image": [
-      "Kiwi.png"
-    ]
+    "image": ["Kiwi.png"]
   },
   {
     "name": "Kiwi",
@@ -112,9 +96,7 @@
     "categoryId": 1,
     "price": 800,
     "view": true,
-    "image": [
-      "Kiwi.png"
-    ]
+    "image": ["Kiwi.png"]
   },
   {
     "name": "Mango",
@@ -125,9 +107,7 @@
     "categoryId": 1,
     "price": 460,
     "view": false,
-    "image": [
-      "Mango.png"
-    ]
+    "image": ["Mango.png"]
   },
   {
     "name": "Frutilla",
@@ -138,9 +118,7 @@
     "categoryId": 1,
     "price": 480,
     "view": false,
-    "image": [
-      "Frutilla.png"
-    ]
+    "image": ["Frutilla.png"]
   },
   {
     "name": "Sandia",
@@ -151,9 +129,7 @@
     "categoryId": 1,
     "price": 390,
     "view": false,
-    "image": [
-      "Sandia.png"
-    ]
+    "image": ["Sandia.png"]
   },
   {
     "name": "Lechuga",
@@ -164,9 +140,7 @@
     "categoryId": 2,
     "price": 240,
     "view": true,
-    "image": [
-      "Lechuga.png"
-    ]
+    "image": ["Lechuga.png"]
   },
   {
     "name": "Tomate",
@@ -177,9 +151,7 @@
     "categoryId": 2,
     "price": 390,
     "view": false,
-    "image": [
-      "Tomate.png"
-    ]
+    "image": ["Tomate.png"]
   },
   {
     "name": "Repollo",
@@ -190,9 +162,7 @@
     "categoryId": 2,
     "price": 480,
     "view": false,
-    "image": [
-      "Repollo.png"
-    ]
+    "image": ["Repollo.png"]
   },
   {
     "name": "Acelga",
@@ -203,9 +173,7 @@
     "categoryId": 2,
     "price": 200,
     "view": false,
-    "image": [
-      "Acelga.png"
-    ]
+    "image": ["Acelga.png"]
   },
   {
     "name": "Zapallo",
@@ -216,9 +184,7 @@
     "categoryId": 2,
     "price": 230,
     "view": false,
-    "image": [
-      "Zapallo.png"
-    ]
+    "image": ["Zapallo.png"]
   },
   {
     "name": "Zanahoria",
@@ -229,9 +195,7 @@
     "categoryId": 2,
     "price": 250,
     "view": false,
-    "image": [
-      "Zanahoria.png"
-    ]
+    "image": ["Zanahoria.png"]
   },
   {
     "name": "Cebolla",
@@ -242,9 +206,7 @@
     "categoryId": 2,
     "price": 130,
     "view": false,
-    "image": [
-      "Cebolla.png"
-    ]
+    "image": ["Cebolla.png"]
   },
   {
     "name": "Limón",
@@ -255,9 +217,7 @@
     "categoryId": 2,
     "price": 240,
     "view": false,
-    "image": [
-      "Limon.png"
-    ]
+    "image": ["Limon.png"]
   },
   {
     "name": "Papa",
@@ -268,8 +228,15 @@
     "categoryId": 2,
     "price": 120,
     "view": false,
-    "image": [
-      "Papa.png"
-    ]
+    "image": ["Papa.png"]
+  },
+  {
+    "name": "asd",
+    "categoryName": "verduras",
+    "type": "123",
+    "price": "4000",
+    "origin": "china",
+    "image": "",
+    "id": 22
   }
 ]

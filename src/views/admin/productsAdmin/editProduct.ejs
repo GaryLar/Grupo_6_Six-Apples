@@ -4,30 +4,29 @@
 <body class="administracion">
     <%- include('../../partials/header-admin') %> 
     <section class="section-admin">
-        <h2 class="admin">Editar Producto: </h2>
+        <h2 class="admin">Editar Producto:</h2>
 
-        <form action="" method="" class="form-admin">
+        <form action="/admin/productos/<%=producto.id %>?_method=PUT" method="post" class="form-admin">
             <div class="container-admin">
                 <label for="name">Nombre del producto:</label>
-                <input type="text" class="admin-style" name="name" id="name">
+                <input type="text" class="admin-style" name="name" id="name" value="<%=producto.name %>">
             </div>
             <div class="container-admin">
                 <label for="categoryName">Categoría:</label>
-                <input type="text" class="admin-style" name="categoryName" id="categoryName">
+                <input type="text" class="admin-style" name="categoryName" id="categoryName" value="<%=producto.categoryName %>">
             </div>
             <div class="container-admin">
                 <label for="type">Tipo:</label>
-                <input type="text" class="admin-style" name="type" id="type">
+                <input type="text" class="admin-style" name="type" id="type" value="<%=producto.type%>">
             </div>
             <div class="container-admin">
                 <label for="price">Precio:</label>
-                <input type="number" class="admin-style" name="price" id="price">
+                <input type="number" class="admin-style" name="price" id="price" value="<%=producto.price%>">
             </div>
             <div class="container-admin">
                 <label for="origin">Origen del Producto:</label>
-                <input type="text" class="admin-style" name="origin" id="origin">
-<!--                 <textarea name="origin" class="admin-style" id="origin" cols="30" rows="10"></textarea>
- -->            </div>
+                <input type="text" class="admin-style" name="origin" id="origin" value="<%=producto.origin %>">
+            </div>
             <div class="container-admin-file">
                 <label for="image">Agregar imagen</label>
                 <input type="file" name="image" id="image">
