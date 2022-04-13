@@ -1,4 +1,4 @@
-const { getProducts } = require('../data/index');
+const { getProducts, getOffers} = require('../data/index');
 const removeAccents = (str) => {                /* Para sacar acentos */
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
@@ -9,9 +9,14 @@ module.exports={
         let productView = getProducts.filter(product => {
             return product.view === true
         })
+        let offertsView = getOffers.filter(bolson => {
+            return bolson.view === true
+        })
         res.render('home.ejs',{ //home.ejs
             title: "Six Apples",
-            productView
+            productView,
+            offertsView,
+            toThousand
         }) 
     },
     about:(req,res)=>{

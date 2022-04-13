@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+<body class="body-detalles">
+    <%- include("../partials/header.ejs") %>
+    <main class="producto-datalle">
+        <div class="caja1">
+            <div class="imagen-detalle">
+                <img src="/images/<%= oferta.image[0] %>" alt="Durazno">
+            </div>
+            <div class="texto-detalle">
+                <h3><%= oferta.name %></h3>
+                <p><b> ID: </b><%= oferta.id %> </p>
+                <p>$<%= oferta.price %></p>
+                <!-- oferta.description -->
+            </div>
+            <div class="botones-detalle">
+                <button>Agregar al carrito</button>
+                <button>Ver tu carrito</button>
+            </div>
+
+        </div>

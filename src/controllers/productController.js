@@ -1,4 +1,4 @@
-const { getProducts } = require('../data/index');
+const { getProducts, getOffers, writeOffers} = require('../data/index');
 
 module.exports={
     products:(req,res)=>{
@@ -14,8 +14,17 @@ module.exports={
     },
     offers:(req, res) => {
         res.render('products/ofertas', { //ofertas.ejs
-            title: "Ofertas"
+            title: "Ofertas",
+            ofertas: getOffers
         }) 
+    },
+    offersDetail: (req, res) => {
+        let idOferta = +req.params.id;
+        let oferta = getOffers.find(oferta => oferta.id == idOferta)
+        res.render('products/offersDetail', {
+            title: oferta.name,
+            oferta
+        })
     },
     detail:(req, res) => {
         let idProducto = +req.params.id; /* capturamos id del producto que viene por url */

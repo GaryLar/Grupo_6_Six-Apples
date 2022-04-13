@@ -7,82 +7,19 @@
     <main class="main-ofertas">
         <h3 class="titulo-ofertas">Ofertas Bolsones</h3>
         <section class="ofertas">
-
-
+        <% ofertas.forEach(bolson => { %>
         <article class="producto-oferta">
             <div class="contenedor-oferta">
-                <a href="#"><img width="100%" src="/images/oferta1.jpeg" alt="ofertaNaranjas"></a>
+                <a href="/productos/ofertas/<%- bolson.id %>"><img width="100%" src="/images/<%- bolson.image[0] %>" alt="ofertaBolson"></a>
             </div>
             <article class="detalles">
-                <p>Bolson familiar (8kg)</p>
-                <p class="precio"><strong>$1.600</strong></p> 
-                <p>Precio unitario: $210</p>
+                <p><%- bolson.name %> </p>
+                <p class="precio"><strong>$ <%= bolson.price %></strong></p> 
             </article>
             <button class="boton-ofertas"><h4>Agregar al carrito</h4></button>
             </div>
         </article>
-
-        
-        <article class="producto-oferta">
-            <div class="contenedor-oferta">
-                <a href="#"><img width="100%" src="/images/oferta2.jpeg" alt="ofertaZanahoria"></a>
-            </div>
-            <article class="detalles">
-                <p>Bolson familiar (8kg)</p>
-                <p class="precio"><strong>$1.600</strong></p> 
-                <p>Precio unitario: $210</p>
-            </article>
-            <button class="boton-ofertas"><h4>Agregar al carrito</h4></button>
-            </div>
-        </article>
-        <article class="producto-oferta">
-            <div class="contenedor-oferta">
-                <a href="#"><img width="100%" src="/images/oferta3.jpeg" alt="ofertaChoclo"></a> 
-            </div>
-            <article class="detalles">
-                <p>Bolson familiar (8kg)</p>
-                <p class="precio"><strong>$1.600</strong></p> 
-                <p>Precio unitario: $210</p>
-            </article>
-            <button class="boton-ofertas"><h4>Agregar al carrito</h4></button>
-            </div>
-        </article>
-        <article class="producto-oferta">
-            <div class="contenedor-oferta">
-                <a href="#"><img width="100%" src="/images/oferta4.jpeg" alt="ofertaLechuga"></a> 
-            </div>
-            <article class="detalles">
-                <p>Bolson familiar (8kg)</p>
-                <p class="precio"><strong>$1.600</strong></p> 
-                <p>Precio unitario: $210</p>
-            </article>
-            <button class="boton-ofertas"><h4>Agregar al carrito</h4></button>
-            </div>
-        </article>
-        <article class="producto-oferta">
-            <div class="contenedor-oferta">
-                <a href="#"><img width="100%" src="/images/oferta4.jpeg" alt="ofertaLechuga"></a> 
-            </div>
-            <article class="detalles">
-                <p>Bolson familiar (8kg)</p>
-                <p class="precio"><strong>$1.600</strong></p> 
-                <p>Precio unitario: $210</p>
-            </article>
-            <button class="boton-ofertas"><h4>Agregar al carrito</h4></button>
-            </div>
-        </article>
-        <article class="producto-oferta">
-            <div class="contenedor-oferta">
-                <a href="#"><img width="100%" src="/images/oferta4.jpeg" alt="ofertaLechuga"></a> 
-            </div>
-            <article class="detalles">
-                <p>Bolson familiar (8kg)</p>
-                <p class="precio"><strong>$1.600</strong></p> 
-                <p>Precio unitario: $210</p>
-            </article>
-            <button class="boton-ofertas"><h4>Agregar al carrito</h4></button>
-            </div>
-        </article>
+        <% }) %>
     </section>
     </main>
     <%- include("../partials/footer.ejs") %> 
