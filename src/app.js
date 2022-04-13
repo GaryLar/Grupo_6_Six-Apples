@@ -4,6 +4,7 @@ const path = require('path');
 /* requerimos dotenv para la variable de entorno */
 require('dotenv').config();
 const port = process.env.port || 3000;
+const methodOverride = require('method-override');
 
 
 
@@ -16,6 +17,9 @@ const adminRouter = require("./routes/adminRouter")
 
 /* config de archivos estaticos */
 app.use(express.static('public'));
+app.use(express.urlencoded({extended: false})); /* para capturar aquello q vienen del formulario en forma de objeto literal */
+app.use(express.json());
+app.use(methodOverride('_method'));
 
 /* views ejs config  */
 app.set('view engine', 'ejs')
