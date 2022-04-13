@@ -9,5 +9,6 @@ router.get('/detalle/:id', productController.detail);
 
 router.get('/carrito', productController.productCart);
 router.get('/ofertas', productController.offers);
+router.get('/ofertas/:id', productController.offersDetail);
 
 module.exports = router;

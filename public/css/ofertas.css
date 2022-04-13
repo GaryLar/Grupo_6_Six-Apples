@@ -43,6 +43,11 @@ main.main-ofertas article.producto-oferta div.contenedor-oferta img{
     margin-bottom: 15px;
 }
 
+main.main-ofertas article.producto-oferta div.contenedor-oferta img:hover{
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+}
+
 main.main-ofertas article.producto-oferta .detalles{
     text-align: center;
 }

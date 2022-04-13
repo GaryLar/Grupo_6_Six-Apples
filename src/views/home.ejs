@@ -28,16 +28,17 @@
         </div>
         <h3 id="titulo">Nuestros Bolsones</h3>
         <section class="bolsones">
+            <% offertsView.forEach(oferta => { %>
             <article class="producto">
                 <div class="contenedor-foto">
-                    <a href="#"><img width="100%" src="/images/oferta1.jpeg" alt="ofertaNaranjas"></a>  <!-- si toco la foto veria el detalle de producto -->
+                    <a href="/productos/ofertas/<%- oferta.id %>"><img width="100%" src="/images/<%- oferta.image[0] %>" alt="ofertaNaranjas"></a>  <!-- si toco la foto veria el detalle de producto -->
                 </div>
                 <button class="boton-ofertas">
                     <h4>COMPRAR</h4>
                 </button>
                 <article class="detalles">
-                    <p>Bolson familiar (8kg)</p>
-                    <p class="precio">$1.600</p> 
+                    <p><%= oferta.name %> </p>
+                    <p class="precio">$ <%= toThousand(oferta.price)%> </p> 
                     <div class="opciones">
                       <p>Elegir cantidad</p>
                       <button id="cantidad">1</button>
@@ -46,42 +47,7 @@
                     </article>
                 </div>
             </article>
-            <article class="producto">
-                <div class="contenedor-foto">
-                    <a href="#"><img width="100%" src="/images/oferta2.jpeg" alt="ofertaZahahoria"></a>
-                </div>
-                <button class="boton-ofertas">
-                    <h4>COMPRAR</h4>
-                </button>
-                <article class="detalles">
-                    <p>Bolson familiar (8kg)</p>
-                    <p class="precio">$1.600</p>
-                    <div class="opciones">
-                        <p>Elegir cantidad</p>
-                        <button id="cantidad">1</button>
-                        <button id="cantidad">2</button>
-                        <button id="cantidad">3</button>
-                    </div>
-                </article>
-            </article>
-            <article class="producto none-oferta">
-                <div class="contenedor-foto">
-                    <a href="#"><img width="100%" src="/images/oferta3.jpeg" alt="ofertaZahahoria"></a>
-                </div>
-                <button class="boton-ofertas">
-                    <h4>COMPRAR</h4>
-                </button>
-                <article class="detalles">
-                    <p>Bolson familiar (8kg)</p>
-                    <p class="precio">$1.600</p>
-                    <div class="opciones">
-                        <p>Elegir cantidad</p>
-                        <button id="cantidad">1</button>
-                        <button id="cantidad">2</button>
-                        <button id="cantidad">3</button>
-                    </div>
-                </article>
-            </article>
+            <% }) %>
         </section>
         <hr>
         <section id="informacion">
