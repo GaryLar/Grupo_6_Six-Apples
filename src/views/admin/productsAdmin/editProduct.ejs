@@ -19,7 +19,7 @@
                 <label for="categoryName">Categoría:</label>
                 <select name="categoryName" id="categoryName" class="admin-style">
                     <option value="">Elegí</option>
-                    <option value="Frutas" <%= producto.categoryName === "Frutas" && "selected" %>>Frutas</option>
+                    <option value="Frutas" <%= producto.categoryName === "Frutas" && "selected" %>>Frutas</option> <!-- si el producto.cattegoryName es igual a "Frutas" que me lo devuelva seleccionado -->
                     <option value="Verduras" <%= producto.categoryName === "Verduras" && "selected" %>>Verduras</option>
                 </select>
             </div>
@@ -33,7 +33,7 @@
             </div>
             <div class="container-admin">
                 <label for="view">En vista:</label>
-                <input <%= producto.view ? "checked" : "" %>  type="checkbox" id="view" name="view">
+                <input <%= producto.view ? "checked" : "" %>  type="checkbox" id="view" name="view" class="checkbox-style"> <!-- ir ternario: si el producto.view es true.. que devuelva el checked.. sino no. -->
             </div>
             <div class="container-admin-file">
                 <label for="image">Agregar imagen</label>

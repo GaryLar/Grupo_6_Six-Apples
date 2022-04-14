@@ -19,5 +19,24 @@
         "email": "karen@mail.com",
         "password": "654321",
         "avatar": ""
+    },
+    {
+        "id": 3,
+        "name": "Karen",
+        "email": "karenmcalisaya@gmail.com",
+        "avatar": ""
+    },
+    {
+        "id": 4,
+        "name": "Karen",
+        "email": "karenmcalisaya@gmail.com",
+        "avatar": ""
+    },
+    {
+        "id": 5,
+        "name": "Gary",
+        "email": "gary@gmail.com",
+        "password": "1234",
+        "avatar": ""
     }
 ]

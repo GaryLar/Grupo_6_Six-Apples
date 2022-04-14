@@ -61,8 +61,8 @@ div.caja1 .imagen-detalle img{
 
 div.caja1 .texto-detalle{
     margin: 30px 0px;
-    position: relative;
-    left: 30px;
+   /*  position: relative;
+    left: 30px; */
     font-family: var(--font-poppins);
 }
 div.caja1 .texto-detalle p{
@@ -102,8 +102,8 @@ div.caja2{
 }
 
 div.caja2 .producto-caja2 .texto-caja2 {
-    position: relative;
-    right: -18px;
+    /* position: relative; */
+   /*  right: -18px; */
     padding-top: 3px;
     font-family: var(--font-poppins); 
 }

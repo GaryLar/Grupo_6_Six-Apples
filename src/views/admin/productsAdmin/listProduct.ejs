@@ -31,8 +31,8 @@
                   <a href="/admin/productos/editar/<%- product.id %>" class="btn">
                     <i class="fa-solid fa-pen-to-square"></i>
                 </a>
-              <form action="" method="post">
-                  <button class="btn" type="submit">
+              <form action="/admin/productos/eliminar/<%- product.id %>?_method=DELETE" method="post">
+                  <button class="btn" type="submit" onclick="alert('Borraste un producto')">
                       <i class="fa-solid fa-trash-can"></i>
                     </button>
                 </form>

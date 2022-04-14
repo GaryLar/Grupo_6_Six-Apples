@@ -47,5 +47,42 @@ productEdit: (req,res)=>{
          title: "Editar:",
          producto
      })
+},
+
+    /* Recibe los datos actualizados del form de edición */
+productUpdate: (req, res) => {
+    let productoId = +req.params.id;
+    getProducts.forEach(producto => {
+        if(producto.id === productoId){
+            producto.name = req.body.name
+            producto.type = req.body.type
+            producto.origin = req.body.origin
+            producto.categoryName = req.body.categoryName
+            producto.categoryId = req.body.categoryId
+            producto.price = req.body.price
+            producto.view = req.body.view
+        }
+    })
+
+    /* Necesitamos guardarlos en la DB */
+    writeProducts(getProducts);
+    /* redireccion */
+    res.redirect('/admin/productos'); 
+},
+productDelete: (req, res) => {
+    let productoId = +req.params.id;
+    getProducts.forEach(producto => {
+     if(producto.id === productoId){
+          //Obtener la ubicación (índice) del producto a eliminar
+          let indiceDeProducto = getProducts.indexOf(producto);
+          getProducts.splice(indiceDeProducto, 1)
+     }
+    })
+    /* 3 - Sobreescribir el json */
+    writeProducts(getProducts);
+    /* REDIRECCIONAR */ 
+    res.redirect('/admin/productos');
+
 }
+
 }
