@@ -44,7 +44,7 @@ productEdit: (req,res)=>{
      let producto = getProducts.find(producto => producto.id === idProducto)
      /* 3 - Mostrar el producto en la vista */
      res.render('admin/productsAdmin/editProduct', {
-         titulo: "Editar:",
+         title: "Editar:",
          producto
      })
 }

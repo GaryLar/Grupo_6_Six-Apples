@@ -14,9 +14,8 @@
               <th scope="col">Categoría</th>
               <th scope="col">Tipo</th>
               <th scope="col">Precio</th>
-              <th scope="col">Origen</th>
               <th scope="col">En vista</th>
-              <th scope="col" class="btn"></th>
+              <th scope="col"></th>
           </tr>
           </thead>
           <tbody>
@@ -27,12 +26,18 @@
               <td><%- product.categoryName %></td>
               <td><%- product.type %></td>
               <td><%- product.price %></td>
-              <td><%- product.origin %></td>
               <td><%- product.view %></td>
-              <td class="btn">
-                  
+              <td>
+                  <a href="/admin/productos/editar/<%- product.id %>" class="btn">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </a>
+              <form action="" method="post">
+                  <button class="btn" type="submit">
+                      <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </form>
               </td>
-              </tr>
+            </tr>
           <% }) %>  
           </tbody>
       </table>
