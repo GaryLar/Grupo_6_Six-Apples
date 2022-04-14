@@ -12,12 +12,16 @@
                 <input type="text" class="admin-style" name="name" id="name" value="<%=producto.name %>">
             </div>
             <div class="container-admin">
-                <label for="categoryName">Categoría:</label>
-                <input type="text" class="admin-style" name="categoryName" id="categoryName" value="<%=producto.categoryName %>">
-            </div>
-            <div class="container-admin">
                 <label for="type">Tipo:</label>
                 <input type="text" class="admin-style" name="type" id="type" value="<%=producto.type%>">
+            </div>
+            <div class="container-admin">
+                <label for="categoryName">Categoría:</label>
+                <select name="categoryName" id="categoryName" class="admin-style">
+                    <option value="">Elegí</option>
+                    <option value="Frutas" <%= producto.categoryName === "Frutas" && "selected" %>>Frutas</option>
+                    <option value="Verduras" <%= producto.categoryName === "Verduras" && "selected" %>>Verduras</option>
+                </select>
             </div>
             <div class="container-admin">
                 <label for="price">Precio:</label>
@@ -26,6 +30,10 @@
             <div class="container-admin">
                 <label for="origin">Origen del Producto:</label>
                 <input type="text" class="admin-style" name="origin" id="origin" value="<%=producto.origin %>">
+            </div>
+            <div class="container-admin">
+                <label for="view">En vista:</label>
+                <input <%= producto.view ? "checked" : "" %>  type="checkbox" id="view" name="view">
             </div>
             <div class="container-admin-file">
                 <label for="image">Agregar imagen</label>

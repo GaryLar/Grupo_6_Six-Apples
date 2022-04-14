@@ -1,4 +1,3 @@
-@import url(home.css);
 @import url(header-admin.css);
 @import url(listProduct.css);
 
@@ -9,8 +8,11 @@
     font-family: 'poppins', sans-serif;
 }
 
-body.administracion ul{
+body.administracion ul,
+body.administracion a{
     list-style: none;
+    color: black;
+    text-decoration: none;
 }
 
 body.administracion {
@@ -61,6 +63,15 @@ section.section-admin .admin-style{
     padding: 0.5rem;
     margin-bottom: 0.2rem;
     width: 80%;
+    max-width: 250px;
+}
+
+section.section-admin .checkbox-style{
+    border: solid 1px black;
+    outline: none;
+    height: 1rem;
+    margin-bottom: 0.2rem;
+    width: 80%; 
     max-width: 250px;
 }
 
