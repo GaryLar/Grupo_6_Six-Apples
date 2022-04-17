@@ -15,15 +15,15 @@
             </tr>
             </thead>
             <tbody>
-            <% productos.forEach(product => { %>  <!-- revisar variable (seria categoria) -->
+            <% categorias.forEach(category => { %>  <!-- revisar variable (seria categoria) -->
                 <tr>
-                <th scope="row"><%- product.id %></th>
-                <td><%- product.name %></td>
+                <th scope="row"><%- category.id %></th>
+                <td><%- category.name %></td>
                 <td>
-                    <a href="/admin/productos/editar/<%- product.id %>" class="btn">
+                    <a href="/admin/categorias/editar/<%- category.id %>" class="btn">
                       <i class="fa-solid fa-pen-to-square"></i>
                   </a>
-                <form action="/admin/productos/eliminar/<%- product.id %>?_method=DELETE" method="post">
+                <form action="/admin/categorias/eliminar/<%- category.id %>?_method=DELETE" method="post">
                     <button class="btn" type="submit" onclick="alert('Borraste un producto')">
                         <i class="fa-solid fa-trash-can"></i>
                       </button>
