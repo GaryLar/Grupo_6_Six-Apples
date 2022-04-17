@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../../partials/head-admin')  %>
+<body class="administracion">
+    <%- include('../../partials/header-admin') %> 
+    <main class="container min-vh-100 pt-5">
+        <h3 class="titulo">LISTADO DE CATEGORÍAS:</h3>
+        <section class="tabla-color">
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% productos.forEach(product => { %>  <!-- revisar variable (seria categoria) -->
+                <tr>
+                <th scope="row"><%- product.id %></th>
+                <td><%- product.name %></td>
+                <td>
+                    <a href="/admin/productos/editar/<%- product.id %>" class="btn">
+                      <i class="fa-solid fa-pen-to-square"></i>
+                  </a>
+                <form action="/admin/productos/eliminar/<%- product.id %>?_method=DELETE" method="post">
+                    <button class="btn" type="submit" onclick="alert('Borraste un producto')">
+                        <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                  </form>
+                </td>
+              </tr>
+            <% }) %>  
+            </tbody>
+        </table>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

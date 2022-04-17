@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../../partials/head-admin')  %>
+<body class="administracion">
+    <%- include('../../partials/header-admin') %> 
+    <section class="section-admin">
+        <h2 class="admin">Agregar Nueva Oferta</h2>
+        <form action="" method="post" class="form-admin">
+            <div class="container-admin">
+                <label for="name">Nombre de la oferta:</label>
+                <input type="text" class="admin-style" name="name" id="name" placeholder="Bolsón individual o familiar">
+            </div>
+            <div class="container-admin">
+                <label for="price">Precio:</label>
+                <input type="number" class="admin-style" name="price" id="price">
+            </div>
+            <!-- en revision!! -->
+            <div class="container-admin">
+                <label for="categoryName">Productos:</label>
+                <select name="categoryName" id="categoryName" class="admin-style">
+                    <option value="">Elegí</option>
+                    <option value="Frutas">Frutas</option>
+                    <option value="Verduras">Verduras</option>
+                </select>
+            </div>
+            <div class="container-admin">
+                <label for="view">En vista:</label>
+                <input type="checkbox" class="checkbox-style" id="view" name="view">
+            </div>
+            <div class="container-admin-file">
+                <label for="image">Agregar imagen</label>
+                <input type="file" name="image" id="image">
+            </div>
+            <div class="finalizar-registro">
+                <button type="submit">AGREGAR OFERTA</button>
+            </div>
+        </form>
+    </section>
+
+</body>
+</html>
