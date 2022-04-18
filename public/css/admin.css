@@ -112,7 +112,7 @@ section.section-admin .finalizar-registro button{
     transition: all 0.5s ease-in;
 }
 section.section-admin .finalizar-registro button:hover{
-    background-color: var(--color-verdeOscuro);
+    background-color: #92c88a;
 }
 
 @media(min-width: 1100px){
