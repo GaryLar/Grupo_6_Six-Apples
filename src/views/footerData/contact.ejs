@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body class="contact">
+    <%- include("../partials/header.ejs") %>
+    <main>
+        <h4>Dudas, consultas o sugerencias</h4>
+        <section>
+            <h2>Tus Datos</h2>
+            <form action="" method="">
+                <div>
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div>
+                    <label for="phone">Teléfono:</label>
+                    <input type="number" name="phone" id="phone">
+                </div>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div>
+                    <label for="comments">Comentarios:</label>
+                    <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+                </div>
+                <div>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <%- include("../partials/footer.ejs") %> 
+    <%- include("../partials/scripts.ejs") %> 
+</body>
+</html>
