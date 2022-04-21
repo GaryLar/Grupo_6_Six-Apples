@@ -234,7 +234,7 @@ section.profile-section form span.error-message{
 
     ::placeholder{
         color: grey;
-        font-size: 17px;
+        font-size: 11px;
     }
 
     body.profile footer{
