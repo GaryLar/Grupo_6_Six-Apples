@@ -160,6 +160,9 @@ body.profile section form .input-style{
     text-transform: uppercase;
     cursor: pointer;
     margin: 0.2rem auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body.profile section form button.btn-submit{
@@ -172,12 +175,17 @@ section.profile-section form span.error-message{
     text-align: center;
 }
 
+/* USER DATA */ 
+.profile-box{
+    width: 100%;
+}
+
 /* Media querys Version Tablet */ 
-@media(min-width: 768px){
+@media(min-width: 580px){
     body.profile section.profile-section{
-        padding: 2rem; 
+        padding: 2rem 3rem; 
         background-color: white;
-        max-width: 50%;
+        max-width: 850%;
         margin: 70px auto;
     }
 
@@ -188,7 +196,24 @@ section.profile-section form span.error-message{
     section.profile-section form p{
         font-size: 14px;
     }
+
+    .profile-box .userData_container{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .profile-box .userData_container .form_box{
+        width: 50%;
+    }
+
+    body.profile form .btn-container_profile{
+        display: flex;
+        justify-content: space-evenly;
+        gap: 1rem; 
+    }
 }
+
 
 /* Media Querys Version Escritorio */ 
 @media(min-width: 1024px){

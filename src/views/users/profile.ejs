@@ -6,64 +6,65 @@
     <%- include("../partials/header.ejs") %>
     <section class="profile-section">
         <h2 class="profile"> Mi Perfil</h2>
-        
-        <!-- <div class="avatar"></div>   
-         <h4 class="profile-subtitle">Avatar</h4>
-                <div class="avatar"></div> --> 
         <form action="" method="" >
             <div class="avatar"> </div>
                 <div class="input_file-container">
                     <span id="span">SUBIR IMAGEN</span>
                     <input class="avatar2" type="file" name="avatar">
                 </div>
+            <div class="profile-box"> 
                 <h2 class="datos-contacto">Datos de Contacto</h2>
-            <div class="input-container">
-                <input type="text" class="input-style" name="name" placeholder="Ingrese Nombre">
-                <span class="error-message">Debe ingresar su Nombre</span>
+                <div class="userData_container"> 
+                    <div class="form_box"> 
+                        <div class="input-container">
+                            <input type="text" class="input-style" name="name" placeholder="Ingrese Nombre Y Apellido">
+                            <span class="error-message">Debe ingresar su Nombre y Apellido</span>
+                        </div>
+                        <div class="input-container">
+                            <input type="number" class="input-style" name="dni" placeholder="Ingrese su DNI">
+                            <span class="error-message">Debe ingresar su DNI </span>
+                        </div>
+                        <div class="input-container">
+                            <input type="number" class="input-style" name="number" placeholder="Número de Contacto">
+                            <span class="error-message">Debe ingresar su Número </span>
+                        </div> 
+                        <div class="input-container">
+                            <input type="number" class="input-style" name="codigopostal" placeholder="Código Postal">
+                            <span class="error-message">Colocar Código Postal</span>
+                        </div> 
+                    </div>
+                    <div class="form_box">
+                        <div class="input-container">
+                            <select name="province" class="input-style">
+                                <option value="" hidden selected>Elija una provincia</option>
+                                <option value="CapitalFederal">Capital Federal</option>
+                                <option value="ProvinciaDeBuenosAires">Provincia de Buenos Aires</option>
+                                <option value="Neuquen">Neuquén</option>
+                            </select> <span class="error-message"> Seleccione una Provincia</span>
+                        </div>
+                        <div class="input-container">
+                            <select name="province" class="input-style">
+                                <!-- Colocar las localidades de las provincias de arriba -->
+                                <option value="" hidden selected>Elija una Localidad</option>
+                                <option value="CapitalFederal">Capital Federal</option>
+                                <option value="ProvinciaDeBuenosAires">Provincia de Buenos Aires</option>
+                                <option value="Neuquen">Neuquén</option>
+                            </select> <span class="error-message">Debe ingresar su Localidad</span>
+                        </div>
+                        <div class="input-container">
+                            <input type="number" class="input-style" name="number" placeholder="Calle">
+                            <span class="error-message">Debe ingresar su Calle</span>
+                        </div>
+                        <div class="input-container">
+                            <input type="number" class="input-style" name="number" placeholder="Número">
+                            <span class="error-message">Debe ingresar Número</span>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
-            <div class="input-container">
-                <input type="text" class="input-style" name="apellido" placeholder="Ingrese Apellido">
-                <span class="error-message">Debe ingresar su Apellido</span>
-            </div>
-            <div class="input-container">
-                <input type="number" class="input-style" name="codigopostal" placeholder="Código Postal">
-                <span class="error-message">Colocar Código Postal</span>
-            </div>
-            <div class="input-container">
-                <input type="number" class="input-style" name="dni" placeholder="Ingrese su DNI">
-                <span class="error-message">Debe ingresar su DNI </span>
-            </div>
-            <div class="input-container">
-                <input type="number" class="input-style" name="number" placeholder="Numero de Contacto">
-                <span class="error-message">Debe ingresar su Nombre</span>
-            </div>
-             <!-- <div class="input-container">
-                <input type="text" class="input-style" name="provincia" placeholder="Elija su Provincia">
-                <span class="error-message">Debe ingresar su Provincia</span>  -->
-            <div class="input-container">
-                <select name="province" class="input-style">
-                    <option value="" hidden selected>Elija una provincia</option>
-                    <option value="CapitalFederal">Capital Federal</option>
-                    <option value="ProvinciaDeBuenosAires">Provincia de Buenos Aires</option>
-                    <option value="Neuquen">Neuquén</option>
-                </select>
-            </div>
-            <div class="input-container">
-                <input type="text" class="input-style" name="localidad" placeholder="Elija su Localidad">
-                <span class="error-message">Debe ingresar su Localidad</span>
-            </div>
-            <div class="input-container">
-                <input type="number" class="input-style" name="number" placeholder="Calle">
-                <span class="error-message">Debe ingresar su Calle</span>
-            </div>
-            <div class="input-container">
-                <input type="number" class="input-style" name="number" placeholder="Número">
-                <span class="error-message">Debe ingresar Número</span>
-            </div>
-            <div class="btn-container">
+            <div class="btn-container_profile">
                 <button type="submit" class="btn-submit"> Limpiar </button>
-            </div>
-            <div class="btn-container">
                 <button type="submit" class="btn-submit"> Guardar</button>
             </div>
         </form>
