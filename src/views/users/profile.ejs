@@ -6,10 +6,17 @@
     <%- include("../partials/header.ejs") %>
     <section class="profile-section">
         <h2 class="profile"> Mi Perfil</h2>
-        <div class="avatar"></div>
-        <p>Subir imagen</p>
-        <h2 class="datos-contacto">Datos de Contacto</h2>
-        <form action="" method="">
+        
+        <!-- <div class="avatar"></div>   
+         <h4 class="profile-subtitle">Avatar</h4>
+                <div class="avatar"></div> --> 
+        <form action="" method="" >
+            <div class="avatar"> </div>
+                <div class="input_file-container">
+                    <span id="span">SUBIR IMAGEN</span>
+                    <input class="avatar2" type="file" name="avatar">
+                </div>
+                <h2 class="datos-contacto">Datos de Contacto</h2>
             <div class="input-container">
                 <input type="text" class="input-style" name="name" placeholder="Ingrese Nombre">
                 <span class="error-message">Debe ingresar su Nombre</span>
@@ -30,9 +37,16 @@
                 <input type="number" class="input-style" name="number" placeholder="Numero de Contacto">
                 <span class="error-message">Debe ingresar su Nombre</span>
             </div>
-            <div class="input-container">
+             <!-- <div class="input-container">
                 <input type="text" class="input-style" name="provincia" placeholder="Elija su Provincia">
-                <span class="error-message">Debe ingresar su Provincia</span>
+                <span class="error-message">Debe ingresar su Provincia</span>  -->
+            <div class="input-container">
+                <select name="province" class="input-style">
+                    <option value="" hidden selected>Elija una provincia</option>
+                    <option value="CapitalFederal">Capital Federal</option>
+                    <option value="ProvinciaDeBuenosAires">Provincia de Buenos Aires</option>
+                    <option value="Neuquen">Neuquén</option>
+                </select>
             </div>
             <div class="input-container">
                 <input type="text" class="input-style" name="localidad" placeholder="Elija su Localidad">
