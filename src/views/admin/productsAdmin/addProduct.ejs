@@ -6,7 +6,7 @@
     <section class="section-admin">
         <h2 class="admin">Agregar Nuevo Producto</h2>
 
-        <form action="/admin/productos" method="post" class="form-admin">
+        <form action="/admin/productos" method="post" class="form-admin" enctype="multipart/form-data">
             <div class="container-admin">
                 <label for="name">Nombre del producto:</label>
                 <input type="text" class="admin-style" name="name" id="name">
@@ -37,7 +37,7 @@
             </div>
             <div class="container-admin-file">
                 <label for="image">Agregar imagen</label>
-                <input type="file" name="image" id="image">
+                <input type="file" name="image" id="image" >
             </div>
             <div class="finalizar-registro">
                 <button type="submit">AGREGAR PRODUCTO</button>

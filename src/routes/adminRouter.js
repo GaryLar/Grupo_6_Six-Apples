@@ -4,7 +4,8 @@ const express = require('express');
 const router = express.Router();
 const adminController = require('../controllers/admin/adminController')
 const adminProductsController = require('../controllers/admin/adminProductsController');
-const adminCategoryController = require('../controllers/admin/adminCategoryController')
+const adminCategoryController = require('../controllers/admin/adminCategoryController');
+const uploadFile = require('../middlewares/uploadProductsImg');
 
 /*const { route } = require('./productsRouter');*/
 
@@ -20,7 +21,7 @@ router.get('/productos', adminProductsController.list);
 /* GET - Agregar producto */
 router.get('/productos/agregar', adminProductsController.productAdd);
 /* POST - Crea un producto en la DB */
-router.post('/productos/',adminProductsController.productCreate);
+router.post('/productos/',uploadFile.single("image"),adminProductsController.productCreate); // uploadFile.single("image") - Despues del single ponemos el name del input
 
 
 /* GET - Editar producto */
