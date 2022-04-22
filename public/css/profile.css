@@ -100,8 +100,9 @@ body.profile section div.avatar {
     left: 15%;
 }
 
+/* id de el boton subir imagen  */
 #span {
-    background-color: blue;
+    background-color: var(--color-verdeOscuro);
     display: flex;
     justify-content: center;
     align-items: center;
