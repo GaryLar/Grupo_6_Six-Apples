@@ -24,6 +24,7 @@ module.exports = {
     let newProduct = {
         ...req.body,      /* ... (express operator) trae todas las propiedades de  un objeto , en este caso agrega todas las propiedades a esta variable*/
         id: lastId + 1,
+        image :req.file ? req.file.filename : "default-image.png",
        /*  stock: req.body.stock ? true : false */
     }
 
