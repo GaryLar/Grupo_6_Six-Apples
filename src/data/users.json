@@ -1,49 +1,58 @@
 [
-    {
-        "id": 0,
-        "name": "",
-        "email": "",
-        "password": "",
-        "image": ""
-    },
-    {
-        "id": 1,
-        "name": "Andrea Chacón",
-        "email": "andre@mail.com",
-        "password": "123456",
-        "image": ""
-    },
-    {
-        "id": 2,
-        "name": "Karen Calisaya",
-        "email": "karen@mail.com",
-        "password": "654321",
-        "image": ""
-    },
-    {
-        "id": 3,
-        "name": "Karen",
-        "email": "karenmcalisaya@gmail.com",
-        "image": ""
-    },
-    {
-        "id": 4,
-        "name": "Karen",
-        "email": "karenmcalisaya@gmail.com",
-        "image": ""
-    },
-    {
-        "id": 5,
-        "name": "Gary",
-        "email": "gary@gmail.com",
-        "password": "1234",
-        "image": ""
-    },
-    {
-        "id": 6,
-        "name": "",
-        "email": "",
-        "password": "",
-        "image": ""
-    }
+  { "id": 0, "name": "", "email": "", "password": "", "image": "" },
+  {
+    "id": 1,
+    "name": "Andrea Chacón",
+    "email": "andre@mail.com",
+    "password": "123456",
+    "image": ""
+  },
+  {
+    "id": 2,
+    "name": "Karen Calisaya",
+    "email": "karen@mail.com",
+    "password": "654321",
+    "image": ""
+  },
+  {
+    "id": 3,
+    "name": "Karen",
+    "email": "karenmcalisaya@gmail.com",
+    "image": ""
+  },
+  {
+    "id": 4,
+    "name": "Karen",
+    "email": "karenmcalisaya@gmail.com",
+    "image": ""
+  },
+  {
+    "id": 5,
+    "name": "Gary",
+    "email": "gary@gmail.com",
+    "password": "1234",
+    "image": ""
+  },
+  { "id": 6, "name": "", "email": "", "password": "", "image": "" },
+  {
+    "id": 7,
+    "name": "fa",
+    "email": "",
+    "password": "",
+    "image": "avatar1650746922709.jpg"
+  },
+  {
+    "id": 8,
+    "name": "1234",
+    "email": "",
+    "password": "",
+    "image": "avatar1650746937091.png"
+  },
+  {
+    "id": 9,
+    "name": "defa",
+    "email": "",
+    "password": "",
+    "image": "default-image.png"
+  }
 ]
