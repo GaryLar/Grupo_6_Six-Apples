@@ -6,7 +6,7 @@
     <section class="section-admin">
         <h2 class="admin">Agregar Nuevo Producto</h2>
 
-        <form action="/admin/productos" method="post" class="form-admin" enctype="multipart/form-data">
+        <form id="alert" action="/admin/productos" method="post" class="form-admin" enctype="multipart/form-data">
             <div class="container-admin">
                 <label for="name">Nombre del producto:</label>
                 <input type="text" class="admin-style" name="name" id="name">
@@ -45,6 +45,7 @@
 
         </form>
     </section>
+    <%- include('../../partials/scripts') %> 
 
 </body>
 </html>
