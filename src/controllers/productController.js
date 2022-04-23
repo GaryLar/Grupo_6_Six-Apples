@@ -27,11 +27,15 @@ module.exports={
         })
     },
     detail:(req, res) => {
+        let productView = getProducts.filter(product => {
+            return product.view === true})
+
         let idProducto = +req.params.id; /* capturamos id del producto que viene por url */
         let product = getProducts.find(producto => producto.id === idProducto)
         res.render('products/productDetail', {
             title: product.name,
-            product /* llama a un solo producto el que viene por id. Que sacamos de la variable 'product' */
+            product ,/* llama a un solo producto el que viene por id. Que sacamos de la variable 'product' */
+            productView
         }) 
     },
 }

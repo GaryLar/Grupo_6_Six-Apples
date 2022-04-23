@@ -29,7 +29,8 @@ module.exports = {
            name: req.body.name,
            email: req.body.email,
            password: req.body.password,
-           avatar: ""
+           image:req.file ? req.file.filename : "default-image.png",
+        
        }
        // Paso 2 - Guardar el nuevo usuario en el array de usuarios
        getUsers.push(newUser)

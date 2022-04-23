@@ -9,7 +9,7 @@
     <section class="registro-section">
         <h2 class="registro">Registrate</h2>
         <br>
-        <form action="/usuario/registro" method="post">
+        <form action="/usuario/registro" method="post" enctype="multipart/form-data">
             <div class="input-container">
                 <input type="text" class="input-style" name="name" placeholder="Nombre Completo">
                 <span class="error-message">Debe ingresar su Nombre Completo</span>
@@ -25,7 +25,7 @@
             <div class="avatar"> </div>
                 <div class="input_file-container">
                     <span id="span">SUBIR IMAGEN</span>
-                    <input class="avatar2" type="file" name="avatar">
+                    <input class="avatar2" type="file" name="image">
                 </div>
             <div class="btn-container">
                 <button type="submit" class="btn-submit"> Continuar </button>

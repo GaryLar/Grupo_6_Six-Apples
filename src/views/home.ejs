@@ -73,7 +73,7 @@
             <% productView.forEach(product => { %>
             <article class="producto">
                 <div class="contenedor-foto">
-                    <a href="/productos/detalle/<%- product.id %>"><img width="100%" src="/images/<%-product.image [0]%>" alt="imagen producto"></a>
+                    <a href="/productos/detalle/<%- product.id %>"><img width="100%" src="/images/productos/<%-product.image [0]%>" alt="imagen producto"></a>
                 </div>
                 <article class="detalles">
                     <p><%= product.name %></p>

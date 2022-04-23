@@ -35,9 +35,9 @@
         
             </div>
         </div>
-
+<!-- 
         <div class="caja2">
-          <!-- Producto 1 -->
+          
             <div class="producto-caja2">
                 <a href="/">
 
@@ -51,7 +51,7 @@
                      <P>Mango</P> 
                 </div>
             </div>
-         <!-- Producto 2 -->
+         
             <div class="producto-caja2">
                 <a href="/">
 
@@ -65,7 +65,7 @@
                      <P>Mango</P> 
                 </div>
             </div>
-            <!-- Producto 3 -->
+            
             <div class="producto-caja2">
                 <a href="/">
 
@@ -79,7 +79,7 @@
                      <P>Mango</P> 
                 </div>
             </div>
-           <!-- revisar si dejar el a o no -->
+          
             
             <div class="producto-caja2">
                 <div class="imagen-caja2">
@@ -91,9 +91,28 @@
                   <P>Manzana</P>
                 </div>
 
-            </div>
+                
+                
+            </div> 
 
-        </div>
+        </div>-->
+        <section class="producto-caja2">
+            <% productView.forEach(product => { %>
+            <article class="producto">
+                <div class="contenedor-foto">
+                    <a href="/productos/detalle/<%- product.id %>"><img width="100%" src="/images/productos/<%-product.image [0]%>" alt="imagen producto"></a>
+                </div>
+                <article class="detalles">
+                    <p><%= product.name %></p>
+                    <p>Precio por kg</p>
+                    <p class="precio">$<%= product.price %> </p>
+                    <button class="boton-agregar">
+                        <a href="/productos/carrito"><p class="add">Agregar al carrito</p></a>
+                    </button>
+                </article>
+            </article>
+            <% }) %>
+        </section>
     </main>
     <!-- FOOTER -->
 
