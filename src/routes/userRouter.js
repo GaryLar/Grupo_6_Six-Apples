@@ -11,6 +11,8 @@ router.get('/perfil', userController.profile);
 router.get('/registro', userController.register);
 /* post-crea un nuevo usuario */
 router.post('/registro',uploadFile.single('image'), userController.processRegister);
-/* Color Put(actualizar) */
+/* Colocar Put(actualizar) */
+
+
 
 module.exports = router;
