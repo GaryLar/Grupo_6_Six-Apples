@@ -1,0 +1,21 @@
+@import url(header-admin.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+div.conteiner-admin{
+    width: 80%;
+    margin: 30px auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 400px; 
+}
+
+div.titulos {
+    text-align: center;
+}
