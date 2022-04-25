@@ -3,6 +3,24 @@
 <%- include('../partials/head-admin') %> 
 <body class="administracion">
     <%- include('../partials/header-admin') %> 
-    <h1>BIENVENIDOS AL ADMINISTRADOR</h1>
+    <main>
+        <div class="conteiner-admin">
+            <div class="titulos">
+                <h2>¡BIENVENIDOS AL ADMINISTRADOR!</h2>
+                <p>¿Que deseas hacer?</p>
+            </div>
+            <section class="admin-lista">
+                <nav class="nav-admin">
+                    <ul>
+                        <li><a href="/admin/productos/agregar">Agregar Producto</a></li>
+                        <li><a href="/admin/productos">Listado de Productos</a></li>
+                        <li><a href="/admin/categorias/agregar">Agregar Categorías</a></li>
+                        <li><a href="/admin/categorias">Listado de Categorías</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
+    </main>
+    <%- include("../partials/scripts.ejs") %> 
 </body>
 </html>
