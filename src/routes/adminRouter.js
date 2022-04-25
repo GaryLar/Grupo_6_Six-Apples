@@ -27,7 +27,7 @@ router.post('/productos/',uploadFile.single("image"),adminProductsController.pro
 /* GET - Editar producto */
 router.get('/productos/editar/:id', adminProductsController.productEdit)
 /* PUT - Actualiza producto en la DB */
-router.put('/productos/:id', adminProductsController.productUpdate);
+router.put('/productos/:id', uploadFile.single("image"),adminProductsController.productUpdate);
 /* DELETE - Elimina un producto */
 router.delete('/productos/eliminar/:id', adminProductsController.productDelete);
 
