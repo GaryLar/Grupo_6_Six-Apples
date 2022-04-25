@@ -18,7 +18,7 @@ header.header-admin form {
 
 header.header-admin form input{
      display: inline-block;
-     width: 70px;
+     width: 50px;
      outline: none;
      border:none;
      border-radius: 12px;
@@ -38,19 +38,67 @@ header.header-admin div.container-logo-lupa{
     justify-content: space-around;
     align-items: center;
 }
-header.header-admin nav.nav-admin ul{
-    margin: 0 auto;
-    padding: 0 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 500px;
+header.header-admin button{
+    border: none;
+    font-size: 1rem;
+    background-color: #dfffbe ;
+}
+
+header.header-admin nav#menu {
+    display: none;
+    padding: 1rem;
+    background-color: #dfffbe;
+    text-align: center;
+    border-radius: 10px;
+    position:absolute; 
+    top:66px;
+    right:-100%;
+    z-index: 10;
+    width: 100%;
+}
+header.header-admin nav#menu ul li:hover{
+    font-weight: 600;
+}
+
+@keyframes fade-in{
+    0%{
+        right: -100%;
+        opacity: 0;
+    }
+    100%{
+        right:0;
+        opacity: 1;
+    }
+}
+
+header.header-admin nav#menu.active {
+    display:block;
+    opacity: 1;
+    animation: fade-in 2s;
+    right:0;
+}
+
+
+header.header-admin div.menu-desktop{
+    display: none;
 }
 
 @media(min-width: 1100px){
     header.header-admin nav.nav-admin ul{
         max-width: 700px;
         font-size: 14px;
+    }
+    header.header-admin button#boton-menu{
+        display: none;
+    }
+    header.header-admin div.menu-desktop{
+        display: block;
+    }
+    header.header-admin div.menu-desktop nav.menu-admin2 ul{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 1200px;
     }
 }
 

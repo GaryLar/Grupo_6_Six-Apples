@@ -25,7 +25,7 @@ module.exports = {
         ...req.body,      /* ... (express operator) trae todas las propiedades de  un objeto , en este caso agrega todas las propiedades a esta variable*/
         id: lastId + 1,
         image:req.file ? req.file.filename : "default-image.png",
-       /*  stock: req.body.stock ? true : false */
+        view: req.body.view ? true : false 
     }
 
     // Paso 2 - Guardar el nuevo producto en el array de productos
@@ -61,7 +61,7 @@ productUpdate: (req, res) => {
             producto.categoryName = req.body.categoryName
             producto.categoryId = req.body.categoryId
             producto.price = req.body.price
-            producto.view = req.body.view
+            producto.view = req.body.view ? true : false
         }
     })
 
