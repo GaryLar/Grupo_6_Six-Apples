@@ -62,6 +62,7 @@ productUpdate: (req, res) => {
             producto.categoryId = req.body.categoryId
             producto.price = req.body.price
             producto.view = req.body.view ? true : false
+            producto.image = req.file ? req.file.filename : producto.image
         }
     })
 
