@@ -14,5 +14,5 @@
 
 ## Sprint 4
 
-### Para la realización del sprint 4, cada integrante del equipo realizo y culminó sus tareas asignadas.. En equipo trabajamos para la realizacion del multer y logramos termianrlo con exito.. tuvimos inconvenientes en parte con las rutas y en estilos de css pero pudimos resolver el problema y culminarlo con exito.. Para este sprint como equipo pudimos resolver inconvenientes encontrados en dicho sprint...
+### Para la realización del sprint 4, cada integrante del equipo realizo y culminó sus tareas asignadas.. En equipo trabajamos para la realizacion del multer y logramos termimarlo con exito.. tuvimos inconvenientes en parte con las rutas y en estilos de css pero pudimos resolver el problema y culminarlo con exito.. Para este sprint como equipo pudimos resolver inconvenientes encontrados en dicho sprint...
 ### Tambien agregar que pudimos solucionar el gran problema que veniamos arrastrando desde el comienzo de este proyecto, y ahora todos los integrantes del equipo aparecemos como colaboradores en GitHub.

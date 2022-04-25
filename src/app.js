@@ -31,6 +31,9 @@ app.use("/productos", productRouter)  //Productos: carrito, detalle, catalogo, o
 app.use("/usuario", userRouter) //Usuario: perfil, registro.
 app.use("/admin", adminRouter) //admin, CRUD products, users, categorias
 
+/* COLOCAR ruta de error 404 */
+
+
 
 /* servidor escuchando */
 
