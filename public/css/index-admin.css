@@ -19,3 +19,16 @@ div.conteiner-admin{
 div.titulos {
     text-align: center;
 }
+
+
+section.admin-lista nav ul {
+    padding: 7px;
+    text-align: center;
+    margin: 5px;
+}
+
+section.admin-lista nav ul li {
+    border: 1px solid black;
+    margin: 5px;
+    border-radius: 10px;
+}
