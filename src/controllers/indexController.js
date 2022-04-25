@@ -1,3 +1,4 @@
+const { format } = require('express/lib/response');
 const { getProducts, getOffers} = require('../data/index');
 const removeAccents = (str) => {                /* Para sacar acentos */
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -40,3 +41,9 @@ module.exports={
         
     }
 }
+
+
+
+/* form.addEventListener("sumbit",()=>{
+    alert("")
+}) */
