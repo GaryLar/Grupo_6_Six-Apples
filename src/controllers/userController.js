@@ -1,4 +1,6 @@
 const {getUsers, writeUsers} = require('../data')
+const {validationResult} = require('express-validator')
+
 module.exports = {
     login: (req, res) => {
         res.render('users/login', { //login.ejs
@@ -16,6 +18,11 @@ module.exports = {
         }) 
     },
     processRegister: (req, res) => {
+        /* Verificar si hubo errores en el form */
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+
         //Registrar un usuario - Guardarlo en el JSON
        // Paso 1 - Crear un objeto User
        let ultimoId = 0;
@@ -24,6 +31,7 @@ module.exports = {
                ultimoId = user.id
            }
        });
+
        let newUser = {
            id: ultimoId + 1,
            name: req.body.name,
@@ -40,6 +48,15 @@ module.exports = {
 
        /* Paso 4-redireccion */
        res.redirect('/usuario/login')
+
+        }else {
+            /* codigo para mostrar errores */
+            res.render('users/register', {
+                title: "Registro",
+                errors: errors.mapped(),
+                old: req.body
+            })
+        }
 
     }
 }

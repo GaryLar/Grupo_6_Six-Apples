@@ -12,15 +12,27 @@
         <form action="/usuario/registro" method="post" enctype="multipart/form-data">
             <div class="input-container">
                 <input type="text" class="input-style" name="name" placeholder="Nombre Completo">
-                <span class="error-message">Debe ingresar su Nombre Completo</span>
+                <% if (locals.errors && errors.name) { %>
+                    <span class="error-message"><%= errors.name.msg %></span>
+                <% } %>
             </div>
             <div class="input-container">
                 <input type="email" class="input-style" name="email" placeholder="Correo Electrónico">
-                <span class="error-message">Debe ingresar su email</span>
+                <% if (locals.errors && errors.email) { %>
+                    <span class="error-message"><%= errors.email.msg %></span>
+                <% } %>
             </div>
             <div class="input-container">
                 <input type="password" class="input-style" name="password" placeholder="Contraseña">
-                <span class="error-message">Debe ingresar su contraseña</span>
+                <% if (locals.errors && errors.password) { %>
+                    <span class="error-message"><%= errors.password.msg %></span>
+                <% } %>
+            </div>
+            <div class="input-container">
+                <input type="password" class="input-style" name="password2" placeholder="Reingrese su Contraseña">
+                <% if (locals.errors && errors.password2) { %>
+                    <span class="error-message"><%= errors.password2.msg %></span>
+                <% } %>
             </div>
             <div class="avatar"> </div>
                 <div class="input_file-container">
