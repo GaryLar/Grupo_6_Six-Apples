@@ -11,13 +11,13 @@
         <br>
         <form action="/usuario/registro" method="post" enctype="multipart/form-data">
             <div class="input-container">
-                <input type="text" class="input-style" name="name" placeholder="Nombre Completo">
+                <input type="text" class="input-style" name="name" placeholder="Nombre Completo" value="<%= (locals.old && old.name) ? old.name : "" %>">
                 <% if (locals.errors && errors.name) { %>
                     <span class="error-message"><%= errors.name.msg %></span>
                 <% } %>
             </div>
             <div class="input-container">
-                <input type="email" class="input-style" name="email" placeholder="Correo Electrónico">
+                <input type="email" class="input-style" name="email" placeholder="Correo Electrónico" value="<%= (locals.old && old.email) ? old.email : "" %>">
                 <% if (locals.errors && errors.email) { %>
                     <span class="error-message"><%= errors.email.msg %></span>
                 <% } %>
