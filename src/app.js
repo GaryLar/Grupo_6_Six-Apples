@@ -5,6 +5,7 @@ const path = require('path');
 require('dotenv').config();
 const port = process.env.port || 3000;
 const methodOverride = require('method-override');
+const  session =require("express-session")
 
 
 
@@ -20,6 +21,13 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended: false})); /* para capturar aquello q vienen del formulario en forma de objeto literal */
 app.use(express.json());
 app.use(methodOverride('_method'));
+
+app.use(session({
+    secret:"formar",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {}
+}));
 
 /* views ejs config  */
 app.set('view engine', 'ejs')
