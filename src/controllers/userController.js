@@ -7,7 +7,20 @@ module.exports = {
             title: "Login"
         }) 
     },
+    processLogin:(req,res)=>{
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            res.redirect("/")
+        }else{
+            res.render('users/login', {
+                title: "Login",
+                errors: errors.mapped()
+        })}
+
+    },
+
     profile : (req, res)=>{
+        
         res.render('users/profile', { //profile.ejs
             title: "Mi perfil"
         }) 
