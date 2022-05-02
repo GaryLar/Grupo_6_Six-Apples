@@ -52,8 +52,24 @@ header.header-home div.header-top{
 }
 
 header.header-home div.header-top form input#barra,
-header.header-home div.header-top nav.menu-home1 ul i#carrito {
+header.header-home div.header-top nav.menu-home1 ul i#carrito,
+header.header-home div.header-top nav.menu-home1 ul div.desktop{ /* para desaparecer el div de perfil de image */
     display: none;
+}
+
+header.header-home div.header-top nav.menu-home1 ul div.image{
+    border-radius: 50%;
+    border: 1px solid black;
+    height: 23px;
+    width: 23px;
+    background-color: lightgray;
+}
+
+header.header-home div.header-top nav.menu-home1 ul div.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 header.header-home div.header-top form button#lupa{
@@ -555,11 +571,29 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen{
         margin-left: -15px;
     }
 
-    header.header-home div.header-top nav.menu-home1 ul li#ingresa{
+    header.header-home div.header-top nav.menu-home1 ul li#ingresa,
+    header.header-home div.header-top nav.menu-home1 ul div.desktop{
         display: block;  
     }
 
-    header.header-home div.header-top nav.menu-home1 #user{
+    header.header-home div.header-top nav.menu-home1 ul div.desktop{
+        border-radius: 50%;
+        border: 1px solid black;
+        margin-left: 30px;
+        height: 25px;
+        width: 25px;
+        background-color: red;
+    }
+
+    header.header-home div.header-top nav.menu-home1 ul div.desktop img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    header.header-home div.header-top nav.menu-home1 #user,
+    header.header-home div.header-top nav.menu-home1 ul div.movile {
         display: none; 
     }
 

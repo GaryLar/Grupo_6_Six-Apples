@@ -7,13 +7,22 @@
             <input id="barra" type="search" placeholder="  Buscar..." name="search">
             <button id="lupa" type="submit"><i id="lupa" class="fas fa-search"></i></button>
         </form>
-        <nav class="menu-home1">
+        <nav class="menu-home1"> <!-- menu que solo aparece en desktop -->
             <ul>
-                <li id="ingresa"><a href="/usuario/login">Ingresá</a></li><a href="/usuario/login"><i id="user" class="fa-regular fa-circle-user"></i></a>
+                <!-- ingresá comentado -->
+<!--                 <li id="ingresa"><a href="/usuario/login">Ingresá</a></li><a href="/usuario/login"><i id="user" class="fa-regular fa-circle-user"></i></a>-->
                 <li><a href="/productos/carrito"><i id="carrito" class="fa-solid fa-cart-shopping"></i></a></li>
+                <!-- vesion movile -->
+                <li><a href="/usuario/perfil/ejs?"><div class="image movile"></div></a></li><!-- desaparece el icono de id: "user" -->
+                <!-- version desktop -->
+                <li><a href="/usuario/perfil/ejs?"><div class="image desktop"></div></a></li> <!-- image perfil solo cuando inicio sesion-->
+                <!-- 'ingresa' ya no apareceria cuando inicia sesion -->
+
+                <!-- cuando el usuario ingreso,el ingresa y el logo de ingresa desaparece..en 
+                cambio aparace un circulito que muestre la imagen de perfil q la persona elija -->
             </ul>
         </nav>
-        <button id="boton-menu" for="menu"><i class="fa-solid fa-bars"></i></button>
+        <button id="boton-menu" for="menu"><i class="fa-solid fa-bars"></i></button> <!-- lo que esta en menu hamburguesa -->
         <nav id="menu">
             <ul>
                 <li><a href="/">Inicio</a></li>
@@ -21,16 +30,21 @@
                 <li><a href="/productos/ofertas">Ofertas</a></li>
                 <li><a href="/productos/carrito">Carrito</a></li>
                 <li><a href="/about">¿Quiénes somos?</a></li>
+                <li><a href="/admin">Admin</a></li> <!-- aparece si el usuario es administrador e ingreso -->
+                <li><a href="#">Cerrar sesión</a></li><!-- aparece si el usuario ingreso -->
+
             </ul>
         </nav>
         </div>
-        <div class="menu-home3container">
+        <div class="menu-home3container"> <!-- menu de desktop -->
             <nav class="menu-home3">
                 <ul>
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/productos">Catálogo</a></li>
                     <li><a href="/productos/ofertas">Ofertas</a></li>
                     <li><a href="/about">¿Quiénes somos?</a></li>
+                    <li><a href="/admin">Admin</a></li><!-- aparece si el usuario es admin e ingreso -->
+                    <li><a href="#">Cerrar sesión</a></li><!-- aparece si el usuario ingreso -->
                 </ul>
             </nav>
         </div>
