@@ -4,17 +4,47 @@ const {validationResult} = require('express-validator')
 module.exports = {
     login: (req, res) => {
         res.render('users/login', { //login.ejs
-            title: "Login"
+            title: "Login",
+            session: req.session
         }) 
     },
+    processLogin:(req,res)=>{
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+
+            let user = getUsers.find(user => user.email === req.body.email);
+
+            req.session.user = {
+                id: user.id,
+                name: user.name,
+                email: user.email,
+                rol: user.rol,
+                image:user.image
+            }
+
+            res.locals.user = req.session.user
+            
+            res.redirect("perfil") 
+        }else{
+            res.render('users/login', {
+                title: "Login",
+                errors: errors.mapped(),
+                session:req.session
+        })}
+
+    },
+
     profile : (req, res)=>{
+        
         res.render('users/profile', { //profile.ejs
-            title: "Mi perfil"
+            title: "Mi perfil",
+            session: req.session
         }) 
     },
     register: (req, res) => {
         res.render('users/register', { //register.ejs
-            title: "Register"
+            title: "Register",
+            session: req.session
         }) 
     },
     processRegister: (req, res) => {
@@ -38,6 +68,7 @@ module.exports = {
            email: req.body.email,
            password: req.body.password,
            image:req.file ? req.file.filename : "default-image.png",
+           rol: "USER"
         
        }
        // Paso 2 - Guardar el nuevo usuario en el array de usuarios
@@ -54,7 +85,8 @@ module.exports = {
             res.render('users/register', {
                 title: "Registro",
                 errors: errors.mapped(),
-                old: req.body
+                old: req.body,
+                session: req.session
             })
         }
 

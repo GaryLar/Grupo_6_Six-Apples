@@ -12,11 +12,15 @@
         <form action="/usuario/login" method="POST">
             <div class="input-container">
                 <input type="email" class="input-style" name="email" placeholder="Correo Electronico">
-                <span class="error-message">Debe ingresar su email</span>
+                <% if (locals.errors && errors.email) { %>
+                    <span class="error-message"><%= errors.email.msg %></span>
+                <% } %> 
             </div>
             <div class="input-container">
                 <input type="password" class="input-style" name="password" placeholder="Contraseña">
-                <span class="error-message">Debe ingresar su contraseña</span>
+                <% if (locals.errors && errors.password) { %>
+                    <span class="error-message"><%= errors.password.msg %></span>
+                <% } %> 
             </div>
             <div>
                 <button type="submit" class="btn-submit"> Continuar</button>
