@@ -6,12 +6,14 @@ module.exports = {
     list: (req, res) => {
         res.render('admin/categoriesAdmin/listCategory' , {
         title: "Listado de Categorias" , 
-        categorias: getCategories   
+        categorias: getCategories,
+        session: req.session   
         })
     }, 
     categoryAdd: (req, res) => {
         res.render('admin/categoriesAdmin/addCategory' , {
-            title: "Agregar Categoria"
+            title: "Agregar Categoria",
+            session: req.session
         })
     }, 
     categoryCreate: (req, res) => {
@@ -37,7 +39,8 @@ module.exports = {
         let categoria = getCategories.find( categoria => categoria.id === idCategoria)
         res.render('admin/categoriesAdmin/editCategory',{
             title: "Editar Categoria:", 
-            categoria 
+            categoria,
+            session: req.session 
         })
     }, 
     categoryUpdate: (req, res) => {
