@@ -1,0 +1,212 @@
+/* HEADER */
+body header.header-home{
+    background-color: var(--color-verdeClaro);
+    width: 100%;
+}
+header.header-home div.header-top div.logo img{
+    width: 35%; 
+    object-fit: contain; 
+}
+
+header.header-home div.header-top{
+    max-width:550px;
+    margin:0 auto;
+}
+
+header.header-home div.header-top form input#barra,
+header.header-home div.header-top nav.menu-home1 ul i#carrito{ 
+    display: none;
+}
+
+header.header-home div.header-top nav.menu-home1 ul div.image{
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+}
+
+header.header-home div.header-top nav.menu-home1 ul div.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+header.header-home div.header-top form button#lupa{
+    border: none;
+    background-color: rgba(187, 187, 187, 0);
+}
+
+header.header-home div.header-top nav.menu-home1 ul li#ingresa{
+    display: none;
+}
+
+header.header-home div.header-top nav.menu-home1 #user{
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+header.header-home div.header-top nav.menu-home2 input{
+    display: none;
+}
+
+header.header-home div.header-top{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    /* margin-right: 3px; */
+}
+
+header.header-home button{
+    border: none;
+    font-size: 1rem;
+    background-color: var(--color-verdeClaro);
+}
+
+header.header-home nav#menu {
+    display: none;
+    padding: 1rem;
+    background-color: var(--color-verdeClaro);
+    text-align: center;
+    border-radius: 10px;
+    position:absolute;  /* antes fixed*/
+    top:66px;
+    right:-100%;
+    z-index: 10;
+    width: 100%;
+}
+header.header-home nav#menu ul li:hover{
+    font-weight: 600;
+}
+
+@keyframes fade-in{
+    0%{
+        right: -100%;
+        opacity: 0;
+    }
+    100%{
+        right:0;
+        opacity: 1;
+    }
+}
+
+header.header-home nav#menu.active {
+    display:block;
+    opacity: 1;
+    animation: fade-in 2s;
+    right:0;
+}
+
+header.header-home div.menu-home3container {
+    display: none;
+}
+
+/* tablet version */
+@media (min-width: 768px){
+    /* HEADER */
+    header.header-home div.header-top div.logo img{
+        width: 30%;
+    }
+
+    header.header-home div.header-top{
+        max-width:1000px;
+        justify-content:space-around;    
+    }
+    
+    header.header-home div.header-top form input#barra{
+        display:  inline-block;
+        border-radius: 11px;
+        margin-left: 5px;
+        width: 150px;
+    }
+    header.header-home div.header-top form i#lupa{
+        margin-right: 5px;
+        color: lightgray;
+    }
+
+    header.header-home div.header-top form input {
+        outline: none;
+        border: none;
+        height: 14px;
+
+    }
+    header.header-home div.header-top form {
+        background-color: white;
+        border: solid 1px black;
+        border-radius: 12px;
+        height: 23px;
+        margin: 0 50px 0 -50px; 
+    }
+
+    header.header-home div.header-top nav.menu-home1 #user{
+        margin-right: -20px;  
+    }
+    
+    
+    header.header-home div.header-top {
+        margin-right: 3px; 
+    }
+}
+
+@media (min-width: 1100px){
+    /* HEADER */
+
+    body header.header-home div.header-top{
+        height: 80px;
+    }
+
+    header.header-home div.header-top{
+        max-width:1200px;
+        margin:0 auto;
+    }
+
+    header.header-home div.header-top form input#barra{
+        width: 300px;
+    }
+
+    header.header-home div.header-top div.logo img{
+        width: 47%;
+        margin-left: -15px;
+    }
+
+    header.header-home div.header-top nav.menu-home1 ul li#ingresa{
+        display: block;  
+    }
+
+    header.header-home div.header-top nav.menu-home1 #user{
+        display: none; 
+    }
+
+    header.header-home div.header-top {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+ 
+    header.header-home button#boton-menu{
+        display: none;
+    }
+     
+    header.header-home div.header-top nav.menu-home1 ul i#carrito {
+        display: block;
+        margin-left: 30px;
+    }
+
+    header.header-home div.header-top nav.menu-home1 ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header.header-home div.menu-home3container {
+        display: block;
+    }
+   
+    header.header-home div.menu-home3container nav.menu-home3 ul{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+/* end HEADER */

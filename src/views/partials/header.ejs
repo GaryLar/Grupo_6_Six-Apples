@@ -7,15 +7,16 @@
             <input id="barra" type="search" placeholder="  Buscar..." name="search">
             <button id="lupa" type="submit"><i id="lupa" class="fas fa-search"></i></button>
         </form>
-        <nav class="menu-home1"> <!-- menu que solo aparece en desktop -->
+        <nav class="menu-home1">
             <ul>
-                <!-- ingresá comentado -->
-<!--                 <li id="ingresa"><a href="/usuario/login">Ingresá</a></li><a href="/usuario/login"><i id="user" class="fa-regular fa-circle-user"></i></a>-->
+                <% if ( typeof session.user != "undefined") { %>
+                    <li><a href="/usuario/perfil/ejs?"><div class="image"><img src="/images/usuarios/<%- session.user.image %>" alt="perfil"></div></a></li>  <!-- desaparece el icono de id: "user" -->
+                <% } else { %>
+                    <li id="ingresa"><a href="/usuario/login">Ingresá</a></li><a href="/usuario/login"><i id="user" class="fa-regular fa-circle-user"></i></a>
+                <% } %> 
                 <li><a href="/productos/carrito"><i id="carrito" class="fa-solid fa-cart-shopping"></i></a></li>
-                <!-- vesion movile -->
-                <li><a href="/usuario/perfil/ejs?"><div class="image movile"></div></a></li><!-- desaparece el icono de id: "user" -->
+
                 <!-- version desktop -->
-                <li><a href="/usuario/perfil/ejs?"><div class="image desktop"></div></a></li> <!-- image perfil solo cuando inicio sesion-->
                 <!-- 'ingresa' ya no apareceria cuando inicia sesion -->
 
                 <!-- cuando el usuario ingreso,el ingresa y el logo de ingresa desaparece..en 

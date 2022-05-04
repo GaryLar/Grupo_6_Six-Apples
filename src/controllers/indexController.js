@@ -17,12 +17,14 @@ module.exports={
             title: "Six Apples",
             productView,
             offertsView,
-            toThousand
+            toThousand,
+            session: req.session
         }) 
     },
     about:(req,res)=>{
         res.render('quienessomos', { //quienessomos.ejs
-            title: "Quienes Somos"
+            title: "Quienes Somos",
+            session: req.session
         }) 
     },
     search: (req, res) => {
@@ -36,7 +38,8 @@ module.exports={
             title: "Busqueda",
             resultadoBusqueda,
             search: req.query.search,
-            toThousand
+            toThousand,
+            session: req.session
         })
         
     }
