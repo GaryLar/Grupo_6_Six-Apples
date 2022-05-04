@@ -1,81 +1,26 @@
 [
-  { "id": 0, "name": "", "email": "", "password": "", "image": "" },
   {
     "id": 1,
     "name": "Andrea Chacón",
     "email": "andre@mail.com",
-    "password": "123456",
+    "password": "1234567",
+    "rol": "ADMIN",
     "image": ""
   },
   {
     "id": 2,
     "name": "Karen Calisaya",
     "email": "karen@mail.com",
-    "password": "654321",
+    "password": "1234567",
+    "rol": "ADMIN",
     "image": ""
   },
   {
     "id": 3,
-    "name": "Karen",
-    "email": "karenmcalisaya@gmail.com",
-    "image": ""
-  },
-  {
-    "id": 4,
-    "name": "Karen",
-    "email": "karenmcalisaya@gmail.com",
-    "image": ""
-  },
-  {
-    "id": 5,
     "name": "Gary",
     "email": "gary@gmail.com",
-    "password": "1234",
-    "image": ""
-  },
-  { "id": 6, "name": "", "email": "", "password": "", "image": "" },
-  {
-    "id": 7,
-    "name": "fa",
-    "email": "",
-    "password": "",
-    "image": "avatar1650746922709.jpg"
-  },
-  {
-    "id": 8,
-    "name": "1234",
-    "email": "",
-    "password": "",
-    "image": "avatar1650746937091.png"
-  },
-  {
-    "id": 9,
-    "name": "defa",
-    "email": "",
-    "password": "",
-    "image": "default-image.png"
-  },
-  {
-    "id": 10,
-    "name": "joaquin galvan",
-    "email": "123@gmail.com",
     "password": "1234567",
-    "image": "default-image.png"
-  },
-  {
-    "id": 11,
-    "name": "JOAQUI",
-    "email": "asd@mail.com",
-    "password": "12345678",
-    "rol":"ADMIN",
-    "image": "default-image.png"
-  },
-  {
-    "id": 12,
-    "name": "asdfghj",
-    "email": "mail@mail.com",
-    "password": "12345678",
-    "rol":"USER",
-    "image": "default-image.png"
+    "rol": "USER",
+    "image": ""
   }
 ]
