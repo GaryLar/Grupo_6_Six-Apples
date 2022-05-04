@@ -7,26 +7,27 @@ const adminProductsController = require('../controllers/admin/adminProductsContr
 const adminCategoryController = require('../controllers/admin/adminCategoryController');
 const uploadFile = require('../middlewares/uploadProductsImg');
 const checkUserSession = require('../middlewares/checkUserSession')
+const checkAdmin = require('../middlewares/checkAdmin')
 
 /*const { route } = require('./productsRouter');*/
 
 /* GET mostrará index */
-router.get('/', checkUserSession, adminController.index) /* pagina de inicio */
+router.get('/', checkUserSession, checkAdmin, adminController.index) /* pagina de inicio */
 
 
 /* ============== */
 /* CRUD PRODUCTOS */
 /* ============== */
 /* GET - Lista de productos */
-router.get('/productos', checkUserSession, adminProductsController.list);
+router.get('/productos', checkUserSession, checkAdmin, adminProductsController.list);
 /* GET - Agregar producto */
-router.get('/productos/agregar', checkUserSession, adminProductsController.productAdd);
+router.get('/productos/agregar', checkUserSession, checkAdmin, adminProductsController.productAdd);
 /* POST - Crea un producto en la DB */
 router.post('/productos/',uploadFile.single("image"),adminProductsController.productCreate); // uploadFile.single("image") - Despues del single ponemos el name del input
 
 
 /* GET - Editar producto */
-router.get('/productos/editar/:id', checkUserSession, adminProductsController.productEdit)
+router.get('/productos/editar/:id', checkUserSession, checkAdmin, adminProductsController.productEdit)
 /* PUT - Actualiza producto en la DB */
 router.put('/productos/:id', uploadFile.single("image"),adminProductsController.productUpdate);
 /* DELETE - Elimina un producto */
@@ -37,15 +38,15 @@ router.delete('/productos/eliminar/:id', adminProductsController.productDelete);
 /* CRUD CATEGORIAS */
 /* ============== */
 /* GET - Lista de categorias */
-router.get('/categorias', checkUserSession, adminCategoryController.list);
+router.get('/categorias', checkUserSession, checkAdmin, adminCategoryController.list);
 /* GET - Agregar categorias */
-router.get('/categorias/agregar', checkUserSession, adminCategoryController.categoryAdd);
+router.get('/categorias/agregar', checkUserSession, checkAdmin, adminCategoryController.categoryAdd);
 /* POST - Crea una categoria en la DB */
 router.post('/categorias/',adminCategoryController.categoryCreate);
 
 
 /* GET - Editar Categorias */
-router.get('/categorias/editar/:id',checkUserSession, adminCategoryController.categoryEdit)
+router.get('/categorias/editar/:id',checkUserSession, checkAdmin, adminCategoryController.categoryEdit)
 /* PUT - Actualiza categoria en la DB */
 router.put('/categorias/:id', adminCategoryController.categoryUpdate);
 /* DELETE - Elimina una categoria */
