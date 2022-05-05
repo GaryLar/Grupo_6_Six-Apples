@@ -31,9 +31,12 @@
                 <li><a href="/productos/ofertas">Ofertas</a></li>
                 <li><a href="/productos/carrito">Carrito</a></li>
                 <li><a href="/about">¿Quiénes somos?</a></li>
-                <li><a href="/admin">Admin</a></li> <!-- aparece si el usuario es administrador e ingreso -->
-                <li><a href="#">Cerrar sesión</a></li><!-- aparece si el usuario ingreso -->
-
+                <% if (typeof session.user != "undefined") { %>
+                    <li><a href="/usuario/salir">Cerrar sesión</a></li>
+                <% if (session.user.rol === "ADMIN") { %>
+                    <li><a href="/admin">Admin</a></li> <!-- aparece si el usuario es administrador e ingreso -->
+                <% } %>
+                <% } %>
             </ul>
         </nav>
         </div>
@@ -44,8 +47,12 @@
                     <li><a href="/productos">Catálogo</a></li>
                     <li><a href="/productos/ofertas">Ofertas</a></li>
                     <li><a href="/about">¿Quiénes somos?</a></li>
-                    <li><a href="/admin">Admin</a></li><!-- aparece si el usuario es admin e ingreso -->
-                    <li><a href="#">Cerrar sesión</a></li><!-- aparece si el usuario ingreso -->
+                    <% if (typeof session.user != "undefined") { %>
+                        <li><a href="/usuario/salir">Cerrar sesión</a></li><!-- aparece si el usuario ingreso -->
+                    <% if (session.user.rol === "ADMIN") { %>
+                        <li><a href="/admin">Admin</a></li> <!-- aparece si el usuario es administrador e ingreso -->
+                    <% } %>
+                    <% } %>
                 </ul>
             </nav>
         </div>

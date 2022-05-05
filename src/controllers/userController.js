@@ -1,5 +1,6 @@
 const {getUsers, writeUsers} = require('../data')
-const {validationResult} = require('express-validator')
+const {validationResult} = require('express-validator');
+const req = require('express/lib/request');
 
 module.exports = {
     login: (req, res) => {
@@ -20,6 +21,17 @@ module.exports = {
                 email: user.email,
                 rol: user.rol,
                 image:user.image
+            }
+
+            /* cookie */
+            if(req.body.recordar){
+                const TIME_IN_MILISECONDS = 60000;
+                res.cookie('saCookie', req.session.user, {
+                    expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                    httpOnly: true,
+                    secure: true
+                })
+                
             }
 
             res.locals.user = req.session.user
@@ -90,5 +102,15 @@ module.exports = {
             })
         }
 
+    },
+    leaveSession: (req, res) => {
+        /* eliminamos session */
+        req.session.destroy();
+
+        /* eliminamos cookie */
+        if(req.cookies.saCookie){
+            res.cookie('saCookie', '', {maxAge: -1}) 
+        }
+        res.redirect('/')
     }
 }

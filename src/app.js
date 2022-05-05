@@ -6,7 +6,8 @@ require('dotenv').config();
 const port = process.env.port || 3000;
 const methodOverride = require('method-override');
 const  session =require("express-session")
-
+const cookieParser = require('cookie-parser');
+const cookieSession = require('./middlewares/cookieSession');
 
 
 /* Enrutadores */
@@ -22,12 +23,15 @@ app.use(express.urlencoded({extended: false})); /* para capturar aquello q viene
 app.use(express.json());
 app.use(methodOverride('_method'));
 
+
 app.use(session({
     secret:"formar",
     resave: false,
     saveUninitialized: true,
     cookie: {}
 }));
+app.use(cookieParser());
+app.use(cookieSession);
 
 /* views ejs config  */
 app.set('view engine', 'ejs')

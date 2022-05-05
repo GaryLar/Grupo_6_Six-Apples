@@ -18,5 +18,6 @@ router.get('/registro', checkUserInSession, userController.register);
 router.post('/registro',uploadFile.single('image'), registerValidator, userController.processRegister);
 /* Colocar Put(actualizar) */
 
-
+/* get leaveSession */
+router.get('/salir', userController.leaveSession);
 module.exports = router;
