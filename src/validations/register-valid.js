@@ -11,7 +11,7 @@ let validateRegister = [
         .isEmail().withMessage('Ingrese un email válido'),
     
     body('email').custom((value) => {
-        let user = getUsers.find(user => getUsers.email === value);
+        let user = getUsers.find(user => user.email === value);
         if(user){
             return false;
         } return true;

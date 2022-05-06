@@ -12,6 +12,9 @@
   },
   "author": "",
   "license": "ISC",
+  "nodemonConfig": {
+    "ignore": "src/data/*.json"
+  },
   "bugs": {
     "url": "https://github.com/GaryLar/Grupo_6_Six-Apples/issues"
   },
