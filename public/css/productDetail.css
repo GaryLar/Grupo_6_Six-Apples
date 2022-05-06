@@ -256,6 +256,7 @@ div.caja1 .imagen-detalle{
 div.caja1 .imagen-detalle img{
     width: 600px;
     height: 518px;
+    padding: 2px;
     object-fit: contain;
     border-right: 1px solid black;
 }
