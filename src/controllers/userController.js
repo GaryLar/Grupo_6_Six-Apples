@@ -1,6 +1,7 @@
 const {getUsers, writeUsers} = require('../data')
 const {validationResult} = require('express-validator');
 const req = require('express/lib/request');
+const bcrypt = require('bcryptjs');
 
 module.exports = {
     login: (req, res) => {
@@ -78,7 +79,7 @@ module.exports = {
            id: ultimoId + 1,
            name: req.body.name,
            email: req.body.email,
-           password: req.body.password,
+           password: bcrypt.hashSync(req.body.password, 10), 
            image:req.file ? req.file.filename : "default-image.png",
            rol: "USER"
         

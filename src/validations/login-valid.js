@@ -1,6 +1,7 @@
 const { check, body } = require('express-validator');
 const {getUsers} = require('../data');
 
+
 let validateLogin = [
     check('email')
         .notEmpty().withMessage('Se requiere un email').bail()
