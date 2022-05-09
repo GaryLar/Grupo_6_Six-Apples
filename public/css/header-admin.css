@@ -1,6 +1,6 @@
 /* header admin */
 @import url(admin.css); 
-body.administracion header.header-admin {
+header.header-admin {
     background-color: #dfffbe;
     width: 100%;
     font-size: 12px;
@@ -43,11 +43,10 @@ header.header-admin div.container-logo-lupa{
 
 header.header-admin div.avatar-admin{
     border-radius: 50%;
-    border: 1px solid red;
     background-color: lightgrey;
     width: 22px;
-    height: 21px;
-    margin: 0 10px
+    height: 22px;
+    margin: 0 10px;
 }
 
 header.header-admin div.avatar-admin img {
@@ -108,17 +107,25 @@ header.header-admin div.menu-desktop{
         max-width: 700px;
         font-size: 14px;
     }
+
     header.header-admin button#boton-menu{
         display: none;
     }
+
     header.header-admin div.menu-desktop{
         display: block;
     }
+
     header.header-admin div.menu-desktop nav.menu-admin2 ul{
         display: flex;
         justify-content: space-around;
         align-items: center;
         max-width: 1200px;
+    }
+
+    header.header-admin div.avatar-admin{
+        width: 40px;
+        height: 40px;
     }
 }
 

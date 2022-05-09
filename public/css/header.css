@@ -192,6 +192,11 @@ header.header-home div.menu-home3container {
         margin-left: 30px;
     }
 
+    header.header-home div.header-top nav.menu-home1 ul div.image{
+        height: 40px;
+        width: 40px;
+    }
+
     header.header-home div.header-top nav.menu-home1 ul{
         display: flex;
         justify-content: space-between;

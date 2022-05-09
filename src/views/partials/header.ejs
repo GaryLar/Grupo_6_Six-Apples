@@ -15,12 +15,6 @@
                     <li id="ingresa"><a href="/usuario/login">Ingresá</a></li><a href="/usuario/login"><i id="user" class="fa-regular fa-circle-user"></i></a>
                 <% } %> 
                 <li><a href="/productos/carrito"><i id="carrito" class="fa-solid fa-cart-shopping"></i></a></li>
-
-                <!-- version desktop -->
-                <!-- 'ingresa' ya no apareceria cuando inicia sesion -->
-
-                <!-- cuando el usuario ingreso,el ingresa y el logo de ingresa desaparece..en 
-                cambio aparace un circulito que muestre la imagen de perfil q la persona elija -->
             </ul>
         </nav>
         <button id="boton-menu" for="menu"><i class="fa-solid fa-bars"></i></button> <!-- lo que esta en menu hamburguesa -->
@@ -34,7 +28,7 @@
                 <% if (typeof session.user != "undefined") { %>
                     <li><a href="/usuario/salir">Cerrar sesión</a></li>
                 <% if (session.user.rol === "ADMIN") { %>
-                    <li><a href="/admin">Admin</a></li> <!-- aparece si el usuario es administrador e ingreso -->
+                    <li><a href="/admin">Admin</a></li>
                 <% } %>
                 <% } %>
             </ul>
@@ -48,9 +42,9 @@
                     <li><a href="/productos/ofertas">Ofertas</a></li>
                     <li><a href="/about">¿Quiénes somos?</a></li>
                     <% if (typeof session.user != "undefined") { %>
-                        <li><a href="/usuario/salir">Cerrar sesión</a></li><!-- aparece si el usuario ingreso -->
+                        <li><a href="/usuario/salir">Cerrar sesión</a></li>
                     <% if (session.user.rol === "ADMIN") { %>
-                        <li><a href="/admin">Admin</a></li> <!-- aparece si el usuario es administrador e ingreso -->
+                        <li><a href="/admin">Admin</a></li>
                     <% } %>
                     <% } %>
                 </ul>

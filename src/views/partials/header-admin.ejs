@@ -7,8 +7,7 @@
         <input id="barra" type="search" placeholder="  Buscar...">
         <button id="lupa"><i id="lupa" class="fas fa-search"></i></button>
     </form>
-    <!-- image avatar -->
-    <div class="avatar-admin"><img src="ejs" alt="perfil"></div>
+    <div class="avatar-admin"><img src="/images/usuarios/<%- session.user.image %>" alt="perfil"></div>
     <button id="boton-menu" for="menu"><i class="fa-solid fa-bars"></i></button><!-- menu hamburgues -->
     <nav id="menu">
         <ul>
@@ -16,7 +15,8 @@
             <li><a href="/admin/productos">Listado de Productos</a></li>
             <li><a href="/admin/categorias/agregar">Agregar Categorías</a></li>
             <li><a href="/admin/categorias">Listado de Categorías</a></li>
-            <li><a href="#">Cerrar Sesión</a></li>
+            <li><a href="/">Salir del Admin</a></li>
+            <li><a href="/usuario/salir">Cerrar Sesión</a></li>
         </ul>
     </nav>
 </div>
@@ -27,7 +27,8 @@
                 <li><a href="/admin/productos">Listado de Productos</a></li>
                 <li><a href="/admin/categorias/agregar">Agregar Categorías</a></li>
                 <li><a href="/admin/categorias">Listado de Categorías</a></li>
-                <li><a href="#">Cerrar Sesión</a></li>
+                <li><a href="/">Salir del Admin</a></li>
+                <li><a href="/usuario/salir">Cerrar Sesión</a></li>
        </ul>
     </nav>
 </div>
