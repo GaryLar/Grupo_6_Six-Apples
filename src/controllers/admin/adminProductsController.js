@@ -1,5 +1,6 @@
 /* controlador para los products */
 const { getProducts, writeProducts} = require('../../data/index');
+const { validationResult } = require('express-validator');
 
 module.exports = {
     list: (req, res) => {
@@ -15,22 +16,33 @@ module.exports = {
             session: req.session
         })
     },
-    productCreate:(req,res)=>{   
-         let lastId = 0;
-         getProducts.forEach(product => {
-             if(product.id > lastId){
-                 lastId = product.id;
-             }
-    })
-    let newProduct = {
-        ...req.body, 
-        id: lastId + 1,
-        image:req.file ? req.file.filename : "default-image.png",
-        view: req.body.view ? true : false 
-    }
-    getProducts.push(newProduct)
-    writeProducts(getProducts)
-    res.redirect('/admin/productos')
+    productCreate:(req,res)=>{  
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            let lastId = 0;
+            getProducts.forEach(product => {
+                if(product.id > lastId){
+                    lastId = product.id;
+            }
+        })
+        let newProduct = {
+            ...req.body, 
+            id: lastId + 1,
+            image:req.file ? req.file.filename : "default-image.png",
+            view: req.body.view ? true : false 
+        }
+        getProducts.push(newProduct)
+        writeProducts(getProducts)
+        res.redirect('/admin/productos')
+
+        } else {
+            res.render('admin/productsAdmin/addProduct', {
+                title: 'Agregar Producto',
+                session: req.session,
+                errors: errors.mapped(),
+                old: req.body
+            })
+        }
 },
 
 productEdit: (req,res)=>{

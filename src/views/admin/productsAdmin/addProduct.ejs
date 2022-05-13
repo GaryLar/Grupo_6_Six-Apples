@@ -9,27 +9,42 @@
         <form id="alert" action="/admin/productos" method="post" class="form-admin" enctype="multipart/form-data">
             <div class="container-admin">
                 <label for="name">Nombre del producto:</label>
-                <input type="text" class="admin-style" name="name" id="name">
+                <input type="text" class="admin-style" name="name" id="name" value="<%= (locals.old && old.name) ? old.name : "" %>">
+                <% if (locals.errors && errors.name) { %>
+                    <span class="error-msg"><%= errors.name.msg %></span>
+                <% } %>
             </div>
             <div class="container-admin">
                 <label for="type">Tipo:</label>
-                <input type="text" class="admin-style" name="type" id="type">
+                <input type="text" class="admin-style" name="type" id="type" value="<%= (locals.old && old.type) ? old.type : "" %>">
+                <% if (locals.errors && errors.type) { %>
+                    <span class="error-msg"><%= errors.type.msg %></span>
+                <% } %>
             </div>
             <div class="container-admin">
                 <label for="categoryName">Categoría:</label>
                 <select name="categoryName" id="categoryName" class="admin-style">
                     <option value="">Elegí</option>
-                    <option value="Frutas">Frutas</option>
-                    <option value="Verduras">Verduras</option>
+                    <option value="Frutas" <%= (locals.old && old.categoryName) && old.categoryName === "Frutas" ? "selected" : "" %> >Frutas</option>
+                    <option value="Verduras" <%= (locals.old && old.categoryName) && old.categoryName === "Verduras" ? "selected" : "" %> >Verduras</option>
                 </select>
+                <% if (locals.errors && errors.categoryName) { %>
+                    <span class="error-msg"><%= errors.categoryName.msg %></span>
+                <% } %>
             </div>
             <div class="container-admin">
                 <label for="price">Precio:</label>
-                <input type="number" class="admin-style" name="price" id="price">
+                <input type="number" class="admin-style" name="price" id="price" value="<%= (locals.old && old.price) ? old.price: "" %>">
+                <% if (locals.errors && errors.price) { %>
+                    <span class="error-msg"><%= errors.price.msg %></span>
+                <% } %>
             </div>
             <div class="container-admin">
                 <label for="origin">Origen del Producto:</label>
-                <input type="text" class="admin-style" name="origin" id="origin">
+                <input type="text" class="admin-style" name="origin" id="origin" value="<%= (locals.old && old.origin) ? old.origin : "" %>">
+                <% if (locals.errors && errors.origin) { %>
+                    <span class="error-msg"><%= errors.origin.msg %></span>
+                <% } %>
             </div>
             <div class="container-admin">
                 <label for="view">En vista:</label>
@@ -37,7 +52,7 @@
             </div>
             <div class="container-admin-file">
                 <label for="image">Agregar imagen</label>
-                <input type="file" name="image" id="image" >
+                <input type="file" name="image" id="image">
             </div>
             <div class="finalizar-registro">
                 <button type="submit">AGREGAR PRODUCTO</button>
@@ -45,7 +60,8 @@
 
         </form>
     </section>
-    <%- include('../../partials/scripts') %> 
-
+    <% if (!locals.errors) { %>
+        <%- include('../../partials/scripts') %> 
+    <% }%> 
 </body>
 </html>

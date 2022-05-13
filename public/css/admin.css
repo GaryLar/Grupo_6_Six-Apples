@@ -67,6 +67,11 @@ section.section-admin .admin-style{
     max-width: 250px;
 }
 
+section.section-admin span.error-msg{
+    font-size: 10px;
+    color: tomato;
+}
+
 section.section-admin .checkbox-style{
     border: solid 1px black;
     outline: none;
@@ -86,7 +91,7 @@ section.section-admin div.container-admin-file{
     width: 10rem;
     position: relative;
     margin: 0 auto;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 }
 
 section.section-admin .container-admin-file label{
@@ -125,12 +130,21 @@ section.section-admin .finalizar-registro button:hover{
      section.section-admin h2.admin{
         font-size: 18px;
     }
+
     section.section-admin form div.container-admin,
     section.section-admin form div.container-admin-file {
         display: flex;
         flex-direction: row; 
         justify-content: space-between;
         align-items: center; 
+        flex-wrap: wrap;
+    }
+
+    section.section-admin span.error-msg {
+        width: 100%;
+        font-size: 12px;
+        text-align: right;
+        margin-right: 1rem;
     }
 
     section.section-admin .finalizar-registro button{
