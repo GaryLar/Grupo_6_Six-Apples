@@ -56,6 +56,10 @@ productEdit: (req,res)=>{
 },
 
 productUpdate: (req, res) => {
+    let errors = validationResult(req);
+    if(errors.isEmpty ()){
+
+    
     let productoId = +req.params.id;
     getProducts.forEach(producto => {
         if(producto.id === productoId){
@@ -72,6 +76,17 @@ productUpdate: (req, res) => {
 
     writeProducts(getProducts);
     res.redirect('/admin/productos'); 
+} else {
+    let idProducto = +req.params.id; 
+    let producto = getProducts.find(producto => producto.id === idProducto)
+    res.render('admin/productsAdmin/editProduct', {
+        title: "Editar:",
+        producto,
+        session: req.session,
+        errors: errors.mapped(),
+        old: req.body
+    })
+}
 },
 
 productDelete: (req, res) => {

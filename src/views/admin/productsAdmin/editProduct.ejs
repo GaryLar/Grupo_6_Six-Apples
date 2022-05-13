@@ -9,11 +9,17 @@
         <form action="/admin/productos/<%=producto.id %>?_method=PUT" method="post" class="form-admin" enctype="multipart/form-data">
             <div class="container-admin">
                 <label for="name">Nombre del producto:</label>
-                <input type="text" class="admin-style" name="name" id="name" value="<%=producto.name %>">
+                <input type="text" class="admin-style" name="name" id="name" value="<%= producto.name %>">
+                <% if (locals.errors && errors.name) { %>
+                  <span class="error-msg"><%= errors.name.msg %></span>
+                <% } %>
             </div>
             <div class="container-admin">
                 <label for="type">Tipo:</label>
                 <input type="text" class="admin-style" name="type" id="type" value="<%=producto.type%>">
+                <% if (locals.errors && errors.type) { %>
+                    <span class="error-msg"><%= errors.type.msg %></span>
+                <% } %>
             </div>
             <div class="container-admin">
                 <label for="categoryName">Categoría:</label>
@@ -22,14 +28,23 @@
                     <option value="Frutas" <%= producto.categoryName === "Frutas" && "selected" %>>Frutas</option> <!-- si el producto.cattegoryName es igual a "Frutas" que me lo devuelva seleccionado -->
                     <option value="Verduras" <%= producto.categoryName === "Verduras" && "selected" %>>Verduras</option>
                 </select>
+                <% if (locals.errors && errors.categoryName) { %>
+                    <span class="error-msg"><%= errors.categoryName.msg %></span>
+                <% } %>
             </div>
             <div class="container-admin">
                 <label for="price">Precio:</label>
                 <input type="number" class="admin-style" name="price" id="price" value="<%=producto.price%>">
+                <% if (locals.errors && errors.price) { %>
+                    <span class="error-msg"><%= errors.price.msg %></span>
+                <% } %>
             </div>
             <div class="container-admin">
                 <label for="origin">Origen del Producto:</label>
                 <input type="text" class="admin-style" name="origin" id="origin" value="<%=producto.origin %>">
+                <% if (locals.errors && errors.origin) { %>
+                    <span class="error-msg"><%= errors.origin.msg %></span>
+                <% } %>
             </div>
             <div class="container-admin">
                 <label for="view">En vista:</label>
