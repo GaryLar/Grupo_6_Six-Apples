@@ -1,5 +1,14 @@
 # Retrospectiva
 
+# Sprint 4
+
+ ![estrella](./data-del-grupo/retrospectivaSprint4.jpg)
+
+ ### Como siempre al realizar un nuevo sprint, hacemos una restrospectiva de las cosas a mejorar de los anteriores, seguimos utilizando el metodo de la estrella de mar, por el momento nos parece el mas efectivo a la hora de recordar ciertos puntos de sprints anteriores.
+ ### Para este sprint tuvimos en cuenta muchas de las cosas marcadas en retrospectivas anteriores, y pudimos mejorar mucho, tanto individualmente como en equipo. Nos enfocamos en en las consignas principales del sprint y pudimos terminarlo en poco tiempo, aprendimos a no confiarnos tanto con las fechas de entrega, aunque igualmente, tenemos cosas para mejorar.
+ ### Generalmente, nos queremos enfocar en base de datos, es un tema nuevo que se viene fuerte y no queremos que nos agarre de imprevisto. Tambien dejamos ciertas tarjetas que nos identifica como grupo, nos gusta tomarnos las cosas con gracia, ya que se hace mas ameno el codear y pasar tiempo como equipo.
+ ### Otro dato, dejamos las tarjetas de "hacer menos" o "dejar de hacer", para siempre tenerlas presentes y no cometer esos errores.
+
 # Sprint 3
 
  ![estrella](./data-del-grupo/retrospectivaSprint3.jpg)
