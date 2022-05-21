@@ -6,94 +6,93 @@
     <%- include("../partials/header.ejs") %>
     <section class="profile-section">
         <h2 class="profile"> Mi Perfil</h2>
-        <form action="/usuario/perfil/<%= user.id %>" method="post">
-            <div class="image"><img src="/images/usuarios/<%= user.image %>" alt="imagePerfil"></div> 
+        <form action="/usuario/perfil/editar/<%= user.id %>?_method=PUT" method="POST">
+            <div class="image"><img src="/images/usuarios/<%= user.image %>" alt="imagePerfil"></div>
                 <div class="input_file-container">
                     <span id="span">SUBIR IMAGEN</span>
                     <input class="avatar2" type="file" name="image">
                 </div>
+               
             <div class="profile-box"> 
                 <h2 class="datos-contacto">Datos de Contacto</h2>
                 <div class="userData_container"> 
                     <div class="form_box"> 
                         <div class="input-container">
-                            <input type="text" class="input-style" name="name" id="name" placeholder="Ingrese Nombre Y Apellido" value="<%= user.name %>" disabled>
+                            <input type="text" class="input-style" name="name" id="name" placeholder="Ingrese Nombre Y Apellido" value="<%= user.name %>"> <!-- session.user.name -->
                         </div>
                         <div class="input-container">
-                            <input type="number" disabled class="input-style" name="dni" id="dni" placeholder="Ingrese su DNI" value="<%= user.dni %>">
+                            <input type="number" class="input-style" name="dni" id="dni" placeholder="Ingrese su DNI" value="<%= user.dni %>">
                         </div>
                         <div class="input-container">
-                            <input type="number" disabled class="input-style" name="phone" id="phone" placeholder="Número de Contacto" value="<%= user.phone %>">
+                            <input type="number" class="input-style" name="phone" id="phone" placeholder="Número de Contacto" value="<%= user.phone %>">
                         </div> 
                         <div class="input-container">
-                            <input type="number" disabled class="input-style" name="postcode" id="postcode" placeholder="Código Postal" value="<%= user.postcode%>">
+                            <input type="number" class="input-style" name="postcode" id="postcode" placeholder="Código Postal" value="<%= user.postcode %>">
                         </div> 
                     </div>
                     <div class="form_box">
                         <div class="input-container">
-                            <select name="province" disabled class="input-style" value="<%= user.province %>">
+                            <select name="province" id="province" class="input-style">
                                 <option value="" hidden selected>Elija una provincia</option>
-                                <option value="capitalFederal" <%= user.province === "capitalFederal" ? "selected" : "" %> >Capital Federal</option>
+                                <option value="capitalFederal" <%= user.province === "capitalFederal" ? "selected" : "" %>>Capital Federal</option>
                                 <option value="provinciaDeBuenosAires" <%= user.province === "provinciaDeBuenosAires" ? "selected" : "" %>>Provincia de Buenos Aires</option>
                                 <option value="neuquen" <%= user.province === "neuquen" ? "selected" : "" %>>Neuquén</option>
                             </select>
                         </div>
                         <div class="input-container">
-                            <select name="district" disabled class="input-style" >
+                            <select name="district" id="district"  class="input-style">
                                 <option value="" hidden selected>Elija una Localidad</option>
                                 <!-- Capital Federal 
                                 2- Arreglar font size de el placeholder en vista escritorio
                                 3- (BUSCAR COMO COLCOAR OPCION DE SOLO APARECER LOCALIDADES SEGUN LA PROVINCIA QUE SELECCIONE ---
                                 intentar cambiar el value con el nombre de la provi seleccionada -->
-                                <% if ("capitalFederal" === "selected") { %>
-                                    <option value="Agronomia">Agronomia</option>
-                                    <option value="Almagro">Almagro</option>
-                                    <option value="Balvanera">Balvanera</option>
-                                    <option value="Barracas">Barracas</option>
-                                    <option value="Belgrano">Belgrano</option>
-                                    <option value="Boedo">Boedo</option>
-                                    <option value="Caballito">Caballito</option>
-                                    <option value="Chacarita">Chacarita</option>
-                                    <option value="Coghlan">Coghlan</option>
-                                    <option value="Colegiales">Colegiales</option>
-                                    <option value="Constitución">Constitución</option>
-                                    <option value="Flores">Flores</option>
-                                    <option value="Floresta">Flroesta</option>
-                                    <option value="LaBoca">La Boca</option>
-                                    <option value="LaPaternal">La Paternal</option>
-                                    <option value="Liniers">Liniers</option>
-                                    <option value="Mataderos">Mataderos</option>
-                                    <option value="MonteCastro">Monte Castro</option>
-                                    <option value="NuevaPompeya">Nueva Pompeya</option>
-                                    <option value="Nuñez">Nuñez</option>
-                                    <option value="Palermo">Palermo</option>
-                                    <option value="ParqueAvellaneda">Parque Avellaneda</option>
-                                    <option value="ParqueChacabuco">Parque Chacabuco</option>
-                                    <option value="ParqueChas">ParqueChas</option>
-                                    <option value="ParquePatricios">ParquePatricios</option>
-                                    <option value="PuertoMadero">PuertoMadero</option>
-                                    <option value="Recoleta">Recoleta</option>
-                                    <option value="Retiro">Retiro</option>
-                                    <option value="Saavedra">Saavedra</option>
-                                    <option value="SanNicolás">SanNicolás</option>
-                                    <option value="SanCristóbal">SanCristóbal</option>
-                                    <option value="SanTelmo">SanTelmo</option>
-                                    <option value="Versalles">Versalles</option>
-                                    <option value="VillaCrespo">VillaCrespo</option>
-                                    <option value="VillaDevoto">VillaDevoto</option>
-                                    <option value="VillaGeneralMitre">VillaGeneralMitre</option>
-                                    <option value="VillaLugano">VillaLugano</option>
-                                    <option value="VillaLuro">VillaLuro</option>
-                                    <option value="VillaOrtúzar">VillaOrtúzar</option>
-                                    <option value="VillaPueyrredón">VillaPueyrredón</option>
-                                    <option value="VillaReal">VillaReal</option>
-                                    <option value="VillaRiachuelo">VillaRiachuelo</option>
-                                    <option value="VillaSantaRita">VillaSantaRita</option>
-                                    <option value="VillaSoldati">VillaSoldati</option>
-                                    <option value="VillaUrquiza">VillaUrquiza</option>
-                                    <option value="VilladelParque">VilladelParque</option>
-                                    <option value="VélezSarsfield">VélezSarsfield</option> 
-                                <% } %>
+                                <option value="Agronomia">Agronomia</option>
+                                <option value="Almagro">Almagro</option>
+                                <option value="Balvanera">Balvanera</option>
+                                <option value="Barracas">Barracas</option>
+                                <option value="Belgrano">Belgrano</option>
+                                <option value="Boedo">Boedo</option>
+                                <option value="Caballito">Caballito</option>
+                                <option value="Chacarita">Chacarita</option>
+                                <option value="Coghlan">Coghlan</option>
+                                <option value="Colegiales">Colegiales</option>
+                                <option value="Constitución">Constitución</option>
+                                <option value="Flores">Flores</option>
+                                <option value="Floresta">Flroesta</option>
+                                <option value="LaBoca">La Boca</option>
+                                <option value="LaPaternal">La Paternal</option>
+                                <option value="Liniers">Liniers</option>
+                                <option value="Mataderos">Mataderos</option>
+                                <option value="MonteCastro">Monte Castro</option>
+                                <option value="NuevaPompeya">Nueva Pompeya</option>
+                                <option value="Nuñez">Nuñez</option>
+                                <option value="Palermo">Palermo</option>
+                                <option value="ParqueAvellaneda">Parque Avellaneda</option>
+                                <option value="ParqueChacabuco">Parque Chacabuco</option>
+                                <option value="ParqueChas">ParqueChas</option>
+                                <option value="ParquePatricios">ParquePatricios</option>
+                                <option value="PuertoMadero">PuertoMadero</option>
+                                <option value="Recoleta">Recoleta</option>
+                                <option value="Retiro">Retiro</option>
+                                <option value="Saavedra">Saavedra</option>
+                                <option value="SanNicolás">SanNicolás</option>
+                                <option value="SanCristóbal">SanCristóbal</option>
+                                <option value="SanTelmo">SanTelmo</option>
+                                <option value="Versalles">Versalles</option>
+                                <option value="VillaCrespo">VillaCrespo</option>
+                                <option value="VillaDevoto">VillaDevoto</option>
+                                <option value="VillaGeneralMitre">VillaGeneralMitre</option>
+                                <option value="VillaLugano">VillaLugano</option>
+                                <option value="VillaLuro">VillaLuro</option>
+                                <option value="VillaOrtúzar">VillaOrtúzar</option>
+                                <option value="VillaPueyrredón">VillaPueyrredón</option>
+                                <option value="VillaReal">VillaReal</option>
+                                <option value="VillaRiachuelo">VillaRiachuelo</option>
+                                <option value="VillaSantaRita">VillaSantaRita</option>
+                                <option value="VillaSoldati">VillaSoldati</option>
+                                <option value="VillaUrquiza">VillaUrquiza</option>
+                                <option value="VilladelParque">VilladelParque</option>
+                                <option value="VélezSarsfield">VélezSarsfield</option> 
                                 <!-- Provincia de Buenos Aires -->
                                 <option value="AlmiranteBrown">Almirante Brown</option>
                                 <option value="Avellaneda">Avellaneda</option>
@@ -171,20 +170,19 @@
                             </select>
                         </div>
                         <div class="input-container">
-                            <input type="text" disabled class="input-style" name="direction" placeholder="Dirección" value="<%= user.direction %>">
+                            <input type="text" class="input-style" name="direction" id="direction" placeholder="Dirección" value="<%= user.direction %>">
                         </div>
                         <div class="input-container">
-                            <input type="number" disabled class="input-style" name="number" placeholder="Número de calle" value="<%= user.number %>">
+                            <input type="number" class="input-style" name="number" id="number" placeholder="Número de calle" value="<%= user.number %>">
                         </div>
                     </div>
-                </div>  
+                </div>
+                
+            </div>
+            <div class="btn-container_profile">
+                <button type="submit" class="btn-submit">Guardar cambios</button>
             </div>
         </form>
-        <div class="btn-container_profile">
-            <a href="/usuario/perfil/editar/<%- user.id %>">
-                <button type="submit" class="btn-submit"> Editar</button>
-            </a>
-        </div>
     </section>
 
     <!--FOOTER-->

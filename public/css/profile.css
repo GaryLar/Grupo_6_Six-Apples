@@ -72,7 +72,7 @@ body.profile h2{
     font-size: 20px;
 }
 
-body.profile section div.avatar {
+body.profile section div.image {
     border-radius: 50%;
     height: 80px;
     object-fit: cover;
@@ -80,6 +80,12 @@ body.profile section div.avatar {
     width: 80px;
     border: solid 1px black;
     margin: 0px auto; 
+}
+body.profile section div.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 

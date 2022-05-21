@@ -2,21 +2,35 @@
     {
         "id": 1,
         "name": "andrevict",
-        "email": "andreav@mail.com",
+        "email" : "andrev@mail.com",
         "password": "$2a$10$Mq3Wwqo0HjkqBrnXBZwheux7OsDKB8IQO.BoPRAbO6mpEX56hNAv6",
         "image": "avatar-1651882021725.jpg",
-        "rol": "ADMIN"
+        "rol": "ADMIN",
+        "dni": 5675,
+        "phone": 0,
+        "postcode": 0,
+        "province": "",
+        "district": "",
+        "direction": "",
+        "number": 0
     },
     {
-        "id": 1,
-        "name": "garyrodriguez",
+        "id": 2,
+        "name": "gary ro",
         "email": "gary@mail.com",
         "password": "$2a$10$Mq3Wwqo0HjkqBrnXBZwheux7OsDKB8IQO.BoPRAbO6mpEX56hNAv6",
         "image": "avatar-1651882021725.jpg",
-        "rol": "ADMIN"
+        "rol": "ADMIN",
+        "dni": 658765,
+        "phone": 59768,
+        "postcode": 565464,
+        "province": "provinciaDeBuenosAires",
+        "district": "",
+        "direction": "dfhsdkf",
+        "number": 45645
     },
     {
-        "id": 1,
+        "id": 3,
         "name": "joaquinGalvan",
         "email": "joaquin@mail.com",
         "password": "$2a$10$Mq3Wwqo0HjkqBrnXBZwheux7OsDKB8IQO.BoPRAbO6mpEX56hNAv6",
@@ -24,12 +38,11 @@
         "rol": "ADMIN"
     },
     {
-        "id": 1,
+        "id": 4,
         "name": "karencalisaya",
         "email": "karen@mail.com",
         "password": "$2a$10$Mq3Wwqo0HjkqBrnXBZwheux7OsDKB8IQO.BoPRAbO6mpEX56hNAv6",
         "image": "avatar-1651882021725.jpg",
         "rol": "USER"
     }
-
 ]

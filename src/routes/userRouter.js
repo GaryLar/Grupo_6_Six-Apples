@@ -11,13 +11,13 @@ const checkUserSession = require("../middlewares/checkUserSession")
 
 /* Ruta para mostrar formularios */
 router.get('/login', checkUserInSession, userController.login);
-router.post("/login",loginValidator,userController.processLogin)
-router.get('/perfil', checkUserSession, userController.profile);
+router.post("/login",loginValidator,userController.processLogin) 
 router.get('/registro', checkUserInSession, userController.register);
-/* post-crea un nuevo usuario */
 router.post('/registro',uploadFile.single('image'), registerValidator, userController.processRegister);
-/* Colocar Put(actualizar) */
 
+router.get('/perfil', checkUserSession, userController.profile);
+router.get('/perfil/editar/:id', checkUserSession, userController.profileEdit);
+router.put('/perfil/editar/:id', checkUserSession, userController.profileUpdate);
 /* get leaveSession */
 router.get('/salir', userController.leaveSession);
 module.exports = router;
