@@ -16,3 +16,10 @@
 
 ### Para la realización del sprint 4, cada integrante del equipo realizo y culminó sus tareas asignadas.. En equipo trabajamos para la realizacion del multer y logramos termimarlo con exito.. tuvimos inconvenientes en parte con las rutas y en estilos de css pero pudimos resolver el problema y culminarlo con exito.. Para este sprint como equipo pudimos resolver inconvenientes encontrados en dicho sprint...
 ### Tambien agregar que pudimos solucionar el gran problema que veniamos arrastrando desde el comienzo de este proyecto, y ahora todos los integrantes del equipo aparecemos como colaboradores en GitHub.
+
+## Sprint 5 
+
+### Para la realizacion del sprint 5, todos los integrantes del equipo pudieron culminar sus tareas con exito.. En equipo tuvimos inconvenientes con las cookies, también tuvimos incovenientes con el repositorio remoto a la hora de hacer pull, se resolviendo con exito clonando nuevamente el proyecto integrador.. 
+### Cuando se implemento el bcrypt tuvimos problemas con los usuarios registrados anteriormente ya que no podian iniciar sessión, se pudo resolver creando nuevos usuarios.. 
+### Como equipo pudimos resolver detalles e inconvenientes que se nos presenta en cada sprint, siempre tomando ideas, conocimientos y técnicas de cada integrante que son fundamentales para este proyecto integrador.. 
+
