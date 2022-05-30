@@ -1,5 +1,5 @@
-module.exports = (sequelize,dataTypes) => {
-    let alias = 'Product';
+module.exports = (sequelize, dataTypes) => {
+    let alias = 'Offer';
     let cols = {
         id: {
             type: dataTypes.INTEGER(10).UNSIGNED,
@@ -7,16 +7,15 @@ module.exports = (sequelize,dataTypes) => {
             allowNull: false, /* permite nulos? */
             primaryKey: true,
         },
-        name: {
+        typesOffersId: {
+            type: dataTypes.INTEGER(10).UNSIGNED,
+        },
+        categoryName: {
             type: dataTypes.STRING(45),
             allowNull: false,
         },
-        type: {
-            type: dataTypes.STRING(45),
-            allowNull: false,
-        },
-        origin: {
-            type: dataTypes.STRING(45),
+        description: {
+            type: dataTypes.STRING(100),
             allowNull: false,
         },
         price: {
@@ -34,19 +33,15 @@ module.exports = (sequelize,dataTypes) => {
         },
         updatedAt: {
             type: dataTypes.TIMESTAMP
-        },
-        categoryId: {
-            type: dataTypes.INTEGER(10).UNSIGNED
         }
-
     };
     let config = {
-        tableName: 'products',
+        tableName: 'offers',
         deletedAt: false,
         timestamp: true
     };
 
-    const Product = sequelize.define(alias, cols, config)
+    const Offer = sequelize.define(alias, cols, config)
 
-    return Product
+    return Offer
 }

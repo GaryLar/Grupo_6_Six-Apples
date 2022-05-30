@@ -109,6 +109,7 @@ module.exports = {
     profileEdit : (req, res)=>{
         let id = +req.session.user.id;
         let user = getUsers.find(user => user.id === id);
+        
         res.render('users/profileEdit', {
             title: "Perfil",
             user,
@@ -116,6 +117,7 @@ module.exports = {
             old: req.body
     
         })  
+       
     },
     profileUpdate: (req, res) => {
         let idUser = +req.params.id;
