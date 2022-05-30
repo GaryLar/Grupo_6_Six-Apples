@@ -46,6 +46,8 @@
                                 2- Arreglar font size de el placeholder en vista escritorio
                                 3- (BUSCAR COMO COLCOAR OPCION DE SOLO APARECER LOCALIDADES SEGUN LA PROVINCIA QUE SELECCIONE ---
                                 intentar cambiar el value con el nombre de la provi seleccionada -->
+                                <% if (locals.old.province === "capitalFederal") { %>
+                                
                                 <option value="Agronomia">Agronomia</option>
                                 <option value="Almagro">Almagro</option>
                                 <option value="Balvanera">Balvanera</option>
@@ -93,6 +95,9 @@
                                 <option value="VillaUrquiza">VillaUrquiza</option>
                                 <option value="VilladelParque">VilladelParque</option>
                                 <option value="VélezSarsfield">VélezSarsfield</option> 
+                                <% } %>
+
+                                <% if (locals.old.province === "provinciaDeBuenosAires") { %>
                                 <!-- Provincia de Buenos Aires -->
                                 <option value="AlmiranteBrown">Almirante Brown</option>
                                 <option value="Avellaneda">Avellaneda</option>
@@ -132,7 +137,9 @@
                                 <option value="TresDeFebrero">Tres De Febrero</option>
                                 <option value="VicenteLópez">Vicente López</option>
                                 <option value="Zárate">Zárate</option>
+                                <% } %>
                                 <!-- Neuquen -->
+                                <% if (locals.old.province === "neuquen") { %>
                                 <option value="Alumine">Alumine</option>
                                 <option value="Andacollo">Andacollo</option>
                                 <option value="Arroyito">Arroyito</option>
@@ -167,6 +174,7 @@
                                 <option value="VillaPehuenia">Villa Pehuenia</option>
                                 <option value="VillaTraful">Villa Traful</option>
                                 <option value="Zapala">Zapala</option>
+                                <% } %>
                             </select>
                         </div>
                         <div class="input-container">
