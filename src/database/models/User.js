@@ -66,8 +66,8 @@ module.exports = (sequelize, dataTypes) => {
             as:"rol",
             foreignKey:"rolId"
         })
-        User.hasMany(models.Order,{
-            as:"orders",
+        User.belongsTo(models.Order,{
+            as:"order",
             foreignKey:"userId"
         })
     }
