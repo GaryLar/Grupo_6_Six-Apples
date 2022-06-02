@@ -29,12 +29,6 @@ module.exports = (sequelize,dataTypes) => {
         image: {
             type: dataTypes.STRING(45),
         },
-        createdAt: {
-            type: dataTypes.TIMESTAMP
-        },
-        updatedAt: {
-            type: dataTypes.TIMESTAMP
-        },
         categoryId: {
             type: dataTypes.INTEGER(10).UNSIGNED
         }

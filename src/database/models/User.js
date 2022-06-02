@@ -46,12 +46,7 @@ module.exports = (sequelize, dataTypes) => {
         rolld: {
             type: dataTypes.INTEGER(10).UNSIGNED
         },
-        createdAt: {
-            type: dataTypes.TIMESTAMP,
-        },
-        updatedAt: {
-            type: dataTypes.TIMESTAMP,
-        }
+        
     };
     let config = {
         tableName: 'users',

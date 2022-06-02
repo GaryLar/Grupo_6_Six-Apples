@@ -11,12 +11,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.BOOLEAN,
             allowNull: false,
         },
-        createdAt: {
-            type: dataTypes.TIMESTAMP
-        },
-        updatedAt: {
-            type: dataTypes.TIMESTAMP
-        },
+        
         userId: {
             type: dataTypes.INTEGER(10).UNSIGNED,
         }

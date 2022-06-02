@@ -11,12 +11,6 @@ module.exports=(sequelize,dataTypes)=>{
             type:dataTypes.INTEGER(10).UNSIGNED,
             allowNull:false
         },
-        createdAt:{
-            type:dataTypes.TIMESTAMP
-        },
-        updatedAt:{
-            type:dataTypes.TIMESTAMP
-        },
         orderId:{
             type:dataTypes.INTEGER(10).UNSIGNED,
         },
