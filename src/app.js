@@ -44,7 +44,9 @@ app.use("/usuario", userRouter) //Usuario: perfil, registro.
 app.use("/admin", adminRouter) //admin, CRUD products, users, categorias
 
 /* COLOCAR ruta de error 404 */
-
+app.use((req, res, next) => {
+    res.status(404).render('not-found');
+   })
 
 
 /* servidor escuchando */

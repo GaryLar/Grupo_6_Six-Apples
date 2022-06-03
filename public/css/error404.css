@@ -1,0 +1,32 @@
+@import url(home.css);
+
+:root {
+    /* COLORES */
+    --color-verdeClaro: #dfffbe;
+    --color-verdeOscuro: #92c88a;
+    /* FUENTES */
+    --font-poppins: 'Poppins', sans-serif;
+    /* TAMAÑOS DE FUENTES */
+    --title: 16px;
+    --paragraph: 14px;  /* valor en rem? */
+    --precios: 18px;
+    --otrasDescripciones: 16px;
+}
+
+/* ESTILOS GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.section p {
+    font-size: 20px;
+    color:black; 
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    background-color: var(--color-verdeClaro) ;
+}
