@@ -1,40 +1,44 @@
 /* controlador para los products */
-const { getProducts, writeProducts} = require('../../data/index');
+const db = require("../../database/models")
 const { validationResult } = require('express-validator');
+const { products } = require("../productController");
 
 module.exports = {
     list: (req, res) => {
-        res.render('admin/productsAdmin/listProduct', {
+        db.Product.findAll()
+        .then((products)=>{
+            res.render('admin/productsAdmin/listProduct', {
             title: "Listado de Productos",
-            productos: getProducts,
-            session: req.session
+                productos: products,
+                session: req.session
+            });
         })
+        .catch((error)=>res.send(error))
+        
     },
     productAdd: (req, res) => {
-        res.render('admin/productsAdmin/addProduct', {
-            title: "Agregar Producto",
-            session: req.session
-        })
+            res.render('admin/productsAdmin/addProduct', {
+                title: "Agregar Producto",
+                session: req.session
+            })
     },
     productCreate:(req,res)=>{  
         let errors = validationResult(req);
-        if(errors.isEmpty()){
-            let lastId = 0;
-            getProducts.forEach(product => {
-                if(product.id > lastId){
-                    lastId = product.id;
-            }
-        })
-        let newProduct = {
-            ...req.body, 
-            id: lastId + 1,
-            image:req.file ? req.file.filename : "default-image.png",
-            view: req.body.view ? true : false 
-        }
-        getProducts.push(newProduct)
-        writeProducts(getProducts)
-        res.redirect('/admin/productos')
 
+        if(errors.isEmpty()){
+            db.Product.create({
+                name:req.body.name,
+                type:req.body.type,
+                categoryId:req.body.categoryName==="Frutas"?1:2,
+                price:req.body.price,
+                origin:req.body.origin,
+                view:req.body.view ? 1 : 0 ,
+                image:req.file ? req.file.filename : "default-image.png",
+            })
+            .then(()=>{
+                res.redirect('/admin/productos')
+            })
+            .catch((error)=>res.send(error))
         } else {
             res.render('admin/productsAdmin/addProduct', {
                 title: 'Agregar Producto',
@@ -44,22 +48,49 @@ module.exports = {
             })
         }
 },
-
 productEdit: (req,res)=>{
     let idProducto = +req.params.id; 
-    let producto = getProducts.find(producto => producto.id === idProducto)
-    res.render('admin/productsAdmin/editProduct', {
-        title: "Editar:",
-        producto,
-        session: req.session
-    })
-},
+    db.Product.findByPk(idProducto)
+    .then((products)=>{
+        res.render('admin/productsAdmin/editProduct', {
+            title: "Editar:",
+            producto:products,
+            session: req.session
+        })
 
+    })
+    .catch((error)=>res.send(error))
+},
 productUpdate: (req, res) => {
     let errors = validationResult(req);
     if(errors.isEmpty ()){
+        db.Product.update({
+                name:req.body.name,
+                type:req.body.type,
+                categoryId:req.body.categoryName==="Frutas"?1:2,
+                price:req.body.price,
+                origin:req.body.origin,
+                view:req.body.view ? 1 : 0 ,
+                image:req.file ? req.file.filename : "default-image.png",
+        })
+        .then(()=>{
+            res.redirect('/admin/productos'); 
+        })
+    } else {
+        let idProducto = +req.params.id; 
+        db.Product.findByPk(idProducto)
+        .then((producto))
+        res.render('admin/productsAdmin/editProduct', {
+            title: "Editar:",
+            products:producto,
+            session: req.session,
+            errors: errors.mapped(),
+            old: req.body
+        })
+    }
 
-    
+
+
     let productoId = +req.params.id;
     getProducts.forEach(producto => {
         if(producto.id === productoId){
@@ -74,19 +105,6 @@ productUpdate: (req, res) => {
         }
     })
 
-    writeProducts(getProducts);
-    res.redirect('/admin/productos'); 
-} else {
-    let idProducto = +req.params.id; 
-    let producto = getProducts.find(producto => producto.id === idProducto)
-    res.render('admin/productsAdmin/editProduct', {
-        title: "Editar:",
-        producto,
-        session: req.session,
-        errors: errors.mapped(),
-        old: req.body
-    })
-}
 },
 
 productDelete: (req, res) => {

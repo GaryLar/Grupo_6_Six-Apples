@@ -26,7 +26,7 @@ module.exports = {
 
             /* cookie */
             if(req.body.recordar){
-                const TIME_IN_MILISECONDS = 60000;
+                const TIME_IN_MILISECONDS = 600000;
                 res.cookie('saCookie', req.session.user, {
                     expires: new Date(Date.now() + TIME_IN_MILISECONDS),
                     httpOnly: true,
