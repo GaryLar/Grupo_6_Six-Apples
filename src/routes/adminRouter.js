@@ -8,6 +8,7 @@ const adminCategoryController = require('../controllers/admin/adminCategoryContr
 const uploadFile = require('../middlewares/uploadProductsImg');
 const productsValid = require('../validations/products-valid');
 const productsEditValid = require('../validations/productsEdit-valid');
+const categoryValid = require('../validations/category-valid')
 const checkUserSession = require('../middlewares/checkUserSession')
 const checkAdmin = require('../middlewares/checkAdmin')
 
@@ -42,11 +43,11 @@ router.get('/categorias', checkUserSession, checkAdmin, adminCategoryController.
 /* GET - Agregar categorias */
 router.get('/categorias/agregar', checkUserSession, checkAdmin, adminCategoryController.categoryAdd);
 /* POST - Crea una categoria en la DB */
-router.post('/categorias/',adminCategoryController.categoryCreate);
+router.post('/categorias/', categoryValid,adminCategoryController.categoryCreate);
 /* GET - Editar Categorias */
 router.get('/categorias/editar/:id',checkUserSession, checkAdmin, adminCategoryController.categoryEdit)
 /* PUT - Actualiza categoria en la DB */
-router.put('/categorias/:id', adminCategoryController.categoryUpdate);
+router.put('/categorias/:id', categoryValid, adminCategoryController.categoryUpdate);
 /* DELETE - Elimina una categoria */
 router.delete('/categorias/eliminar/:id', adminCategoryController.categoryDelete);
 

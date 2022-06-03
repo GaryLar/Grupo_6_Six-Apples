@@ -1,4 +1,5 @@
 const db = require('../../database/models');
+const {validationResult} = require('express-validator');
 
 module.exports = {
     list: (req, res) => {
@@ -17,11 +18,20 @@ module.exports = {
         })
     }, 
     categoryCreate: (req, res) => {
-        db.Category.create({
-            name: req.body.name
-        })
-        .then(() => res.redirect('/admin/categorias'))
-        .catch((error) => res.send(error))
+        let errors = validationResult(req)
+        if(errors.isEmpty()){
+            db.Category.create({
+                name: req.body.name
+            })
+            .then(() => res.redirect('/admin/categorias'))
+            .catch((error) => res.send(error))
+        }else {
+            res.render('admin/categoriesAdmin/addCategory' , {
+                title: "Agregar Categoria",
+                session: req.session,
+                errors: errors.mapped()
+            })
+        }
     }, 
 
     categoryEdit: (req,res) => {
@@ -37,27 +47,37 @@ module.exports = {
     }, 
 
     categoryUpdate: (req, res) => {
-        let categoryId = +req.params.id; 
-        db.Category.update({
-            name: req.body.name, 
-        }, {
-        where: {
-            id: categoryId  
+        let errors = validationResult(req)
+        if(errors.isEmpty()){
+            let categoryId = +req.params.id; 
+            db.Category.update({
+                name: req.body.name, 
+            }, {
+            where: {
+                id: categoryId  
+            }
+            })
+            .then((result) => {
+                if(result){
+                    res.redirect('/admin/categorias')
+                } /*else{ 
+                    res.send('ups, ocurrio un error') PARA VISRA DE ERROR 
+                }*/
+            })
+             .catch((error) => res.send(error))
+        } else {
+            res.render('admin/categoriesAdmin/editCategory',{
+                title: "Editar Categoria:", 
+                categoria,
+                session: req.session,
+                errors: errors.mapped()
+        }) 
         }
-        })
-        .then((result) => {
-            if(result){
-                res.redirect('/admin/categorias')
-            } /*else{ 
-                res.send('ups, ocurrio un error') PARA VISRA DE ERROR 
-            }*/
-        })
-         .catch((error) => res.send(error))
     }, 
 
     categoryDelete:(req, res) => {
         let categoryId = +req.params.id; 
-        db.categoryId.destroy({ where:{
+        db.Category.destroy({ where:{
         id:  categoryId }})
         .then((result) => {
             if(result){

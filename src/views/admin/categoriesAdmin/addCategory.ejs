@@ -9,6 +9,9 @@
             <div class="container-admin">
                 <label for="name">Nombre de la categoría:</label>
                 <input type="text" class="admin-style" name="name" id="name">
+                <% if (locals.errors && errors.name) { %>
+                    <span class="error-msg"><%= errors.name.msg  %></span>
+                <% } %>
             </div>
             <div class="finalizar-registro">
                 <button type="submit">AGREGAR CATEGORÍA</button>
