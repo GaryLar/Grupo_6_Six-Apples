@@ -1,7 +1,7 @@
 //const { getProducts, getOffers, writeOffers} = require('../data/index');
 const { promise } = require("bcrypt/promises");
 const db = require("../database/models")
-const { Op } = require("sequelize");
+const { Op } = require('Sequelize');
 
 module.exports={
     products:(req,res)=>{
@@ -45,18 +45,20 @@ module.exports={
         .catch((error)=>res.send(error))
     },
     detail:(req, res) => {
-        let idProducto = +req.params.id; /* capturamos id del producto que viene por url */
-        /* let promiseView = db.Product.findAll({
-            where: {
-                view:{[db.sequelize.Op.eq]:1}
-            }}) */
+        let idProducto = +req.params.id; 
         let promiseProduct = db.Product.findByPk(idProducto)
-        Promise.all([ promiseProduct])
-        .then((product)=>{
+        let promiseView = db.Product.findAll({where : {
+            view : {
+                [db.Sequelize.Op.eq] : 1
+                /*  [db.Sequelize.Op.not] : 'true' */
+            }
+        }})
+        Promise.all([promiseProduct, promiseView])
+        .then(([product, productView])=>{
             res.render('products/productDetail', {
                 title: product.name,
-                product ,/* llama a un solo producto el que viene por id. Que sacamos de la variable 'product' */
-                
+                productView,
+                product,
                 session: req.session
             }) 
         })
