@@ -1,14 +1,14 @@
-/* controlador de las categorias */
-const { getCategories, writeCategories} = require('../../data/index'); 
-const adminProductsController = require('./adminProductsController');
+const db = require('../../database/models');
 
 module.exports = {
     list: (req, res) => {
+        db.Category.findAll()
+        .then((categorias) => 
         res.render('admin/categoriesAdmin/listCategory' , {
-        title: "Listado de Categorias" , 
-        categorias: getCategories,
-        session: req.session   
-        })
+            title: "Listado de Categorias" , 
+            categorias,
+            session: req.session,
+        }))
     }, 
     categoryAdd: (req, res) => {
         res.render('admin/categoriesAdmin/addCategory' , {
@@ -17,54 +17,55 @@ module.exports = {
         })
     }, 
     categoryCreate: (req, res) => {
-        let lastId = 0; 
-        getCategories.forEach(categoria => {
-            if(categoria.id > lastId){
-                lastId = categoria.id; 
-            }
+        db.Category.create({
+            name: req.body.name
         })
-        let newCategoria = {
-            ...req.body,
-            id : lastId + 1, 
-        }
-        getCategories.push(newCategoria)
-
-        writeCategories(getCategories)
-
-        res.redirect('/admin/categorias')
+        .then(() => res.redirect('/admin/categorias'))
+        .catch((error) => res.send(error))
     }, 
 
     categoryEdit: (req,res) => {
         let idCategoria = +req.params.id; 
-        let categoria = getCategories.find( categoria => categoria.id === idCategoria)
-        res.render('admin/categoriesAdmin/editCategory',{
-            title: "Editar Categoria:", 
-            categoria,
-            session: req.session 
-        })
+        db.Category.findByPk(idCategoria).then((categoria) => {
+            res.render('admin/categoriesAdmin/editCategory',{
+                title: "Editar Categoria:", 
+                categoria,
+                session: req.session 
+        }) 
+    })
+        .catch((error) => res.send(error))
     }, 
+
     categoryUpdate: (req, res) => {
         let categoryId = +req.params.id; 
-        getCategories.forEach(categoria => {
-            if( categoria.id === categoryId){
-                categoria.name = req.body.name 
-            }
+        db.Category.update({
+            name: req.body.name, 
+        }, {
+        where: {
+            id: categoryId  
+        }
         })
-
-        writeCategories(getCategories); 
-        res.redirect('/admin/categorias'); 
+        .then((result) => {
+            if(result){
+                res.redirect('/admin/categorias')
+            } /*else{ 
+                res.send('ups, ocurrio un error') PARA VISRA DE ERROR 
+            }*/
+        })
+         .catch((error) => res.send(error))
     }, 
 
     categoryDelete:(req, res) => {
         let categoryId = +req.params.id; 
-        getCategories.forEach(categorias => {
-            if( categorias.id === categoryId){
-                let indiceDeCategoria = getCategories.indexOf(categorias); 
-                getCategories.splice(indiceDeCategoria, 1) 
-            }
-        })
-         writeCategories(getCategories); 
-         res.redirect('/admin/categorias'); 
+        db.categoryId.destroy({ where:{
+        id:  categoryId }})
+        .then((result) => {
+            if(result){
+                res.redirect('/admin/categorias');
+            } /*else {
+                res.send('ups.algo rompio') PARA VISTA ERROR 
+            }*/ 
+         })
+         .catch((error) => res.send(error)); 
+        }
     }
-
-}
