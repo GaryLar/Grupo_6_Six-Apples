@@ -26,35 +26,46 @@ module.exports = {
 
     categoryEdit: (req,res) => {
         let idCategoria = +req.params.id; 
-        let categoria = getCategories.find( categoria => categoria.id === idCategoria)
-        res.render('admin/categoriesAdmin/editCategory',{
-            title: "Editar Categoria:", 
-            categoria,
-            session: req.session 
-        })
+        db.Category.findByPk(idCategoria).then((categoria) => {
+            res.render('admin/categoriesAdmin/editCategory',{
+                title: "Editar Categoria:", 
+                categoria,
+                session: req.session 
+        }) 
+    })
+        .catch((error) => res.send(error))
     }, 
+
     categoryUpdate: (req, res) => {
         let categoryId = +req.params.id; 
-        getCategories.forEach(categoria => {
-            if( categoria.id === categoryId){
-                categoria.name = req.body.name 
-            }
+        db.Category.update({
+            name: req.body.name, 
+        }, {
+        where: {
+            id: categoryId  
+        }
         })
-
-        writeCategories(getCategories); 
-        res.redirect('/admin/categorias'); 
+        .then((result) => {
+            if(result){
+                res.redirect('/admin/categorias')
+            } /*else{ 
+                res.send('ups, ocurrio un error') PARA VISRA DE ERROR 
+            }*/
+        })
+         .catch((error) => res.send(error))
     }, 
 
     categoryDelete:(req, res) => {
         let categoryId = +req.params.id; 
-        getCategories.forEach(categorias => {
-            if( categorias.id === categoryId){
-                let indiceDeCategoria = getCategories.indexOf(categorias); 
-                getCategories.splice(indiceDeCategoria, 1) 
-            }
-        })
-         writeCategories(getCategories); 
-         res.redirect('/admin/categorias'); 
+        db.categoryId.destroy({ where:{
+        id:  categoryId }})
+        .then((result) => {
+            if(result){
+                res.redirect('/admin/categorias');
+            } /*else {
+                res.send('ups.algo rompio') PARA VISTA ERROR 
+            }*/ 
+         })
+         .catch((error) => res.send(error)); 
+        }
     }
-
-}
