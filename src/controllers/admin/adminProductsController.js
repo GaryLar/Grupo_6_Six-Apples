@@ -72,25 +72,26 @@ productUpdate: (req, res) => {
                 origin:req.body.origin,
                 view:req.body.view ? 1 : 0 ,
                 image:req.file ? req.file.filename : "default-image.png",
+        },{
+            when:{
+                id:req.params.id,
+            }
         })
-        .then(()=>{
-            res.redirect('/admin/productos'); 
+        .then((producto)=>{
+            res.redirect('/admin/productos',{
+            }); 
         })
     } else {
-        let idProducto = +req.params.id; 
-        db.Product.findByPk(idProducto)
-        .then((producto))
         res.render('admin/productsAdmin/editProduct', {
             title: "Editar:",
-            products:producto,
+             producto,
             session: req.session,
             errors: errors.mapped(),
             old: req.body
         })
     }
-
-
-
+  
+/* 
     let productoId = +req.params.id;
     getProducts.forEach(producto => {
         if(producto.id === productoId){
@@ -103,11 +104,24 @@ productUpdate: (req, res) => {
             producto.view = req.body.view ? true : false
             producto.image = req.file ? req.file.filename : producto.image
         }
-    })
+    }) */
 
 },
 
 productDelete: (req, res) => {
+        let productoId = +req.params.id; 
+        db.Product.destroy({ where:{
+        id:  productoId }})
+        .then((result) => {
+            if(result){
+                res.redirect('/admin/productos');
+            } else {
+                res.send('ups.algo rompio')  
+            }
+         })
+         .catch((error) => res.send(error)); 
+        }
+/* 
     let productoId = +req.params.id;
     getProducts.forEach(producto => {
     if(producto.id === productoId){
@@ -117,6 +131,6 @@ productDelete: (req, res) => {
     })
     writeProducts(getProducts);
     res.redirect('/admin/productos');
-}
+} */
 
 }
