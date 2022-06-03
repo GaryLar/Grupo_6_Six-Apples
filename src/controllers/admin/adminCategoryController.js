@@ -1,14 +1,14 @@
-/* controlador de las categorias */
-const { getCategories, writeCategories} = require('../../data/index'); 
-const adminProductsController = require('./adminProductsController');
+const db = require('../../database/models');
 
 module.exports = {
     list: (req, res) => {
+        db.Category.findAll()
+        .then((categorias) => 
         res.render('admin/categoriesAdmin/listCategory' , {
-        title: "Listado de Categorias" , 
-        categorias: getCategories,
-        session: req.session   
-        })
+            title: "Listado de Categorias" , 
+            categorias,
+            session: req.session,
+        }))
     }, 
     categoryAdd: (req, res) => {
         res.render('admin/categoriesAdmin/addCategory' , {
@@ -17,21 +17,11 @@ module.exports = {
         })
     }, 
     categoryCreate: (req, res) => {
-        let lastId = 0; 
-        getCategories.forEach(categoria => {
-            if(categoria.id > lastId){
-                lastId = categoria.id; 
-            }
+        db.Category.create({
+            name: req.body.name
         })
-        let newCategoria = {
-            ...req.body,
-            id : lastId + 1, 
-        }
-        getCategories.push(newCategoria)
-
-        writeCategories(getCategories)
-
-        res.redirect('/admin/categorias')
+        .then(() => res.redirect('/admin/categorias'))
+        .catch((error) => res.send(error))
     }, 
 
     categoryEdit: (req,res) => {
