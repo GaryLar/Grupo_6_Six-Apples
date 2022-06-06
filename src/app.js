@@ -45,7 +45,7 @@ app.use("/admin", adminRouter) //admin, CRUD products, users, categorias
 
 /* COLOCAR ruta de error 404 */
 app.use((req, res, next) => {
-    res.status(404).render('not-found');
+    res.status(404).render('error404', {title: 'Error', session: req.session});
    })
 
 

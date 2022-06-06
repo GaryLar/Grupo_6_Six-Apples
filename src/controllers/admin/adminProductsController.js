@@ -1,7 +1,6 @@
 /* controlador para los products */
 const db = require("../../database/models")
 const { validationResult } = require('express-validator');
-const { products } = require("../productController");
 
 module.exports = {
     list: (req, res) => {
@@ -73,39 +72,31 @@ productUpdate: (req, res) => {
                 view:req.body.view ? 1 : 0 ,
                 image:req.file ? req.file.filename : "default-image.png",
         },{
-            when:{
+            where:{
                 id:req.params.id,
             }
         })
-        .then((producto)=>{
-            res.redirect('/admin/productos',{
-            }); 
+        .then(()=>{
+            res.redirect('/admin/productos'); 
         })
+        .catch((error) => res.send(error))
     } else {
+        db.Product.findOne({
+        where:{
+            id:req.params.id,
+        }
+    })
+    .then((producto)=>{
         res.render('admin/productsAdmin/editProduct', {
             title: "Editar:",
-             producto,
+            producto,
             session: req.session,
             errors: errors.mapped(),
             old: req.body
         })
-    }
-  
-/* 
-    let productoId = +req.params.id;
-    getProducts.forEach(producto => {
-        if(producto.id === productoId){
-            producto.name = req.body.name
-            producto.type = req.body.type
-            producto.origin = req.body.origin
-            producto.categoryName = req.body.categoryName
-            producto.categoryId = req.body.categoryId
-            producto.price = req.body.price
-            producto.view = req.body.view ? true : false
-            producto.image = req.file ? req.file.filename : producto.image
-        }
-    }) */
-
+    })
+    .catch((error) => res.send(error))
+}
 },
 
 productDelete: (req, res) => {
@@ -121,16 +112,5 @@ productDelete: (req, res) => {
          })
          .catch((error) => res.send(error)); 
         }
-/* 
-    let productoId = +req.params.id;
-    getProducts.forEach(producto => {
-    if(producto.id === productoId){
-        let indiceDeProducto = getProducts.indexOf(producto);
-        getProducts.splice(indiceDeProducto, 1)
-    }
-    })
-    writeProducts(getProducts);
-    res.redirect('/admin/productos');
-} */
 
 }
