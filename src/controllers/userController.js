@@ -112,11 +112,11 @@ module.exports = {
         .catch(error => res.send(error))
     },
     profileUpdate: (req, res) => {
-        let idUser = +req.params.id;
         let errors = validationResult(req);
         if(errors.isEmpty()){
             db.User.update({
-                name: req.body.name,
+                ...req.body
+                /* name: req.body.name,
                 dni: +req.body.dni,
                 phone: +req.body.phone,
                 postcode: +req.body.postcode,
@@ -124,10 +124,10 @@ module.exports = {
                 district: req.body.district,
                 direction: req.body.direction,
                 number: +req.body.number,
-                image: req.file ? req.file.filename : user.image
+                image: req.file ? req.file.filename : image */
             },{
                 where: {
-                    idUser
+                    id: req.session.user.id
                 }
             })
             .then(() => 
@@ -137,13 +137,12 @@ module.exports = {
         }else{
             db.User.findOne({
                 where: {
-                    idUser
+                    id: req.session.user.id
                 }
             })
-            .then((user) => {
+            .then(() => {
                 res.render('users/profileEdit', {
                     title: "EditarPerfil",
-                    user,
                     session: req.session,
                     old: req.body,
                     errors: errors.mapped()

@@ -18,16 +18,28 @@
                 <div class="userData_container"> 
                     <div class="form_box"> 
                         <div class="input-container">
-                            <input type="text" class="input-style" name="name" id="name" placeholder="Ingrese Nombre Y Apellido" value="<%= user.name %>"> <!-- session.user.name -->
+                            <input type="text" class="input-style" name="name" id="name" placeholder="Ingrese Nombre Y Apellido" value="<%= locals.old && old.name %>"> <!-- session.user.name -->
+                            <% if (locals.errors && errors.name) { %>
+                                <small class="error-message"><%= errors.name.msg %></small>
+                                <% } %>
                         </div>
                         <div class="input-container">
-                            <input type="number" class="input-style" name="dni" id="dni" placeholder="Ingrese su DNI" value="<%= user.dni %>">
+                            <input type="number" class="input-style" name="dni" id="dni" placeholder="Ingrese su DNI" value="<%= locals.old && old.dni %>">
+                            <% if (locals.errors && errors.dni) { %>
+                                <small class="error-message"><%= errors.dni.msg %></small>
+                                <% } %>
                         </div>
                         <div class="input-container">
-                            <input type="number" class="input-style" name="phone" id="phone" placeholder="Número de Contacto" value="<%= user.phone %>">
+                            <input type="number" class="input-style" name="phone" id="phone" placeholder="Número de Contacto" value="<%= locals.old && old.phone %>">
+                            <% if (locals.errors && errors.number) { %>
+                                <small class="error-message"><%= errors.number.msg %></small>
+                                <% } %>
                         </div> 
                         <div class="input-container">
-                            <input type="number" class="input-style" name="postcode" id="postcode" placeholder="Código Postal" value="<%= user.postcode %>">
+                            <input type="number" class="input-style" name="postcode" id="postcode" placeholder="Código Postal" value="<%= locals.old && old.postcode %>">
+                            <% if (locals.errors && errors.postcode) { %>
+                                <small class="error-message"><%= errors.postcode.msg %></small>
+                                <% } %>
                         </div> 
                     </div>
                     <div class="form_box">
@@ -38,6 +50,9 @@
                                 <option value="provinciaDeBuenosAires" <%= user.province === "provinciaDeBuenosAires" ? "selected" : "" %>>Provincia de Buenos Aires</option>
                                 <option value="neuquen" <%= user.province === "neuquen" ? "selected" : "" %>>Neuquén</option>
                             </select>
+                            <% if (locals.errors && errors.province) { %>
+                                <small class="error-message"><%= errors.province.msg %></small>
+                                <% } %>
                         </div>
                         <div class="input-container">
                             <select name="district" id="district"  class="input-style">
@@ -46,7 +61,6 @@
                                 2- Arreglar font size de el placeholder en vista escritorio
                                 3- (BUSCAR COMO COLCOAR OPCION DE SOLO APARECER LOCALIDADES SEGUN LA PROVINCIA QUE SELECCIONE ---
                                 intentar cambiar el value con el nombre de la provi seleccionada -->
-                                <% if (locals.old.province === "capitalFederal") { %>
                                 
                                 <option value="Agronomia">Agronomia</option>
                                 <option value="Almagro">Almagro</option>
@@ -95,9 +109,7 @@
                                 <option value="VillaUrquiza">VillaUrquiza</option>
                                 <option value="VilladelParque">VilladelParque</option>
                                 <option value="VélezSarsfield">VélezSarsfield</option> 
-                                <% } %>
 
-                                <% if (locals.old.province === "provinciaDeBuenosAires") { %>
                                 <!-- Provincia de Buenos Aires -->
                                 <option value="AlmiranteBrown">Almirante Brown</option>
                                 <option value="Avellaneda">Avellaneda</option>
@@ -137,9 +149,7 @@
                                 <option value="TresDeFebrero">Tres De Febrero</option>
                                 <option value="VicenteLópez">Vicente López</option>
                                 <option value="Zárate">Zárate</option>
-                                <% } %>
                                 <!-- Neuquen -->
-                                <% if (locals.old.province === "neuquen") { %>
                                 <option value="Alumine">Alumine</option>
                                 <option value="Andacollo">Andacollo</option>
                                 <option value="Arroyito">Arroyito</option>
@@ -174,14 +184,22 @@
                                 <option value="VillaPehuenia">Villa Pehuenia</option>
                                 <option value="VillaTraful">Villa Traful</option>
                                 <option value="Zapala">Zapala</option>
-                                <% } %>
                             </select>
+                            <% if (locals.errors && errors.district) { %>
+                                <small class="error-message"><%= errors.district.msg %></small>
+                                <% } %>
                         </div>
                         <div class="input-container">
-                            <input type="text" class="input-style" name="direction" id="direction" placeholder="Dirección" value="<%= user.direction %>">
+                            <input type="text" class="input-style" name="direction" id="direction" placeholder="Dirección" value="<%= locals.old && old.direction %>">
+                            <% if (locals.errors && errors.direction) { %>
+                                <small class="error-message"><%= errors.direction.msg %></small>
+                                <% } %>
                         </div>
                         <div class="input-container">
-                            <input type="number" class="input-style" name="number" id="number" placeholder="Número de calle" value="<%= user.number %>">
+                            <input type="number" class="input-style" name="number" id="number" placeholder="Número de calle" value="<%= locals.old && old.number %>">
+                            <% if (locals.errors && errors.number) { %>
+                                <small class="error-message"><%= errors.number.msg %></small>
+                                <% } %>
                         </div>
                     </div>
                 </div>
