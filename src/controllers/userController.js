@@ -107,14 +107,51 @@ module.exports = {
                 user,
                 session: req.session,
                 old: req.body
-        
             }) 
         })
         .catch(error => res.send(error))
     },
     profileUpdate: (req, res) => {
         let idUser = +req.params.id;
-        getUsers.forEach(user => {
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            db.User.update({
+                name: req.body.name,
+                dni: +req.body.dni,
+                phone: +req.body.phone,
+                postcode: +req.body.postcode,
+                province: req.body.province,
+                district: req.body.district,
+                direction: req.body.direction,
+                number: +req.body.number,
+                image: req.file ? req.file.filename : user.image
+            },{
+                where: {
+                    idUser
+                }
+            })
+            .then(() => 
+                res.redirect('/') 
+            )
+            .catch(error => res.send(error))
+        }else{
+            db.User.findOne({
+                where: {
+                    idUser
+                }
+            })
+            .then((user) => {
+                res.render('users/profileEdit', {
+                    title: "EditarPerfil",
+                    user,
+                    session: req.session,
+                    old: req.body,
+                    errors: errors.mapped()
+                }) 
+            })
+        }
+
+        /* getUsers.forEach(user => {
             if(user.id === idUser){
                 user.name = req.body.name,
                 user.dni = +req.body.dni,
@@ -128,29 +165,7 @@ module.exports = {
             }
         })
         writeUsers(getUsers);
-        res.redirect('/'); 
-
-         /*   let id = +req.params.id;
-        let user = getUsers.find(user => user.id === id)
-        let {name, dni, phone, postcode, province, district, direction, number} = req.body
-
-        getUsers.forEach(user => {
-            if(user.id === id){
-                user.id = user.id
-                user.name = name
-                user.dni = +dni
-                user.phone = +phone
-                user.postcode = +postcode
-                user.province = province
-                user.district = district
-                user.direction = direction
-                user.number = +number
-                user.image = req.file ? req.file.filename : user.image
-            }
-        })
-        writeUsers(getUsers)
-        req.session.user = user
-        res.redirect('/') */
+        res.redirect('/');  */
     },
     leaveSession: (req, res) => {
         /* eliminamos session */
