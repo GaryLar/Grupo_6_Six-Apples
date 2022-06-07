@@ -43,7 +43,7 @@ module.exports = (sequelize, dataTypes) => {
         direction: {
             type: dataTypes.STRING(100),
         },
-        rolld: {
+        rolId: {
             type: dataTypes.INTEGER(10).UNSIGNED
         },
         
@@ -51,7 +51,7 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName: 'users',
         deletedAt: false,
-        timestamp: true
+        timestamps: true
     };
 
     const User = sequelize.define(alias, cols, config)
@@ -61,9 +61,9 @@ module.exports = (sequelize, dataTypes) => {
             as:"rol",
             foreignKey:"rolId"
         })
-        User.belongsTo(models.Order,{
+        User.hasOne(models.Order,{
             as:"order",
-            foreignKey:"userId"
+            foreignKey: "userId"
         })
     }
 

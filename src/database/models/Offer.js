@@ -32,7 +32,7 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName: 'offers',
         deletedAt: false,
-        timestamp: true
+        timestamps: true
     };
 
     const Offer = sequelize.define(alias, cols, config)

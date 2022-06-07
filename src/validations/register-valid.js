@@ -1,5 +1,5 @@
 const { check, body } = require('express-validator');
-const {getUsers} = require('../data');
+const db = require('../database/models');
 
 let validateRegister = [
     check('name')
@@ -11,11 +11,17 @@ let validateRegister = [
         .isEmail().withMessage('Ingrese un email válido'),
     
     body('email').custom((value) => {
-        let user = getUsers.find(user => user.email === value);
-        if(user){
-            return false;
-        } return true;
-    }).withMessage('Email ya registrado'),
+        return db.User.findOne({
+            where: {
+                email: value,
+            }
+        })
+        .then((user) => {
+            if(user){
+                return Promise.reject('Email ya registrado')
+            }
+        })
+    }),
     check('password')
         .notEmpty().withMessage('Ingrese una contraseña').bail()
         .isLength({ min: 7}).withMessage('La contraseña debe tener un mínimo de 7 caracteres'),
