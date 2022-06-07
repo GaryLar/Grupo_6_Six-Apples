@@ -4,22 +4,32 @@ const removeAccents = (str) => {                /* Para sacar acentos */
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."); /* ESTA funcion sirve parapasar a miles */
+const db = require("../database/models")
+const { Op } = require('Sequelize');
 
 module.exports={
     index:(req,res)=>{
-        let productView = getProducts.filter(product => {
-            return product.view === true
+        let productPromise = db.Product.findAll({where : {
+            view : {
+                [db.Sequelize.Op.eq] : 1
+            }
+        }})
+        let offertsPromise = db.Offer.findAll({where : {
+            view : {
+                [db.Sequelize.Op.eq] : 1
+            }
+        }})
+        Promise.all([productPromise, offertsPromise])
+        .then(([productView, offertsView])=>{
+            res.render('home.ejs',{ //home.ejs
+                title: "Six Apples",
+                productView,
+                offertsView,
+                toThousand,
+                session: req.session
+            }) 
         })
-        let offertsView = getOffers.filter(bolson => {
-            return bolson.view === true
-        })
-        res.render('home.ejs',{ //home.ejs
-            title: "Six Apples",
-            productView,
-            offertsView,
-            toThousand,
-            session: req.session
-        }) 
+        .catch((error)=>res.send(error))
     },
     about:(req,res)=>{
         res.render('quienessomos', { //quienessomos.ejs
@@ -34,19 +44,15 @@ module.exports={
                 resultadoBusqueda.push(product)
             }
         });
-        res.render('search', {
-            title: "Busqueda",
-            resultadoBusqueda,
-            search: req.query.search,
-            toThousand,
-            session: req.session
-        })
-        
+        db.Product.findAll()
+        .then(()=>{
+            res.render('search', {
+                title: "Busqueda",
+                resultadoBusqueda,
+                search: req.query.search,
+                toThousand,
+                session: req.session
+            })
+        }) 
     }
 }
-
-
-
-/* form.addEventListener("sumbit",()=>{
-    alert("")
-}) */
