@@ -92,19 +92,25 @@ module.exports = {
                 old: req.body
             })
         })
+        .catch(error => res.send(error))
     },
     profileEdit : (req, res)=>{
         let id = +req.session.user.id;
-        let user = getUsers.find(user => user.id === id);
+        db.User.findOne({
+            where: {
+                id
+            }
+        })
+        .then((user) => {
+            res.render('users/profileEdit', {
+                title: "Perfil",
+                user,
+                session: req.session,
+                old: req.body
         
-        res.render('users/profileEdit', {
-            title: "Perfil",
-            user,
-            session: req.session,
-            old: req.body
-    
-        })  
-       
+            }) 
+        })
+        .catch(error => res.send(error))
     },
     profileUpdate: (req, res) => {
         let idUser = +req.params.id;
