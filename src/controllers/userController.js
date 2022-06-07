@@ -79,12 +79,18 @@ module.exports = {
     },
     profile : (req, res)=>{
         let id = +req.session.user.id;
-        let user = getUsers.find(user => user.id === id);
-        res.render('users/profile', {
-            title: "Perfil",
-            user,
-            session: req.session,
-            old: req.body
+        db.User.findOne({
+            where: {
+                id
+            },
+        })
+        .then((user) => {
+            res.render('users/profile', {
+                title: "Perfil",
+                user,
+                session: req.session,
+                old: req.body
+            })
         })
     },
     profileEdit : (req, res)=>{
