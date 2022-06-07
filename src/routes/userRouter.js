@@ -18,7 +18,7 @@ router.post('/registro',uploadFile.single('image'), registerValidator, userContr
 
 router.get('/perfil', checkUserSession, userController.profile);
 router.get('/perfil/editar/:id', checkUserSession, userController.profileEdit);
-router.put('/perfil/editar/:id', profileValidator, checkUserSession, userController.profileUpdate);
+router.put('/perfil/editar/:id', uploadFile.single('image'), profileValidator, checkUserSession, userController.profileUpdate);
 /* get leaveSession */
 router.get('/salir', userController.leaveSession);
 module.exports = router;
