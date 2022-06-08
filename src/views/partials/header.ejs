@@ -10,7 +10,7 @@
         <nav class="menu-home1">
             <ul>
                 <% if ( typeof session.user != "undefined") { %>
-                    <li><a href="/usuario/perfil"><div class="image"><img src="/images/usuarios/<%- session.user.image %>" alt="perfil"></div></a></li>  <!-- desaparece el icono de id: "user" -->
+                    <li><a href="/usuario/perfil"><div class="image"><img src="/images/usuarios/<%= user.image %>" alt="perfil"></div></a></li>  <!-- desaparece el icono de id: "user" -->
                 <% } else { %>
                     <li id="ingresa"><a href="/usuario/login">Ingresá</a></li><a href="/usuario/login"><i id="user" class="fa-regular fa-circle-user"></i></a>
                 <% } %> 

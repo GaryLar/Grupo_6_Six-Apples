@@ -115,23 +115,15 @@ module.exports = {
         let errors = validationResult(req);
         if(errors.isEmpty()){
             db.User.update({
-                ...req.body
-                /* name: req.body.name,
-                dni: +req.body.dni,
-                phone: +req.body.phone,
-                postcode: +req.body.postcode,
-                province: req.body.province,
-                district: req.body.district,
-                direction: req.body.direction,
-                number: +req.body.number,
-                image: req.file ? req.file.filename : image */
+                ...req.body,
+                image: req.file ? req.file.filename : session.user.image /* session.user.image / req.session.user.image */
             },{
                 where: {
                     id: req.session.user.id
                 }
             })
             .then(() => 
-                res.redirect('/') 
+                res.redirect('/')  /* antes / */
             )
             .catch(error => res.send(error))
         }else{
@@ -149,22 +141,6 @@ module.exports = {
                 }) 
             })
         }
-
-        /* getUsers.forEach(user => {
-            if(user.id === idUser){
-                user.name = req.body.name,
-                user.dni = +req.body.dni,
-                user.phone = +req.body.phone,
-                user.postcode = +req.body.postcode,
-                user.province = req.body.province,
-                user.district = req.body.district,
-                user.direction = req.body.direction,
-                user.number = +req.body.number,
-                user.image = req.file ? req.file.filename : user.image
-            }
-        })
-        writeUsers(getUsers);
-        res.redirect('/');  */
     },
     leaveSession: (req, res) => {
         /* eliminamos session */

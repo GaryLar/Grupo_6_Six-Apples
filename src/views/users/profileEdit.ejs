@@ -6,10 +6,10 @@
     <%- include("../partials/header.ejs") %>
     <section class="profile-section">
         <h2 class="profile"> Mi Perfil</h2>
-        <form action="/usuario/perfil/editar/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-            <div class="image"><img src="/images/usuarios/<%= user.image %>" alt="imagePerfil"></div>
+        <form action="/usuario/perfil/editar/<%= session.user.id %>?_method=PUT" method="POST" enctype= "multipart/form-data">
+            <div class="image"><img src="/images/usuarios/<%= user.image %>" alt="imagePerfil"></div>  <!-- raro -->
                 <div class="input_file-container">
-                    <span id="span">SUBIR IMAGEN</span>
+                    <span id="span">EDITAR IMAGEN</span>
                     <input class="avatar2" type="file" name="image">
                 </div>
                
@@ -18,27 +18,27 @@
                 <div class="userData_container"> 
                     <div class="form_box"> 
                         <div class="input-container">
-                            <input type="text" class="input-style" name="name" id="name" placeholder="Ingrese Nombre Y Apellido" value="<%= locals.old && old.name %>"> <!-- session.user.name -->
+                            <input type="text" class="input-style" name="name" id="name" placeholder="Ingrese Nombre Y Apellido" value="<%= (locals.old && old.name) ? old.name : user.name %>"> <!-- session.user.name -->
                             <% if (locals.errors && errors.name) { %>
-                                <small class="error-message"><%= errors.name.msg %></small>
+                                <span class="error-message"><%= errors.name.msg %></span>
                                 <% } %>
                         </div>
                         <div class="input-container">
-                            <input type="number" class="input-style" name="dni" id="dni" placeholder="Ingrese su DNI" value="<%= locals.old && old.dni %>">
+                            <input type="number" class="input-style" name="dni" id="dni" placeholder="Ingrese su DNI" value="<%= (locals.old && old.dni) ? old.dni : user.dni %>">
                             <% if (locals.errors && errors.dni) { %>
-                                <small class="error-message"><%= errors.dni.msg %></small>
+                                <span class="error-message"><%= errors.dni.msg %></span>
                                 <% } %>
                         </div>
                         <div class="input-container">
-                            <input type="number" class="input-style" name="phone" id="phone" placeholder="Número de Contacto" value="<%= locals.old && old.phone %>">
-                            <% if (locals.errors && errors.number) { %>
-                                <small class="error-message"><%= errors.number.msg %></small>
+                            <input type="number" class="input-style" name="phone" id="phone" placeholder="Número de Contacto" value="<%= (locals.old && old.phone) ? old.phone : user.phone %>">
+                            <% if (locals.errors && errors.phone) { %>
+                                <span class="error-message"><%= errors.phone.msg %></span>
                                 <% } %>
                         </div> 
                         <div class="input-container">
-                            <input type="number" class="input-style" name="postcode" id="postcode" placeholder="Código Postal" value="<%= locals.old && old.postcode %>">
-                            <% if (locals.errors && errors.postcode) { %>
-                                <small class="error-message"><%= errors.postcode.msg %></small>
+                            <input type="number" class="input-style" name="postCode" id="postCode" placeholder="Código Postal" value="<%= (locals.old && old.postCode) ? old.postCode : user.postCode %>">
+                            <% if (locals.errors && errors.postCode) { %>
+                                <span class="error-message"><%= errors.postCode.msg %></span>
                                 <% } %>
                         </div> 
                     </div>
@@ -51,7 +51,7 @@
                                 <option value="neuquen" <%= user.province === "neuquen" ? "selected" : "" %>>Neuquén</option>
                             </select>
                             <% if (locals.errors && errors.province) { %>
-                                <small class="error-message"><%= errors.province.msg %></small>
+                                <span class="error-message"><%= errors.province.msg %></span>
                                 <% } %>
                         </div>
                         <div class="input-container">
@@ -186,19 +186,19 @@
                                 <option value="Zapala">Zapala</option>
                             </select>
                             <% if (locals.errors && errors.district) { %>
-                                <small class="error-message"><%= errors.district.msg %></small>
+                                <span class="error-message"><%= errors.district.msg %></span>
                                 <% } %>
                         </div>
                         <div class="input-container">
-                            <input type="text" class="input-style" name="direction" id="direction" placeholder="Dirección" value="<%= locals.old && old.direction %>">
+                            <input type="text" class="input-style" name="direction" id="direction" placeholder="Dirección" value="<%= (locals.old && old.direction) ? old.direction : user.direction %>">
                             <% if (locals.errors && errors.direction) { %>
-                                <small class="error-message"><%= errors.direction.msg %></small>
+                                <span class="error-message"><%= errors.direction.msg %></span>
                                 <% } %>
                         </div>
                         <div class="input-container">
-                            <input type="number" class="input-style" name="number" id="number" placeholder="Número de calle" value="<%= locals.old && old.number %>">
+                            <input type="number" class="input-style" name="number" id="number" placeholder="Número de calle" value="<%= (locals.old && old.number) ? old.number : user.number %>">
                             <% if (locals.errors && errors.number) { %>
-                                <small class="error-message"><%= errors.number.msg %></small>
+                                <span class="error-message"><%= errors.number.msg %></span>
                                 <% } %>
                         </div>
                     </div>

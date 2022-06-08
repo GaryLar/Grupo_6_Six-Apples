@@ -7,7 +7,7 @@ let validateProfile = [
         .notEmpty().withMessage('Se require nombre completo'),
     check("phone")
         .notEmpty().withMessage('Se require nombre completo'),
-    check("postcode")
+    check("postCode")
         .notEmpty().withMessage('Se require nombre completo'),
     check("province")
         .notEmpty().withMessage('Se require nombre completo'),
