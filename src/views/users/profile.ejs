@@ -10,7 +10,7 @@
             <div class="image"><img src="/images/usuarios/<%= user.image %>" alt="imagePerfil"></div> 
                 <div class="input_file-container">
                     <span id="span">SUBIR IMAGEN</span>
-                    <input class="avatar2" type="file" name="image">
+                    <input class="avatar2" disabled type="file" name="image">
                 </div>
             <div class="profile-box"> 
                 <h2 class="datos-contacto">Datos de Contacto</h2>
@@ -26,7 +26,7 @@
                             <input type="number" disabled class="input-style" name="phone" id="phone" placeholder="Número de Contacto" value="<%= user.phone %>">
                         </div> 
                         <div class="input-container">
-                            <input type="number" disabled class="input-style" name="postcode" id="postcode" placeholder="Código Postal" value="<%= user.postcode%>">
+                            <input type="number" disabled class="input-style" name="postCode" id="postCode" placeholder="Código Postal" value="<%= user.postCode %>">
                         </div> 
                     </div>
                     <div class="form_box">

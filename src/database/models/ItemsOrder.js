@@ -21,7 +21,7 @@ module.exports=(sequelize,dataTypes)=>{
     let config = {
         tableName:'items_order',
         deletedAt: false,
-        timestamp: true
+        timestamps: true
     };
     const ItemsOrder =sequelize.define(alias,cols,config)
 

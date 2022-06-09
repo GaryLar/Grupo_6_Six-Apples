@@ -11,7 +11,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.BOOLEAN,
             allowNull: false,
         },
-        
         userId: {
             type: dataTypes.INTEGER(10).UNSIGNED,
         }
@@ -19,7 +18,7 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName: 'orders',
         deletedAt: false,
-        timestamp: true
+        timestamps: true
     };
 
     const Order = sequelize.define(alias, cols, config)

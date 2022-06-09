@@ -14,13 +14,13 @@ module.exports = (sequelize, dataTypes) => {
     };
     let config = {
         tableName: 'rol',
-        timestamp: false,
+        timestamps: false,
     };
 
     const Rol = sequelize.define(alias, cols, config);
 
-    Rol.associate= models =>{
-        Rol.hasMany(models.User,{
+    Rol.associate = models => {
+        Rol.hasMany(models.User, {
             as:"users", /* ROL TIENE MUCHOS USUARIOS (LO QUE DICE EL AS)*/
             foreignKey:"rolId"
         })
