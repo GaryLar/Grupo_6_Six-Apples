@@ -20,13 +20,29 @@
     box-sizing: border-box;
 }
 
-body.section p {
+body.error404 {
+    background-image: url('/images/nodisponible2.png'); 
+    background-size:800px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+body.error404 section p {
     font-size: 20px;
     color:black; 
-    display: flex;
+}
+
+body.error404 section.error404-section{
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: white;
+    width:30%; 
+    margin: 209px auto;
+    display:flex;
     justify-content: center;
 }
 
-body{
-    background-color: var(--color-verdeClaro) ;
+section.error404-section {
+    opacity: 80%;
 }
