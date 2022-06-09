@@ -10,7 +10,7 @@
         <nav class="menu-home1">
             <ul>
                 <% if ( typeof session.user != "undefined") { %>
-                    <li><a href="/usuario/perfil"><div class="image"><img src="/images/usuarios/<%= user.image %>" alt="perfil"></div></a></li>  <!-- desaparece el icono de id: "user" -->
+                    <li><a href="/usuario/perfil"><div class="image"><img src="/images/usuarios/<%= session.user.image %>" alt="perfil"></div></a></li>  <!-- desaparece el icono de id: "user" -->
                 <% } else { %>
                     <li id="ingresa"><a href="/usuario/login">Ingresá</a></li><a href="/usuario/login"><i id="user" class="fa-regular fa-circle-user"></i></a>
                 <% } %> 
@@ -27,7 +27,7 @@
                 <li><a href="/about">¿Quiénes somos?</a></li>
                 <% if (typeof session.user != "undefined") { %>
                     <li><a href="/usuario/salir">Cerrar sesión</a></li>
-                <% if (session.user.rol === "ADMIN") { %>
+                <% if (session.user.rol === 1) { %>
                     <li><a href="/admin">Admin</a></li>
                 <% } %>
                 <% } %>
@@ -43,7 +43,7 @@
                     <li><a href="/about">¿Quiénes somos?</a></li>
                     <% if (typeof session.user != "undefined") { %>
                         <li><a href="/usuario/salir">Cerrar sesión</a></li>
-                    <% if (session.user.rol === "ADMIN") { %>
+                    <% if (session.user.rol === 1) { %>
                         <li><a href="/admin">Admin</a></li>
                     <% } %>
                     <% } %>

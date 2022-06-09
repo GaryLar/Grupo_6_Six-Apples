@@ -1,4 +1,3 @@
-const { format } = require('express/lib/response');
 const { getProducts, getOffers} = require('../data/index');
 const removeAccents = (str) => {                /* Para sacar acentos */
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -38,21 +37,26 @@ module.exports={
         }) 
     },
     search: (req, res) => {
-        let resultadoBusqueda = []
-        getProducts.forEach(product => {
-            if(removeAccents(`${product.name} || ${product.categoryName}`).toLowerCase().includes(req.query.search.toLowerCase())){
-                resultadoBusqueda.push(product)
+        let resultado = req.query.search.toLowerCase()
+        db.Product.findAll({
+            where: {
+                [Op.or] : [
+                    {name : {[Op.substring] : resultado}}, 
+                ]
             }
-        });
-        db.Product.findAll()
-        .then(()=>{
-            res.render('search', {
-                title: "Busqueda",
-                resultadoBusqueda,
-                search: req.query.search,
-                toThousand,
-                session: req.session
-            })
-        }) 
+        })
+        .then((resultadoBusqueda) => {
+                    res.render('search', {
+                        title: "Busqueda",
+                        resultadoBusqueda,
+                        search: req.query.search,
+                        toThousand,
+                        session: req.session
+                    })
+
+                })        
+        .catch((error) => res.send(error))
+     
+            
     }
 }

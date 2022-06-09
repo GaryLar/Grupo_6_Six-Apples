@@ -1,6 +1,8 @@
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
 const db = require('../database/models');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
     login: (req, res) => {
@@ -116,15 +118,13 @@ module.exports = {
         if(errors.isEmpty()){
             db.User.update({
                 ...req.body,
-                image: req.file ? req.file.filename : session.user.image /* session.user.image / req.session.user.image */
+                image: req.file ? req.file.filename : req.session.user.image /* session.user.image / req.session.user.image */
             },{
                 where: {
                     id: req.session.user.id
                 }
             })
-            .then(() => 
-                res.redirect('/')  /* antes / */
-            )
+            .then(() => res.redirect('/'))
             .catch(error => res.send(error))
         }else{
             db.User.findOne({
