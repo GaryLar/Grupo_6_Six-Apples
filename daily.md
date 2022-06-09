@@ -26,4 +26,4 @@
 ## Sprint 6
 
 ### En este sprint estuvimos trabajando con base de datos que fue un tema que es bastante nuevo para todos y estuvimos a full para poder entenderlo y asi llevar a cabo nuestro sprint de la mejor manera.. En cierto momento tuvimos incovenientes con respecto a que los datos de nuestro proyectos se consumieran directamente desde la base de datos, pero fue solucionado.. 
-### Tambien se tuvo un incoveniente con respecto al xammp que utilizamos conjunto con el dbeaver pero tambien estuvimos investigando y tuvo solución..
+### Tambien se tuvo un incoveniente con respecto al xammp que utilizamos conjunto con el dbeaver pero tambien estuvimos investigando y encomtramos la solución.
