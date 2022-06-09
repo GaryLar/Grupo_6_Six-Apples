@@ -23,3 +23,7 @@
 ### Cuando se implemento el bcrypt tuvimos problemas con los usuarios registrados anteriormente ya que no podian iniciar sessión, se pudo resolver creando nuevos usuarios.. 
 ### Como equipo pudimos resolver detalles e inconvenientes que se nos presenta en cada sprint, siempre tomando ideas, conocimientos y técnicas de cada integrante que son fundamentales para este proyecto integrador.. 
 
+## Sprint 6
+
+### En este sprint estuvimos trabajando con base de datos que fue un tema que es bastante nuevo para todos y estuvimos a full para poder entenderlo y asi llevar a cabo nuestro sprint de la mejor manera.. En cierto momento tuvimos incovenientes con respecto a que los datos de nuestro proyectos se consumieran directamente desde la base de datos, pero fue solucionado.. 
+### Tambien se tuvo un incoveniente con respecto al xammp que utilizamos conjunto con el dbeaver pero tambien estuvimos investigando y tuvo solución..

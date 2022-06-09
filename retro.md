@@ -1,5 +1,14 @@
 # Retrospectiva
 
+# Sprint 5 
+![estrella](./data-del-grupo/restrospectiva-sprint5.jpg)
+
+### En este sprint 5 trabajamos en nuestra retrospectiva para seguir y recordar varios puntos en todos los sprint. 
+### En este sprint tomamos en cuenta en las dayli la sugerencia de conectarnos y resolver dudas en conjunto pero tambien trabajando en las tareas que se nos asigno.
+### Tambien trabajamos con los middlewares y tuvimos algunos incovenientes, ya que el middleware de admin buscaban el rol que le pasabamos como string, del JSON. Pero fue solucionado haciendo que consuma esos datos desde la db, de la tabla de rol, lo hicimos requerir al db y traer el resultado. 
+### Tomando en cuenta como en los sprint anteriores cada integrante se desarrollo muy bien y pudo culminar, apesar de los incovenientes, las tareas asignadas.. De igual forma seguiremos enfocandonos en base de datos y en apis que es un tema que nos re servirá para nuestro proyecto y todo quedo fenomenal.
+
+
 # Sprint 4
 
  ![estrella](./data-del-grupo/retrospectivaSprint4.jpg)
