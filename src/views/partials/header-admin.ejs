@@ -3,9 +3,9 @@
     <div class="logo-admin">
         <a href="/admin"><img src="/images/logoFinal.png" alt="logo"></a>
     </div>
-    <form action="" method="">
-        <input id="barra" type="search" placeholder="  Buscar...">
-        <button id="lupa"><i id="lupa" class="fas fa-search"></i></button>
+    <form action="/admin/search" method="GET">
+        <input id="barra" type="search" placeholder="  Buscar..." name="search" >
+        <button id="lupa" type="submit"><i id="lupa" class="fas fa-search"></i></button>
     </form>
     <div class="avatar-admin"><img src="/images/usuarios/<%- session.user.image %>" alt="perfil"></div>
     <button id="boton-menu" for="menu"><i class="fa-solid fa-bars"></i></button><!-- menu hamburgues -->

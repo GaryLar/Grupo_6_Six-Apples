@@ -89,22 +89,23 @@ body.profile section div.image img{
 }
 
 
- .input_file-container {
+/* .input_file-container {
     background-color: white;
     border-radius: 1rem;
     height: 2.5rem;
     padding: 0.5rem;
     width: 10rem;
     position: relative;
+    margin: 0 auto 2rem;
     margin-bottom: 2rem;
-
+ 
 }
 
  .input_file-container span {
     position: absolute;
     top: 7%;
     left: 15%;
-}
+} */
 
 /* id de el boton subir imagen  */
 #span {
@@ -123,16 +124,8 @@ body.profile section div.image img{
     /* sirve esto para seleccinar un solo input(un input puntual) ..puede ser con clase o asi */
     opacity: 0;
     cursor: pointer;
-  /*  display: flex;
-    justify-content: center;
-    margin: 0 auto ;*/
 }
- 
-.avatar2{
-    display: flex;
-    justify-content: center;
-    margin: 0 auto; 
-}
+
 
 body.profile h2.datos-contacto{
     text-align: center;

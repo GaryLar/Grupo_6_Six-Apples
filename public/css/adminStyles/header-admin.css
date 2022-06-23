@@ -5,6 +5,14 @@ header.header-admin {
     width: 100%;
     font-size: 12px;
 }
+header.header-admin li{
+    list-style: none;
+}
+
+header.header-admin a{
+    color: black;
+    text-decoration: none;
+}
 
 header.header-admin div.logo-admin img {
     width: 35%; 

@@ -132,12 +132,13 @@ module.exports = {
                     id: req.session.user.id
                 }
             })
-            .then(() => {
+            .then((user) => {
                 res.render('users/profileEdit', {
                     title: "EditarPerfil",
                     session: req.session,
                     old: req.body,
-                    errors: errors.mapped()
+                    errors: errors.mapped(),
+                    user
                 }) 
             })
         }

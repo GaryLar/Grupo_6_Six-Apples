@@ -16,6 +16,8 @@ const checkAdmin = require('../middlewares/checkAdmin')
 
 /* GET mostrará index */
 router.get('/', checkUserSession, checkAdmin, adminController.index) /* pagina de inicio */
+router.get('/search', checkUserSession, checkAdmin, adminController.search)
+
 
 
 /* ============== */

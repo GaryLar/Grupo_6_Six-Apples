@@ -9,27 +9,25 @@
     font-family: 'poppins', sans-serif;
 }
 
-body.administracion ul,
-body.administracion a{
-    list-style: none;
-    color: black;
-    text-decoration: none;
-}
-
-body.administracion {
+/* styles form del admin */
+body.form-edit,
+body.form-add,
+body.list-category,
+body.form-edit-category,
+body.form-add-category,
+body.search-admin{
     background-image: url('/images/imagenbody.jpg');
     background-size: contain;
-    min-height: 100vh;
 }
 
-section.section-admin{ /* aqui tendria que poner el fondo */
+.section-admin{ 
    text-align: center;
    width: 80%;
-   margin: 30px auto;
    background-color: white;
    border-radius: 10px;
    padding: 10px;
    max-width: 400px; 
+   margin: 30px auto;
 }
 
 section.section-admin h2.admin{
@@ -51,8 +49,6 @@ section.section-admin form div{
 
 section.section-admin form div.container-admin,
 section.section-admin form div.container-admin-file{
-    /* display: flex;
-    flex-direction: column; */
     margin-bottom: 1rem;
 }
 
@@ -87,11 +83,9 @@ section.section-admin div.container-admin-file{
     border: 1px solid black;
     border-radius: 1rem;
     height: 2.5rem; 
-  /*   padding: 0rem; */
     width: 10rem;
     position: relative;
     margin: 0 auto;
-    /* margin-bottom: 1rem; */
 }
 
 section.section-admin .container-admin-file label{
