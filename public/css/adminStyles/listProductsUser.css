@@ -1,14 +1,16 @@
 /* styles listados admin */
 body.listado-productos h3.titulo,
 body.list-category h3.titulo,
-body.search-admin h3.titulo {
+body.search-admin h3.titulo,
+body.listado-usuarios h3.titulo {
     text-align: center;
     font-weight: 800;
 }
 
 body.listado-productos section.tabla-color,
 body.list-category section.tabla-color,
-body.search-admin section.tabla-color{
+body.search-admin section.tabla-color,
+body.listado-usuarios section.tabla-color{
     background-color: rgba(255, 255, 255, 0.827);
 }
 

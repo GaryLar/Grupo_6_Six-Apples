@@ -10,15 +10,16 @@ const productsValid = require('../validations/products-valid');
 const productsEditValid = require('../validations/productsEdit-valid');
 const categoryValid = require('../validations/category-valid')
 const checkUserSession = require('../middlewares/checkUserSession')
-const checkAdmin = require('../middlewares/checkAdmin')
+const checkAdmin = require('../middlewares/checkAdmin');
+const adminUsersController = require('../controllers/admin/adminUsersController');
 
-/*const { route } = require('./productsRouter');*/
-
-/* GET mostrará index */
+/* mostrará index */
 router.get('/', checkUserSession, checkAdmin, adminController.index) /* pagina de inicio */
 router.get('/search', checkUserSession, checkAdmin, adminController.search)
 
-
+/* ADMIN USUARIOS */
+router.get('/users', checkUserSession, checkAdmin, adminUsersController.users);
+router.put('/users/:id', checkUserSession,checkAdmin, adminUsersController.userChangeRol);
 
 /* ============== */
 /* CRUD PRODUCTOS */
