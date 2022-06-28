@@ -6,13 +6,14 @@
     <section class="section-admin">
         <h2 class="admin">Agregar Nuevo Producto</h2>
 
-        <form id="alert" action="/admin/productos" method="post" class="form-admin" enctype="multipart/form-data">
+        <form id="formProduct" action="/admin/productos" method="post" class="form-admin" enctype="multipart/form-data">
             <div class="container-admin">
                 <label for="name">Nombre del producto:</label>
                 <input type="text" class="admin-style" name="name" id="name" value="<%= (locals.old && old.name) ? old.name : "" %>">
                 <% if (locals.errors && errors.name) { %>
                     <span class="error-msg"><%= errors.name.msg %></span>
                 <% } %>
+                <span class="error-msg" id="nameError"></span>
             </div>
             <div class="container-admin">
                 <label for="type">Tipo:</label>
@@ -20,6 +21,7 @@
                 <% if (locals.errors && errors.type) { %>
                     <span class="error-msg"><%= errors.type.msg %></span>
                 <% } %>
+                <span class="error-msg" id="typeError"></span>
             </div>
             <div class="container-admin">
                 <label for="categoryName">Categoría:</label>
@@ -31,6 +33,7 @@
                 <% if (locals.errors && errors.categoryName) { %>
                     <span class="error-msg"><%= errors.categoryName.msg %></span>
                 <% } %>
+                <span class="error-msg" id="categoryNameError"></span>
             </div>
             <div class="container-admin">
                 <label for="price">Precio:</label>
@@ -38,6 +41,7 @@
                 <% if (locals.errors && errors.price) { %>
                     <span class="error-msg"><%= errors.price.msg %></span>
                 <% } %>
+                <span class="error-msg" id="priceError"></span>
             </div>
             <div class="container-admin">
                 <label for="origin">Origen del Producto:</label>
@@ -45,17 +49,20 @@
                 <% if (locals.errors && errors.origin) { %>
                     <span class="error-msg"><%= errors.origin.msg %></span>
                 <% } %>
+                <span class="error-msg" id="originError"></span>
             </div>
             <div class="container-admin">
                 <label for="view">En vista:</label>
-                <input type="checkbox" class="checkbox-style" id="view" name="view">
+                <input type="checkbox" class="checkbox-style" id="view" name="view"> <!-- este campo puede estar vacio -->
             </div>
-            <div class="container-admin-file">
+            <div class="container-admin-file imageError">
                 <label for="image">Agregar imagen</label>
                 <input type="file" name="image" id="image">
+                <span class="error-msg" id="imageError"></span>
             </div>
             <div class="finalizar-registro">
                 <button type="submit">AGREGAR PRODUCTO</button>
+                <span id="submitErrors" style="font-size: 14px;"></span>
             </div>
 
         </form>
@@ -63,5 +70,6 @@
     <% if (!locals.errors) { %>
         <%- include('../../partials/scripts') %> 
     <% }%> 
+    <script src="../../../../javascript/validationsFront/addProduct.js"></script>
 </body>
 </html>

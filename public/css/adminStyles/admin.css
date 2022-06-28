@@ -53,6 +53,10 @@ section.section-admin form div.container-admin-file{
     margin-bottom: 1rem;
 }
 
+section.section-admin div.imageError span#imageError{
+    margin-top: 70px;
+}
+
 section.section-admin .admin-style{
     border: solid 1px black;
     outline: none;
@@ -64,7 +68,8 @@ section.section-admin .admin-style{
     max-width: 250px;
 }
 
-section.section-admin span.error-msg{
+section.section-admin span.error-msg,
+section.section-admin span#submitErrors{
     font-size: 10px;
     color: tomato;
 }
@@ -103,7 +108,7 @@ section.section-admin .container-admin-file input[type = file]{
 }
 
 section.section-admin div.finalizar-registro{
-    margin: 20px auto;
+    margin: 30px auto;
     text-align: center;
 }
 section.section-admin .finalizar-registro button{
@@ -135,6 +140,14 @@ section.section-admin .finalizar-registro button:hover{
         flex-wrap: wrap;
     }
 
+    section.section-admin div.imageError{
+        flex-wrap: nowrap;
+    }
+
+    section.section-admin div.imageError span#imageError{
+        margin-top: 10px;
+    }
+
     section.section-admin span.error-msg {
         width: 100%;
         font-size: 12px;
@@ -144,6 +157,7 @@ section.section-admin .finalizar-registro button:hover{
 
     section.section-admin .finalizar-registro button{
         width: 200px;
+        margin-top: 25px;
     }
 
 }
