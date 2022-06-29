@@ -79,7 +79,7 @@ body.profile section div.image {
     object-position: center;
     width: 80px;
     border: solid 1px black;
-    margin: 0px auto; 
+    margin: 0px auto 15px auto; 
 }
 body.profile section div.image img{
     width: 100%;
@@ -89,23 +89,14 @@ body.profile section div.image img{
 }
 
 
-/* .input_file-container {
+ .input_file-container .avatar2{
     background-color: white;
     border-radius: 1rem;
-    height: 2.5rem;
     padding: 0.5rem;
     width: 10rem;
     position: relative;
-    margin: 0 auto 2rem;
-    margin-bottom: 2rem;
- 
+    margin: -3.5rem auto 2rem ;
 }
-
- .input_file-container span {
-    position: absolute;
-    top: 7%;
-    left: 15%;
-} */
 
 /* id de el boton subir imagen  */
 #span {
@@ -178,6 +169,7 @@ section.profile-section form span.error-message{
 /* USER DATA */ 
 .profile-box{
     width: 100%;
+    margin-top: -10px;
 }
 
 /* Media querys Version Tablet */ 
@@ -222,6 +214,12 @@ section.profile-section form span.error-message{
         background-color: white;
         max-width: 45%;
         margin: 70px auto;
+    }
+    body.profile h2.datos-contacto{
+        margin:1rem 0rem 1rem 0rem;
+    }
+    .input_file-container .avatar2{
+        margin: -3.5rem auto -3rem ;
     }
 
     section.profile-section form span.error-message{

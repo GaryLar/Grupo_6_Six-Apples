@@ -1,22 +1,22 @@
-const { check, body } = require('express-validator');
+const { check } = require('express-validator');
 
 let validateProfile = [
     check("name")
-        .notEmpty().withMessage('Se require nombre completo'),
+        .notEmpty().withMessage('Se requiere nombre completo'),
     check("dni")
-        .notEmpty().withMessage('Se require nombre completo'),
+        .notEmpty().withMessage('Ingrese DNI'),
     check("phone")
-        .notEmpty().withMessage('Se require nombre completo'),
+        .notEmpty().withMessage('Ingrese numero telefónico'),
     check("postCode")
-        .notEmpty().withMessage('Se require nombre completo'),
+        .notEmpty().withMessage('Ingrese código Postal'),
     check("province")
-        .notEmpty().withMessage('Se require nombre completo'),
+        .notEmpty().withMessage('Elija una Provincia'),
     check("district")
-        .notEmpty().withMessage('Se require nombre completo'),
+        .notEmpty().withMessage('Elija una Localidad'),
     check("direction")
-        .notEmpty().withMessage('Se require nombre completo'),
+        .notEmpty().withMessage('Ingrese dirección'),
     check("number")
-        .notEmpty().withMessage('Se require nombre completo')
+        .notEmpty().withMessage('Ingrese numero de calle')
 ];
 
 module.exports = validateProfile;

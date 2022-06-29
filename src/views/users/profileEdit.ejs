@@ -6,11 +6,12 @@
     <%- include("../partials/header.ejs") %>
     <section class="profile-section">
         <h2 class="profile"> Mi Perfil</h2>
-        <form action="/usuario/perfil/editar/<%= session.user.id %>?_method=PUT" method="POST" enctype= "multipart/form-data">
+        <form action="/usuario/perfil/editar/<%= session.user.id %>?_method=PUT" method="POST" enctype= "multipart/form-data" id="formProfile">
             <div class="image"><img src="/images/usuarios/<%= user.image %>" alt="imagePerfil"></div>  <!-- raro -->
+            <span class="error-message" id="imageError"></span>
                 <div class="input_file-container">
                     <span id="span">EDITAR IMAGEN</span>
-                    <input class="avatar2" type="file" name="image">
+                    <input class="avatar2" type="file" name="image" id="image">
                 </div>
                
             <div class="profile-box"> 
@@ -21,25 +22,29 @@
                             <input type="text" class="input-style" name="name" id="name" placeholder="Ingrese Nombre Y Apellido" value="<%= (locals.old && old.name) ? old.name : user.name %>"> <!-- session.user.name -->
                             <% if (locals.errors && errors.name) { %>
                                 <span class="error-message"><%= errors.name.msg %></span>
-                                <% } %>
+                            <% } %>
+                            <span class="error-message" id="nameError"></span>
                         </div>
                         <div class="input-container">
                             <input type="number" class="input-style" name="dni" id="dni" placeholder="Ingrese su DNI" value="<%= (locals.old && old.dni) ? old.dni : user.dni %>">
                             <% if (locals.errors && errors.dni) { %>
                                 <span class="error-message"><%= errors.dni.msg %></span>
-                                <% } %>
+                            <% } %>
+                            <span class="error-message" id="dniError"></span>
                         </div>
                         <div class="input-container">
                             <input type="number" class="input-style" name="phone" id="phone" placeholder="Número de Contacto" value="<%= (locals.old && old.phone) ? old.phone : user.phone %>">
                             <% if (locals.errors && errors.phone) { %>
                                 <span class="error-message"><%= errors.phone.msg %></span>
-                                <% } %>
+                            <% } %>
+                            <span class="error-message" id="phoneError"></span>
                         </div> 
                         <div class="input-container">
                             <input type="number" class="input-style" name="postCode" id="postCode" placeholder="Código Postal" value="<%= (locals.old && old.postCode) ? old.postCode : user.postCode %>">
                             <% if (locals.errors && errors.postCode) { %>
                                 <span class="error-message"><%= errors.postCode.msg %></span>
-                                <% } %>
+                            <% } %>
+                            <span class="error-message" id="postCodeError"></span>
                         </div> 
                     </div>
                     <div class="form_box">
@@ -52,7 +57,8 @@
                             </select>
                             <% if (locals.errors && errors.province) { %>
                                 <span class="error-message"><%= errors.province.msg %></span>
-                                <% } %>
+                            <% } %>
+                            <span class="error-message" id="provinceError"></span>
                         </div>
                         <div class="input-container">
                             <select name="district" id="district"  class="input-style">
@@ -187,24 +193,28 @@
                             </select>
                             <% if (locals.errors && errors.district) { %>
                                 <span class="error-message"><%= errors.district.msg %></span>
-                                <% } %>
+                            <% } %>
+                            <span class="error-message" id="districtError"></span>
                         </div>
                         <div class="input-container">
                             <input type="text" class="input-style" name="direction" id="direction" placeholder="Dirección" value="<%= (locals.old && old.direction) ? old.direction : user.direction %>">
                             <% if (locals.errors && errors.direction) { %>
                                 <span class="error-message"><%= errors.direction.msg %></span>
-                                <% } %>
+                            <% } %>
+                            <span class="error-message" id="directionError"></span>
                         </div>
                         <div class="input-container">
                             <input type="number" class="input-style" name="number" id="number" placeholder="Número de calle" value="<%= (locals.old && old.number) ? old.number : user.number %>">
                             <% if (locals.errors && errors.number) { %>
                                 <span class="error-message"><%= errors.number.msg %></span>
-                                <% } %>
+                            <% } %>
+                            <span class="error-message" id="numberError"></span>
                         </div>
                     </div>
                 </div>
                 
             </div>
+            <span class="error-message" id="submitError"></span>
             <div class="btn-container_profile">
                 <button type="submit" class="btn-submit">Guardar cambios</button>
             </div>
@@ -214,5 +224,6 @@
     <!--FOOTER-->
     <%- include("../partials/footer.ejs") %> 
     <%- include("../partials/scripts.ejs") %> 
+    <script src="../../../javascript/validationsFront/profileValidator.js"></script>
 </body>
 </html>
