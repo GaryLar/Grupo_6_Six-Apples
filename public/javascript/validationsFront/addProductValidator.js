@@ -29,6 +29,9 @@ window.addEventListener('load', function(){
                 $error.innerHTML = "El nombre no es válido";
                 $name.classList.add('error-msg');
                 break;
+            case $name.value.length<5:
+                $error.innerHTML = "El nombre no es válido";
+                break;
             default:
                 $name.classList.remove('error-msg');
                 $error.innerHTML = "";

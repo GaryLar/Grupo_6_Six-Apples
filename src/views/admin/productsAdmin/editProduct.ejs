@@ -6,25 +6,26 @@
     <main>
     <section class="section-admin">
         <h2 class="admin">Editar Producto:</h2>
-
-        <form action="/admin/productos/<%=producto.id %>?_method=PUT" method="post" class="form-admin" enctype="multipart/form-data">
+        <form action="/admin/productos/<%=producto.id %>?_method=PUT" method="post" class="form-admin formEdit" enctype="multipart/form-data">
             <div class="container-admin">
                 <label for="name">Nombre del producto:</label>
-                <input type="text" class="admin-style" name="name" id="name" value="<%= producto.name %>">
+                <input type="text" class="admin-style nameEdit"  name="name" id="name" value="<%= producto.name %>">
                 <% if (locals.errors && errors.name) { %>
                   <span class="error-msg"><%= errors.name.msg %></span>
                 <% } %>
+                <span class="error-msg" id="errorEdit"></span>
             </div>
             <div class="container-admin">
                 <label for="type">Tipo:</label>
-                <input type="text" class="admin-style" name="type" id="type" value="<%=producto.type%>">
+                <input type="text" class="admin-style typeEdit" name="type" id="type" value="<%=producto.type%>">
                 <% if (locals.errors && errors.type) { %>
                     <span class="error-msg"><%= errors.type.msg %></span>
                 <% } %>
+                <span class="error-msg" id="typeErrorEdit"></span>
             </div>
             <div class="container-admin">
                 <label for="categoryName">Categoría:</label>
-                <select name="categoryName" id="categoryName" class="admin-style">
+                <select name="categoryName" id="categoryName" class="admin-style categoryEdit">
                     <option value="">Elegí</option>
                     <option value="Frutas" <%= producto.categoryName === "Frutas" && "selected" %>>Frutas</option> <!-- si el producto.cattegoryName es igual a "Frutas" que me lo devuelva seleccionado -->
                     <option value="Verduras" <%= producto.categoryName === "Verduras" && "selected" %>>Verduras</option>
@@ -32,30 +33,36 @@
                 <% if (locals.errors && errors.categoryName) { %>
                     <span class="error-msg"><%= errors.categoryName.msg %></span>
                 <% } %>
+                <span class="error-msg" id="categoryErrorE"></span>
             </div>
             <div class="container-admin">
                 <label for="price">Precio:</label>
-                <input type="number" class="admin-style" name="price" id="price" value="<%=producto.price%>">
+                <input type="number" class="admin-style priceEdit" name="price" id="price" value="<%=producto.price%>">
                 <% if (locals.errors && errors.price) { %>
                     <span class="error-msg"><%= errors.price.msg %></span>
                 <% } %>
+                <span class="error-msg" id="priceErrorE"></span>
             </div>
             <div class="container-admin">
                 <label for="origin">Origen del Producto:</label>
-                <input type="text" class="admin-style" name="origin" id="origin" value="<%=producto.origin %>">
+                <input type="text" class="admin-style originEdit" name="origin" id="origin" value="<%=producto.origin %>">
                 <% if (locals.errors && errors.origin) { %>
                     <span class="error-msg"><%= errors.origin.msg %></span>
                 <% } %>
+                <span class="error-msg" id="originErrorE"></span>
             </div>
             <div class="container-admin">
                 <label for="view">En vista:</label>
                 <input <%= producto.view ? "checked" : "" %>  type="checkbox" id="view" name="view" class="checkbox-style"> <!-- ir ternario: si el producto.view es true.. que devuelva el checked.. sino no. -->
+                <span class="error-msg" id="viewError"></span>
             </div>
             <div class="container-admin-file">
                 <label for="image">Agregar imagen</label>
-                <input type="file" name="image" id="image">
+                <input type="file" name="image" id="image" class="imageE">
             </div>
+            <span class="error-msg" id="imageErrorE"></span>
             <div class="finalizar-registro">
+                <span id="submitErrorE" style="font-size: 18px; color: red;"></span>
                 <button type="submit">GUARDAR CAMBIOS</button>
             </div>
 
@@ -63,5 +70,6 @@
     </section>
 </main>
     <%- include('../../partials/scripts')  %>
+    <script src="../../../../javascript/validationsFront/editProductValidator.js"></script>
 </body>
 </html>
