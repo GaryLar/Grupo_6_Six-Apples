@@ -24,11 +24,16 @@ window.addEventListener("load",()=>{
     
     
     $nameEdit.addEventListener("blur",()=>{
+        let caracteresMin=$nameEdit.value.length;
+        
         if(!$nameEdit.value.trim()){
             $errorEdit.innerHTML="Nombre del producto requerido"
-        }else if(!regExAlpha.test($nameEdit.value)){
+        }else if(!regExAlpha.test($nameEdit.value)   ){
             $errorEdit.innerHTML="El nombre no es válido"
-        }else{
+        }else if(caracteresMin<5){
+        $errorEdit.innerHTML="El nombre no es válido"
+        }
+        else{
             $errorEdit.innerHTML=""
         }
     }) 
@@ -99,8 +104,8 @@ window.addEventListener("load",()=>{
 
         for (let i = 0; i < elementsForm.length -1 ; i++) {
             if(elementsForm[i].value==""
-            &&elementsForm[i].name!=="view"
-            &&elementsForm[i].type=="file"){
+            &&elementsForm[i].$nameEdit!=="view"
+            &&elementsForm[i].$typeE=="file"){
                 submitErrorE.innerHTML="Hay errores en el formulario"
                 errores=true;
             }
