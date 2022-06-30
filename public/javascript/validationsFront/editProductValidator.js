@@ -104,8 +104,8 @@ window.addEventListener("load",()=>{
 
         for (let i = 0; i < elementsForm.length -1 ; i++) {
             if(elementsForm[i].value==""
-            &&elementsForm[i].$nameEdit!=="view"
-            &&elementsForm[i].$typeE=="file"){
+            &&elementsForm[i].name !=="view"
+            &&elementsForm[i].type !=="file"){
                 submitErrorE.innerHTML="Hay errores en el formulario"
                 errores=true;
             }
