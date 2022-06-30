@@ -9,31 +9,40 @@
     <section class="registro-section">
         <h2 class="registro">Registrate</h2>
         <br>
-        <form action="/usuario/registro" method="post" enctype="multipart/form-data">
+        <form id="register-form" action="/usuario/registro" method="post" enctype="multipart/form-data">
+
             <div class="input-container">
-                <input type="text" class="input-style" name="name" placeholder="Nombre Completo" value="<%= (locals.old && old.name) ? old.name : "" %>">
+                <input id="name" type="text" class="input-style" name="name" placeholder="Nombre Completo" value="<%= (locals.old && old.name) ? old.name : "" %>">
                 <% if (locals.errors && errors.name) { %>
                     <span class="error-message"><%= errors.name.msg %></span>
                 <% } %>
+                <span class="error-message" id="nameErrors"></span>
             </div>
+
             <div class="input-container">
-                <input type="email" class="input-style" name="email" placeholder="Correo Electrónico" value="<%= (locals.old && old.email) ? old.email : "" %>">
+                <input id="email" type="email" class="input-style" name="email" placeholder="Correo Electrónico" value="<%= (locals.old && old.email) ? old.email : "" %>">
                 <% if (locals.errors && errors.email) { %>
                     <span class="error-message"><%= errors.email.msg %></span>
                 <% } %>
+                <span class="error-message" id="emailErrors"></span>
             </div>
+
             <div class="input-container">
-                <input type="password" class="input-style" name="password" placeholder="Contraseña">
+                <input id="password" type="password" class="input-style" name="password" placeholder="Contraseña">
                 <% if (locals.errors && errors.password) { %>
                     <span class="error-message"><%= errors.password.msg %></span>
                 <% } %>
+                <span class="error-message" id="passwordErrors"></span>
             </div>
+
             <div class="input-container">
-                <input type="password" class="input-style" name="password2" placeholder="Reingrese su Contraseña">
+                <input id="password2" type="password" class="input-style" name="password2" placeholder="Reingrese su Contraseña">
                 <% if (locals.errors && errors.password2) { %>
                     <span class="error-message"><%= errors.password2.msg %></span>
                 <% } %>
+                <span class="error-message" id="password2Errors"></span>
             </div>
+
             <div class="avatar"> </div>
                 <div class="input_file-container">
                     <span id="span">SUBIR IMAGEN</span>
@@ -50,5 +59,7 @@
     
     <%- include("../partials/footer.ejs") %> 
     <%- include("../partials/scripts.ejs") %>
+
+    <script src="../../../javascript/validationsFront/register.js"></script>
 </body>
 </html>
