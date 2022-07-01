@@ -6,7 +6,10 @@ window.addEventListener('load', () => {
     let $email = qs('#email'),
     $emailErrors = qs('#emailErrors'),
     $password = qs('#password'),
-    $passwordErrors = qs('#passwordErrors')
+    $passwordErrors = qs('#passwordErrors'),
+    $form = qs('#formLogin'),
+    regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
+    regExPass = /^(?=.*\d).{6,12}$/;
 
     $email.addEventListener('blur', () => {
         switch (true) {
@@ -41,4 +44,26 @@ window.addEventListener('load', () => {
                 break;
         }
     })
+
+    $form.addEventListener('submit', function(e){
+        e.preventDefault()
+
+       let elementosFormulario = this.elements;
+       let errores = false;
+       console.log(elementosFormulario)
+
+       for (let index = 0; index < elementosFormulario.length -1; index++) {
+           if(elementosFormulario[index].value == ""
+           && elementosFormulario[index].type !== "checkbox"
+           || elementosFormulario[index].classList.contains('error-message')){
+               elementosFormulario[index].classList.add('error-message');
+               submitErrorsLogin.innerHTML = "Hay errores en el formulario"
+               errores = true;
+           }
+       }
+       
+       if(!errores){
+           $form.submit()
+       }
+   })
 })
