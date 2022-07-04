@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
     $passwordErrors = qs('#passwordErrors'),
     $form = qs('#formLogin'),
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-    regExPass = /^(?=.*\d).{6,12}$/;
+    regExPass = /^(?=.*\d).{7,100}$/;
 
     $email.addEventListener('blur', () => {
         switch (true) {
