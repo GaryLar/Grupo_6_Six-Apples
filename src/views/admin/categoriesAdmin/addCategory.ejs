@@ -5,19 +5,23 @@
     <%- include('../../partials/header-admin') %> 
     <section class="section-admin">
         <h2 class="admin">Agregar Nueva Categoría</h2>
-        <form action="/admin/categorias" method="post" class="form-admin">
+        <form id= "form-Category" action="/admin/categorias" method="post" class="form-admin">
             <div class="container-admin">
                 <label for="name">Nombre de la categoría:</label>
-                <input type="text" class="admin-style" name="name" id="name">
+                <input type="text" class="admin-style categoryName" name="name" id="name">
                 <% if (locals.errors && errors.name) { %>
-                    <span class="error-msg"><%= errors.name.msg  %></span>
+                    <span class="error-msg" ><%= errors.name.msg  %></span>
                 <% } %>
+                <span class="error-msg"  id="categoryError"></span>
             </div>
             <div class="finalizar-registro">
                 <button type="submit">AGREGAR CATEGORÍA</button>
+                <span id="submitErrorcategory" style="font-size: 14px; color:red"></span>
             </div>
         </form>
     </section>
     <%- include("../../partials/scripts.ejs") %> 
+    
+    <script src="../../../../javascript/validationsFront/addCategoryValidator.js"></script>
 </body>
 </html>
