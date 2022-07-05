@@ -6,7 +6,7 @@ let validateProduct = [
         .isAlphanumeric().withMessage('Ingrese un nombre válido'),
     check('type')
         .notEmpty().withMessage('Debes ingresar el tipo de producto'),
-    check('categoryName')
+    check('categoryId')
         .notEmpty().withMessage('Selecciona una categoría'),
     check('price')
         .notEmpty().withMessage('Ingresa precio del producto').bail()

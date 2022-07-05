@@ -24,15 +24,15 @@
                 <span class="error-msg" id="typeErrorEdit"></span>
             </div>
             <div class="container-admin">
-                <label for="categoryName">Categoría:</label>
-                <select name="categoryName" id="categoryName" class="admin-style categoryEdit">
-                    <option value="">Elegí</option>
-                    <option value="Frutas" <%= producto.categoryName === "Frutas" && "selected" %>>Frutas</option> <!-- si el producto.cattegoryName es igual a "Frutas" que me lo devuelva seleccionado -->
-                    <option value="Verduras" <%= producto.categoryName === "Verduras" && "selected" %>>Verduras</option>
+                <label for="category">Categoría:</label>
+                <select name="categoryId" id="categoryId" class="admin-style categoryEdit">
+                    <option selected hidden>Categoria</option>
+                    <% categorias.forEach (category => { %>
+                        <option value="<%- category.id %>" <%= (locals.old && old.categoryId) && old.categoryId === category.id || category.id === producto.categoryId ? "selected" : "" %>><%- category.name %></option>
+                    <% }) %>
                 </select>
-                <% if (locals.errors && errors.categoryName) { %>
-                    <span class="error-msg"><%= errors.categoryName.msg %></span>
-                <% } %>
+             <!-- revisar -->
+               
                 <span class="error-msg" id="categoryErrorE"></span>
             </div>
             <div class="container-admin">
@@ -58,7 +58,7 @@
             </div>
             <div class="container-admin-file">
                 <label for="image">Agregar imagen</label>
-                <input type="file" name="image" id="image" class="imageE">
+                <input type="file" name="image" id="image" class="imageE" value="<%= producto.image %>">
             </div>
             <span class="error-msg" id="imageErrorE"></span>
             <div class="finalizar-registro">

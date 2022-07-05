@@ -24,14 +24,15 @@
                 <span class="error-msg" id="typeError"></span>
             </div>
             <div class="container-admin">
-                <label for="categoryName">Categoría:</label>
-                <select name="categoryName" id="categoryName" class="admin-style">
+                <label for="category">Categoría:</label>
+                <select name="categoryId" id="categoryId" class="admin-style">
                     <option value="">Elegí</option>
-                    <option value="Frutas" <%= (locals.old && old.categoryName) && old.categoryName === "Frutas" ? "selected" : "" %> >Frutas</option>
-                    <option value="Verduras" <%= (locals.old && old.categoryName) && old.categoryName === "Verduras" ? "selected" : "" %> >Verduras</option>
+                    <% categorias.forEach(({id, name}) => { %>
+                        <option value="<%= id %>"><%= name %> </option>
+                    <% }) %>
                 </select>
-                <% if (locals.errors && errors.categoryName) { %>
-                    <span class="error-msg"><%= errors.categoryName.msg %></span>
+                <% if (locals.errors && errors.categoryId) { %>
+                    <span class="error-msg"><%= errors.categoryId.msg %></span>
                 <% } %>
                 <span class="error-msg" id="categoryNameError"></span>
             </div>

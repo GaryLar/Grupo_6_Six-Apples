@@ -4,7 +4,7 @@ const { validationResult } = require('express-validator');
 
 module.exports = {
     list: (req, res) => {
-        db.Product.findAll()
+        db.Product.findAll({include: ['category']})
         .then((products)=>{
             res.render('admin/productsAdmin/listProduct', {
             title: "Listado de Productos",
@@ -13,25 +13,24 @@ module.exports = {
             });
         })
         .catch((error)=>res.send(error))
-        
     },
     productAdd: (req, res) => {
+        db.Category.findAll()
+        .then(categorias => {
             res.render('admin/productsAdmin/addProduct', {
                 title: "Agregar Producto",
-                session: req.session
+                session: req.session,
+                categorias
             })
+
+        })
     },
     productCreate:(req,res)=>{  
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
             db.Product.create({
-                name:req.body.name,
-                type:req.body.type,
-                categoryId:req.body.categoryName==="Frutas"?1:2,
-                price:req.body.price,
-                origin:req.body.origin,
-                view:req.body.view ? 1 : 0 ,
+                ...req.body,
                 image:req.file ? req.file.filename : "default-image.png",
             })
             .then(()=>{
@@ -39,66 +38,68 @@ module.exports = {
             })
             .catch((error)=>res.send(error))
         } else {
+            db.Category.findAll()
+            .then(categorias => {
             res.render('admin/productsAdmin/addProduct', {
-                title: 'Agregar Producto',
+                title: "Agregar Producto",
                 session: req.session,
+                categorias,
                 errors: errors.mapped(),
                 old: req.body
             })
-        }
+            .catch((error) => res.send(error));
+        })
+    }
 },
 productEdit: (req,res)=>{
     let idProducto = +req.params.id; 
-    db.Product.findByPk(idProducto)
-    .then((products)=>{
+    let promiseProduct = db.Product.findByPk(idProducto)
+    let promiseCategory = db.Category.findAll()
+    Promise.all([ promiseProduct, promiseCategory])
+    .then(([producto, categorias]) => {
         res.render('admin/productsAdmin/editProduct', {
             title: "Editar:",
-            producto:products,
+            producto,
+            categorias,
             session: req.session
         })
-
     })
     .catch((error)=>res.send(error))
 },
 productUpdate: (req, res) => {
     let errors = validationResult(req);
-    if(errors.isEmpty ()){
+    if(errors.isEmpty()){
+        let producto = db.Product.findByPk(req.params.id)
         db.Product.update({
-                name:req.body.name,
-                type:req.body.type,
-                categoryId:req.body.categoryName==="Frutas"?1:2,
-                price:req.body.price,
-                origin:req.body.origin,
-                view:req.body.view ? 1 : 0 ,
-                image:req.file ? req.file.filename : "default-image.png",
+            ...req.body,
+            image: req.file ? req.filename : producto.image,
         },{
             where:{
                 id:req.params.id,
             }
         })
-        .then(()=>{
+        .then(() => {
             res.redirect('/admin/productos'); 
         })
         .catch((error) => res.send(error))
     } else {
-        db.Product.findOne({
-        where:{
-            id:req.params.id,
-        }
-    })
-    .then((producto)=>{
-        res.render('admin/productsAdmin/editProduct', {
-            title: "Editar:",
-            producto,
-            session: req.session,
-            errors: errors.mapped(),
-            old: req.body
+        let idProducto = +req.params.id; 
+        let promiseProduct = db.Product.findByPk(idProducto)
+        let promiseCategory = db.Category.findAll()
+        Promise.all([ promiseProduct, promiseCategory])
+        .then(([producto, categorias]) => {
+            res.render('admin/productsAdmin/editProduct', {
+                title: "Editar:",
+                producto,
+                categorias,
+                session: req.session,
+                errors: errors.mapped(),
+                old: req.body
+            })
         })
-    })
-    .catch((error) => res.send(error))
+        .catch((error)=>res.send(error))
 }
 },
-
 productDelete: (req, res) => {
         let productoId = +req.params.id; 
         db.Product.destroy({ where:{
