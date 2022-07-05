@@ -96,7 +96,6 @@ window.addEventListener("load", () => {
             $imgPreview.innerHTML = '';
             return false;
         }else{
-            // Image preview
             $fileErrors.innerHTML = '';
             $file.classList.remove('error-message')
         }
