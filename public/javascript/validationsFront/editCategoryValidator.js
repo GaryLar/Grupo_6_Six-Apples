@@ -1,29 +1,28 @@
-
-function qs (element){
+function qs(element) {
     return document.querySelector(element)
 }
 
-window.addEventListener('load', function() {
-    let $categoryName = qs ('.categoryName'),
-    $error = qs ('#categoryError'),
-    $form = qs('#form-Category'),
+window.addEventListener("load", () => {
+    let $form = qs (".formEditcat")
+    let $editcatName = qs (".editcatName"); 
+    let $error = qs ('#errorEditcat'),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/; 
 
-    $categoryName.addEventListener('blur', () => {
+    $editcatName.addEventListener("blur", () => {
         switch(true){
-            case !$categoryName.value.trim():
+            case !$editcatName.value.trim():
                 $error.innerHTML = "Ingrese nombre de la Categoria";
-                $categoryName.classList.add('error-msg');
+                $editcatName.classList.add('error-msg');
                 break;
-            case !regExAlpha.test($categoryName.value): /* test devuelve bool */
+            case !regExAlpha.test($editcatName.value): /* test devuelve bool */
                 $error.innerHTML = "El nombre no es válido";
-                $categoryName.classList.add('error-msg');
+                $editcatName.classList.add('error-msg');
                 break;
-            case $categoryName.value.length<6:
+            case $editcatName.value.length<6:
                 $error.innerHTML = "El nombre no es válido";
                 break;
             default:
-                $categoryName.classList.remove('error-msg');
+                $editcatName.classList.remove('error-msg');
                 $error.innerHTML = "";
                 break;
         }
@@ -39,13 +38,13 @@ window.addEventListener('load', function() {
 
         for(let index = 0; index < elementoFormulario.length -1; index++) {
             if(elementoFormulario[index].value == ""){
-                submitErrorcategory.innerHTML = "Hay errores en el formulario"
+                submitErrorcategoryedit.innerHTML = "Hay errores en el formulario"
                 errores= true;
             } 
         }
          if(!errores){
             $form.submit()
-        }    
-   })
-
-}) 
+        }  
+    })  
+    
+})
