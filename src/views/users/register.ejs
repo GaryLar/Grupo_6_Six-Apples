@@ -9,7 +9,7 @@
     <section class="registro-section">
         <h2 class="registro">Registrate</h2>
         <br>
-        <form id="register-form" action="/usuario/registro" method="post" enctype="multipart/form-data">
+        <form id="formRegister" action="/usuario/registro" method="post" enctype="multipart/form-data">
 
             <div class="input-container">
                 <input id="name" type="text" class="input-style" name="name" placeholder="Nombre Completo" value="<%= (locals.old && old.name) ? old.name : "" %>">
@@ -46,11 +46,14 @@
             <div class="avatar"> </div>
                 <div class="input_file-container">
                     <span id="span">SUBIR IMAGEN</span>
-                    <input class="avatar2" type="file" name="image">
+                    <input class="avatar2" type="file" name="image" id="formFile" >
+                    <span class="error-message" id="fileErrors"></span>
                 </div>
             <div class="btn-container">
                 <button type="submit" class="btn-submit"> Continuar </button>
+                <span id="submitErrorsRegister" style="font-size: 14px; color: red;"></span>
             </div>
+
             <p>Al registrarte, aceptas nuestras Condiciones de uso y </p>
             <p>Política de privacidad.</p>
             <span>¿Ya tienes una cuenta? <span><a href="/usuario/login"><strong> Iniciar Sesión</strong> </a></span></span>

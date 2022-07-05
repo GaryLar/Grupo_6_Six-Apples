@@ -11,10 +11,12 @@ window.addEventListener("load", () => {
     $passwordErrors = qs('#passwordErrors'),
     $password2 = qs('#password2'),
     $password2Errors = qs('#password2Errors'),
-    $form = qs('#register-form'),
+    $file = qs('#formFile'),
+    $fileErrors = qs('#fileErrors'),
+    $form = qs('#formRegister'),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-    regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
+    regExPass = /^(?=.*\d).{7,100}$/;
     
     $inputName.addEventListener("blur", () => {
         switch (true) {
@@ -83,4 +85,42 @@ window.addEventListener("load", () => {
                 break;
         }
     })
+
+    $file.addEventListener('change', 
+    function fileValidation(){
+        let filePath = $file.value,
+            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i
+        if(!allowefExtensions.exec(filePath)){
+            $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+            $file.value = '';
+            $imgPreview.innerHTML = '';
+            return false;
+        }else{
+            $fileErrors.innerHTML = '';
+            $file.classList.remove('error-message')
+        }
+    })
+
+    $form.addEventListener('submit', function(e){
+        e.preventDefault()
+
+       let elementosFormulario = this.elements;
+       let errores = false;
+       console.log(elementosFormulario)
+
+        for (let index = 0; index < elementosFormulario.length -1; index++) {
+            if(elementosFormulario[index].value == ""
+            && elementosFormulario[index].name !== "image"
+            && elementosFormulario[index].type !== "file"
+            || elementosFormulario[index].classList.contains('error-message')){
+                elementosFormulario[index].classList.add('error-message');
+                submitErrorsRegister.innerHTML = "Hay errores en el formulario"
+                errores = true;
+            }
+        }
+       
+        if(!errores){
+            $form.submit()
+        }
+   })
 })
