@@ -21,8 +21,7 @@
 }
 
 body.error404 {
-    background-image: url('/images/nodisponible2.png'); 
-    background-size:800px; 
+    background-image: url('/images/Come-frutas-y-verduras1.png'); 
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
@@ -36,13 +35,33 @@ body.error404 section p {
 body.error404 section.error404-section{
     border-radius: 10px;
     padding: 1rem;
-    /*background-color: white;*/
+    background-color: white;
     width:30%; 
     margin: 209px auto;
     display:flex;
     justify-content: center;
 }
 
-/*section.error404-section {
+section.error404-section {
     opacity: 80%;
 }
+
+.btn-submit-error{
+    text-align: center;
+    border: none;
+    border-radius: 1rem;
+    display:flex;
+    justify-content: center;
+    height: 2.5rem;
+    text-transform: uppercase;
+    width: 8rem;
+    cursor: pointer;
+    margin: 0.8rem  0;
+    background-color: var(--color-verdeOscuro);
+    align-items: center;
+    margin-left: auto; 
+    margin-right:auto; 
+}
+
+
+
