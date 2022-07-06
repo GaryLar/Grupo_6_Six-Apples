@@ -7,7 +7,7 @@ window.addEventListener('load', function(){
     $error = qs('#nameError'),
     $type = qs('#type'),
     $typeError = qs('#typeError'),
-    $categoryName = qs('#categoryName'),
+    $categoryId = qs('#categoryId'),
     $categoryNameError = qs('#categoryNameError'),
     $price = qs('#price'),
     $priceError = qs('#priceError'),
@@ -49,12 +49,12 @@ window.addEventListener('load', function(){
         }
     })
 
-    $categoryName.addEventListener('blur', () => {
-        if(!$categoryName.value.trim()){
+    $categoryId.addEventListener('blur', () => {
+        if(!$categoryId.value.trim()){
             $categoryNameError.innerHTML = "Elija una categoría";
-            $categoryName.classList.add('error-msg');
+            $categoryId.classList.add('error-msg');
         } else{
-            $categoryName.classList.remove('error-msg');
+            $categoryId.classList.remove('error-msg');
             $categoryNameError.innerHTML = "";
         }
     })

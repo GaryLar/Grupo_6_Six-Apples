@@ -5,19 +5,23 @@
     <%- include('../../partials/header-admin') %> 
     <section class="section-admin">
         <h2 class="admin">Editar Categoría</h2>
-        <form action="/admin/categorias/<%=categoria.id %>?_method=PUT" method="post" class="form-admin">
+        <form action="/admin/categorias/<%=categoria.id %>?_method=PUT" method="post" class="form-admin formEditcat">
             <div class="container-admin">
                 <label for="name">Nombre de la categoría:</label>
-                <input type="text" class="admin-style" name="name" id="name" value="<%=categoria.name %>">
+                <input type="text" class="admin-style editcatName" name="name" id="name" value="<%=categoria.name %>">
                 <% if (locals.errors && errors.name) { %>
                     <span class="error-msg"><%= errors.name.msg  %></span>
                 <% } %>
+                <span class="error-msg" id="errorEditcat"></span>
             </div>
             <div class="finalizar-registro">
+                <span id="submitErrorcategoryedit" style="font-size: 14px; color: red;"></span>
                 <button type="submit">GUARDAR CAMBIOS</button>
             </div>
         </form>
     </section>
     <%- include("../../partials/scripts.ejs") %> 
+    
+<script src="../../../../javascript/validationsFront/editCategoryValidator.js"></script>
 </body>
 </html>

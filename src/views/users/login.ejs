@@ -9,26 +9,34 @@
     <section class="login-section"> 
         <h2 class="login"> Ingresá</h2>
         <br>
-        <form action="/usuario/login" method="POST">
+        <form id="formLogin" action="/usuario/login" method="POST">
+
             <div class="input-container">
-                <input type="email" class="input-style" name="email" placeholder="Correo Electronico">
+                <input id="email" type="email" class="input-style" name="email" placeholder="Correo Electronico">
                 <% if (locals.errors && errors.email) { %>
                     <span class="error-message"><%= errors.email.msg %></span>
-                <% } %> 
+                <% } %>
+                <span class="error-message" id="emailErrors"></span>
             </div>
+
             <div class="input-container">
-                <input type="password" class="input-style" name="password" placeholder="Contraseña">
+                <input id="password" type="password" class="input-style" name="password" placeholder="Contraseña">
                 <% if (locals.errors && errors.password) { %>
                     <span class="error-message"><%= errors.password.msg %></span>
-                <% } %> 
+                <% } %>
+                <span class="error-message" id="passwordErrors"></span>
             </div>
+
             <div class="input-container"> <!-- arreglar style -->
                 <label for="recordar" id="recordar"><input type="checkbox" class="input-checkbox" name="recordar" id="recordar"> Recordame</label>
                 
             </div>
+
             <div>
-                <button type="submit" class="btn-submit"> Continuar</button>
+                <button  type="submit" class="btn-submit"> Continuar</button>
+                <span id="submitErrorsLogin" style="font-size: 14px; color: red;" ></span>
             </div>
+
             <br>
             <p>Al registrarte, aceptas nuestras Condiciones de uso y </p>
             <p>Política de privacidad.</p>
@@ -37,6 +45,8 @@
         </form>
     </section>
     <%- include("../partials/footer.ejs") %> 
-    <%- include("../partials/scripts.ejs") %> 
+    <%- include("../partials/scripts.ejs") %>
+
+    <script src="../../../javascript/validationsFront/loginValidator.js"></script>
 </body>
 </html>
