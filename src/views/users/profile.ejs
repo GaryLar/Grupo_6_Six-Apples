@@ -31,144 +31,16 @@
                     </div>
                     <div class="form_box">
                         <div class="input-container">
-                            <select name="province" disabled class="input-style" value="<%= user.province %>">
-                                <option value="" hidden selected>Elija una provincia</option>
-                                <option value="capitalFederal" <%= user.province === "capitalFederal" ? "selected" : "" %> >Capital Federal</option>
-                                <option value="provinciaDeBuenosAires" <%= user.province === "provinciaDeBuenosAires" ? "selected" : "" %>>Provincia de Buenos Aires</option>
-                                <option value="neuquen" <%= user.province === "neuquen" ? "selected" : "" %>>Neuquén</option>
+
+                            <select id="provinciaOption" name="province" disabled class="input-style">
+                                
                             </select>
+
                         </div>
                         <div class="input-container">
+
                             <select name="district" disabled class="input-style" >
                                 <option value="" hidden selected>Elija una Localidad</option>
-                                <!-- Capital Federal 
-                                2- Arreglar font size de el placeholder en vista escritorio
-                                3- (BUSCAR COMO COLCOAR OPCION DE SOLO APARECER LOCALIDADES SEGUN LA PROVINCIA QUE SELECCIONE ---
-                                intentar cambiar el value con el nombre de la provi seleccionada -->
-                                
-                                    <option value="Agronomia">Agronomia</option>
-                                    <option value="Almagro">Almagro</option>
-                                    <option value="Balvanera">Balvanera</option>
-                                    <option value="Barracas">Barracas</option>
-                                    <option value="Belgrano">Belgrano</option>
-                                    <option value="Boedo">Boedo</option>
-                                    <option value="Caballito">Caballito</option>
-                                    <option value="Chacarita">Chacarita</option>
-                                    <option value="Coghlan">Coghlan</option>
-                                    <option value="Colegiales">Colegiales</option>
-                                    <option value="Constitución">Constitución</option>
-                                    <option value="Flores">Flores</option>
-                                    <option value="Floresta">Flroesta</option>
-                                    <option value="LaBoca">La Boca</option>
-                                    <option value="LaPaternal">La Paternal</option>
-                                    <option value="Liniers">Liniers</option>
-                                    <option value="Mataderos">Mataderos</option>
-                                    <option value="MonteCastro">Monte Castro</option>
-                                    <option value="NuevaPompeya">Nueva Pompeya</option>
-                                    <option value="Nuñez">Nuñez</option>
-                                    <option value="Palermo">Palermo</option>
-                                    <option value="ParqueAvellaneda">Parque Avellaneda</option>
-                                    <option value="ParqueChacabuco">Parque Chacabuco</option>
-                                    <option value="ParqueChas">ParqueChas</option>
-                                    <option value="ParquePatricios">ParquePatricios</option>
-                                    <option value="PuertoMadero">PuertoMadero</option>
-                                    <option value="Recoleta">Recoleta</option>
-                                    <option value="Retiro">Retiro</option>
-                                    <option value="Saavedra">Saavedra</option>
-                                    <option value="SanNicolás">SanNicolás</option>
-                                    <option value="SanCristóbal">SanCristóbal</option>
-                                    <option value="SanTelmo">SanTelmo</option>
-                                    <option value="Versalles">Versalles</option>
-                                    <option value="VillaCrespo">VillaCrespo</option>
-                                    <option value="VillaDevoto">VillaDevoto</option>
-                                    <option value="VillaGeneralMitre">VillaGeneralMitre</option>
-                                    <option value="VillaLugano">VillaLugano</option>
-                                    <option value="VillaLuro">VillaLuro</option>
-                                    <option value="VillaOrtúzar">VillaOrtúzar</option>
-                                    <option value="VillaPueyrredón">VillaPueyrredón</option>
-                                    <option value="VillaReal">VillaReal</option>
-                                    <option value="VillaRiachuelo">VillaRiachuelo</option>
-                                    <option value="VillaSantaRita">VillaSantaRita</option>
-                                    <option value="VillaSoldati">VillaSoldati</option>
-                                    <option value="VillaUrquiza">VillaUrquiza</option>
-                                    <option value="VilladelParque">VilladelParque</option>
-                                    <option value="VélezSarsfield">VélezSarsfield</option> 
-                                
-                                <!-- Provincia de Buenos Aires -->
-                                <option value="AlmiranteBrown">Almirante Brown</option>
-                                <option value="Avellaneda">Avellaneda</option>
-                                <option value="BahiaBlanca">BahiaBlanca</option>
-                                <option value="Berazategui">Berazategui</option>
-                                <option value="Berisso">Berisso</option>
-                                <option value="Campana">Campana</option>
-                                <option value="Escobar">Escobar</option>
-                                <option value="EstebanEcheverría">Esteban Echeverría</option>
-                                <option value="Ezeiza">Ezeiza</option>
-                                <option value="FlorenciaVarela">Florencia Varela</option>
-                                <option value="GeneralRodríquez">General Rodríquez</option>
-                                <option value="GeneralSanMartín">General San Martín</option>
-                                <option value="Hurlingham">Hurlingham</option>
-                                <option value="Ituzaingó">Ituzaingó</option>
-                                <option value="JoseC.Paz">Jose C. Paz</option>
-                                <option value="Junín">Junín</option>
-                                <option value="LaMatanza">La Matanza</option>
-                                <option value="LaPlata">La Plata</option>
-                                <option value="Lanús">Lanús</option>
-                                <option value="LomasDeZamora">Lomas De Zamora</option>
-                                <option value="Luján">Luján</option>
-                                <option value="MalvinasArgentinas">Malvinas Argentinas</option>
-                                <option value="MarDelPlata">Mar Del Plata</option>
-                                <option value="Merlo">Merlo</option>
-                                <option value="Moreno">Moreno</option>
-                                <option value="Morón">Morón</option>
-                                <option value="Necochea">Necochea</option>
-                                <option value="Olavarría">Olavarría</option>
-                                <option value="Pergamino">Pergamino</option>
-                                <option value="Pilar">Pilar</option>
-                                <option value="Quilmes">Quilmes</option>
-                                <option value="SanIsidro">San Isidro</option>
-                                <option value="SanMiguel">San Miguel</option>
-                                <option value="SanNicolásDeLosArroyos">San Nicolás De Los Arroyos</option>
-                                <option value="Tandil">Tandil</option>
-                                <option value="TresDeFebrero">Tres De Febrero</option>
-                                <option value="VicenteLópez">Vicente López</option>
-                                <option value="Zárate">Zárate</option>
-                               
-                                <!-- Neuquen -->
-                                <option value="Alumine">Alumine</option>
-                                <option value="Andacollo">Andacollo</option>
-                                <option value="Arroyito">Arroyito</option>
-                                <option value="Caviahue">Caviahue</option>
-                                <option value="Centenario">Centenario</option>
-                                <option value="ChosMalal">Chos Malal</option>
-                                <option value="Copahue">Copahue</option>
-                                <option value="CutralCo">Cutral Co</option>
-                                <option value="ElCholar">El Cholar</option>
-                                <option value="ElHuecu">El Huecu</option> 
-                                <option value="Huinganco">Huinganco</option>
-                                <option value="JuninDeLosAndes">Junin De Los Andes</option>
-                                <option value="LasLajas">Las Lajas</option>
-                                <option value="LasOvejas">Las Ovejas</option>
-                                <option value="Loncopue">Loncopue</option>
-                                <option value="ManzanoAmargo">Manzano Amargo</option>
-                                <option value="Moquehue">Moquehue</option>
-                                <option value="NeuquenCapital">Neuquen Capital</option>
-                                <option value="PicunLeufu">Picun Leufu</option>
-                                <option value="PiedraDelAguila">Piedra Del Aguila</option> .
-                                <option value="PlazaHuincul">Plaza Huincul</option>
-                                <option value="Plottier">Plottier</option>
-                                <option value="PrimerosPinos">Primeros Pinos</option>
-                                <option value="Pulmari">Pulmari</option> 
-                                <option value="RincónDeLosSauces">Rincón De Los Sauces</option>
-                                <option value="SanMartinDeLosAndes">San Martin De Lo sAndes</option>
-                                <option value="TricaoMalal">Tricao Malal</option>
-                                <option value="Varvarco">Varvarco</option>
-                                <option value="VillaElChocon">Villa El Chocon</option>
-                                <option value="VillaLaAngostura">Villa LaA ngostura</option>
-                                <option value="VillaLagoMeliquina">Villa Lago Meliquina</option>
-                                <option value="VillaPehuenia">Villa Pehuenia</option>
-                                <option value="VillaTraful">Villa Traful</option>
-                                <option value="Zapala">Zapala</option>
                             </select>
                         </div>
                         <div class="input-container">
@@ -191,5 +63,6 @@
     <!--FOOTER-->
     <%- include("../partials/footer.ejs") %> 
     <%- include("../partials/scripts.ejs") %> 
+    <script src="../../../javascript/validationsFront/apiProvincias.js"></script>
 </body>
 </html>
