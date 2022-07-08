@@ -1,7 +1,7 @@
 # Retrospectiva
 
 # Sprint 6
-![estrella](./data-del-grupo/restrospectivaSprint6.jpg)
+![estrella](./data-del-grupo/retrospectivaSprint6.jpg)
 
 ### Al comenzar a realizar la retrospectiva, nos dimos cuánta de que ya estamos en nuestro 7.º sprint, y de la cantidad de cosas que pudimos mejorar gracias a realizar una retrospectiva antes de comenzar uno nuevo.
 ### Ya que estamos en el tramo final, decidimos ir cerrando y ultimando detalles de nuestro hermoso proyecto.
