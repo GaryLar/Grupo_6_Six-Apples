@@ -1,7 +1,11 @@
 # Retrospectiva
 
+# Sprint 6
+![estrella](./data-del-grupo/restrospectivaSprint6.jpg)
+###
+
 # Sprint 5 
-![estrella](./data-del-grupo/restrospectiva-sprint5.jpg)
+![estrella](./data-del-grupo/restrospectivaSprint5.jpg)
 
 ### En este sprint 5 trabajamos en nuestra retrospectiva para seguir y recordar varios puntos en todos los sprint. 
 ### En este sprint tomamos en cuenta en las dayli la sugerencia de conectarnos y resolver dudas en conjunto pero tambien trabajando en las tareas que se nos asigno.
