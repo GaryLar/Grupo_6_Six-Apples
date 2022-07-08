@@ -27,13 +27,8 @@ body.quienessomos ul{
 
 body.quienessomos{
     font-family: var(--font-poppins);
-    /*font-size: var(--paragraph);*/
-    /*display: flex;*/
-   /* justify-content: center;
-    align-items: center;
-   /* padding:  0 16px; */
     background-image: url('/images/imagenbody.jpg'); 
-    background-size: contain;
+    background-size:contain;
     min-height: 100vh;
 }
 
@@ -57,8 +52,6 @@ body.quienessomos h1{
 
 body.quienessomos p{
     text-align: center;
-    margin-bottom: 1rem;
-    font-size: 15px; 
 }
 
 /* Media Querys Version Tablet */ 

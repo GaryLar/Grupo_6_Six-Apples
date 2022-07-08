@@ -3,32 +3,41 @@
 <%- include('../partials/head') %>
 <body class="contact">
     <%- include("../partials/header.ejs") %>
-    <main>
-        <h4>Dudas, consultas o sugerencias</h4>
-        <section>
-            <h2>Tus Datos</h2>
+    <main class="contact-main">
+        <h2 class="title-contact">Dudas, consultas o sugerencias</h2>
+        <div class="container-contact">
+        <section class="form-contact">
+            <h2 class="title-contact">Tus Datos</h2>
             <form action="" method="">
-                <div>
+                <div class="input-contact">
                     <label for="name">Nombre:</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" class="style-input-contact">
                 </div>
-                <div>
+                <div class="input-contact">
                     <label for="phone">Teléfono:</label>
-                    <input type="number" name="phone" id="phone">
+                    <input type="number" name="phone" id="phone" class="style-input-contact">
                 </div>
-                <div>
+                <div class="input-contact">
                     <label for="email">E-mail:</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" class="style-input-contact">
                 </div>
-                <div>
+                <div class="input-contact">
                     <label for="comments">Comentarios:</label>
-                    <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+                    <textarea name="comments" id="comments" cols="30" rows="7" class="style-input-contact"></textarea>
                 </div>
-                <div>
-                    <button type="submit">Enviar</button>
+                <div class="contain-button-contact">
+                    <button type="submit" class="submit-contact" disabled>Enviar</button>
                 </div>
             </form>
         </section>
+        <section class="map-contact">
+            <h2 class="zone-contact">Zonas de entrega</h2>
+            <h4 class="data-contact">Dia y hora de reparto: de lunes a sábado de 9 a 15hs</h4>
+            <div class="div-map-contact">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13144.770203080603!2d-58.46032706909918!3d-34.54867983751869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1657300241360!5m2!1ses-419!2sar" width="250" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </div>
     </main>
     <%- include("../partials/footer.ejs") %> 
     <%- include("../partials/scripts.ejs") %> 

@@ -30,11 +30,6 @@ body.login ul{
 body.registro, 
 body.login{
     font-family: var(--font-poppins);
-    /*font-size: var(--paragraph);*/
-    /*display: flex;*/
-   /* justify-content: center;
-    align-items: center;
-   /* padding:  0 16px; */
     background-image: url('/images/imagenbody.jpg'); 
     background-size: contain;
     min-height: 100vh;
@@ -93,10 +88,6 @@ body.login section form .input-style{
     margin-bottom: 0.2rem;
 }
 
-::placeholder{
-    color: grey;
-}
-
 .btn-submit{
     /*text-align: center;
     border-radius: 10px;*/
@@ -130,8 +121,8 @@ section.registro-section form span{
     font-size: 12px;
 }
 
-section.login-section form p,
-section.registro-section form p{
+section.login-section form p.info,
+section.registro-section form p.info{
     text-align: center;
     font-size: 12px;
 }
@@ -151,16 +142,16 @@ section.registro-section form p{
  
 section.login-section form span.error-message, 
 section.registro-section form span.error-message{
-    font-size: 12px;
+   font-size: 12px;
 }
 section.login-section form span, 
 section.registro-section form span{
-    font-size: 14px;
+   font-size: 14px;
 }
 
-section.login-section form p,
-section.registro-section form p{
-    font-size: 14px;
+section.login-section form p.info,
+section.registro-section form p.info{
+    font-size: 14px; 
 }
 }
 @media(min-width: 1100px) {
@@ -179,21 +170,8 @@ section.login-section form span,
 section.registro-section form span{
     font-size: 16px;
 }
-
-section.login-section form p,
-section.registro-section form p{
+section.login-section form p.info,
+section.registro-section form p.info{
     font-size: 16px;
 }
-
-::placeholder{
-    color: grey;
-    font-size: 17px;
-}
-body.login footer, 
-body.registro footer{
-    position: relative;
-    bottom: 0;
-    right: 0;
-}
-
 }
