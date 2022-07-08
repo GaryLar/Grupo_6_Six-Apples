@@ -2,9 +2,13 @@
 
 # Sprint 6
 ![estrella](./data-del-grupo/restrospectivaSprint6.jpg)
-###
+### Al comenzar a realizar la retrospectiva, nos dimos cuánta de que ya estamos en nuestro 7.º sprint, y de la cantidad de cosas que pudimos mejorar gracias a realizar una retrospectiva antes de comenzar uno nuevo.
+### Ya que estamos en el tramo final, decidimos ir cerrando y ultimando detalles de nuestro hermoso proyecto.
+### En este sprint no tuvimos muchos problemas con lo que es codeo, tomamos bien base de datos y no nos generó grandes problemas, lo que por ahí nos costó un poco, fue la organización del equipo, pero con comunicación se resolvió.
+### Cómo siempre dejamos algunas tarjetas para siempre tenerlas presentes y no olvidarnos.
+### Por último, ya estamos en el 7.º sprint y seguimos trabajando para que cada vez nuestro proyecto este mejor.
 
-# Sprint 5 
+# Sprint 5
 ![estrella](./data-del-grupo/restrospectivaSprint5.jpg)
 
 ### En este sprint 5 trabajamos en nuestra retrospectiva para seguir y recordar varios puntos en todos los sprint. 
