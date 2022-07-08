@@ -28,3 +28,11 @@
 ### En este sprint estuvimos trabajando con base de datos que fue un tema que es bastante nuevo para todos y estuvimos a full para poder entenderlo y asi llevar a cabo nuestro sprint de la mejor manera.. En cierto momento tuvimos incovenientes con respecto a que los datos de nuestro proyectos se consumieran directamente desde la base de datos, pero fue solucionado.. 
 ### Tambien se tuvo un incoveniente con respecto al xammp que utilizamos conjunto con el dbeaver pero tambien estuvimos investigando y encomtramos la solución.
 ### Y tenemos incovenientes tambien con respecto al darle eliminar producto y en nuestra data todavia sigue existente la foto del producto cuando deberia eliminarse.
+
+## Sprint 7
+
+### Como bien sabemos este es nuestro ultimo sprint y realmente estuvimos trabajando todos estos meses muy a fondo para obtener como resultado nuestro maravilloso proyecto integrado Six Apples.. 
+### En este sprint pudimos implementar algunos detalles que nos hacian falta para que nuestro proyecto estuviera un poco mas completo, como en sprints anteriores tuvimos incovenientes cuando implementamos las Apis ya que quisimos colocarlos en orden alfabetico pero aun seguimos buscando la solución.. 
+### Nos surgió problemas con algunas validaciones en los formularios pero como equipo cada integrante dio sus ideas y salieron nuestras validaciones perfectas.. 
+### El incoveniente que nos llevo un poco de tiempo fue cuando queriamos capturar inputs con el mismo nombre de id pero no funcionaba, no aplicaba el evento y luego de varios intentos e ideas que se aportaron para la solución fue darles una clase a los inputs y asi poder capturarlos por clase y nombres unicos de id..
+### Como nuestro ultimo sprint solo queda agradecer y felicitar el esfuerzo de cada integrante del equipo y de los profesores que dia a dia durante todos estos meses dieron lo mejor de si para poder sacar este proyecto integrador adelante y darlos nuestra primera experiencia en el mundo del Desarrollo Web.
