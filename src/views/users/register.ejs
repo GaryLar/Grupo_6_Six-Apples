@@ -43,12 +43,16 @@
                 <span class="error-message" id="password2Errors"></span>
             </div>
 
-            <div class="avatar"> </div>
+            <div class="avatar">
                 <div class="input_file-container">
                     <span id="span">SUBIR IMAGEN</span>
                     <input class="avatar2" type="file" name="image" id="formFile" >
-                    <span class="error-message" id="fileErrors"></span>
+                    <% if (locals.errors && errors.image) { %> 
+                        <span class="error-message" id="fileErrors"><%= errors.image.msg %></span>
+                    <% } %>
                 </div>
+            </div>
+
             <div class="btn-container">
                 <button type="submit" class="btn-submit"> Continuar </button>
                 <span id="submitErrorsRegister" style="font-size: 14px; color: red;"></span>
