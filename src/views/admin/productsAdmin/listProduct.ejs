@@ -32,8 +32,11 @@
                       <a href="/admin/productos/editar/<%- product.id %>" class="btn">
                         <i class="fa-solid fa-pen-to-square"></i>
                     </a>
-                  <form action="/admin/productos/eliminar/<%- product.id %>?_method=DELETE" method="post">
-                      <button class="btn" type="submit" onclick="alert('Borraste un producto')">
+                  <form class="elimina" action="/admin/productos/eliminar/<%- product.id %>?_method=DELETE" method="post" >
+                      <button class="btn haceAlgo" onclick="alert('Borraste un producto')" type="submit" >
+                        <script>
+                          
+                        </script>
                           <i class="fa-solid fa-trash-can"></i>
                         </button>
                     </form>
@@ -47,5 +50,6 @@
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <%- include('../../partials/scripts')  %>
+  <script src="../../../../javascript/alertProductDelete.js"></script>
 </body>
 </html>

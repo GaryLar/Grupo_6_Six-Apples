@@ -1,6 +1,7 @@
 let alerta = document.querySelector('#alert') 
 
 alerta.addEventListener("submit", () => {
+
     let opcion = confirm('Desea continuar con la creacion del producto'); 
      if (opcion == true) { 
         alert('Haz puesto ok'); 
@@ -9,6 +10,7 @@ alerta.addEventListener("submit", () => {
        }
 })
     
+
     /*   let mensaje;
       let opcion = confirm('clik aceptar');
       if (opcion == true) { 

@@ -17,7 +17,7 @@ window.addEventListener('load', function(){
     $imageError = qs('#imageError'),
     $form = qs('#formProduct'),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/;
-   
+  
 
     $name.addEventListener('blur', () => {
         switch(true){

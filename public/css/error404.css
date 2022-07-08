@@ -30,16 +30,15 @@ body.error404 {
 body.error404 section p {
     font-size: 20px;
     color:black; 
+    text-align: center;
 }
 
 body.error404 section.error404-section{
     border-radius: 10px;
-    padding: 1rem;
+    padding: 0.9rem;
     background-color: white;
-    width:30%; 
-    margin: 209px auto;
-    display:flex;
-    justify-content: center;
+    width:71%; 
+    margin: 100px auto;
 }
 
 section.error404-section {
@@ -47,21 +46,81 @@ section.error404-section {
 }
 
 .btn-submit-error{
-    text-align: center;
-    border: none;
-    border-radius: 1rem;
-    display:flex;
-    justify-content: center;
-    height: 2.5rem;
-    text-transform: uppercase;
-    width: 8rem;
-    cursor: pointer;
-    margin: 0.8rem  0;
+    border-radius: 10px;
+    padding: 1.5rem;
     background-color: var(--color-verdeOscuro);
+    width: 120px;
+    height: 1.5rem;
+    margin: 50px auto;
+    display: flex;
+    border: none;
+    text-transform: uppercase;
+    text-align: center;
+    cursor:pointer;
     align-items: center;
-    margin-left: auto; 
-    margin-right:auto; 
+    font-size: 12px;
 }
 
 
+/* Media querys Tablet */
+@media(min-width: 720px){
 
+    body.error404 section p {
+        font-size: 26px;
+        text-align: center;
+    }
+    
+    body.error404 section.error404-section{
+        border-radius: 20px;
+        padding: 1rem;
+        width:80%; 
+        margin: 120px auto;
+    }
+    
+    .btn-submit-error{
+        border-radius: 10px;
+        padding: 1.5rem;
+        width: 30%;
+        height: 1.6rem;
+        margin: 50px auto;
+        display: flex;
+        border: none;
+        text-transform: uppercase;
+        text-align: center;
+        cursor:pointer;
+        align-items: center;
+        font-size: 12px;
+        justify-content: center;
+    }
+}
+
+/* Media Querys Version Escritorio */
+@media(min-width: 1020px){
+    body.error404 section p {
+        font-size: 30px;
+        text-align: center;
+    }
+    
+    body.error404 section.error404-section{
+        border-radius: 20px;
+        padding: 1rem;
+        width:50%; 
+        margin: 150px auto;
+    }
+    
+    .btn-submit-error{
+        border-radius: 10px;
+        padding: 1.6rem;
+        width: 40%;
+        height: 2.6rem;
+        margin: 50px auto;
+        display: flex;
+        border: none;
+        text-transform: uppercase;
+        text-align: center;
+        cursor:pointer;
+        align-items: center;
+        font-size: 18px;
+        justify-content: center;
+    }
+}
