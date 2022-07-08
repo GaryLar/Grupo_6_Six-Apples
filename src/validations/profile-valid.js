@@ -1,6 +1,17 @@
 const { check } = require('express-validator');
 
 let validateProfile = [
+    check("image")
+        .custom((value, {req}) => {
+            let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+            if(!req.file){
+                return Promise.reject('Campo requerido')
+            }if(!allowedExtensions.exec(req.file.filename)){
+                return Promise.reject('Solo archivos con estas extensiones .jpeg/.jpg/.png/.gif')
+            }else{
+                return true
+            }
+        }),
     check("name")
         .notEmpty().withMessage('Se requiere nombre completo'),
     check("dni")
