@@ -17,7 +17,7 @@ main.main-ofertas{
 
 main.main-ofertas h3.titulo-ofertas{
     text-align: center;
-    margin: 15px auto;
+    margin: 50px auto;
 
 }
 
@@ -76,5 +76,6 @@ main.main-ofertas article.producto-oferta button.boton-ofertas:hover{
     main.main-ofertas section.ofertas{
         display: flex;
         flex-wrap: wrap;
+     /*    height: 1100px; */
     }
 }
