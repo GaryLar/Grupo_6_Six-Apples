@@ -8,10 +8,10 @@ fetch("https://apis.datos.gob.ar/georef/api/provincias")
 .then((response)=>response.json())
 .then((data)=>{
     for (let index = 0; index < data.provincias.length; index++) {
-        $selectProvince.innerHTML += `<option value="${data.provincias[index].id}">${data.provincias[index].nombre}</option>`
-        let dato=data.provincias[index].nombre
-    }
 
+        $selectProvince.innerHTML += `<option value="${data.provincias[index].id}">${data.provincias[index].nombre}</option>`
+        
+    }
 })
 .catch((error) => console.log(error))
 
@@ -32,6 +32,15 @@ $selectProvince.addEventListener("change", (event) => {
 
 
 /*-------------*/
+const province = []
+province.Sort(comparacion)
+
+function comparacion(a,b){
+    return a-b
+}
+
+
+
 
 })
 
