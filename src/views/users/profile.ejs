@@ -32,15 +32,15 @@
                     <div class="form_box">
                         <div class="input-container">
 
-                            <select id="provinciaOption" name="province" disabled class="input-style">
-                                
+                            <select id="provinciaOption" name="province" disabled class="input-style">   
+                                <option value="" hidden selected><%= user.province %></option>                          
                             </select>
 
                         </div>
                         <div class="input-container">
 
                             <select name="district" disabled class="input-style" >
-                                <option value="" hidden selected>Elija una Localidad</option>
+                                <option value="" hidden selected><%= user.district %></option>
                             </select>
                         </div>
                         <div class="input-container">
