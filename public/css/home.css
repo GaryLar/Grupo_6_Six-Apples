@@ -11,6 +11,12 @@
     --otrasDescripciones: 16px;
 }
 
+/* html {
+    margin: 0 auto;
+    max-width: 1250px;
+    background-color: lightgray;
+} */
+
 /* ESTILOS GENERALES */
 * {
     margin: 0;
@@ -21,6 +27,7 @@
 
 body.homepage {
     font-family: var(--font-poppins);
+   /*  background-color: whitesmoke; */
 }
 main.main-homepage {
     padding: 15px 10px 0;

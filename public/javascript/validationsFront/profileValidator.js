@@ -137,7 +137,7 @@ window.addEventListener('load', function(){
     })
 
     /* validar archivos permitidos de imagenes */
-    $image.addEventListener('change', 
+    /* $image.addEventListener('change', 
     function fileValidation(){
         let filePath = $image.value, 
             allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //exReg, valida extensiones permitidas
@@ -150,7 +150,7 @@ window.addEventListener('load', function(){
             $image.classList.remove('error-message')
             $imageError.innerHTML = ""
         }
-    })
+    }) */
 
     $formProfile.addEventListener('submit', function(e){
         e.preventDefault()
