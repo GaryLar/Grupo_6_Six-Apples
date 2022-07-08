@@ -5,7 +5,7 @@ let validateProfile = [
         .custom((value, {req}) => {
             let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
             if(!req.file){
-                return Promise.reject('Campo requerido')
+                return true
             }if(!allowedExtensions.exec(req.file.filename)){
                 return Promise.reject('Solo archivos con estas extensiones .jpeg/.jpg/.png/.gif')
             }else{
