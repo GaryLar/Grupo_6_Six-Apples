@@ -26,7 +26,7 @@ CREATE TABLE `category` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -180,7 +180,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `products_FK` (`categoryId`),
   CONSTRAINT `products_FK` FOREIGN KEY (`categoryId`) REFERENCES `category` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,7 +189,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Manzana','Red Delicious','NeuquÃƒÆ’Ã‚Â©n',240,0,'Manzana.png',NULL,NULL,1),(2,'Naranja Comun','Red Navel','Nacional',210,0,'Naranja.png',NULL,NULL,1),(3,'Banana','Baya Tropical','India',280,0,'Banana.png',NULL,NULL,1),(4,'Durazno','Scarlet Pearl','Mendoza',290,1,'Durazno.png',NULL,NULL,1),(5,'Anana','Hawai','Hawai',390,0,'Anana.png',NULL,NULL,1),(6,'Uva','Malbec','Mendoza',330,1,'Uva.png',NULL,NULL,1),(7,'Pera','Williams','Inglaterra',220,0,'Pera.png',NULL,NULL,1),(8,'Kiwi','Hayward','Buenos Aires',749,0,'Kiwi.png',NULL,NULL,1),(9,'Kiwi','Summer','Italia',800,1,'Kiwi2.png',NULL,NULL,1),(10,'Mango','Tommy Atkins','Salta',460,0,'Mango.png',NULL,NULL,1),(11,'Frutilla','Duoglas','California',480,0,'Frutilla.png',NULL,NULL,1),(12,'Sandia','Charleston Grey','Formosa',390,0,'Sandia.png',NULL,NULL,1),(13,'Lechuga','Romana','China',240,1,'Lechuga.png',NULL,NULL,2),(14,'Tomate','Raf','San Juan',390,0,'Tomate.png',NULL,NULL,2),(15,'Repollo','Durham Early','China',480,0,'Repollo.png',NULL,NULL,2),(16,'Acelga','Lyon','Neuquen',200,0,'Acelga.png',NULL,NULL,2),(17,'Zapallo','Anco','Buenos Aires',230,0,'Zapallo.png',NULL,NULL,2),(18,'Zanahoria','Danvers','Francia',250,0,'Zanahoria.png',NULL,NULL,2),(19,'Cebolla','Blanca','Rio Negro',130,0,'Cebolla.png',NULL,NULL,2),(20,'LimÃƒÂ³n ','Verna','MÃƒÂ©xico',240,0,'Limon.png',NULL,NULL,2),(21,'Papa','Spunta','Buenos Aires',120,0,'Papa.png',NULL,NULL,2),(24,'prueba','verde','rio negro',200,0,'default-image.png','2022-06-08 20:00:03','2022-06-08 20:02:03',2),(25,'karen','electro','china',3000,0,'default-image.png','2022-06-09 20:05:48','2022-06-09 20:06:07',1),(26,'Prueba','Madera','rio negro',10000,0,'producto-1654816677251.png','2022-06-09 23:17:18','2022-06-09 23:17:57',1);
+INSERT INTO `products` VALUES (1,'Manzana','Red Delicious','Neuquén',240,0,'producto-1656451127926.png',NULL,'2022-06-28 21:18:47',1),(2,'Naranja Comun','Red Navel','Nacional',210,0,'Naranja.png',NULL,NULL,1),(3,'Banana','Baya Tropical','India',280,0,'Banana.png',NULL,NULL,1),(4,'Durazno','Scarlet Pearl','Mendoza',290,1,'Durazno.png',NULL,NULL,1),(5,'Anana','Hawai','Hawai',390,0,'Anana.png',NULL,NULL,1),(6,'Uva','Malbec','Mendoza',330,1,'Uva.png',NULL,NULL,1),(7,'Pera','Williams','Inglaterra',220,0,'Pera.png',NULL,NULL,1),(8,'Kiwi','Hayward','Buenos Aires',749,0,'Kiwi.png',NULL,NULL,1),(9,'Kiwi','Summer','Italia',800,1,'Kiwi2.png',NULL,NULL,1),(10,'Mango','Tommy Atkins','Salta',460,0,'Mango.png',NULL,NULL,1),(11,'Frutilla','Duoglas','California',480,0,'Frutilla.png',NULL,NULL,1),(12,'Sandia','Charleston Grey','Formosa',390,0,'Sandia.png',NULL,NULL,1),(13,'Lechuga','Romana','China',240,1,'Lechuga.png',NULL,NULL,2),(14,'Tomate','Raf','San Juan',390,0,'Tomate.png',NULL,NULL,2),(15,'Repollo','Durham Early','China',480,0,'Repollo.png',NULL,NULL,2),(16,'Acelga','Lyon','Neuquen',200,0,'Acelga.png',NULL,NULL,2),(17,'Zapallo','Anco','Buenos Aires',230,0,'Zapallo.png',NULL,NULL,2),(18,'Zanahoria','Danvers','Francia',250,0,'Zanahoria.png',NULL,NULL,2),(19,'Cebolla','Blanca','Rio Negro',130,0,'Cebolla.png',NULL,NULL,2),(20,'Limon','Verna','México',250,0,'default-image.png',NULL,'2022-07-08 18:14:30',2),(21,'Papa','Spunta','Buenos Aires',120,0,'Papa.png',NULL,NULL,2),(24,'prueba','verde','rio negro',200,0,'default-image.png','2022-06-08 20:00:03','2022-06-08 20:02:03',2),(25,'karen','electro','china',3000,0,'default-image.png','2022-06-09 20:05:48','2022-06-09 20:06:07',1),(28,'pruebaTwo','prueba','prueba',200,0,'default-image.png','2022-06-28 21:21:13','2022-06-30 21:20:16',2),(32,'karen','Frutas','Prueba',1000,0,'default-image.png','2022-06-30 21:26:23','2022-06-30 21:29:04',1);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -276,7 +276,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (3,'Andrea Chacon','andrev@mail.com','$2a$10$gCAbe/v7rLNPGsAyMYZA/OLWS0Rkzy1UhrN2chnocYataPmhEG8VK','avatar-1654814730090.jpg',234234,4324,2147483647,1233,'provinciaDeBuenosAires','Floresta','Doctor ramon',1,'2022-06-07 18:23:31','2022-06-09 22:45:30'),(4,'gary rodriguez','gary@mail.com','$2a$10$Q1.3DUe43IGbIOC6kG36seblae.Qn5vNAzaJEZIc0rQFLagby5djW','default-image.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,'2022-06-07 18:25:03','2022-06-07 18:25:03'),(5,'joaquinGalvan','joaquin@mail.com','$2a$10$k4K36B99TKv9ZwFBRBEC5u1fI1htbTbwpgxW9qaj4g0uZNP5/yrAe','default-image.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,'2022-06-07 18:26:27','2022-06-07 18:26:27'),(6,'karencalisaya','karen@mail.com','$2a$10$JdTVlRCjDamC4.CMF/yh6.qRQIFpgNQvyuHeukBvAkGk96isYNOoC','default-image.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,'2022-06-07 18:27:04','2022-06-07 18:27:04');
+INSERT INTO `users` VALUES (3,'Andrea Chacon','andrev@mail.com','$2a$10$gCAbe/v7rLNPGsAyMYZA/OLWS0Rkzy1UhrN2chnocYataPmhEG8VK','avatar-1654814730090.jpg',234234,4324,2147483647,1233,'74','74021030000','Doctor ramon',1,'2022-06-07 18:23:31','2022-07-08 18:53:10'),(4,'gary rodriguez','gary@mail.com','$2a$10$Q1.3DUe43IGbIOC6kG36seblae.Qn5vNAzaJEZIc0rQFLagby5djW','default-image.png',67,87654321,1123232349,1377,'capitalFederal','Liniers','Doctor ramon',2,'2022-06-07 18:25:03','2022-06-29 18:47:48'),(5,'joaquinGalvan','joaquin@mail.com','$2a$10$k4K36B99TKv9ZwFBRBEC5u1fI1htbTbwpgxW9qaj4g0uZNP5/yrAe','default-image.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,'2022-06-07 18:26:27','2022-06-07 18:26:27'),(6,'karencalisaya','karen@mail.com','$2a$10$JdTVlRCjDamC4.CMF/yh6.qRQIFpgNQvyuHeukBvAkGk96isYNOoC','default-image.png',NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,'2022-06-07 18:27:04','2022-06-07 18:27:04');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -293,4 +293,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-09 20:44:50
+-- Dump completed on 2022-07-08 16:52:49

@@ -34,7 +34,19 @@ let validateRegister = [
         }
         return true;
 
-    }).withMessage('Las contraseñas no coinciden')
+    }).withMessage('Las contraseñas no coinciden'),
+
+    check("image")
+        .custom((value, {req}) => {
+            let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+            if(!req.file){
+                return true
+            }if(!allowedExtensions.exec(req.file.filename)){
+                return Promise.reject('Solo archivos con estas extensiones .jpeg/.jpg/.png/.gif')
+            }else{
+                return true
+            }
+        })
 ];
 
 module.exports = validateRegister;

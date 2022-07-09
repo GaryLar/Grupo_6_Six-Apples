@@ -1,3 +1,76 @@
-body.contact {
-    background-color: aqua;
+/* estilos de contacto (footer) */
+main.contact-main h2.title-contact {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 16px;
+}
+
+main.contact-main section.form-contact {
+    /* align-items: center;
+    text-align: center; */
+    border: 1px black solid;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 300px;
+}
+
+section.form-contact div.input-contact {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-bottom: 16px;
+    margin:0 auto;
+}
+
+section.form-contact .style-input-contact {
+    border-radius: 7px;
+    outline: none;
+    border: 1px black solid;
+    margin-bottom: 0.2rem;
+}
+
+section.form-contact .contain-button-contact{
+    text-align: center;
+    color: #92c88a;
+
+}
+section.form-contact .submit-contact{
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 4rem;
+    margin: 10px 0;
+    background-color: #92c88a;
+}
+section.map-contact{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+section.map-contact h2.zone-contact {
+    text-align: center;
+    font-size: 16px;
+    margin: 1rem auto;
+}
+
+section.map-contact h4.data-contact {
+    font-size: 13px;
+    text-align: center;
+    margin: 1rem;
+}
+
+@media(min-width: 800px){
+    div.container-contact{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 20px auto;
+    }
+    main.contact-main section.form-contact {
+        /* align-items: center;
+        text-align: center; */
+        border: 1px black solid;
+        border-radius: 10px;
+        margin: 0 20px;
+        width: 400px;
+    }
 }

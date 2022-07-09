@@ -8,7 +8,9 @@
         <h2 class="profile"> Mi Perfil</h2>
         <form action="/usuario/perfil/editar/<%= session.user.id %>?_method=PUT" method="POST" enctype= "multipart/form-data" id="formProfile">
             <div class="image"><img src="/images/usuarios/<%= user.image %>" alt="imagePerfil"></div>  <!-- raro -->
-            <span class="error-message" id="imageError"></span>
+            <% if (locals.errors && errors.image) { %> 
+                <span class="error-message" id="imageError"><%= errors.image.msg %></span>
+            <% } %>
                 <div class="input_file-container">
                     <span id="span">EDITAR IMAGEN</span>
                     <input class="avatar2" type="file" name="image" id="image">
@@ -68,7 +70,6 @@
                             <select name="district" id="district"  class="input-style">
                                 <option value="" hidden selected>Elija una Localidad</option>
                                
-                        
                             </select>
 
 
