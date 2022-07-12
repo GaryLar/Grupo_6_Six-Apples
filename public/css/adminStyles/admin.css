@@ -121,7 +121,7 @@ section.section-admin .finalizar-registro button:hover{
     background-color: #92c88a;
 }
 
-@media(min-width: 1100px){
+@media(min-width: 1020px){
     section.section-admin{ 
         width: 90%;
         padding: 30px;
