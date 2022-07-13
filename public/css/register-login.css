@@ -154,7 +154,7 @@ section.registro-section form p.info{
     font-size: 14px; 
 }
 }
-@media(min-width: 1100px) {
+@media(min-width: 1020px) {
     body.registro section.registro-section, 
     body.login section.login-section{
     padding: 3rem;

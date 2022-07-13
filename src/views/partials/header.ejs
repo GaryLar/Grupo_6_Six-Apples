@@ -3,21 +3,26 @@
         <div class="logo">
             <a href="/"><img src="/images/logoFinal.png" alt="logo"></a>
         </div>
-        <form action="/search" method="GET">
+        <form action="/search" method="GET">|    
             <input id="barra" type="search" placeholder="  Buscar..." name="search">
             <button id="lupa" type="submit"><i id="lupa" class="fas fa-search"></i></button>
         </form>
         <nav class="menu-home1">
             <ul>
-                <% if ( typeof session.user != "undefined") { %>
-                    <li><a href="/usuario/perfil"><div class="image"><img src="/images/usuarios/<%= session.user.image %>" alt="perfil"></div></a></li>  <!-- desaparece el icono de id: "user" -->
-                <% } else { %>
-                    <li id="ingresa"><a href="/usuario/login">Ingresá</a></li><a href="/usuario/login"><i id="user" class="fa-regular fa-circle-user"></i></a>
-                <% } %> 
-                <li><a href="/productos/carrito"><i id="carrito" class="fa-solid fa-cart-shopping"></i></a></li>
+                <% if ( typeof session.user !="undefined" ) { %>
+                    <li><a href="/usuario/perfil">
+                            <div class="image"><img src="/images/usuarios/<%= session.user.image %>" alt="perfil"></div>
+                        </a></li> <!-- desaparece el icono de id: "user" -->
+                    <% } else { %>
+                        <li id="ingresa"><a href="/usuario/login">Ingresá</a></li><a href="/usuario/login"><i id="user"
+                                class="fa-regular fa-circle-user"></i></a>
+                        <% } %>
+                            <li><a href="/productos/carrito"><i id="carrito" class="fa-solid fa-cart-shopping"></i></a>
+                            </li>
             </ul>
         </nav>
-        <button id="boton-menu" for="menu"><i class="fa-solid fa-bars"></i></button> <!-- lo que esta en menu hamburguesa -->
+        <button id="boton-menu" for="menu"><i class="fa-solid fa-bars"></i></button>
+        <!-- lo que esta en menu hamburguesa -->
         <nav id="menu">
             <ul>
                 <li><a href="/">Inicio</a></li>
@@ -25,29 +30,30 @@
                 <li><a href="/productos/ofertas">Ofertas</a></li>
                 <li><a href="/productos/carrito">Carrito</a></li>
                 <li><a href="/about">¿Quiénes somos?</a></li>
-                <% if (typeof session.user != "undefined") { %>
+                <% if (typeof session.user !="undefined" ) { %>
                     <li><a href="/usuario/salir">Cerrar sesión</a></li>
-                <% if (session.user.rol === 1) { %>
-                    <li><a href="/admin">Admin</a></li>
-                <% } %>
-                <% } %>
+                    <% if (session.user.rol===1) { %>
+                        <li><a href="/admin">Admin</a></li>
+                        <% } %>
+                            <% } %>
             </ul>
         </nav>
-        </div>
-        <div class="menu-home3container"> <!-- menu de desktop -->
-            <nav class="menu-home3">
-                <ul>
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/productos">Catálogo</a></li>
-                    <li><a href="/productos/ofertas">Ofertas</a></li>
-                    <li><a href="/about">¿Quiénes somos?</a></li>
-                    <% if (typeof session.user != "undefined") { %>
-                        <li><a href="/usuario/salir">Cerrar sesión</a></li>
-                    <% if (session.user.rol === 1) { %>
+    </div>
+    <div class="menu-home3container">
+        <!-- menu de desktop -->
+        <nav class="menu-home3">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/productos">Catálogo</a></li>
+                <li><a href="/productos/ofertas">Ofertas</a></li>
+                <li><a href="/about">¿Quiénes somos?</a></li>
+                <% if (typeof session.user !="undefined" ) { %>
+                    <li><a href="/usuario/salir">Cerrar sesión</a></li>
+                    <% if (session.user.rol===1) { %>
                         <li><a href="/admin">Admin</a></li>
-                    <% } %>
-                    <% } %>
-                </ul>
-            </nav>
-        </div>
+                        <% } %>
+                            <% } %>
+            </ul>
+        </nav>
+    </div>
 </header>

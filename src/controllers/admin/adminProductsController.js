@@ -69,15 +69,18 @@ productEdit: (req,res)=>{
 productUpdate: (req, res) => {
     let errors = validationResult(req);
     if(errors.isEmpty()){
-        let producto = db.Product.findByPk(req.params.id)
-        db.Product.update({
-            ...req.body,
-            image: req.file ? req.filename : producto.image,
-        },{
-            where:{
-                id:req.params.id,
-            }
+        db.Product.findByPk(req.params.id)
+        .then(producto => {
+            db.Product.update({
+                ...req.body,
+                image: req.file ? req.file.filename : producto.image
+            },{
+                where: {
+                    id: req.params.id
+                }
+            })
         })
+        .catch((error) => res.send(error))
         .then(() => {
             res.redirect('/admin/productos'); 
         })

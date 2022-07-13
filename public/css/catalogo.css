@@ -120,7 +120,7 @@ button.add-button p.add{
 
 /* media querie version DESKTOP */
 
-@media (min-width: 1100px){
+@media (min-width: 1020px){
     main.main-catalogo section.frutas-section{
         padding: 0 30px;
     }  

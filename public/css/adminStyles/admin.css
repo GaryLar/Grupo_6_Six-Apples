@@ -29,6 +29,7 @@ body.listado-usuarios{
    padding: 10px;
    max-width: 400px; 
    margin: 30px auto;
+   box-shadow: -20px 14px 5px 0px rgb(138 138 138 / 50%);
 }
 
 section.section-admin h2.admin{
@@ -116,12 +117,13 @@ section.section-admin .finalizar-registro button{
     border-radius: 1rem;
     border: 1px solid black;
     transition: all 0.5s ease-in;
+    
 }
-section.section-admin .finalizar-registro button:hover{
+section.section-admin .finalizar-registro button{
     background-color: #92c88a;
 }
 
-@media(min-width: 1100px){
+@media(min-width: 1020px){
     section.section-admin{ 
         width: 90%;
         padding: 30px;

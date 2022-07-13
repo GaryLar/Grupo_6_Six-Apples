@@ -291,7 +291,7 @@ main.main-homepage button.boton-agregar:hover{
 }
 
 /* DESKTOP VERSION */
-@media (min-width: 1100px){
+@media (min-width: 1020px){
     /* OFERTAS BOLSONES */
     main.main-homepage section article.none-oferta{
         display: block;
