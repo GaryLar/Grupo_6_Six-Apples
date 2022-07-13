@@ -47,7 +47,6 @@ module.exports = {
                 errors: errors.mapped(),
                 old: req.body
             })
-            .catch((error) => res.send(error));
         })
     }
 },
