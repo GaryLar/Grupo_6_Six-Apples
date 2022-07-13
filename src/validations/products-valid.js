@@ -3,7 +3,7 @@ const { check, body } = require('express-validator');
 let validateProduct = [
     check('name')
         .notEmpty().withMessage('Debes ingresar el nombre del producto').bail()
-        .isAlphanumeric().withMessage('Ingrese un nombre válido'),
+        .isLength({ min: 5 }).withMessage('Ingrese un nombre válido'),
     check('type')
         .notEmpty().withMessage('Debes ingresar el tipo de producto'),
     check('categoryId')
