@@ -18,8 +18,10 @@ div.conteiner-admin{
     background-color: white;
     border-radius: 10px;
     padding: 10px;
-    max-width: 400px; 
+    max-width: 487px; 
+    box-shadow: -20px 14px 5px 0px rgb(138 138 138 / 50%);
 }
+
 
 div.titulos {
     text-align: center;
@@ -31,9 +33,14 @@ section.admin-lista nav.nav-admin a{
 }
 
 section.admin-lista nav ul {
-    padding: 7px;
+    padding: 10px;
     text-align: center;
-    margin: 5px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    max-width: 63%;
+
 }
 
 section.admin-lista nav ul li {
@@ -41,4 +48,8 @@ section.admin-lista nav ul li {
     margin: 5px;
     border-radius: 10px;
     list-style: none;
+}
+
+body.index div.titulos p.p-index{
+    font-size: 22px;
 }
