@@ -42,10 +42,11 @@ body.productCart{
 div.container-carrito {
     width: 85%;
     background-color: white;
-   
+    opacity:90%; 
     margin: 15px auto;
     border: grey 1px solid;
-    box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4);
+    box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4); 
+    border-radius: 15px;
 }
 
 section.menu-carrito nav ul{

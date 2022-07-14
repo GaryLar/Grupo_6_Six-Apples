@@ -48,7 +48,7 @@ body.profile section.profile-section{
 }
  
 section.profile-section{
-    opacity: 80%;
+    opacity: 90%;
 }
 
 body.profile section form {
@@ -195,6 +195,10 @@ section.profile-section form span.error-message{
         justify-content: space-evenly;
         gap: 1rem; 
     }
+
+    body.profile h2.datos-contacto{
+        font-size: 19px;
+    }
 }
 
 
@@ -208,6 +212,7 @@ section.profile-section form span.error-message{
     }
     body.profile h2.datos-contacto{
         margin:1rem 0rem 1rem 0rem;
+        font-size: 22px;
     }
     .input_file-container .avatar2{
         margin: -3.5rem auto -3rem ;

@@ -250,6 +250,10 @@ main.main-homepage button.boton-agregar:hover{
     font-family: var(--font-poppins); 
     margin-left: -4px;
 }
+ /* footer */ 
+ footer.footer-homepage section.section-footer ul.list-footer a.enlace-footer{
+    font-size: 8.2px;
+ }
 
 /* TABLET VERSION*/
 @media (min-width: 768px) {
@@ -288,7 +292,13 @@ main.main-homepage button.boton-agregar:hover{
     .boton-agregar p.add{
         font-size: 14px;
     }
+
+    /* footer */ 
+    footer.footer-homepage section.section-footer ul.list-footer a.enlace-footer{
+        font-size: 8.9px;
+    }
 }
+ 
 
 /* DESKTOP VERSION */
 @media (min-width: 1020px){
@@ -301,5 +311,10 @@ main.main-homepage button.boton-agregar:hover{
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-evenly;
+    }
+
+    /* footer */ 
+    footer.footer-homepage section.section-footer ul.list-footer a.enlace-footer{
+        font-size: 14px;
     }
 }

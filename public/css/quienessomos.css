@@ -115,5 +115,9 @@ body.quienessomos p{
         max-width: 58%;
         height: 47vh;
     }
+
+    section.quienessomos-section form p {
+        font-size: 22px;
+    }
 }
 

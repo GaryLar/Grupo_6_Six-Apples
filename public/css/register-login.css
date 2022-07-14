@@ -48,7 +48,7 @@ body.login section.login-section{
  
 section.login-section,
 section.registro-section{
-    opacity: 80%;
+    opacity: 90%;
 }
 
 body.registro section form, 
@@ -75,6 +75,7 @@ body.registro h2,
 body.login h2 {
     text-align: center;
     margin-bottom: 1rem;
+    font-size: 25px;
 
 }
 
@@ -102,10 +103,11 @@ body.login section form .input-style{
     /*background-color: black;*/
 }
 
-body.login section form button.btn-submit,
+body.login section form div.button button.btn-submit,
 body.registro section form button.btn-submit{
     background-color: grey;
 }
+
 
 section.login-section form span.error-message, 
 section.registro-section form span.error-message{

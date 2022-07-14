@@ -37,7 +37,7 @@ footer.footer-homepage div nav a.twitter-timeline{
 }
 
 footer.footer-homepage div nav p.copyright {
-    font-size:6px; 
+    font-size:8px; 
 }
 
 footer.footer-homepage hr.hr-footer{ /* margen a la linea de separacion */
@@ -123,5 +123,9 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
         padding: 7px; 
         margin-left: 70px;
         font-size: 12px;
+    }
+
+    footer.footer-homepage div nav p.copyright{ 
+        font-size: 13px; 
     }
 }
