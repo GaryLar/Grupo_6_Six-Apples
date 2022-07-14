@@ -30,11 +30,11 @@ body.quienessomos{
 }
 
 body.quienessomos section.quienessomos-section{
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 1rem;
     background-color: white;
     width: 90%;
-    height: 65vh;
+    height: 90vh;
     margin: 50px auto;
     box-shadow: -12px -7px 5px 0px rgb(138 138 138 / 50%);
 }
@@ -45,7 +45,6 @@ section.quienessomos-section{
 
 body.quienessomos h1{
     text-align: center;
-    margin-bottom: 1rem;
     font-size: 20px;
 }
 
@@ -53,13 +52,35 @@ body.quienessomos p{
     text-align: center;
 }
 
+@media(min-width:400px){
+    body.quienessomos section.quienessomos-section{
+        width: 89%;
+        height: 75vh;
+    }
+}
+
+@media(min-width:500px){
+    body.quienessomos section.quienessomos-section{
+        width: 83%;
+        height: 65vh;
+    }
+}
+
+@media(min-width:620px){
+    body.quienessomos section.quienessomos-section{
+        width: 89%;
+        height: 55vh;
+    }
+}
+
 /* Media Querys Version Tablet */ 
 @media(min-width:768px){
     body.quienessomos section.quienessomos-section{
         padding: 2rem;
         background-color: white;
-        max-width: 50%;
+        max-width: 70%;
         margin: 70px auto ;
+        height: 65vh;
     }
 
     section.quienessomos-section form p {
@@ -75,6 +96,7 @@ body.quienessomos p{
         max-width: 60%;
         margin: 140px auto ;
         margin-bottom: 13.2%;
+        height: 57vh;
     }
 
     section.quienessomos-section form p {
@@ -87,3 +109,11 @@ body.quienessomos p{
         right:0; 
     }
 }
+
+@media(min-width:1440px){
+    body.quienessomos section.quienessomos-section{
+        max-width: 58%;
+        height: 47vh;
+    }
+}
+
