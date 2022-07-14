@@ -135,7 +135,7 @@ section.datos-carrito div.input-carrito{
 }
 
 section.datos-carrito div.input-carrito span{
-    font-size: x-small;
+    font-size: 10px;
     color: blue;
     opacity: 70%;
     margin-left: 15px;
@@ -192,7 +192,7 @@ section.datos-carrito div.boton-final button:hover{
     }
     
     section.datos-carrito div.input-carrito span{
-        font-size: x-small;
+        font-size: 11px;
         color: blue;
         opacity: 70%;
         margin-left: 15px;
@@ -226,8 +226,23 @@ section.datos-carrito div.boton-final button:hover{
         margin: 5px 0 15px 0;
         width: 20%;
     }
+
+    section.datos-carrito div.input-carrito span{
+        font-size: 13px;
+        color: blue;
+        opacity: 70%;
+        margin-left: 15px;
+    }
 }
 
+@media(min-width:1440){
+    section.datos-carrito div.input-carrito span{
+        font-size: 16px;
+        color: blue;
+        opacity: 70%;
+        margin-left: 15px;
+    }
+}
 /*body.productCart main.menu-carrito{
     border-radius: 10px;
     padding: 1rem;

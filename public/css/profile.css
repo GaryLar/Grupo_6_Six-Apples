@@ -100,11 +100,11 @@ body.profile section div.image img{
 
 /* id de el boton subir imagen  */
 #span {
-    background-color: var(--color-verdeOscuro);
+    background-color: var(--color-verdeClaro);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 110px;
+    width: 130px;
     height: 30px;
     margin: 0 auto; 
     font-size: 14px;
@@ -145,6 +145,7 @@ body.profile section form .input-style{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--color-verdeOscuro);
 }
 
 body.profile section form button.btn-submit{
