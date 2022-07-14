@@ -1,0 +1,101 @@
+@import url(home.css); 
+
+:root {
+    /* COLORES */
+    --color-verdeClaro: #dfffbe;
+    --color-verdeOscuro: #92c88a;
+    --color-natural: #FEFFDF; 
+    /* FUENTES */
+    --font-poppins: 'Poppins', sans-serif;
+    /* TAMAÑOS DE FUENTES */
+    --title: 16px;
+    --paragraph: 14px;  
+    --precios: 18px;
+    --otrasDescripciones: 16px;
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.proteccion{
+    font-family: var(--font-poppins);
+    background-image: url('/images/imagenbody.jpg');
+    background-size: contain;
+    min-height: 100vh;
+}
+
+body.proteccion section.proteccion{
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: white;
+    width: 90%;
+    margin: 50px auto;
+    box-shadow: -12px -7px 5px 0px rgb(138 138 138 / 50%);
+}
+
+section.proteccion{
+    opacity: 80%;
+}
+
+body.proteccion h2.proteccion{
+    text-align: center;
+    font-size: 20px; 
+    margin-bottom: 1rem;
+}
+
+body.proteccion h6.H1{
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 0.3rem;
+}
+
+body.proteccion p.p1{
+    font-size: 13px;
+    margin-bottom: 0.8rem;
+    padding: 0.3rem;
+}
+
+/* Media Querys Version Tablet */
+@media(min-width: 720px){
+    body.proteccion section.proteccion {
+        padding: 2rem;
+        width:80%;
+        margin: 60px auto; 
+    }
+
+    body.proteccion h2.proteccion{
+        font-size:25px; 
+    }
+
+    body.proteccion h6.H1{
+        font-size: 17.5px;
+    }
+
+    body.proteccion p.p1{
+        font-size: 16.5px;
+    }
+}
+
+/* Media Querys Version Escritorio */
+@media(min-width:1020px){
+    body.proteccion section.proteccion {
+        width:72%;
+        margin: 75px auto; 
+    }
+
+    body.proteccion h2.proteccion{
+        font-size:25px; 
+    }
+
+    body.proteccion h6.H1{
+        font-size: 17.5px;
+    }
+
+    body.proteccion p.p1{
+        font-size: 16.5px;
+    }
+}
