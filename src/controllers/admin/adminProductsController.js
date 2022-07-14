@@ -1,6 +1,8 @@
 /* controlador para los products */
 const db = require("../../database/models")
 const { validationResult } = require('express-validator');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
     list: (req, res) => {
@@ -78,10 +80,16 @@ productUpdate: (req, res) => {
                     id: req.params.id
                 }
             })
-        })
-        .catch((error) => res.send(error))
-        .then(() => {
-            res.redirect('/admin/productos'); 
+            .then(() => {
+                if(req.file){
+                    let existe = fs.existsSync(path.join(__dirname, "../../../public/images/productos", producto.image)) 
+                     if( existe && producto.image !== "default-image.png"){
+                        fs.unlinkSync(path.join(__dirname, "../../../public/images/productos", producto.image))
+                    }
+                }
+                res.redirect('/admin/productos')
+            })
+            .catch((error) => res.send(error))
         })
         .catch((error) => res.send(error))
     } else {
@@ -104,16 +112,25 @@ productUpdate: (req, res) => {
 },
 productDelete: (req, res) => {
         let productoId = +req.params.id; 
-        db.Product.destroy({ where:{
-        id:  productoId }})
-        .then((result) => {
-            if(result){
-                res.redirect('/admin/productos');
-            } else {
-                res.send('ups.algo rompio')  
+        /* busco por id el producto a eliminar */
+        db.Product.findByPk(productoId)
+        .then(product => {
+            db.Product.destroy({
+                where:{
+                id: productoId
             }
-         })
-         .catch((error) => res.send(error)); 
+        })
+        /* deberia al eliminar el producto, tambien borrar la imagen asociada */
+        .then(() => {
+            let existe = fs.existsSync(path.join(__dirname, "../../../public/images/productos", product.image));
+            if(existe && product.image !== "default-image.png"){
+                fs.unlinkSync(path.join(__dirname, "../../../public/images/productos", product.image))
+            }
+        })
+        .catch((error) => res.send(error))
+        res.redirect('/admin/productos')
+        })
+        .catch((error) => res.send(error))
         }
 
 }
