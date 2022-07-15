@@ -49,6 +49,7 @@ footer.footer-homepage hr.hr-footer{ /* margen a la linea de separacion */
 .navegacion-footer{
     display: flex;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .list-footer li{
@@ -56,6 +57,10 @@ footer.footer-homepage hr.hr-footer{ /* margen a la linea de separacion */
     justify-content: space-between;
     margin: 0 25px 0 20px;
     text-align: center;
+}
+
+.enlace-footer{
+    font-size: 8.2px
 }
 
 footer.footer-homepage div.image-bottom{
@@ -109,7 +114,10 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
     footer.footer-homepage section.section-footer div.image-bottom img#imagen{
         width: 13%;
     }
-    
+
+    .enlace-footer{
+        font-size: 8.9px
+    }
 }
 
 @media (min-width: 1100px){
@@ -129,5 +137,9 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
 
     footer.footer-homepage div nav p.copyright{ 
         font-size: 13px; 
+    }
+
+    .enlace-footer{
+        font-size: 14px
     }
 }
