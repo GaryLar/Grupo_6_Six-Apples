@@ -61,7 +61,7 @@ main.main-ofertas article.producto-oferta button.boton-ofertas{
     border: none;
     background-color: lightgray;
     border-radius: 9px;
-    padding: 6px;
+    padding: 8px;
     transition: all 0.5s ease-in;
 }
 

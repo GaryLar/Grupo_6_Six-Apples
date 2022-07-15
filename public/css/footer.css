@@ -80,6 +80,7 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
         padding-right: 8px;
         justify-content: space-between;
         display: flex;
+        margin: 0px 05px 0px 02px;  
     }
 
     /* iconos FOOTER*/
@@ -89,7 +90,8 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
     }
 
     footer.footer-homepage div nav p.copyright{ 
-        font-size:9px; 
+        font-size:9px;
+        margin: 2px 15px;  
     }
 
     footer.footer-homepage section.section-footer{  /* agrege en tablet */

@@ -115,6 +115,7 @@ button.add-button p.add{
     }
     button.add-button {
         margin-left: 50px;
+        padding: 8px; 
     }
 }
 
