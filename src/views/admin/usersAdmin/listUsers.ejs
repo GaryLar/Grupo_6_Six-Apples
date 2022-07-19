@@ -26,11 +26,11 @@
                   <form action="/admin/users/<%= user.id %>?_method=PUT" method="POST">
                     <td>
                       <select  name="rolId" id="rolId">
-                        <option value="<%= user.rol.name %>"></option>
-                        <option value="User" <%= user.rol.name === "User" && "selected" %>>Usuario</option>
-                        <option value="Admin" <%= user.rol.name === "Admin" && "selected" %>>Administrador</option>
+                        <option value=""><% user.rolId %></option>
+                        <option value="2" <%= user.rolId == 2 ? "selected" : "" %>>Usuario</option>
+                        <option value="1" <%= user.rolId == 1 ? "selected" : "" %>>Administrador</option>
                       </select>
-                      <button type="submit" class="btn btn-outline-secondary btn-sm disabled">Guardar rol</button>
+                      <button type="submit" class="btn btn-outline-secondary btn-sm">Guardar</button>
                       </td>
                   </form>
                   </td>

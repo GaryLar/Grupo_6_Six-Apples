@@ -16,13 +16,13 @@ module.exports = {
         .catch((error) => res.send(error))
     },
     userChangeRol: (req, res) => {  /* solo quiero poder cambiar el rol de mi usuario */
-        let{ rol } = req.body
+        let{ rolId } = req.body
         db.User.update({
-            rol
+            rolId
         }, {
             where: { id: req.params.id}
         })
         .then(() => res.redirect('/admin/users'))
-        .catch((error) => res.send(error))
+        .catch((error) => res.send(error)) 
     }
 }
