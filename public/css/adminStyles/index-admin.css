@@ -46,7 +46,7 @@ section.admin-lista nav ul {
 
 section.admin-lista nav ul li {
     border: 1px solid black;
-    margin: 5px;
+    margin: 6px;
     border-radius: 10px;
     list-style: none;
 }
