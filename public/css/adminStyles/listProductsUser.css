@@ -19,6 +19,11 @@ body.listado-productos {
     background-size: contain;
 }
 
+/* searchAdmin.ejs -No hay productos */
+body.search-admin h2.producto-no-encontrado {
+    text-align: center;
+}
+
 /* style boton flotante en listado de productos */
 main.container-float{
     position:relative;

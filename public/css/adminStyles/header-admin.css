@@ -18,14 +18,14 @@ header.header-admin div.logo-admin img {
     width: 35%; 
     object-fit: contain; 
 }
-header.header-admin form {
+header.header-admin form#busqueda-admin {
     background-color: white;
     border: 1px solid grey;
     border-radius: 10px;
     width: 80px;
 }
 
-header.header-admin form input{
+header.header-admin form input#barra{
      display: inline-block;
      width: 40px;
      outline: none;
@@ -122,18 +122,36 @@ header.header-admin div.menu-desktop{
 
     header.header-admin div.menu-desktop{
         display: block;
+        margin: 0 auto;
+        max-width: 1200px;
     }
 
-    header.header-admin div.menu-desktop nav.menu-admin2 ul{
+    header.header-admin div.menu-desktop nav.menu-admin2 ul.ul-admin{
         display: flex;
         justify-content: space-around;
         align-items: center;
-        max-width: 1200px;
     }
 
     header.header-admin div.avatar-admin{
         width: 40px;
         height: 40px;
     }
+
+    header.header-admin form#busqueda-admin {
+        width: 150px;
+        height: 25px;
+    }
+    
+    header.header-admin form input#barra{
+        width: 95px;
+   }
+
+   header.header-admin form button i#lupa{
+    border: none;
+    background-color: rgba(240, 248, 255, 0);
+    font-size: 15px;
+    margin-right: -80px;
+    margin-top: 3.5px;
+}
 }
 
