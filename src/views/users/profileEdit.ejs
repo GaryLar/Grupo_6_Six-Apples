@@ -101,6 +101,11 @@
                 <button type="submit" class="btn-submit">Guardar cambios</button>
             </div>
         </form>
+        <form action="/usuario/perfil/editar/eliminar/<%= session.user.id %>?_method=DELETE" method="post">
+        <div class="btn-container_profile">
+            <button style="background-color:rgb(247, 52, 52)" type="submit" class="btn-submit">Borrar Cuenta</button>
+        </div>
+        </form>
     </section>
 
     <!--FOOTER-->

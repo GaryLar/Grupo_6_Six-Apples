@@ -152,5 +152,24 @@ module.exports = {
             res.cookie('saCookie', '', {maxAge: -1}) 
         }
         res.redirect('/')
+    },
+    deleteAccount:(req, res) =>{
+        req.session.destroy();
+        /* eliminamos cookie */
+        if(req.cookies.saCookie){
+            res.cookie('saCookie', '', {maxAge: -1}) 
+        }
+        
+        let userId = +req.params.id;
+        db.User.findByPk(userId)
+        .then((user)=>{
+            db.User.destroy({
+                where:{
+                    id:userId
+                }
+            })
+        })
+        .catch((error) => res.send(error))
+        res.redirect('/')
     }
 }
