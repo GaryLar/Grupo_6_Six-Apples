@@ -99,6 +99,7 @@ body.profile section div.image img{
 .input_file-container .avatar2{
     width: 130px;
     height: 20px;
+    cursor: pointer;
     
 }
 /* id de el boton subir imagen  */
@@ -115,6 +116,11 @@ body.profile section div.image img{
     cursor: pointer;
 }
 
+#span:hover{
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+}
+
 .input_file-container input[type = file] { 
     /* sirve esto para seleccinar un solo input(un input puntual) ..puede ser con clase o asi */
     opacity: 0;
@@ -123,6 +129,9 @@ body.profile section div.image img{
     width: 130px;
     cursor: pointer;
 
+}
+.input_file-container input {
+    cursor: pointer;
 }
 
 

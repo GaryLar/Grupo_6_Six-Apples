@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 const  session =require("express-session")
 const cookieParser = require('cookie-parser');
 const cookieSession = require('./middlewares/cookieSession');
+const apiProductsRouter = require('./routes/apiRouter/apiProductsRouter');
 
 
 /* Enrutadores */
@@ -42,6 +43,7 @@ app.use("/",indexRouter)  //Home , About
 app.use("/productos", productRouter)  //Productos: carrito, detalle, catalogo, ofertas.
 app.use("/usuario", userRouter) //Usuario: perfil, registro.
 app.use("/admin", adminRouter) //admin, CRUD products, users, categorias
+app.use("/api/productos", apiProductsRouter);
 
 /* COLOCAR ruta de error 404 */
 app.use((req, res, next) => {
