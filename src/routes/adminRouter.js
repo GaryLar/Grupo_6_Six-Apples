@@ -20,6 +20,7 @@ router.get('/search', checkUserSession, checkAdmin, adminController.search)
 /* ADMIN USUARIOS */
 router.get('/users', checkUserSession, checkAdmin, adminUsersController.users);
 router.put('/users/:id', checkUserSession,checkAdmin, adminUsersController.userChangeRol);
+router.delete("/users/eliminar/:id",checkUserSession,checkAdmin,adminUsersController.deleteUser)
 
 /* ============== */
 /* CRUD PRODUCTOS */
@@ -53,5 +54,7 @@ router.get('/categorias/editar/:id',checkUserSession, checkAdmin, adminCategoryC
 router.put('/categorias/:id', categoryValid, adminCategoryController.categoryUpdate);
 /* DELETE - Elimina una categoria */
 router.delete('/categorias/eliminar/:id', adminCategoryController.categoryDelete);
+
+
 
 module.exports = router;

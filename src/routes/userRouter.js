@@ -21,5 +21,5 @@ router.get('/perfil/editar/:id', checkUserSession, userController.profileEdit);
 router.put('/perfil/editar/:id', uploadFile.single('image'), profileValidator, checkUserSession, userController.profileUpdate);
 /* get leaveSession */
 router.get('/salir', userController.leaveSession);
-router.delete("/perfil/editar/eliminar/:id",userController.deleteAccount)
+router.delete("/perfil/editar/eliminar/:id",checkUserSession,userController.deleteAccount)
 module.exports = router;

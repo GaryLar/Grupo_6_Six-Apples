@@ -159,7 +159,6 @@ module.exports = {
         if(req.cookies.saCookie){
             res.cookie('saCookie', '', {maxAge: -1}) 
         }
-        
         let userId = +req.params.id;
         db.User.findByPk(userId)
         .then((user)=>{

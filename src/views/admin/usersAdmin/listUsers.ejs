@@ -14,6 +14,7 @@
                   <th scope="col">Nombre</th>
                   <th scope="col">Email</th>
                   <th scope="col">Rol</th>
+                  <th scope="col"></th>
               </tr>
               </thead>
               <tbody>
@@ -30,9 +31,18 @@
                         <option value="2" <%= user.rolId == 2 ? "selected" : "" %>>Usuario</option>
                         <option value="1" <%= user.rolId == 1 ? "selected" : "" %>>Administrador</option>
                       </select>
-                      <button type="submit" class="btn btn-outline-secondary btn-sm">Guardar</button>
+                      <button style="color: black;" type="submit" class="btn btn-outline-secondary btn-sm">Guardar</button>
                       </td>
-                  </form>
+                      <td>
+                        
+                      </td>
+                    </form>
+                    <td>
+                    <form action="/admin/users/eliminar/<%- user.id %>?_method=DELETE" method="post">
+                      <div class="btn-container_profile">
+                          <button style="background-color: rgb(247, 52, 52);color: black;"  type="submit" class="btn btn-outline-secondary btn-sm ">Borrar Cuenta</button>
+                      </div>
+                      </form>
                   </td>
                 </tr>
               <% }) %>  

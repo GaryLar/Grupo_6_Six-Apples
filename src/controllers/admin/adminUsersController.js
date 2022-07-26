@@ -24,5 +24,20 @@ module.exports = {
         })
         .then(() => res.redirect('/admin/users'))
         .catch((error) => res.send(error)) 
+    },
+    deleteUser:(req, res) =>{
+        let userId = +req.params.id;
+        req.session.destroy();
+    
+        db.User.findByPk(userId)
+        .then((user)=>{
+            db.User.destroy({
+                where:{
+                    id : userId
+                }
+            })
+        })
+        .catch((error) => res.send(error))
+        res.redirect('/admin/users')
     }
 }
