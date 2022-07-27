@@ -11,5 +11,7 @@ router.get('/detalle/:id', productController.detail);
 router.get('/carrito', checkUserSession, productController.productCart);
 router.get('/ofertas', productController.offers);
 router.get('/ofertas/:id', productController.offersDetail);
+router.get('/filtro', productController.filter);
+router.get('/filtro/price', productController.filterPrice);
 
 module.exports = router;

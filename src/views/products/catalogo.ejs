@@ -7,6 +7,24 @@
     <main class="main-catalogo">
         <h3 class="titulo-catalogo">Catálogo Completo</h3>
         <hr class="hr-separacion">
+        <form class="filter" action="/productos/filtro" method="GET" style="margin-left: 10px; cursor: pointer; margin-bottom: 0.5rem;">
+            <select name="search" id="search">
+              <option value="">Categorias</option>
+              <option value="1">Frutas</option>
+              <option value="2">Verduras</option>
+            </select>
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
+        <form class="filter" action="/productos/filtro/price" method="GET" style="margin-left: 10px; cursor: pointer;">
+            <select name="search" id="search">
+              <option value="">Precios</option>
+              <option value="120">120</option>
+              <option value="460">460</option>
+              <option value="480">480</option>
+              <option value="390">390</option>
+            </select>
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form>
         <section class="frutas-section">
             <% products.forEach(product => { %>
             <article class="productos-catalogo">

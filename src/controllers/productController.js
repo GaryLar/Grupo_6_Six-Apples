@@ -1,16 +1,17 @@
 //const { getProducts, getOffers, writeOffers} = require('../data/index');
-const { promise } = require("bcrypt/promises");
-const db = require("../database/models")
+const db = require("../database/models");
 const { Op } = require('Sequelize');
 
 module.exports={
     products:(req,res)=>{
-        db.Product.findAll()
+        db.Product.findAll({
+            include: ['category'],
+        })
         .then((products)=>{
             res.render('products/catalogo', { //catalogo.ejs
                 title: "Catálogo",
                 products,
-                session: req.session
+                session: req.session,
             });
         })
         .catch((error)=>res.send(error))
@@ -64,4 +65,42 @@ module.exports={
         })
         .catch((error)=>res.send(error))
     },
+    /* filtro en catalogo */
+    filter: (req, res) => {
+        let busqueda = req.query.search
+        db.Product.findAll({
+            include: ['category'],
+            where: {
+                categoryId: {[db.Sequelize.Op.substring] : busqueda}
+            }
+        })
+        .then(products => {
+            res.render('products/catalogo', {
+                busqueda,
+                title: 'filtro',
+                session: req.session,
+                products,
+            })
+        })
+    },
+    filterPrice: (req, res) => {
+        let encuentro = +req.query.search
+        db.Product.findAll({
+            include: ['category'],
+            where: {
+                [Op.or]: {
+                    price: {
+                        [db.Sequelize.Op.like] : +encuentro,
+                    }
+           }}
+        })
+        .then(products => {
+            res.render('products/catalogo', {
+                encuentro,
+                title: 'filtro',
+                session: req.session,
+                products,
+            })
+        })
+    }
 }

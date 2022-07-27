@@ -105,7 +105,7 @@ button.add-button p.add{
     }
     main.main-catalogo section.frutas-section{
         justify-content: space-around;
-        max-width: fit-content;
+        max-width:none;/* cambie el max-width: fit-content*/
         margin: 0 auto;
     }  
     main.main-catalogo section.frutas-section article.productos-catalogo {
@@ -124,6 +124,7 @@ button.add-button p.add{
 @media (min-width: 1020px){
     main.main-catalogo section.frutas-section{
         padding: 0 30px;
+        max-width: 90%; /* agrege este max-width */
     }  
 
     body.catalogo main.main-catalogo article.productos-catalogo {
