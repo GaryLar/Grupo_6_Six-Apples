@@ -9,6 +9,7 @@ const  session =require("express-session")
 const cookieParser = require('cookie-parser');
 const cookieSession = require('./middlewares/cookieSession');
 const apiProductsRouter = require('./routes/apiRouter/apiProductsRouter');
+const cors = require('cors');
 
 
 /* Enrutadores */
@@ -44,6 +45,7 @@ app.use("/productos", productRouter)  //Productos: carrito, detalle, catalogo, o
 app.use("/usuario", userRouter) //Usuario: perfil, registro.
 app.use("/admin", adminRouter) //admin, CRUD products, users, categorias
 app.use("/api/productos", apiProductsRouter);
+app.use(cors());
 
 /* COLOCAR ruta de error 404 */
 app.use((req, res, next) => {

@@ -1,6 +1,5 @@
 const db = require('../../database/models');
 const { validationResult } = require('express-validator');
-const data = require('../../data');
 module.exports = {
     listAll:(req, res) => {
         db.Product.findAll({
@@ -63,13 +62,16 @@ module.exports = {
        
     },
     getSome: (req, res) => {
+        let limit = +req.params.limit;
+        let offfser = +req.params.offset;
+
         db.Product.findAll({
             include: [{
                 association: 'category',
                 attributes: ['id', 'name']
             }],
-            limit: 5,
-            offset: 0,
+            limit,
+            offset,
         })
         .then((products) => {
             let response = {

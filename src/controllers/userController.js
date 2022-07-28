@@ -118,14 +118,37 @@ module.exports = {
         if(errors.isEmpty()){
             db.User.update({
                 ...req.body,
-                image: req.file ? req.file.filename : req.session.user.image /* session.user.image / req.session.user.image */
+                image: req.file ? req.file.filename : req.session.user.image 
             },{
                 where: {
                     id: req.session.user.id
                 }
             })
-            .then(() => res.redirect('/'))
-            .catch(error => res.send(error))
+            .then((result) => {
+                db.User.findByPk(req.session.user.id)
+                .then((user) => { /* sobreescribimos session, con las cookies */
+                    req.session.user = {
+                        id: user.id,
+                        name: user.name,
+                        email: user.email,
+                        rol: user.rolId,
+                        image: user.image
+                    }
+                    if(req.cookies.saCookie){
+                        res.cookie('saCookie', '', {maxAge: -1})
+                    }
+                    const TIME_IN_MILISECONDS = 60000000;
+                    res.cookie('saCookie', req.session.user, {
+                        expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                        httpOnly: true,
+                        secure: true
+                    })
+                    res.locals.user = req.session.user
+                    return res.redirect('/')
+                })
+                .catch(error => console.log(error))
+            })
+            .catch(error => console.log(error))
         }else{
             db.User.findOne({
                 where: {
