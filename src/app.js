@@ -10,12 +10,13 @@ const cookieParser = require('cookie-parser');
 const cookieSession = require('./middlewares/cookieSession');
 const apiProductsRouter = require('./routes/apiRouter/apiProductsRouter');
 const cors = require('cors');
+const passport = require('passport');
 
 
 /* Enrutadores */
 const indexRouter = require("./routes/indexRouter")
-const productRouter = require("./routes/productsRouter")
-const userRouter = require("./routes/userRouter")
+const productRouter = require("./routes/productsRouter.js")
+const userRouter = require("./routes/userRouter.js")
 const adminRouter = require("./routes/adminRouter")
 
 
@@ -34,6 +35,9 @@ app.use(session({
 }));
 app.use(cookieParser());
 app.use(cookieSession);
+/* passport */
+app.use(passport.initialize());
+app.use(passport.session());
 
 /* views ejs config  */
 app.set('view engine', 'ejs')

@@ -1,6 +1,8 @@
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
 const db = require('../database/models');
+const passport = require('passport');
+/* const GoogleStrategy = require('passport-google-oidc'); */
 const fs = require('fs');
 const path = require('path');
 
@@ -47,6 +49,19 @@ module.exports = {
                         errors: errors.mapped(),
                         session:req.session
                 })}
+    },
+    loginGoogle: (req, res) => {
+        let user = req.session.passport.user[0]
+        req.session.user = {
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          image: user.image,
+          googleId: user.social_id,
+          rol: user.rolId,
+        }
+
+        res.redirect('/')
     },
     register: (req, res) => {
         res.render('users/register', { //register.ejs

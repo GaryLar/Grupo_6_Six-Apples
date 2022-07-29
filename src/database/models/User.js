@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         password: {
             type: dataTypes.STRING(70),
-            allowNull: false,
+            defaultValue: null
         },
         image: {
             type: dataTypes.STRING(45),
@@ -46,6 +46,14 @@ module.exports = (sequelize, dataTypes) => {
         rolId: {
             type: dataTypes.INTEGER(10).UNSIGNED
         },
+        social_id: {
+            type:dataTypes.STRING(60),
+            defaultValue: null
+        },
+        social_provider: {
+            type:dataTypes.STRING(45),
+            defaultValue: null
+        }
         
     };
     let config = {

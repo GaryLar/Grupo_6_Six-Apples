@@ -8,11 +8,22 @@ const loginValidator = require("../validations/login-valid")
 const checkUserInSession = require("../middlewares/checkUserInSession")
 const checkUserSession = require("../middlewares/checkUserSession")
 const profileValidator = require("../validations/profile-valid")
+const passport = require('passport');
+const googleLogin = require('../functions/google');
+googleLogin()
+passport.serializeUser(function(user, done) {
+    done(null, user);
+  });
+  passport.deserializeUser(function(user, done) {
+    done(null, user);
+  });
 
 
 /* Ruta para mostrar formularios */
 router.get('/login', checkUserInSession, userController.login);
-router.post("/login",loginValidator,userController.processLogin) 
+router.post("/login",loginValidator,userController.processLogin);
+router.get('/login/google', passport.authenticate( "google", { scope: ["profile", "email"] }));
+router.get('/login/google/callback', passport.authenticate( "google", { failureRedirect: '/usuario/login' }), userController.loginGoogle);
 router.get('/registro', checkUserInSession, userController.register);
 router.post('/registro',uploadFile.single('image'), registerValidator, userController.processRegister);
 
