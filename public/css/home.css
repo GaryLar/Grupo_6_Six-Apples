@@ -25,6 +25,52 @@
     list-style: none;
 }
 
+/* BOTON FLOTANTE */
+#btn-mas{
+    display: none;
+}
+.container{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+}
+.redes a, #icon-mas2{
+    display: block;
+    text-decoration: none;
+    background: #51744c;
+    color: white;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+    transition: all 500ms ease;
+}
+.redes a:hover{
+    background: white;
+    color: #51744c;
+}
+.redes a{
+    margin-bottom: -15px;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-mas:checked~ .redes a{
+    margin-bottom: 10px;
+    opacity: 1;
+    visibility: visible;
+}
+#icon-mas2{
+    cursor: pointer;
+    background: #51744c;
+}
+#btn-mas:checked ~ .btn-mas #icon-mas2{
+    transform: rotate(137deg);
+}
+/* FIN BOTON FLOTANTE */
+
 body.homepage {
     font-family: var(--font-poppins);
    /*  background-color: whitesmoke; */
