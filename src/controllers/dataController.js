@@ -23,11 +23,12 @@ module.exports = {
         subject:`${name} te ha enviado una consulta`,
         html:`<h1>Formulario de consulta</h1>
         <ul>
-            <li>Nombre:${name}</li>
-            <li>Telefono:${phone}</li>
-            <li>Correo electronico:${email}</li>
+            <li>Nombre: ${name}</li>
+            <li>Telefono: ${phone}</li>
+            <li>Correo electronico: ${email}</li>
         </ul>
-        <p>La consulta enviada es: ${comments}</p>`
+        <p>La consulta enviada es:</p>
+        <p>${comments}</p>`
         }
         nodemailerTransporter.sendMail(mailOptions,(err,data)=>{
 
