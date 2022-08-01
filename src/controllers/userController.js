@@ -61,7 +61,7 @@ module.exports = {
           rol: user.rolId,
         }
 
-        res.redirect('/admin/users')
+        res.redirect('/')
     },
     register: (req, res) => {
         res.render('users/register', { //register.ejs

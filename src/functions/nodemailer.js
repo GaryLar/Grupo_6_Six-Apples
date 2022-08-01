@@ -6,8 +6,8 @@ let transporter=nodemailer.createTransport({
         type: 'OAuth2',
         user: "sixapplesstore@gmail.com",
         clientId:process.env.GOOGLE_CLIENT_ID,
-        clientSecret:"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",
-        refreshToken:"1//04wppJ9IJN2ABCgYIARAAGAQSNwF-L9IrZwYblG-y3ZZcC1fMKQAIuxrQQNKddOzxkCCB82Rjm7UsCtDd_qrOs5lg4EN7qMZ4gHU",
+        clientSecret:process.env.GOOGLE_CLIENT_SECRET,
+        refreshToken:process.env.REFRESH_TOKEN,
         accessToken: process.env.ACCESS_TOKEN
     }
 })

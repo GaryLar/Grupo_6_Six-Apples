@@ -9,7 +9,7 @@ module.exports = {
         })
     },
     search: (req, res) => {
-        let resultado = req.query.search.toLowerCase()
+        let resultado = req.query.search.toLowerCase().trim()
         db.Product.findAll({
             where:{
                 [Op.or] : [
