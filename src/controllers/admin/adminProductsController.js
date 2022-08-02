@@ -6,13 +6,76 @@ const path = require('path');
 
 module.exports = {
     list: (req, res) => {
-        db.Product.findAll({include: ['category']})
+        let url = `http://${req.headers.host}${req.originalUrl}`; /* definimos la url, la armamos para ver si tiene uncliudo los parametros o no */
+        /* a continuacion tenemos pasar por algunas validaciones, por ejemplo
+        si existe dentro de los parametros de la url la pages, hará ciertas cosas */
+
+        const dataPaginacion = (data, page, limit) => {
+            const {count, rows: result} = data; /* queremos manipular count y rows */
+            const pages = Math.ceil(count / limit)/* math.ceil trae numeros enteros */
+            const paginaActual = page ? + page : 0; /* si existe q la devuelva, sino cero */
+            let paginaSiguiente = "";
+            let paginaAnterior = "";
+
+            if(url.includes('page')){
+                let parametros = url.substring(url.search(/page/i), url.search(/&/i))/* le pasamos el indice de los parametros, y va a extraer esa porcion de texto */
+                      /* los busca y extrae esa porcion de codigo */
+                      if(paginaActual == 0){
+                        paginaSiguiente = url.replace(parametros, `page=${paginaActual + 1}`)
+                      }else {
+                        paginaAnterior = url.replace(parametros, `page=${paginaActual - 1}` )
+                        paginaSiguiente = url.replace(parametros, `page=${paginaActual + 1}`)
+                      }
+            }else {
+                paginaSiguiente = `${url}?page=${paginaActual + 1}&size=${limit}`; /* hay q pasar la url de la pagina siguiente y de la pagina anterior */
+            }
+            const siguiente = page == (pages - 1) ? null: paginaSiguiente;
+            const anterior = paginaActual == 0 ? null : paginaAnterior;
+
+            return {count, pages , paginaActual, anterior, siguiente, result}
+        }
+
+        const{page, size} = req.query; /* desestructurar la query para obtener los parametros */
+
+        const paginacion = (page, size) => {
+            console.log(typeof size) /* string */
+            console.log(typeof page) /* string */
+            /* necesito definir el limit y el offset */
+            const limit = size ? +size : 4; /* si llega size q lo devuelva sino por defecto un 5, size con + para q sea number*/
+            const offset = page ? page * limit : 0; /* calcular el numero de pagina q estoy teniendo */
+            return{limit, offset}
+        }
+        const {limit, offset} = paginacion(page, size) 
+        console.log(size)
+        db.Product.findAndCountAll({
+            include: ['category'],
+            limit: limit,
+            offset: offset
+        })
         .then((products)=>{
+            const data = dataPaginacion(products, page, limit)/* enviamos la respuesta-los productos, el numero de lagina y el limite del los resultados */
+           /*  res.send(data) */
+            /* res.json({
+                info : {
+                    count : data.count,
+                    pages: data.pages,
+                    paginaActual: data.paginaActual,
+                    anterior: data.anterior,
+                    siguiente: data.siguiente,
+                },
+                result : data.result
+            }) */
             res.render('admin/productsAdmin/listProduct', {
             title: "Listado de Productos",
-                productos: products,
-                session: req.session
-            });
+                productos: data.result,
+                session: req.session,
+                count : data.count,
+                pages: data.pages,
+                paginaActual: data.paginaActual,
+                anterior: data.anterior,
+                siguiente: data.siguiente,
+
+            }); 
         })
         .catch((error)=>res.send(error))
     },

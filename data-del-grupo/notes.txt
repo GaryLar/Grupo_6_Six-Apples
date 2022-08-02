@@ -1,0 +1,16 @@
+paginacion: 
+-del lado del servidor, para grandes conjunto de datos, y cuando
+sabemos que nuestra empresa crecera.
+-del lado del cliente, te trae todos los datos, y los va mostrando 
+de acuerdo a la pagina q pongas. La desventaja es q quizas esos
+datos no estan del todo actualizados. 
+
+Tenemos que pasar la informacion como parametros en la query string. 
+Para esto necesitamos la cantidad, la cantidad de paginas, la pagina donde
+estoy parado actualmente la pagina anterior y la siguiente pagina.
+
+Podemos desestructurar la queryString.
+
+findAndCountAll: buscar y contar todos. Devuelve 
+dos cosas la cantidad de resultados(count) y los resultados(rows)
+
