@@ -80,6 +80,77 @@ module.exports = {
             .catch(error => res.json({error, catch: 1}))
         }
     },
+    removeOneFromCart: (req, res) => {
+        let itemId = req.params.item;
+        let user = req.params.user;
 
+        db.Order.findOne({
+            where: {
+                userId: user,
+            },
+            include: [
+                {
+                    association: "order_items",
+                    include: [
+                        {
+                            association: "products"
+                        },
+                    ],
+                },
+            ],
+        }).then((order) => {
+            let itemToRemove = order.order_items.find(
+                (item) => item.productId === +itemId
+            );
+            if(itemToRemove !== undefined){
+                db.ItemsOrder.findByPk(itemToRemove.id)
+                .then((item) => {
+                    let newQuantity = +item.quantity -1;
+                    if(item.quantity > 1){
+                        db.ItemsOrder.update({
+                            orderId: item.orderId,
+                            productId: item.productId,
+                            quantity: newQuantity,
+                        },
+                        {
+                            where: {
+                                id: item.id,
+                            },
+                        }).then((result) => {
+                            if(result) {
+                                res.json({
+                                    status:200,
+                                    msg: "item cantidad updated",
+                                })
+                            }
+                        })
+                    } else {
+                        db.ItemsOrder.destroy({
+                            where: {
+                                id: item.id,
+                            },
+                        }).then((result) =>
+                        res.status(200).json({
+                            status: 200,
+                            msg: "item removed absolutamente",
+                        }))
+                    }
+                })
+                .catch((error) => 
+                res.json({
+                    error: error,
+                }))
+            }
+        })
+    },
+    removeAllFromCart: (req, res) => {
+
+    },
+    clearCart: (req, res) => {
+
+    },
+    productsInCart: (req, res) => {
+
+    },
 
 }
