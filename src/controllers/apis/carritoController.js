@@ -7,22 +7,22 @@ module.exports = {
         let userId = req.params.user;
 
         if (userId) {
-            db.Order.findAll({
+            db.Order.findAll({ /* consulto si hay orden creada para el usuario */
                 where: {
                     userId: userId,
                 },
                 include: [
                     {
-                        association: "items_order", include: [{association: "products"}]
+                        association: "order_items", include: [{association: "products"}]
                     },
                 ],
             }).then((result) => {
-                if (result.length > 0) {
-                    let products = result[0].items_order || null;
+                if (result.length > 0) { /* su existe la orden, la actualizo */
+                    let products = result[0].products || null;
                     let item = products?.find((item) => item.productId === +productId);
                     if (item) {
                         let newQuantity = +quantity + item.quantity;
-                        db.Items_order.update(
+                        db.ItemsOrder.update(
                             {
                                 productId: productId,
                                 quantity: newQuantity,
@@ -38,11 +38,9 @@ module.exports = {
                                 msg: "Producto actualizado",
                             });
                         }).catch((error) =>
-                        res.json({
-                            errors:error,
-                        }));
-                    } else {
-                        db.Items_order.create({
+                        res.json({error, catch: "1a"}));
+                    } else { 
+                        db.ItemsOrder.create({ /* si el item no esta en la orden, la agrego */
                             productId: productId,
                             orderId: result[0].id,
                             quantity: +quantity,
@@ -56,31 +54,30 @@ module.exports = {
                             errors: error,
                         }));
                     }
-                } else {
+                } else { /* si no existe la orden, la creo */
                     db.Order.create({
                         userId,
                         state: "PENDING",
                     }).then((order) => {
-                        if (order) {
-                            db.Order_items.create({
+                        if (order) { /* si se creo, creo el registo en la tabla */
+                            db.ItemsOrder.create({
                                 orderId: order.id,
-                                productId: productID,
+                                productId: productId,
                                 quantity: +quantity,
-                            }).then((items_order) => {
+                            }).then((ItemsOrder) => {
                                 res.json({
                                     meta: {
                                         status: 201,
                                     },
-                                    data: items_order,
+                                    data: ItemsOrder,
                                 });
                             });
                         } 
                     }).catch((error) => 
-                    res.json({
-                        errors: error,
-                    }));
+                    res.json({error, catch: "Orden creada"}));
                 }
             })
+            .catch(error => res.json({error, catch: 1}))
         }
     },
 
