@@ -46,9 +46,9 @@
                 <div class="contenedor-foto">
                     <a href="/productos/ofertas/<%- oferta.id %>"><img width="100%" src="/images/<%- oferta.image %>" alt="ofertaNaranjas"></a>  <!-- si toco la foto veria el detalle de producto -->
                 </div>
-                <!-- <button class="boton-ofertas">
-                     <h4>COMPRAR</h4> 
-                </button> -->
+                <button class="boton-ofertas">
+                    <a href="/productos/ofertas/<%- oferta.id %>"><h4>Ver detalle</h4></a>
+                </button>
                 <article class="detalles">
                     <p><%= oferta.name %> </p>
                     <p class="precio">$ <%= toThousand(oferta.price)%> </p> 
