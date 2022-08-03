@@ -8,127 +8,108 @@
 
     <main>
         <div class="container-carrito">
-            <section class="menu-carrito">
-                <nav class="data-carrito">
-                    <ul>
-                        <li><a href="/productCart">Carrito(3)</a></li>
-                        <li><a id="palabra-azul" href="#">Favoritos(1)</a></li>
-                        <li><a id="palabra-azul" href="#">Historial</a></li>
-                    </ul>
-                </nav>
-            </section>
-            <article class="articulos-carrito">
-                <div class="tarjeta-carrito">
-                    <div class="container-img-carrito">
-                        <img src="/images/productos/Durazno.png" alt="Duraznito">
-                    </div>
-                    <div class="info-carrito">
-                        <strong>Durazno</strong>
-                        <p>ID: 3210</p>
-                        <strong>$167/kg</strong>
-                    </div>
-                    <div class="form-carrito">
-                        <form action="" method="">
-                            <label for="cantidad"></label>
-                            <input type="number" placeholder="......" class="cantidad" min="1" max="500" id="cantidad" value="cantidad">
-                            <label for="unidad-peso"></label>
-                                <select name="unidad-peso" id="unidad-peso" class="unidad-peso">
-                                    <option value="kg" selected>kg</option> 
-                                    <option value="g">gr</option>
-                                    <option value="u">u</option>
-                                </select>
-                            </form>
-                    </div>
+            <% if (products.length === 0) { %>
+                <h2 class="no-products">No hay productos en su carrito</h2>
+            <% }  else { %>
+                <h2 class="products-in-cart">Productos en su Carrito</h2>
+                <div>
+                    <button class="clear-cart" onclick="clearCart(`<%=user%>`)">
+                        Vaciar carrito
+                    </button>  
                 </div>
-                <div class="botones-carrito">
-                    <button type="reset">Eliminar</button>
-                    <button type="submit">Agregar a favoritos</button>
-                </div>
-            </article>
+                <section class="menu-carrito">
+                    <nav class="data-carrito">
+                        <ul>
+                            <li><a href="/productCart">Carrito(3)</a></li>
+                            <li><a id="palabra-azul" href="#">Favoritos(1)</a></li>
+                            <li><a id="palabra-azul" href="#">Historial</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <% products.forEach(product => { %>
+                    <article class="articulos-carrito">
+                        <div class="tarjeta-carrito">
+                            <div class="container-img-carrito">
+                                <img src="/images/productos/<%= product.image %>" alt="imageProduct">
+                            </div>
+                            <div class="info-carrito">
+                                <strong><%= product.name %></strong>
+                                <p>ID: <%= product.id %></p>
+                                <strong>$<%= product.price %></strong>
+                            </div>
+                           <!--  <div class="form-carrito">
+                                <form action="" method="">
+                                    <label for="cantidad"></label>
+                                    <input type="number" placeholder="......" class="cantidad" min="1" max="500" id="cantidad" value="cantidad">
+                                    <label for="unidad-peso"></label>
+                                        <select name="unidad-peso" id="unidad-peso" class="unidad-peso">
+                                            <option value="kg" selected>kg</option> 
+                                            <option value="g">gr</option>
+                                            <option value="u">u</option>
+                                        </select>
+                                    </form>
+                            </div> -->
 
-            <article class="articulos-carrito">
-                <div class="tarjeta-carrito">
-                    <div class="container-img-carrito">
-                        <img src="/images/productos/Manzana.png" alt="Manzanita">
-                    </div>
-                    <div class="info-carrito">
-                        <strong>Manzana</strong>
-                        <p>ID: 3670</p>
-                        <strong>$130/kg</strong>
-                    </div>
-                    <div class="form-carrito">
-                        <form action="" method="">
-                            <label for="cantidad"></label>
-                            <input type="number" placeholder="......" class="cantidad" min="1" max="500" id="cantidad" value="cantidad">
-                            <label for="unidad-peso"></label>
-                                <select name="unidad-peso" id="unidad-peso" class="unidad-peso">
-                                    <option value="kg" selected>kg</option> 
-                                    <option value="g">gr</option>
-                                    <option value="u">u</option>
-                                </select>
-                            </form>
-                    </div>
-                </div>
-                <div class="botones-carrito">
-                    <button type="reset">Eliminar</button>
-                    <button type="submit">Agregar a favoritos</button>
-                </div>
-            </article>
 
-            <article class="articulos-carrito">
-                <div class="tarjeta-carrito">
-                    <div class="container-img-carrito">
-                        <img src="/images/productos/Acelga.png" alt="Acelga">
-                    </div>
-                    <div class="info-carrito">
-                        <strong>Acelga</strong>
-                        <p>ID: 2392</p>
-                        <strong>$62/u</strong>
-                    </div>
-                    <div class="form-carrito">
-                        <form action="" method="">
-                            <label for="cantidad"></label>
-                            <input type="number" placeholder="......" class="cantidad" min="1" max="500" id="cantidad" value="cantidad">
-                            <label for="unidad-peso"></label>
-                                <select name="unidad-peso" id="unidad-peso" class="unidad-peso">
-                                    <option value="kg" selected>kg</option> 
-                                    <option value="g">gr</option>
-                                    <option value="u">u</option>
-                                </select>
-                            </form>
-                    </div>
-                </div>
-                <div class="botones-carrito">
-                    <button type="reset">Eliminar</button>
-                    <button type="submit">Agregar a favoritos</button>
-                </div>
-            </article>
+                            <div class="productNumber">
+                                <label for="cantidad">Cantidad</label>
+                                <div class="counter">
+                                    <button type="button" class="btn-subtract" onclick="removeOne(`<%- product.id %>`, `<%= session.user.id %>`)">
+                                        -
+                                    </button>
+                                        <div><%- product.quantity %></div>      
+                                    <button type="button" id="btn-add" onclick="addToCart(`<%= product.id %>`, 1,`<%= session.user.id %>`)">
+                                        +
+                                    </button>
+                                </div>
+                            </div>
 
-            <section class="datos-carrito">
-                <div class="container-input">
-                    <div class="input-carrito">
-                        <input type="radio" for="retiro" name="checkbox" id="retiro"><label for="retiro">
-                            <strong>Retiro en sucursal cercana</strong> $0
-                        </label>
-                        <br>
-                        <span class="direccion-carrito">(Leandro N. Alem 4479, Claypole, BA)</span>
+
+                        </div>
+                        <div class="botones-carrito">
+                            <button type="reset" onclick="removeAll(`<%- product.id %>`, `<%= session.user.id %>`)">Eliminar</button>
+                            <button type="submi disabled">Agregar a favoritos</button>
+                        </div>
+                    </article>
+                <% }) %>
+                <section class="datos-carrito">
+                    <div class="container-input">
+                        <div class="input-carrito radio-buttons">
+                            <input type="radio" for="retiro" name="checkbox" id="retiro" onclick="radio(0)"><label for="retiro">
+                                <strong>Retiro en sucursal cercana</strong> $0
+                            </label>
+                            <br>
+                            <span class="direccion-carrito">(Leandro N. Alem 4479, Claypole, BA)</span>
+                        </div>
+                        <div class="input-carrito linea">
+                            <input type="radio" for="envio" name="checkbox" id="envio" onclick="radio(1)"><label for="envio">
+                                <strong>Envio a domicilio registrado</strong> $127
+                            </label>
+                            <br>
+                            <span class="direccion-carrito">(Av. Lacaze 4362, Claypole, BA)</span>
+                        </div>
                     </div>
-                    <div class="input-carrito linea">
-                        <input type="radio" for="envio" name="checkbox" id="envio"><label for="envio">
-                            <strong>Envio a domicilio registrado</strong> $127
-                        </label>
-                        <br>
-                        <span class="direccion-carrito">(Av. Lacaze 4362, Claypole, BA)</span>
+
+
+                    <div class="precio-total total">
+                        <strong>Total con envío:</strong>
+                        <strong id="precioTotal">$794</strong>
                     </div>
-                </div>
-                <div class="precio-total">
-                    <strong>Total con envío:</strong>
-                    <strong>$794</strong>
-                </div>
-                <div class="boton-final">
-                    <button type="submit">Finalizar Compra</button>
-                </div>
-            </section>
+                    <!-- <strong>Subtotal</strong>
+                        Precio final 
+                    <strong id="precioSubtotal">$PrecioFinal</strong>
+                    <div class="subtotal">
+                    </div>
+                    <div class="costo-envio">
+                        <strong>Costo de envío</strong>
+                        <span>$340</span>
+                    </div> -->
+                    <div class="boton-final">
+                        <button type="submit">Finalizar Compra</button>
+                    </div>
+                </section>
+            <% } %> 
+
         </div>
     </main>
 

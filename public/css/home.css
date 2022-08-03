@@ -206,7 +206,7 @@ main.main-homepage section article button.boton-ofertas{
 }
 
 main.main-homepage section article button.boton-ofertas:hover{
-    background-color: var(--color-verdeOscuro); /* PONIENDO COLOR A LOS BOTONES */
+    background-color: var(--color-verdeOscuro); 
     color: white;
 }
 
@@ -224,6 +224,7 @@ main.main-homepage section article.detalles{
 main.main-homepage section article p.precio {
     font-size: var(--precios);
     font-weight: bold;
+    margin-top: 1rem;
 }
 
 main.main-homepage section article div.opciones {
@@ -282,7 +283,7 @@ main.main-homepage button.boton-agregar{
     background-color: lightgrey;
     border-radius: 9px;
     border-style: none;
-    padding: 3px;
+    padding: 7px;
     transition: all 0.3s ease-in;
 }
 
@@ -294,7 +295,6 @@ main.main-homepage button.boton-agregar:hover{
     font-size: 10px;
     font-weight: 600;
     font-family: var(--font-poppins); 
-    margin-left: -4px;
 }
 
 /* TABLET VERSION*/
@@ -348,5 +348,8 @@ main.main-homepage button.boton-agregar:hover{
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-evenly;
+    }
+    main.main-homepage button.boton-agregar{
+        margin-left: 50px;
     }
 }

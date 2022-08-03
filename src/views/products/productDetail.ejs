@@ -19,14 +19,28 @@
                 <p><b> ID: </b><%= product.id %> </p>
                 <p> <b>Precio por Kg: </b>$<%= product.price %></p>
             </div>
+            <div class="productNumber">
+                <label for="cantidad">Cantidad</label>
+                <div class="counter">
+                  <button type="button" class="btn-subtract" onclick="subtract();">
+                    -
+                  </button>
+    
+                  <div id="count">1</div>
+    
+                  <button type="button" id="btn-add" onclick="add();">+</button>
+                </div>
+            </div>
 
             <div class="botones-detalle">
-                <button>Agregar al carrito</button>
-                <button>Ver tu carrito</button>
+                <button onclick="addToCart(`<%- product.id %>`, 1,`<%= user %>`)">Agregar al carrito</button>
+              <!--   <button>Ver tu carrito</button> -->
             </div>
 
         </div>
     
+
+
         <div class="titulo-caja2">
             <div></div>
             <h3>PRODUCTOS RELACIONADOS</h3>
@@ -46,8 +60,8 @@
                     <p>Precio por kg</p>
                     <p class="precio">$<%= product.price %> </p>
                     <div class="preboton">
-                    <button class="boton-agregarDetalle">
-                        <a href="/productos/carrito"><p class="add">Agregar al carrito</p></a>
+                    <button class="boton-agregarDetalle" onclick="addToCart(`<%- product.id %>`, 1,`<%= user %>`)">
+                        <p class="add">Agregar al carrito</p>
                     </button>
                 </div>
                 </article>
@@ -59,7 +73,7 @@
 
     <%- include("../partials/footer.ejs") %> 
     <%- include("../partials/scripts.ejs") %> 
-    
+   
 </body>
 </html>
 

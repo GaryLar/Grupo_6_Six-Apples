@@ -71,6 +71,19 @@ div.caja1 .texto-detalle p{
     font-size:var(--paragraph)
 }
 
+body.body-detalles .productNumber {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 17px;
+    
+}
+body.body-detalles .counter{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 200px ;
+}
 div.caja1 .botones-detalle{
     display: flex;
     flex-direction: column;
@@ -278,6 +291,10 @@ div.caja1 .botones-detalle{
     flex-direction: row;
     justify-content: space-between;
     margin: 20px 20px 0px 20px ;
+}
+
+body.body-detalles .productNumber {
+    margin-top: 3rem;   
 }
 
 div.caja1 .botones-detalle button{
