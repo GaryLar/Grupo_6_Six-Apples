@@ -25,5 +25,16 @@ module.exports=(sequelize,dataTypes)=>{
     };
     const ItemsOrder =sequelize.define(alias,cols,config)
 
+    ItemsOrder.associate = models => {
+        ItemsOrder.belongsTo(models.Order, {
+            as:"order",
+            foreignKey: "orderId"
+        })
+        ItemsOrder.belongsTo(models.Product, {
+            as:"products",
+            foreignKey: "productId"
+        })
+    }
+
     return ItemsOrder
 }
