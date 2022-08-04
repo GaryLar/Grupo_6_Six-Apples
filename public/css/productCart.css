@@ -46,9 +46,6 @@ body.productCart .productNumber {
     font-size: 15px;
 }
 
-body.productCart .productNumber .fa-plus{
-}
-
 body.productCart .productNumber #botones{
     display: contents;
     cursor: pointer;

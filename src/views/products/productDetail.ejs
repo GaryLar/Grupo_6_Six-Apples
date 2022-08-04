@@ -36,7 +36,7 @@
 
             <% if (session.user !== undefined) { %>
                 <div class="botones-detalle">
-                    <button onclick="addToCartProductDetail(`<%- product.id %>`,`<%= user %>`)">
+                    <button class="boton-agregar-al-carrito" onclick="addToCartProductDetail(`<%- product.id %>`,`<%= user %>`)">
                         Agregar al carrito
                     </button>
                     <button><a href="/productos/carrito">Ver tu carrito</a></button>
@@ -44,7 +44,7 @@
             <% } else { %>
                 <div class="botones-detalle">
                     <a href="/usuario/login">
-                        <button onclick="alert('Debes registrate o iniciar sesión')">
+                        <button class="boton-agregar-al-carrito" onclick="alert('Debes registrate o iniciar sesión')">
                         Agregar al carrito
                         </button>
                     </a>
