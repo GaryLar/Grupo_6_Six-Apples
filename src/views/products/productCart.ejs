@@ -53,8 +53,6 @@
                                     </select>
                                 </div>
                             </div>
-
-
                         </div>
                         <div class="botones-carrito">
                             <button type="reset" onclick="removeAll(`<%- product.id %>`, `<%= session.user.id %>`)">Eliminar</button>
@@ -99,8 +97,11 @@
                             Vaciar carrito
                         </button>  
                     </div>
+                  
                     <div class="boton-final">
-                        <button type="submit">Finalizar Compra</button>
+                        <a href="/">
+                        <button type="submit" onclick="alert(`Compra Finalizada`)">Finalizar Compra</button>
+                        </a> 
                     </div>
                     
                 </section>

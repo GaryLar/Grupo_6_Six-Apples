@@ -3,6 +3,52 @@ const BASE_URL = window.location.origin
     let $removeOne = document.querySelector('#removeOne');
     let $removeAll = document.querySelector('#removeAll');
 
+    
+    function addToCartProductDetail(productId,user){
+        let contadorr=document.querySelector("#count").textContent
+        fetch(`${BASE_URL}/api/productos/carrito/${productId}/${contadorr}/${user}`, {method: "POST"})
+        .then(res => {
+            if(res.ok){
+                return res.json()
+            }else{
+                throw {
+                    errorMsg: "Ocurrió un error"
+                }
+            }
+        })
+        .then(result => {
+            if(result.status === 200 || result.status === 201){
+                alert('Producto agregado')
+                window.location.reload()
+            }
+        })
+        .catch(error => alert(`${error.errorMsg}`))
+    }
+
+    function addToCart2(productId,user){
+        let contadorr=document.querySelector("#count").textContent
+        fetch(`${BASE_URL}/api/productos/carrito/${productId}/${contadorr}/${user}`, {method: "POST"})
+        .then(res => {
+            if(res.ok){
+                return res.json()
+            }else{
+                throw {
+                    errorMsg: "Ocurrió un error"
+                }
+            }
+        })
+        .then(result => {
+            if(result.status === 200 || result.status === 201){
+                alert('Producto agregado')
+                window.location.reload()
+            }
+        })
+        .catch(error => alert(`${error.errorMsg}`))
+        
+    }
+
+
+
     function addToCart (productId, quantity = 1, user){
         fetch(`${BASE_URL}/api/productos/carrito/${productId}/${quantity}/${user}`, {method: "POST"})
         .then(res => {
