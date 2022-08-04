@@ -9,14 +9,14 @@
     <main>
         <div class="container-carrito">
             <% if (products.length === 0) { %>
-                <h2 class="no-products">No hay productos en su carrito</h2>
+                <div class="container-carrito-vacio">
+                    <h2 class="no-products">SU CARRITO ESTA VACIO</h2>
+                    <h3>¿No sabés qué comprar? ¡Te recomendamos algunos productos! ;)</h3>
+                </div>
             <% }  else { %>
                 <h2 class="products-in-cart">Productos en su Carrito</h2>
-                <div>
-                    <button class="clear-cart" onclick="clearCart(`<%=user%>`)">
-                        Vaciar carrito
-                    </button>  
-                </div>
+                
+
                 <section class="menu-carrito">
                     <nav class="data-carrito">
                         <ul>
@@ -37,30 +37,20 @@
                                 <p>ID: <%= product.id %></p>
                                 <strong>$<%= product.price %></strong>
                             </div>
-                           <!--  <div class="form-carrito">
-                                <form action="" method="">
-                                    <label for="cantidad"></label>
-                                    <input type="number" placeholder="......" class="cantidad" min="1" max="500" id="cantidad" value="cantidad">
-                                    <label for="unidad-peso"></label>
-                                        <select name="unidad-peso" id="unidad-peso" class="unidad-peso">
-                                            <option value="kg" selected>kg</option> 
-                                            <option value="g">gr</option>
-                                            <option value="u">u</option>
-                                        </select>
-                                    </form>
-                            </div> -->
 
 
                             <div class="productNumber">
                                 <label for="cantidad">Cantidad</label>
                                 <div class="counter">
-                                    <button type="button" class="btn-subtract" onclick="removeOne(`<%- product.id %>`, `<%= session.user.id %>`)">
-                                        -
-                                    </button>
-                                        <div><%- product.quantity %></div>      
-                                    <button type="button" id="btn-add" onclick="addToCart(`<%= product.id %>`, 1,`<%= session.user.id %>`)">
-                                        +
-                                    </button>
+                                    <button type="button" class="fa-solid fa-minus" id="botones" onclick="removeOne(`<%- product.id %>`, `<%= session.user.id %>`)"></button>
+                                        <div class="cantidad-productos"><%- product.quantity %></div>      
+                                    <button type="button" class="fa-solid fa-plus" id="botones" onclick="addToCart(`<%= product.id %>`, 1,`<%= session.user.id %>`)"></button>
+                                    
+                                    <select name="unidad-peso" id="unidad-peso" class="unidad-peso">
+                                        <option value="kg" selected>kg</option> 
+                                        <option value="g">gr</option>
+                                        <option value="u">u</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -104,9 +94,15 @@
                         <strong>Costo de envío</strong>
                         <span>$340</span>
                     </div> -->
+                    <div class="clear-cart-content">
+                        <button class="clear-cart" onclick="clearCart(`<%=user%>`)">
+                            Vaciar carrito
+                        </button>  
+                    </div>
                     <div class="boton-final">
                         <button type="submit">Finalizar Compra</button>
                     </div>
+                    
                 </section>
             <% } %> 
 
