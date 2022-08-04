@@ -185,7 +185,7 @@ h1.button-google {
 a.button-google{
     border-radius: 10px;
     border: none;
-    width: 180px;
+    width: 200px;
     height: 45px;
     display: flex;
     justify-content: center;
@@ -194,6 +194,6 @@ a.button-google{
 }
 
 #icono-google{
-    display: flex;
-    left: 30px;
+    position: relative;
+    padding: 1rem;
 }
