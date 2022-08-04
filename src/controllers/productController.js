@@ -15,6 +15,7 @@ module.exports={
                 title: "Catálogo",
                 products,
                 session: req.session,
+                user: req.session.user?.id || null,
             });
         })
         .catch((error)=>res.send(error))
@@ -47,7 +48,8 @@ module.exports={
             res.render('products/ofertas', { //ofertas.ejs
                 title: "Ofertas",
                 ofertas:offers,
-                session: req.session
+                session: req.session,
+                user: req.session.user?.id || null,
             }) 
         })
         .catch((error)=>res.send(error))
@@ -57,9 +59,10 @@ module.exports={
         db.Offer.findByPk(idOferta)
             .then((offer)=>{
                 res.render('products/offersDetail', {
-                    title: offer.name,
+                    title: "Ofertas",
                     oferta:offer,
-                    session: req.session
+                    session: req.session,
+                    user: req.session.user?.id || null,
                 })
             })
         .catch((error)=>res.send(error))
@@ -100,6 +103,7 @@ module.exports={
                 title: 'filtro',
                 session: req.session,
                 products,
+                user: req.session.user?.id || null,
             })
         })
     },
@@ -120,6 +124,7 @@ module.exports={
                 title: 'filtro',
                 session: req.session,
                 products,
+                user: req.session.user?.id || null,
             })
         })
     }
