@@ -42,6 +42,7 @@ body.body-detalles ul {
 /* Main */
 
 /* CAJA 1  */
+
 .caja1{
     border: 1px solid #8A8A8A;
     margin: 25px 15px 0 15px;
@@ -89,6 +90,10 @@ div.caja1 .botones-detalle{
     flex-direction: column;
     align-items: center;
     margin: 0 auto 20px auto;
+}
+
+.boton-agregar-al-carrito{
+    cursor: pointer;
 }
 
 div.caja1 .botones-detalle button{
