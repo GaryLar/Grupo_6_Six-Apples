@@ -1,6 +1,9 @@
 //const { getProducts, getOffers, writeOffers} = require('../data/index');
 const db = require("../database/models");
 const { Op } = require('Sequelize');
+let axios = require('axios');
+
+const BASE_URL = "http://localhost:3006/api/productos"
 
 module.exports={
     products:(req,res)=>{
@@ -12,15 +15,32 @@ module.exports={
                 title: "Catálogo",
                 products,
                 session: req.session,
+                user: req.session.user?.id || null,
             });
         })
         .catch((error)=>res.send(error))
     },
     productCart:(req, res) => {
-        res.render('products/productCart', { //productCart.ejs
-            title: "Carrito",
-            session: req.session
-        }) 
+        let user = req.session.user.id
+        axios({
+            method: 'get',
+            url: `http://localhost:3006/api/productos/carrito/${user}`,
+        })
+        .then(response => {
+            let products = response.data.data?.order_items.map(item => {
+                return {
+                    ...item.products,
+                    quantity: item.quantity
+                }
+            })
+            res.render('products/productCart', { //productCart.ejs
+                title: "Carrito",
+                session: req.session,
+                products: products !== undefined ? products : [],
+                user: req.session.user?.id || null, 
+            }) 
+        })
+        .catch(error => res.send(error))
     },
     offers:(req, res) => {
         db.Offer.findAll()
@@ -28,7 +48,8 @@ module.exports={
             res.render('products/ofertas', { //ofertas.ejs
                 title: "Ofertas",
                 ofertas:offers,
-                session: req.session
+                session: req.session,
+                user: req.session.user?.id || null,
             }) 
         })
         .catch((error)=>res.send(error))
@@ -38,9 +59,10 @@ module.exports={
         db.Offer.findByPk(idOferta)
             .then((offer)=>{
                 res.render('products/offersDetail', {
-                    title: offer.name,
+                    title: "Ofertas",
                     oferta:offer,
-                    session: req.session
+                    session: req.session,
+                    user: req.session.user?.id || null,
                 })
             })
         .catch((error)=>res.send(error))
@@ -60,7 +82,8 @@ module.exports={
                 title: product.name,
                 productView,
                 product,
-                session: req.session
+                session: req.session,
+                user: req.session.user?.id || null,
             }) 
         })
         .catch((error)=>res.send(error))
@@ -80,6 +103,7 @@ module.exports={
                 title: 'filtro',
                 session: req.session,
                 products,
+                user: req.session.user?.id || null,
             })
         })
     },
@@ -100,6 +124,7 @@ module.exports={
                 title: 'filtro',
                 session: req.session,
                 products,
+                user: req.session.user?.id || null,
             })
         })
     }

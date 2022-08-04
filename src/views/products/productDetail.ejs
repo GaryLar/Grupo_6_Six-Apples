@@ -19,14 +19,39 @@
                 <p><b> ID: </b><%= product.id %> </p>
                 <p> <b>Precio por Kg: </b>$<%= product.price %></p>
             </div>
-
-            <div class="botones-detalle">
-                <button>Agregar al carrito</button>
-                <button>Ver tu carrito</button>
+            <div class="productNumber">
+                <label for="cantidad">Cantidad por Kg:</label>
+                <div class="counter">
+                  <button type="button" class="btn-subtract" onclick="subtract();">
+                    -
+                  </button>
+    
+                  <div id="count">1</div>
+    
+                  <button type="button" id="btn-add" onclick="add();">+</button>
+                </div>
             </div>
 
+            
+
+            <% if (session.user !== undefined) { %>
+                <div class="botones-detalle">
+                    <button onclick="addToCartProductDetail(`<%- product.id %>`,`<%= user %>`)">
+                        Agregar al carrito
+                    </button>
+                    <button><a href="/productos/carrito">Ver tu carrito</a></button>
+                </div>
+            <% } else { %>
+                <div class="botones-detalle">
+                    <a href="/usuario/login">
+                        <button onclick="alert('Debes registrate o iniciar sesión')">
+                        Agregar al carrito
+                        </button>
+                    </a>
+                </div>
+            <% } %>
         </div>
-    
+
         <div class="titulo-caja2">
             <div></div>
             <h3>PRODUCTOS RELACIONADOS</h3>
@@ -45,11 +70,19 @@
                     <p><strong><%= product.name %></strong> </p>
                     <p>Precio por kg</p>
                     <p class="precio">$<%= product.price %> </p>
-                    <div class="preboton">
-                    <button class="boton-agregarDetalle">
-                        <a href="/productos/carrito"><p class="add">Agregar al carrito</p></a>
-                    </button>
-                </div>
+                    <% if (session.user !== undefined) { %>
+                        <div class="preboton">
+                            <button class="boton-agregarDetalle" onclick="addToCart(`<%- product.id %>`, 1,`<%= user %>`)">
+                                <p class="add">Agregar al carrito</p>
+                            </button>
+                        </div>
+                        <% } else {%>
+                            <a href="/usuario/login">
+                                <button class="boton-agregarDetalle" onclick="alert('Debes registrarte o iniciar session')">
+                                    <p class="add">Agregar al carrito</p>
+                                </button>                                 
+                            </a>
+                        <% } %>
                 </article>
             </article>
             <% }) %>
@@ -59,7 +92,7 @@
 
     <%- include("../partials/footer.ejs") %> 
     <%- include("../partials/scripts.ejs") %> 
-    
+   
 </body>
 </html>
 

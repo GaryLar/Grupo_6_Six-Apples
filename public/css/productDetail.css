@@ -71,11 +71,24 @@ div.caja1 .texto-detalle p{
     font-size:var(--paragraph)
 }
 
+body.body-detalles .productNumber {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 17px;
+    
+}
+body.body-detalles .counter{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 200px ;
+}
 div.caja1 .botones-detalle{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
 }
 
 div.caja1 .botones-detalle button{
@@ -127,9 +140,7 @@ article.detalles-producto button.boton-agregarDetalle{
     border: none;
     border-radius: 20px;
     background-color: #C4C4C4;
-    margin-top: 20px;
-    
-    
+    margin: 20px auto 0px;
 }
 
 article.detalles-producto button.boton-agregarDetalle p.add{
@@ -277,7 +288,11 @@ div.caja1 .botones-detalle{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 20px 20px 0px 20px ;
+    margin: 0 auto;
+}
+
+body.body-detalles .productNumber {
+    margin-top: 3rem;   
 }
 
 div.caja1 .botones-detalle button{
@@ -313,21 +328,6 @@ div.caja1 .botones-detalle button{
 article.detalles-producto{
     padding: 10px 0px 15px 16px;
     font-size: 22px;
-}
-
-article.detalles-producto button.boton-agregar{
-    height: 45px;
-    width: 160px;
-    border: none;
-    border-radius: 20px;
-    margin-left:25px;
-    background-color: #C4C4C4;
-    font-size: 20px;
-}
-
-article.detalles-producto button.boton-agregar p.add{
-    font-size:17px;
-    font-weight: lighter;
 }
 
 div.titulo-caja2{

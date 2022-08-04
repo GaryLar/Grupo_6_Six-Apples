@@ -9,9 +9,9 @@ router.get('/some', apiProductsController.getSome);
 
 /* CARRITO */
 router.post('/carrito/:product/:quantity/:user', carritoController.addToCart)
-router.get('/cart/:user', )
-router.delete('/cart/removeOne/:item/:user', )
-router.delete('/cart/removeAll/:item/:user', )
-router.delete('/cart/clearCart/:user', )
+router.get('/carrito/:user', carritoController.productsInCart);
+router.delete('/carrito/removeOne/:item/:user', carritoController.removeOneFromCart);
+router.delete('/carrito/removeAll/:item/:user', carritoController.removeAllFromCart);
+router.delete('/carrito/clearCart/:user', carritoController.clearCart);
 
 module.exports = router;

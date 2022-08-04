@@ -47,7 +47,7 @@
                     <a href="/productos/ofertas/<%- oferta.id %>"><img width="100%" src="/images/<%- oferta.image %>" alt="ofertaNaranjas"></a>  <!-- si toco la foto veria el detalle de producto -->
                 </div>
                 <button class="boton-ofertas">
-                    <h4>COMPRAR</h4>
+                    <a href="/productos/ofertas/<%- oferta.id %>"><h4>Ver detalle</h4></a>
                 </button>
                 <article class="detalles">
                     <p><%= oferta.name %> </p>
@@ -93,7 +93,7 @@
                     <p>Precio por kg</p>
                     <p class="precio">$<%= product.price %> </p>
                     <button class="boton-agregar">
-                        <a href="/productos/carrito"><p class="add">Agregar al carrito</p></a>
+                        <a href="/productos/detalle/<%- product.id %>"><p class="add">Ver detalle</p></a>
                     </button>
                 </article>
             </article>

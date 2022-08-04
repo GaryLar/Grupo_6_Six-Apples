@@ -36,14 +36,61 @@ body.productCart{
     min-height: 100vh;
 }
 
+body.productCart h2.products-in-cart{
+    text-align: center;
+}
 
+body.productCart .productNumber {
+    text-align: center;
+    /* margin-top: 1rem; */
+    font-size: 15px;
+}
+
+body.productCart .productNumber .fa-plus{
+}
+
+body.productCart .productNumber #botones{
+    display: contents;
+    cursor: pointer;
+}
+
+body.productCart .productNumber .cantidad-productos{
+    margin: 0 15px;
+}
+
+body.productCart .counter{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 200px ;
+    border: black 1px solid;
+    border-radius: 15px;
+    padding-left: 10px;
+}
+
+/* CARRITO VACIO */
+div.container-carrito-vacio{
+    margin: 100% auto;
+}
+
+div.container-carrito-vacio h2.no-products{
+    text-align: center;
+    font-size: large;
+}
+
+div.container-carrito-vacio h3{
+    text-align: center;
+    opacity: 40%;
+    font-size: small;
+}
 
 
 div.container-carrito {
     width: 85%;
     background-color: white;
     opacity:90%; 
-    margin: 15px auto;
+    margin: 40% auto;
     border: grey 1px solid;
     box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.4); 
     border-radius: 15px;
@@ -169,12 +216,22 @@ section.datos-carrito div.boton-final button:hover{
     background-color:var(--color-verdeOscuro);
 }
 
+.clear-cart-content{
+    padding-left: 30px;
+}
+
+.clear-cart{
+    color: blue;
+    display: contents;
+    cursor: pointer;
+    padding-left: 100px;
+}
 
 /*VERSION TABLET*/
 @media(min-width:768px){
 
     div.container-carrito {
-        margin: 30px auto;
+        margin: 20% auto;
     }
 
     div.botones-carrito button{
@@ -185,6 +242,20 @@ section.datos-carrito div.boton-final button:hover{
         border-left: 1px dashed grey;
     }
     Linea que nunca fue linea*/
+
+    /* CARRITO VACIO */
+    div.container-carrito-vacio{
+        margin: 50% auto;
+    }
+
+    div.container-carrito-vacio h2.no-products{
+        font-size: x-large;
+    }
+
+    div.container-carrito-vacio h3{
+        font-size: medium;
+    }
+    /* FIN CARRITO VACIO */
 
     section.datos-carrito div.container-input{
         display: flex;
@@ -218,7 +289,12 @@ section.datos-carrito div.boton-final button:hover{
 @media(min-width:1020px){
     div.container-carrito {
         width: 75%; 
-        margin: 95px auto;
+        margin: 9% auto;
+    }
+
+    /* CARRITO VACIO */
+    div.container-carrito-vacio{
+        margin: 30% auto;
     }
 
     section.datos-carrito div.boton-final button{

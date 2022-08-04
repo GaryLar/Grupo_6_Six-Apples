@@ -35,9 +35,20 @@
                     <p><%- product.name %></p>
                     <p>Precio por kg</p>
                     <p class="precio-catalogo">$ <%- product.price %></p>
-                    <button class="add-button">
+                    <% if (session.user !== undefined) { %>
+                      <button class="add-button" onclick="addToCart(`<%- product.id %>`, 1 ,`<%= user %>`)">
+                        <p class="add">Agregar al carrito</p>
+                      </button>
+                  <% } else { %>
+                      <a href="/usuario/login">
+                        <button class="add-button" onclick="alert('Debes registrate o iniciar sesión')">
+                          Agregar al carrito
+                        </button>
+                      </a>
+                  <% } %>
+                   <!--  <button class="add-button">
                         <a href="#"><p class="add">Agregar al carrito</p></a>
-                    </button>
+                    </button> -->
                 </article>
             </article>
             <% }) %>
