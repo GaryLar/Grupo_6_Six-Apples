@@ -6,10 +6,9 @@ const path = require('path');
 
 module.exports = {
     list: (req, res) => {
-        let url = `http://${req.headers.host}${req.originalUrl}`; /* definimos la url, la armamos para ver si tiene uncliudo los parametros o no */
-        /* a continuacion tenemos pasar por algunas validaciones, por ejemplo
-        si existe dentro de los parametros de la url la pages, hará ciertas cosas */
-
+        let url = `http://${req.headers.host}${req.originalUrl}`; /* definimos la url, la armamos para ver si tiene uncluidos los parametros o no */
+        /* establecer algunas validaciones, por ejemplo
+        si existe dentro de los parametros de la url la page */
         const dataPaginacion = (data, page, limit) => {
             const {count, rows: result} = data; /* queremos manipular count y rows */
             const pages = Math.ceil(count / limit)/* math.ceil trae numeros enteros */
@@ -54,17 +53,6 @@ module.exports = {
         })
         .then((products)=>{
             const data = dataPaginacion(products, page, limit)/* enviamos la respuesta-los productos, el numero de lagina y el limite del los resultados */
-           /*  res.send(data) */
-            /* res.json({
-                info : {
-                    count : data.count,
-                    pages: data.pages,
-                    paginaActual: data.paginaActual,
-                    anterior: data.anterior,
-                    siguiente: data.siguiente,
-                },
-                result : data.result
-            }) */
             res.render('admin/productsAdmin/listProduct', {
             title: "Listado de Productos",
                 productos: data.result,
