@@ -179,7 +179,7 @@ section.registro-section form p.info{
 }
 
 h1.button-google {
-    font-size: 15px;
+    font-size: 12px;
 }
 
 a.button-google{
@@ -191,4 +191,9 @@ a.button-google{
     justify-content: center;
     align-items: center;
     background-color: var(--color-verdeOscuro);
+}
+
+#icono-google{
+    display: flex;
+    left: 30px;
 }
